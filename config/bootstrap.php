@@ -14,7 +14,8 @@ declare(strict_types=1);
  * @since         0.10.8
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-
+use Cake\Error\ErrorTrap;
+use Cake\Error\ExceptionTrap;
 /*
  * Configure paths required to find CakePHP + general filepath constants
  */
@@ -124,11 +125,12 @@ ini_set('intl.default_locale', Configure::read('App.defaultLocale'));
  */
 $isCli = PHP_SAPI === 'cli';
 if ($isCli) {
-    (new ConsoleErrorHandler(Configure::read('Error')))->register();
+    //(new ConsoleErrorHandler(Configure::read('Error')))->register();
+    (new ErrorTrap(Configure::read('Error')))->register();
 } else {
-    (new ErrorHandler(Configure::read('Error')))->register();
+    //(new ErrorHandler(Configure::read('Error')))->register();
+    (new ExceptionTrap(Configure::read('Error')))->register();
 }
-
 /*
  * Include the CLI bootstrap overrides.
  */

@@ -94,6 +94,12 @@ class ModulesController extends AppController
             return $this->redirect($redirect);
 
         }
+        if ($id == 13){
+            $redirect = $this->request->getQuery('redirect', ['controller' => 'Pages', 'action' => 'display', 'calculators']);
+
+            return $this->redirect($redirect);
+
+        }
 
         $this->set(compact('module'));
     }

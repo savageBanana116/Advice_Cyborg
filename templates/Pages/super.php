@@ -1,7 +1,7 @@
 <?php
 
 // Connect to database
-$con = mysqli_connect("localhost", "root", "", "advice_cyborg");
+$con = mysqli_connect("localhost", "fit3048", "fit3048", "fit3048_advice");
 
 // mysqli_connect("servername","username","password","database_name")
 
@@ -136,7 +136,7 @@ $all_supers = mysqli_query($con, $sql);
                     <?php
 
                     // Connect to database
-                    $con = mysqli_connect("localhost", "root", "", "advice_cyborg");
+                    $con = mysqli_connect("localhost", "fit3048", "fit3048", "fit3048_advice");
 
                     // mysqli_connect("servername","username","password","database_name")
 

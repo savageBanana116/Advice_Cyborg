@@ -35,6 +35,34 @@
                     </div>
                 </div>
             <?php endforeach; ?>
+
+        </div>
+        <div class="row">
+
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" href="<?= $this->Url->build(['action' => 'view', $module->module_id]) ?>">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+
+                            <?= $this->Html->image('modules/'.h($module->module_id).".jpg", ['alt' => 'module_image',"class"=>"img-fluid"])?>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">
+                             <h>Calculators</h>
+
+<!--                                    <span class="badge bg-primary">Premium</span>-->
+
+                                    <span class="badge bg-secondary">Free</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
         </div>
     </div>
 </section>

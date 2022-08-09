@@ -5,6 +5,7 @@
  */
 ?>
     <!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <html lang="en">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -141,7 +142,7 @@
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6> Basic Tax Payable</h6> </td>
-                                <td> <h6 style="margin-left: 10em">$ 0</h6></td>
+                                <td> <h6 id="taxPayable" style="margin-left: 10em">$</h6></td>
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6> Medicare Levy </h6> </td>
@@ -187,23 +188,51 @@
         const others = parseFloat(document.getElementById("myOthers").value);
         const free = parseFloat(document.getElementById("myTaxFree").value);
 
+
+
+        let taxPayable = 0;
+        function addTaxPayable(){
+        if (addIncome()<=18200){
+            taxPayable = 0;
+        }else if (18201<= addIncome() && addIncome()<=45000){
+
+            taxPayable = (addIncome()-18200)*0.19;
+
+        }else if(45001<= addIncome()&& addIncome()<=120000){
+
+            taxPayable = (addIncome()-45000)*0.325+5092;
+
+        }else if( 120001<= addIncome()&& addIncome()<=180000){
+
+            taxPayable = (addIncome()-120000)*0.37+29467;
+
+        }else if( addIncome() >= 180001){
+
+            taxPayable = (addIncome()-180000)*0.45 +51667;
+        }
+
+        return Math.round(taxPayable);
+        }
         function addIncome(){
             let c1 =0;
             let c18= 0.1*salary- salarySacrifice;
             let c19 = (0.1*salary - salarySacrifice)-27500;
-            if (27500<c18){
+            if (27500<c18 && salarySacrifice!= 0){
                 c1 = c19;
             }
             const totalIncome = salary + investment + pension + rental + credits + others + salarySacrifice + c1 -salarySacrifice- free;
-           return  totalIncome ;
+           return totalIncome ;
         }
+
+
 
         var commas = addIncome().toLocaleString("en-US");
         var commas = addIncome().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
+        var commas2 = addTaxPayable().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 
         document.getElementById("echoOut").innerHTML = "$ " + commas ;
+        document.getElementById("taxPayable").innerHTML = "$ " + commas2 ;
 
     }
 

@@ -146,7 +146,7 @@
          <h1  id="netIncome" style="color: #2f3a82">$</h1>
 
                 </form>
-                <div class="tax-output-2"style="flex: 1;width: 108%; height: 35em ;margin-top: 5em;margin-left: -2em ; padding:2%; background-color: rgba(99, 99, 98, 0.06); ">
+                <div class="tax-output-2"style="flex: 1;width: 108%; height: 38.6em ;margin-top: 5em;margin-left: -2em ; padding:2%; background-color: rgba(99, 99, 98, 0.06); ">
                     <div class="output-table" style="padding: 6%">
                         <table>
                             <tr style="border-bottom: 1px solid black ;">
@@ -177,6 +177,10 @@
                             <tr>
                                 <td> <h2>Total Tax Payable </h2> </td>
                                 <td> <h6 id="taxPaid" style="margin-left: 10em">$ 0</h6></td>
+                            </tr>
+                            <tr>
+                                <td> <h4>Tax Payable </h4> </td>
+                                <td> <h6 id="Paid" style="margin-left: 10em">$ 0</h6></td>
                             </tr>
                         </table>
                     </div>
@@ -289,7 +293,7 @@
             }else {
                 c1 = salarySacrifice;
             }
-            const totalIncome = salary + investment + pension + rental + credits + others - c1 ;
+            const totalIncome = salary + investment + pension + rental + credits + others - c1 -free ;
            return Math.round(totalIncome)  ;
         }
 
@@ -336,7 +340,8 @@
             }
             return Math.round(taxPaid);
         }
-            let netIncome = addIncome() - addTotalTax();
+        let taxYouPay = addTotalTax() - credits;
+            let netIncome = (addIncome() + free) - taxYouPay;
 
         var commas = addIncome().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas2 = addTaxPayable().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -346,6 +351,7 @@
         var commas6 =addLowOffset().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas7 =addTotalTax().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas8 =netIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var commas9 =taxYouPay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 
 
@@ -357,6 +363,7 @@
         document.getElementById("lowOffset").innerHTML = "+ $ " + commas6 ;
         document.getElementById("taxPaid").innerHTML = "- $ " + commas7 ;
         document.getElementById("netIncome").innerHTML = " $ " +  commas8 ;
+        document.getElementById("Paid").innerHTML = "- $ " +  commas9 ;
 
         // document.getElementById("test1").innerHTML =  myFamily+ addMedicareLevy() ;
 

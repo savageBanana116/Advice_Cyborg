@@ -284,7 +284,9 @@
         function addIncome(){
             let c1 =0;
             let c18= 0.1*salary+ salarySacrifice;
-            if (27500<c18){
+            if (27500>c18){
+                c1 = 0;
+            }else {
                 c1 = salarySacrifice;
             }
             const totalIncome = salary + investment + pension + rental + credits + others - c1 ;
@@ -324,7 +326,7 @@
         // calculate total tax payable
         let pensionRebate = (pension - free) * 0.15;
         let totalTax = addMedicareLevy() + addTaxPayable();
-        let totalOffset = addLowOffset() + addLowOffset()+ pensionRebate;
+        let totalOffset = addMiddleOffset() + addLowOffset()+ pensionRebate;
         let taxPaid = 0;
         function addTotalTax(){
             if (totalOffset>=totalTax){

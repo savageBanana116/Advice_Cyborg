@@ -164,7 +164,7 @@
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6> Low & Middle Income Tax Offset </h6> </td>
-                                <td> <h6 style="margin-left: 10em">$ 0</h6></td>
+                                <td> <h6 id="middleOffset" style="margin-left: 10em">$ 0</h6></td>
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6>Low Income Tax Offset </h6> </td>
@@ -172,7 +172,7 @@
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6>Pension Rebate </h6> </td>
-                                <td> <h6 style="margin-left: 10em">$ 0</h6></td>
+                                <td> <h6 id="pensionRebate" style="margin-left: 10em">$ 0</h6></td>
                             </tr>
                             <tr>
                                 <td> <h2>Total Tax Payable </h2> </td>
@@ -291,18 +291,38 @@
             const totalIncome = salary + investment + pension + rental + credits + others + salarySacrifice + c1 -salarySacrifice- free;
            return Math.round(totalIncome)  ;
         }
-
+        let totalTax = addMedicareLevy() + addTaxPayable();
+        let pensionRebate = (pension - free) * 0.15;
+        // calculate the low & middle income tax offset
+        let middleOffset = 0;
+        function addMiddleOffset(){
+            if (addIncome() <= 37000){
+                middleOffset = 255;
+            }else if ( addIncome() >= 37001 && addIncome() <= 48000){
+                middleOffset = (255 + (0.075*(addIncome() - 37000)));
+            } else if (addIncome()>=48001 && addIncome()<= 90000){
+                middleOffset = 1080;
+            }else if (addIncome()>= 90001 && addIncome() <=126000){
+                middleOffset = 1080-(0.03*(addIncome()-90000));
+            }else {
+                middleOffset = 0;
+            }
+            return Math.round(middleOffset);
+        }
 
 
         var commas = addIncome().toLocaleString("en-US");
         var commas = addIncome().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas2 = addTaxPayable().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas3 = addMedicareLevy().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
+        var commas4 = pensionRebate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var commas5 =addMiddleOffset().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         document.getElementById("echoOut").innerHTML = "$ " + commas ;
         document.getElementById("taxPayable").innerHTML = "- $ " + commas2 ;
         document.getElementById("medicareLevy").innerHTML = "- $ " + commas3 ;
+        document.getElementById("pensionRebate").innerHTML = "+ $ " + commas4 ;
+        document.getElementById("middleOffset").innerHTML = "+ $ " + commas5 ;
 
         // document.getElementById("test1").innerHTML =  myFamily+ addMedicareLevy() ;
 

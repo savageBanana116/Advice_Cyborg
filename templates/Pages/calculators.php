@@ -18,7 +18,7 @@
     </div>
 
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success py-4 w-100" style="width: 100%; margin-bottom: 25%">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success py-4 w-100" style="width: 100%; margin-bottom: 8%">
 
     <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 300%;color: white">
         <ul class="navbar-nav">
@@ -40,6 +40,12 @@
         </ul>
     </div>
 </nav>
+<div class="text-center" style="width:50%;margin-left: 23%;margin-bottom: 10%">
+
+    <p>What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+</div>
 
 
 </body>

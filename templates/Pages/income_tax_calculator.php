@@ -143,7 +143,7 @@
 
             <div class="tax-output" style="flex: 1; height: 10em ;margin-top: 5% ;margin-left: 2% ; padding:2%; background-color: rgba(99, 99, 98, 0.06); border-left: 5px solid #fcba03;">
                 <h5>Total annual net income</h5>
-         <h1  style="color: #2f3a82">$</h1>
+         <h1  id="netIncome" style="color: #2f3a82">$</h1>
 
                 </form>
                 <div class="tax-output-2"style="flex: 1;width: 108%; height: 35em ;margin-top: 5em;margin-left: -2em ; padding:2%; background-color: rgba(99, 99, 98, 0.06); ">
@@ -152,15 +152,15 @@
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h4> Total Taxable Annual Income</h4> </td>
 
-                                <td> <h5 id="echoOut" style="margin-left: 10em">$</h5></td>
+                                <td> <h5 id="echoOut" style="margin-left: 10em">$ 0</h5></td>
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6> Basic Tax Payable</h6> </td>
-                                <td> <h6 id="taxPayable" style="margin-left: 10em">$</h6></td>
+                                <td> <h6 id="taxPayable" style="margin-left: 10em">$ 0</h6></td>
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6> Medicare Levy </h6> </td>
-                                <td> <h6 id="medicareLevy" style="margin-left: 10em">$</h6></td>
+                                <td> <h6 id="medicareLevy" style="margin-left: 10em">$ 0</h6></td>
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6> Low & Middle Income Tax Offset </h6> </td>
@@ -168,7 +168,7 @@
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6>Low Income Tax Offset </h6> </td>
-                                <td> <h6 style="margin-left: 10em">$ 0</h6></td>
+                                <td> <h6 id="lowOffset" style="margin-left: 10em">$ 0</h6></td>
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6>Pension Rebate </h6> </td>
@@ -176,7 +176,7 @@
                             </tr>
                             <tr>
                                 <td> <h2>Total Tax Payable </h2> </td>
-                                <td> <h6 id="test1" style="margin-left: 10em">$ 0</h6></td>
+                                <td> <h6 id="taxPaid" style="margin-left: 10em">$ 0</h6></td>
                             </tr>
                         </table>
                     </div>
@@ -283,16 +283,14 @@
         // calculate total taxable income
         function addIncome(){
             let c1 =0;
-            let c18= 0.1*salary- salarySacrifice;
-            let c19 = (0.1*salary - salarySacrifice)-27500;
+            let c18= 0.1*salary+ salarySacrifice;
             if (27500<c18){
-                c1 = c19;
+                c1 = salarySacrifice;
             }
-            const totalIncome = salary + investment + pension + rental + credits + others + salarySacrifice + c1 -salarySacrifice- free;
+            const totalIncome = salary + investment + pension + rental + credits + others - c1 ;
            return Math.round(totalIncome)  ;
         }
-        let totalTax = addMedicareLevy() + addTaxPayable();
-        let pensionRebate = (pension - free) * 0.15;
+
         // calculate the low & middle income tax offset
         let middleOffset = 0;
         function addMiddleOffset(){
@@ -309,20 +307,54 @@
             }
             return Math.round(middleOffset);
         }
+        // calculate the low income tax offset
+        let lowOffset = 0;
+        function addLowOffset(){
+            if (addIncome() <= 37500){
+                lowOffset = 700;
+            } else if (addIncome()>=37501 && addIncome()<= 45000){
+                lowOffset = (700-(0.05*(addIncome()-37500)));
+            }else if( addIncome() >= 45001 && addIncome()<= 66667){
+                lowOffset = (325-(0.015*(addIncome()-45000)));
+            }else {
+                lowOffset = 0;
+            }
+            return Math.round(lowOffset);
+        }
+        // calculate total tax payable
+        let pensionRebate = (pension - free) * 0.15;
+        let totalTax = addMedicareLevy() + addTaxPayable();
+        let totalOffset = addLowOffset() + addLowOffset()+ pensionRebate;
+        let taxPaid = 0;
+        function addTotalTax(){
+            if (totalOffset>=totalTax){
+                taxPaid = 0;
+            }else {
+                taxPaid = totalTax - totalOffset;
+            }
+            return Math.round(taxPaid);
+        }
+            let netIncome = addIncome() - addTotalTax();
 
-
-        var commas = addIncome().toLocaleString("en-US");
         var commas = addIncome().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas2 = addTaxPayable().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas3 = addMedicareLevy().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas4 = pensionRebate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas5 =addMiddleOffset().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var commas6 =addLowOffset().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var commas7 =addTotalTax().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var commas8 =netIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+
 
         document.getElementById("echoOut").innerHTML = "$ " + commas ;
         document.getElementById("taxPayable").innerHTML = "- $ " + commas2 ;
         document.getElementById("medicareLevy").innerHTML = "- $ " + commas3 ;
         document.getElementById("pensionRebate").innerHTML = "+ $ " + commas4 ;
         document.getElementById("middleOffset").innerHTML = "+ $ " + commas5 ;
+        document.getElementById("lowOffset").innerHTML = "+ $ " + commas6 ;
+        document.getElementById("taxPaid").innerHTML = "- $ " + commas7 ;
+        document.getElementById("netIncome").innerHTML = " $ " +  commas8 ;
 
         // document.getElementById("test1").innerHTML =  myFamily+ addMedicareLevy() ;
 

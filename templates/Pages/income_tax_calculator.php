@@ -124,6 +124,20 @@
                         </div>
                         <input type="number" class="form-control" id="myTaxFree" value="0" >
                     </div>
+                    <span>Are you considered apart of a family?</span>
+                    <div class="input-group mb-2">
+                        <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
+                            <input type="radio"  name="myFamily" class="custom-control-input" value="1116">
+                            <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio"  name="myFamily" class="custom-control-input" value="999" checked>
+                            <label class="custom-control-label" for="customRadioInline2">No</label>
+                        </div>
+
+
+
+                    </div>
                     <button type="button" onclick="taxCalculator()" class="btn btn-success" style="margin-left: 74%; margin-top: 10%;background-color: #000000; color: #ebe8e8">Calculate</button>
             </div>
 
@@ -146,7 +160,7 @@
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6> Medicare Levy </h6> </td>
-                                <td> <h6 style="margin-left: 10em">$ 0</h6></td>
+                                <td> <h6 id="medicareLevy" style="margin-left: 10em">$</h6></td>
                             </tr>
                             <tr style="border-bottom: 1px solid black ;">
                                 <td> <h6> Low & Middle Income Tax Offset </h6> </td>
@@ -162,7 +176,7 @@
                             </tr>
                             <tr>
                                 <td> <h2>Total Tax Payable </h2> </td>
-                                <td> <h6 style="margin-left: 10em">$ 0</h6></td>
+                                <td> <h6 id="test1" style="margin-left: 10em">$ 0</h6></td>
                             </tr>
                         </table>
                     </div>
@@ -187,9 +201,14 @@
         const credits = parseFloat(document.getElementById("myCredits").value);
         const others = parseFloat(document.getElementById("myOthers").value);
         const free = parseFloat(document.getElementById("myTaxFree").value);
+        var myFamily = document.querySelector('input[name="myFamily"]:checked').value;
 
 
 
+
+
+
+            // Calculating basic tax payable
         let taxPayable = 0;
         function addTaxPayable(){
         if (addIncome()<=18200){
@@ -204,24 +223,73 @@
 
         }else if( 120001<= addIncome()&& addIncome()<=180000){
 
-            taxPayable = (addIncome()-120000)*0.37+29467;
+            taxPayable = (addIncome()-120000)*0.37+29467; // + 29467   / 5092
 
         }else if( addIncome() >= 180001){
 
-            taxPayable = (addIncome()-180000)*0.45 +51667;
+            taxPayable = (addIncome()-180000)*0.45 +51667; // + 51667   / 29467
         }
 
         return Math.round(taxPayable);
         }
+
+            // calculate medicare levy
+
+        function addMedicareLevy(){
+            let mediLevy = 0;
+            let basicLevy = addIncome()*0.02;
+            let totalLevy = 0;
+            // is not a family member
+           if (myFamily ==='999'){
+                if (addIncome() <= 90000){
+                    mediLevy = 0;
+                }else {
+                    if(addIncome()>=90001 &&addIncome() <= 105000){
+                    mediLevy = addIncome() * 0.01;
+                    }else {
+                        if (addIncome() >= 105001 && addIncome() <= 140000){ // conflicting condition
+                            mediLevy = addIncome() * 0.0125;
+                        }else {
+                            if (addIncome() > 105000){  // conflicting condition
+                                mediLevy = addIncome() * 0.015;
+                            }
+                        }
+                    }
+                }
+                // is part of a family
+           }else if (myFamily === '1116'){
+               if (addIncome() <= 180000){
+                   mediLevy = 0;
+               }else {
+                   if(addIncome() >= 180001 && addIncome() <= 210000){
+                       mediLevy = addIncome() * 0.01;
+                   }else {
+                       if (addIncome()>=210001 && addIncome() <= 280000){
+                           mediLevy = addIncome() * 0.0125;
+                       }else {
+                           if (addIncome() > 210000){
+                               mediLevy = addIncome() * 0.015;
+                           }
+                       }
+                   }
+               }
+
+           }
+            totalLevy = mediLevy + basicLevy;
+            return totalLevy;
+
+        }
+
+        // calculate total taxable income
         function addIncome(){
             let c1 =0;
             let c18= 0.1*salary- salarySacrifice;
             let c19 = (0.1*salary - salarySacrifice)-27500;
-            if (27500<c18 && salarySacrifice!= 0){
+            if (27500<c18){
                 c1 = c19;
             }
             const totalIncome = salary + investment + pension + rental + credits + others + salarySacrifice + c1 -salarySacrifice- free;
-           return totalIncome ;
+           return Math.round(totalIncome)  ;
         }
 
 
@@ -229,10 +297,15 @@
         var commas = addIncome().toLocaleString("en-US");
         var commas = addIncome().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas2 = addTaxPayable().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var commas3 = addMedicareLevy().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 
         document.getElementById("echoOut").innerHTML = "$ " + commas ;
-        document.getElementById("taxPayable").innerHTML = "$ " + commas2 ;
+        document.getElementById("taxPayable").innerHTML = "- $ " + commas2 ;
+        document.getElementById("medicareLevy").innerHTML = "- $ " + commas3 ;
+
+        // document.getElementById("test1").innerHTML =  myFamily+ addMedicareLevy() ;
+
 
     }
 

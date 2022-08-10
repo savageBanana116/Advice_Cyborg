@@ -146,7 +146,7 @@
          <h1  id="netIncome" style="color: #2f3a82">$</h1>
 
                 </form>
-                <div class="tax-output-2"style="flex: 1;width: 108%; height: 38.6em ;margin-top: 5em;margin-left: -2em ; padding:2%; background-color: rgba(99, 99, 98, 0.06); ">
+                <div class="tax-output-2"style="flex: 1;width: 108%; height: 39em ;margin-top: 5em;margin-left: -2em ; padding:2%; background-color: rgba(99, 99, 98, 0.06); ">
                     <div class="output-table" style="padding: 6%">
                         <table>
                             <tr style="border-bottom: 1px solid black ;">

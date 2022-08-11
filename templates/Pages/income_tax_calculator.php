@@ -38,9 +38,9 @@
         </div>
 
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4 w-100" style="width: 100% ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4 w-100">
 
-        <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 300%;color: white">
+        <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 200%;color: white">
             <ul class="navbar-nav">
                 <li class="nav-item active px-5">
                     <a class="nav-link" href="car_lease_calculator">Car Lease <span class="sr-only">(current)</span></a>
@@ -66,28 +66,28 @@
             <div class="tax-input" style=" padding: 5% ;background-color: rgba(99, 99, 98, 0.06);" >
                 <form action="income_tax_calculator">
             <h2>My Assessable Income</h2>
-            <span >Salary</span>
+            <label for="mySalary">Salary</label>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="mySalary" value="0" >
             </div>
-            <span >Less Salary Sacrifice</span>
+                    <label for="mySalarySacrifice">Less Salary Sacrifice</label>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="mySalarySacrifice" value="0" >
             </div>
-            <span >Investment</span>
+                    <label for="myInvestment">Investment</label>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="myInvestment" value="0" >
             </div>
-            <span>Account Base pension</span>
+                    <label for="myPension">Account Base pension</label>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
@@ -95,14 +95,14 @@
                 <input type="number" class="form-control" id="myPension" value="0" >
             </div>
 
-            <span>Rental</span>
+                    <label for="myRental">Rental</label>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="myRental" value="0" >
             </div>
-            <span>Add Franked credits</span>
+                    <label for="myCredits">Add Franked credits</label>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
@@ -110,14 +110,14 @@
                 <input type="number" class="form-control" id="myCredits" value="0" >
             </div>
 
-            <span>Others</span>
+                    <label for="myOthers">Others</label>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="myOthers" value="0" >
             </div>
-                    <span>Tax Free pension amount</span>
+                    <label for="myTaxFree">Tax Free pension amount</label>>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -127,7 +127,7 @@
                     <button type="button" onclick="taxCalculator()" class="btn btn-success" style="margin-left: 74%; margin-top: 10%;background-color: #000000; color: #ebe8e8">Calculate</button>
             </div>
 
-            <div class="tax-output" style="flex: 1; height: 10em ;margin-top: 5% ;margin-left: 2% ; padding:2%; background-color: rgba(99, 99, 98, 0.06); border-left: 5px solid #fcba03;">
+            <div class="tax-output" style="flex: 1; height: 10em ; width: 30%;margin-left: 2% ; padding:2%; background-color: rgba(99, 99, 98, 0.06); border-left: 5px solid #fcba03;">
                 <h5>Total annual net income</h5>
          <h1  style="color: #2f3a82">$</h1>
 
@@ -174,8 +174,6 @@
         </div>
 
     </div>
-
-    </body>
 
 <script>
     function taxCalculator(){

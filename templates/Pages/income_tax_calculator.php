@@ -9,6 +9,9 @@
     <html lang="en">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<?php
+echo $this->Html->css('custom.css');
+?>
 <style>
 
     input::-webkit-outer-spin-button,
@@ -31,16 +34,16 @@
 </style>
 
     <body>
-    <div class="container" >
-        <div class="text-center" style="margin-top: 5%">
-            <h2 class="text-uppercase" style="font-size: 56px">Income tax Calculators</h2>
+    <div class="container-title" >
+        <div class="text-center" >
+            <h2 class="text-uppercase" >Income tax Calculators</h2>
             <p class="text-muted">Calculate your ___________</p>
         </div>
 
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4 w-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4 w-100"  ">
 
-        <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 200%;color: white">
+        <div class="collapse navbar-collapse" id="navbarNav" >
             <ul class="navbar-nav">
                 <li class="nav-item active px-5">
                     <a class="nav-link" href="car_lease_calculator">Car Lease <span class="sr-only">(current)</span></a>
@@ -61,33 +64,34 @@
         </div>
     </nav>
 
-    <div class="calculator" style="margin-top: 5%;margin-left: 18% ; width: 70%">
-        <div class="tax-row" style="display: flex;">
-            <div class="tax-input" style=" padding: 5% ;background-color: rgba(99, 99, 98, 0.06);" >
+    <div class="container-fluid" >
+        <div class="row" >
+
+            <div class="inputRow col-sm-3 " >
                 <form action="income_tax_calculator">
             <h2>My Assessable Income</h2>
-            <label for="mySalary">Salary</label>
+            <span >Salary</span>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="mySalary" value="0" >
             </div>
-                    <label for="mySalarySacrifice">Less Salary Sacrifice</label>
+            <span >Less Salary Sacrifice</span>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="mySalarySacrifice" value="0" >
             </div>
-                    <label for="myInvestment">Investment</label>
+            <span >Investment</span>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="myInvestment" value="0" >
             </div>
-                    <label for="myPension">Account Base pension</label>
+            <span>Account Base pension</span>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
@@ -95,14 +99,14 @@
                 <input type="number" class="form-control" id="myPension" value="0" >
             </div>
 
-                    <label for="myRental">Rental</label>
+            <span>Rental</span>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="myRental" value="0" >
             </div>
-                    <label for="myCredits">Add Franked credits</label>
+            <span>Add Franked credits</span>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
@@ -110,88 +114,93 @@
                 <input type="number" class="form-control" id="myCredits" value="0" >
             </div>
 
-                    <label for="myOthers">Others</label>
+            <span>Others</span>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
                 <input type="number" class="form-control" id="myOthers" value="0" >
             </div>
-                    <label for="myTaxFree">Tax Free pension amount</label>>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">$</div>
-                        </div>
-                        <input type="number" class="form-control" id="myTaxFree" value="0" >
-                    </div>
-                    <span>Are you considered apart of a family?</span>
-                    <div class="input-group mb-2">
-                        <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
-                            <input type="radio"  name="myFamily" class="custom-control-input" value="1116">
-                            <label class="custom-control-label" for="customRadioInline1">Yes</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio"  name="myFamily" class="custom-control-input" value="999" checked>
-                            <label class="custom-control-label" for="customRadioInline2">No</label>
-                        </div>
-
-
-
-                    </div>
-                    <button type="button" onclick="taxCalculator()" class="btn btn-success" style="margin-left: 74%; margin-top: 10%;background-color: #000000; color: #ebe8e8">Calculate</button>
+            <span>Tax Free pension amount</span>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">$</div>
+                </div>
+                <input type="number" class="form-control" id="myTaxFree" value="0" >
             </div>
-
-            <div class="tax-output" style="flex: 1; height: 10em ; width: 30%;margin-left: 2% ; padding:2%; background-color: rgba(99, 99, 98, 0.06); border-left: 5px solid #fcba03;">
-                <h5>Total annual net income</h5>
-         <h1  id="netIncome" style="color: #2f3a82">$</h1>
-
-                </form>
-                <div class="tax-output-2"style="flex: 1;width: 108%; height: 39em ;margin-top: 5em;margin-left: -2em ; padding:2%; background-color: rgba(99, 99, 98, 0.06); ">
-                    <div class="output-table" style="padding: 6%">
-                        <table>
-                            <tr style="border-bottom: 1px solid black ;">
-                                <td> <h4> Total Taxable Annual Income</h4> </td>
-
-                                <td> <h5 id="echoOut" style="margin-left: 10em">$ 0</h5></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid black ;">
-                                <td> <h6> Basic Tax Payable</h6> </td>
-                                <td> <h6 id="taxPayable" style="margin-left: 10em">$ 0</h6></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid black ;">
-                                <td> <h6> Medicare Levy </h6> </td>
-                                <td> <h6 id="medicareLevy" style="margin-left: 10em">$ 0</h6></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid black ;">
-                                <td> <h6> Low & Middle Income Tax Offset </h6> </td>
-                                <td> <h6 id="middleOffset" style="margin-left: 10em">$ 0</h6></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid black ;">
-                                <td> <h6>Low Income Tax Offset </h6> </td>
-                                <td> <h6 id="lowOffset" style="margin-left: 10em">$ 0</h6></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid black ;">
-                                <td> <h6>Pension Rebate </h6> </td>
-                                <td> <h6 id="pensionRebate" style="margin-left: 10em">$ 0</h6></td>
-                            </tr>
-                            <tr>
-                                <td> <h2>Total Tax Payable </h2> </td>
-                                <td> <h6 id="taxPaid" style="margin-left: 10em">$ 0</h6></td>
-                            </tr>
-                            <tr>
-                                <td> <h4>Tax Payable </h4> </td>
-                                <td> <h6 id="Paid" style="margin-left: 10em">$ 0</h6></td>
-                            </tr>
-                        </table>
-                    </div>
-
+            <span>Are you considered apart of a family?</span>
+            <div class="input-group mb-2">
+                <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
+                    <input type="radio"  name="myFamily" class="custom-control-input" value="1116">
+                    <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio"  name="myFamily" class="custom-control-input" value="999" checked>
+                    <label class="custom-control-label" for="customRadioInline2">No</label>
                 </div>
             </div>
-
-
+            <div class="text-right" style="text-align: right">
+                <button type="button" onclick="taxCalculator()" class="btn btn-success calculate ">Calculate</button>
+            </div>
         </div>
 
+
+        </form>
+
+            <div class="outputIncome col-md-5">
+                <h5>Total annual net income</h5>
+                <h1  id="netIncome" style="color: #2f3a82">$</h1>
+            </div>
+
+            <div class="outputResult col-md-5">
+                <table>
+                    <tr style="border-bottom: 1px solid black ;">
+                        <td> <h4> Total Taxable Annual Income</h4> </td>
+
+                        <td> <h5 class="number" id="echoOut"  >$ 0</h5></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid black ;">
+                        <td> <h6> Basic Tax Payable</h6> </td>
+                        <td> <h6 class="number" id="taxPayable" >$ 0</h6></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid black ;">
+                        <td> <h6> Medicare Levy </h6> </td>
+                        <td> <h6 class="number" id="medicareLevy" >$ 0</h6></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid black ;">
+                        <td> <h6> Low & Middle Income Tax Offset </h6> </td>
+                        <td> <h6 class="number" id="middleOffset" >$ 0</h6></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid black ;">
+                        <td> <h6>Low Income Tax Offset </h6> </td>
+                        <td> <h6 class="number" id="lowOffset" >$ 0</h6></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid black ;">
+                        <td> <h6>Pension Rebate </h6> </td>
+                        <td> <h6 class="number" id="pensionRebate" >$ 0</h6></td>
+                    </tr>
+                    <tr>
+                        <td> <h2>Total Tax Payable </h2> </td>
+                        <td> <h6 class="number" id="taxPaid" >$ 0</h6></td>
+                    </tr>
+                    <tr>
+                        <td> <h4>Tax Payable </h4> </td>
+                        <td> <h6 class="number" id="Paid" >$ 0</h6></td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+
     </div>
+    </div>
+    </body>
 
 <script>
     function taxCalculator(){
@@ -204,10 +213,6 @@
         const others = parseFloat(document.getElementById("myOthers").value);
         const free = parseFloat(document.getElementById("myTaxFree").value);
         var myFamily = document.querySelector('input[name="myFamily"]:checked').value;
-
-
-
-
 
 
             // Calculating basic tax payable

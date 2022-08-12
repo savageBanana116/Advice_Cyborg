@@ -45,7 +45,7 @@
                     </li>
                     <li>
                         <label for="Interest_Rate">Interest Rate: </label>
-                        <input type="number" id="Interes_Rate">
+                        <input type="number" id="Interest_Rate">
                     </li>
                     <li>
                         <label for="Current_Super">Current Superannuation: </label>
@@ -62,10 +62,14 @@
                 </ul>
             </form>
 
-            <button id="Submit"> Calculate </button>
+            <button id="Submit_retirement"> Calculate </button>
 
             <form id="Retirement_Calculator_Form_Output" >
                 <ul class="no-bullets">
+                    <li>
+                        <label for="Payment_Required_Future">Payment Required Amount Future :</label>
+                        <input type="text" id="Payment_Required_Future" readonly>
+                    </li>
                     <li>
                         <label for="Value_Required">Value Required :</label>
                         <input type="text" id="Value_Required" readonly>
@@ -87,8 +91,8 @@
                         <input type="text" id="Net_Payment" readonly>
                     </li>
                     <li>
-                        <label for="Cross_Payment">Gross Payment (Inc Surcharge):</label>
-                        <input type="text" id="Cross_Payment" readonly>
+                        <label for="Gross_Payment">Gross Payment (Inc Surcharge):</label>
+                        <input type="text" id="Gross_Payment" readonly>
                     </li>
                 </ul>
             </form>
@@ -124,5 +128,5 @@
     </div>
 </nav>
 -->
-
+<script src="\team18-app_fit3048\webroot\js\retirement.js"></script>
 </body>

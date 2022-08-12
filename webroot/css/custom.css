@@ -12,22 +12,22 @@ h2.text-uppercase{
 
 }
 .outputIncome{
-    margin-top: 5em;
-    margin-left: 1%;
+    margin-top: 5.3em;
     padding: 3% ;
     background-color: rgba(99, 99, 98, 0.06);
-    height: fit-content;
-
     border-left: 5px solid #fcba03;
+    width: auto;
+    max-width:680px;
 }
 .outputResult{
-
-    margin-left: 47%;
+    width: fit-content;
+    margin-top: 10%;
     padding-left: 5% ;
     padding-right: 5%;
     padding-top: 3%;
     background-color: rgba(99, 99, 98, 0.06);
 }
+
 .calculate{
     background-color: #000000;
     color: #ebe8e8;
@@ -40,6 +40,17 @@ h6.number{
     margin-left: 10em;
 }
 
+@media only screen and (max-width: 1000px) {
+
+    .outputIncome{
+       width: fit-content;
+
+    }
+    .inputRow{
+        width: fit-content;
+    }
+
+}
 @media only screen and (max-width: 900px) {
 
     .container-title h2{
@@ -47,20 +58,23 @@ h6.number{
     }
 
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (min-width: 1900px) {
+    .outputIncome{
+        max-width: 698px;
+    }
+}
+@media only screen and (max-width: 450px) {
 
     .inputRow{
         margin: auto;
     }
     .outputResult{
-        margin: auto;
+        margin: 10% 0;
 
     }
     .outputIncome{
-        margin-top: 10% ;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 10%;
+        width: 80%;
+        margin: 10% 20%;
     }
 h5.number{
     margin-left: 5em;

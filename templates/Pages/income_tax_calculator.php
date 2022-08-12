@@ -66,7 +66,6 @@ echo $this->Html->css('custom.css');
 
     <div class="container-fluid" >
         <div class="row" >
-
             <div class="inputRow col-sm-3 " >
                 <form action="income_tax_calculator">
             <h2>My Assessable Income</h2>
@@ -147,52 +146,50 @@ echo $this->Html->css('custom.css');
 
         </form>
 
-            <div class="outputIncome col-md-5">
+            <div class="col-md-5">
+                <div class="outputIncome">
                 <h5>Total annual net income</h5>
                 <h1  id="netIncome" style="color: #2f3a82">$</h1>
+                </div>
+                <div class="outputResult">
+                    <table>
+                        <tr style="border-bottom: 1px solid black ;">
+                            <td> <h4> Total Taxable Annual Income</h4> </td>
+
+                            <td> <h5 class="number" id="echoOut"  >$ 0</h5></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid black ;">
+                            <td> <h6> Basic Tax Payable</h6> </td>
+                            <td> <h6 class="number" id="taxPayable" >$ 0</h6></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid black ;">
+                            <td> <h6> Medicare Levy </h6> </td>
+                            <td> <h6 class="number" id="medicareLevy" >$ 0</h6></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid black ;">
+                            <td> <h6> Low & Middle Income Tax Offset </h6> </td>
+                            <td> <h6 class="number" id="middleOffset" >$ 0</h6></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid black ;">
+                            <td> <h6>Low Income Tax Offset </h6> </td>
+                            <td> <h6 class="number" id="lowOffset" >$ 0</h6></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid black ;">
+                            <td> <h6>Pension Rebate </h6> </td>
+                            <td> <h6 class="number" id="pensionRebate" >$ 0</h6></td>
+                        </tr>
+                        <tr>
+                            <td> <h2>Total Tax Payable </h2> </td>
+                            <td> <h6 class="number" id="taxPaid" >$ 0</h6></td>
+                        </tr>
+                        <tr>
+                            <td> <h4>Tax Payable </h4> </td>
+                            <td> <h6 class="number" id="Paid" >$ 0</h6></td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
-
-            <div class="outputResult col-md-5">
-                <table>
-                    <tr style="border-bottom: 1px solid black ;">
-                        <td> <h4> Total Taxable Annual Income</h4> </td>
-
-                        <td> <h5 class="number" id="echoOut"  >$ 0</h5></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid black ;">
-                        <td> <h6> Basic Tax Payable</h6> </td>
-                        <td> <h6 class="number" id="taxPayable" >$ 0</h6></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid black ;">
-                        <td> <h6> Medicare Levy </h6> </td>
-                        <td> <h6 class="number" id="medicareLevy" >$ 0</h6></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid black ;">
-                        <td> <h6> Low & Middle Income Tax Offset </h6> </td>
-                        <td> <h6 class="number" id="middleOffset" >$ 0</h6></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid black ;">
-                        <td> <h6>Low Income Tax Offset </h6> </td>
-                        <td> <h6 class="number" id="lowOffset" >$ 0</h6></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid black ;">
-                        <td> <h6>Pension Rebate </h6> </td>
-                        <td> <h6 class="number" id="pensionRebate" >$ 0</h6></td>
-                    </tr>
-                    <tr>
-                        <td> <h2>Total Tax Payable </h2> </td>
-                        <td> <h6 class="number" id="taxPaid" >$ 0</h6></td>
-                    </tr>
-                    <tr>
-                        <td> <h4>Tax Payable </h4> </td>
-                        <td> <h6 class="number" id="Paid" >$ 0</h6></td>
-                    </tr>
-                </table>
-            </div>
-
-
-
-
 
 
 

@@ -28,9 +28,7 @@ echo $this->Html->css('custom.css');
         padding-bottom: 2.5em;
 
     }
-    span {
-        padding-bottom: 5em;
-    }
+
 </style>
 
     <body>
@@ -68,123 +66,140 @@ echo $this->Html->css('custom.css');
         <div class="row" >
             <div class="inputRow col-sm-3 " >
                 <form action="income_tax_calculator">
-            <h2>My Assessable Income</h2>
-            <span >Salary</span>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">$</div>
-                </div>
-                <input type="number" class="form-control" id="mySalary" value="0" >
-            </div>
-            <span >Less Salary Sacrifice</span>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">$</div>
-                </div>
-                <input type="number" class="form-control" id="mySalarySacrifice" value="0" >
-            </div>
-            <span >Investment</span>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">$</div>
-                </div>
-                <input type="number" class="form-control" id="myInvestment" value="0" >
-            </div>
-            <span>Account Base pension</span>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">$</div>
-                </div>
-                <input type="number" class="form-control" id="myPension" value="0" >
-            </div>
+                    <h2>To get started!</h2>
+                    <span>My <span class="blue" >Salary</span> is</span>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="mySalary" value="0" >
+                    </div>
+                    <span >Salary <span class="blue" >Sacrifice</span></span>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="mySalarySacrifice" value="0" >
+                    </div>
+                    <span >Annual <span class="blue"> Investment </span></span>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="myInvestment" value="0" >
+                    </div>
+                    <span class="blue">Account Base pension</span>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="myPension" value="0" >
+                    </div>
 
-            <span>Rental</span>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">$</div>
-                </div>
-                <input type="number" class="form-control" id="myRental" value="0" >
-            </div>
-            <span>Add Franked credits</span>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">$</div>
-                </div>
-                <input type="number" class="form-control" id="myCredits" value="0" >
-            </div>
+                    <span class="blue">Rental</span>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="myRental" value="0" >
+                    </div>
+                    <span>My <span class="blue">Franked credits</span> </span>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="myCredits" value="0" >
+                    </div>
 
-            <span>Others</span>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">$</div>
-                </div>
-                <input type="number" class="form-control" id="myOthers" value="0" >
+                    <span> <span class="blue"> Tax Free pension</span> amount</span>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="myTaxFree" value="0" >
+                    </div>
+                    <span style="font-weight: bold">Others</span>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input type="number" class="form-control" id="myOthers" value="0" >
+                    </div>
+                    <span>Are you considered <span class="blue"> apart of a family?</span></span>
+                    <div class="input-group mb-4">
+                        <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
+                            <input type="radio"  name="myFamily" class="custom-control-input" value="1116">
+                            <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio"  name="myFamily" class="custom-control-input" value="999" checked>
+                            <label class="custom-control-label" for="customRadioInline2">No</label>
+                        </div>
+                    </div>
+                    <div class="text-right" style="text-align: right">
+                        <button type="button" onclick="taxCalculator()" class="btn btn-success calculate ">Calculate</button>
+                    </div>
             </div>
-            <span>Tax Free pension amount</span>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">$</div>
-                </div>
-                <input type="number" class="form-control" id="myTaxFree" value="0" >
-            </div>
-            <span>Are you considered apart of a family?</span>
-            <div class="input-group mb-2">
-                <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
-                    <input type="radio"  name="myFamily" class="custom-control-input" value="1116">
-                    <label class="custom-control-label" for="customRadioInline1">Yes</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio"  name="myFamily" class="custom-control-input" value="999" checked>
-                    <label class="custom-control-label" for="customRadioInline2">No</label>
-                </div>
-            </div>
-            <div class="text-right" style="text-align: right">
-                <button type="button" onclick="taxCalculator()" class="btn btn-success calculate ">Calculate</button>
-            </div>
-        </div>
 
 
         </form>
 
             <div class="col-md-5">
                 <div class="outputIncome">
-                <h5>Total annual net income</h5>
+                <h5>Your Total Annual Net Income</h5>
                 <h1  id="netIncome" style="color: #2f3a82">$</h1>
                 </div>
                 <div class="outputResult">
                     <table>
+                        <tr >
+                            <td style="padding-bottom: 0.5em"> <h6> Your Total Assessable Income</h6> </td>
+                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="assess" >$ 0</h6></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid black ;" >
+                            <td style="padding-bottom: 0em"> <h6> Your Total Deduction</h6> </td>
+                            <td style="padding-bottom: 0em"> <h6 class="number" id="free" >$ 0</h6></td>
+                        </tr>
                         <tr style="border-bottom: 1px solid black ;">
-                            <td> <h4> Total Taxable Annual Income</h4> </td>
+                            <td> <h5 style="padding-bottom: 2em" > Your Taxable Income</h5> </td>
+                            <td> <h5  style="padding-bottom: 2em" class="number" id="echoOut"  >$ 0</h5></td>
+                        </tr>
 
-                            <td> <h5 class="number" id="echoOut"  >$ 0</h5></td>
+
+                        <tr >
+                            <td style="padding-bottom: 0.5em"> <h6> Basic Tax Payable</h6> </td>
+                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="taxPayable" >$ 0</h6></td>
                         </tr>
                         <tr style="border-bottom: 1px solid black ;">
-                            <td> <h6> Basic Tax Payable</h6> </td>
-                            <td> <h6 class="number" id="taxPayable" >$ 0</h6></td>
+                            <td style="padding-bottom: 0em"> <h6> Medicare Levy </h6> </td>
+                            <td style="padding-bottom: 0em"> <h6 class="number" id="medicareLevy" >$ 0</h6></td>
+                        </tr>
+
+                        <tr style="border-bottom: 1px solid black ;">
+                            <td> <h5 style="padding-bottom: 2em">Total Tax Payable </h5> </td>
+                            <td> <h5 style="padding-bottom: 2em" class="number" id="taxPaid" >$ 0</h5></td>
+                        </tr>
+
+                        <tr >
+                            <td style="padding-bottom: 0.5em"> <h6> Low & Middle Income Tax Offset </h6> </td>
+                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="middleOffset" >$ 0</h6></td>
+                        </tr>
+                        <tr >
+                            <td style="padding-bottom: 0.5em"> <h6>Low Income Tax Offset </h6> </td>
+                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="lowOffset" >$ 0</h6></td>
                         </tr>
                         <tr style="border-bottom: 1px solid black ;">
-                            <td> <h6> Medicare Levy </h6> </td>
-                            <td> <h6 class="number" id="medicareLevy" >$ 0</h6></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid black ;">
-                            <td> <h6> Low & Middle Income Tax Offset </h6> </td>
-                            <td> <h6 class="number" id="middleOffset" >$ 0</h6></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid black ;">
-                            <td> <h6>Low Income Tax Offset </h6> </td>
-                            <td> <h6 class="number" id="lowOffset" >$ 0</h6></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid black ;">
-                            <td> <h6>Pension Rebate </h6> </td>
-                            <td> <h6 class="number" id="pensionRebate" >$ 0</h6></td>
+                            <td style="padding-bottom: 0.5em"> <h6>Pension Rebate </h6> </td>
+                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="pensionRebate" >$ 0</h6></td>
                         </tr>
                         <tr>
-                            <td> <h2>Total Tax Payable </h2> </td>
-                            <td> <h6 class="number" id="taxPaid" >$ 0</h6></td>
+                            <td > <h5 style="padding-bottom: 2em">Total Tax Offset </h5> </td>
+                            <td > <h5 style="padding-bottom: 2em" class="number" id="off" >$ 0</h5></td>
                         </tr>
+
+
                         <tr>
-                            <td> <h4>Tax Payable </h4> </td>
-                            <td> <h6 class="number" id="Paid" >$ 0</h6></td>
+                            <td> <h3>Tax Payable </h3> </td>
+                            <td> <h5 class="number" id="Paid" >$ 0</h5></td>
                         </tr>
                     </table>
                 </div>
@@ -343,6 +358,8 @@ echo $this->Html->css('custom.css');
         let taxYouPay = addTotalTax() - credits;
             let netIncome = (addIncome() + free) - taxYouPay;
 
+            let assessIncome = addIncome()+free;
+
         var commas = addIncome().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas2 = addTaxPayable().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas3 = addMedicareLevy().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -352,8 +369,9 @@ echo $this->Html->css('custom.css');
         var commas7 =addTotalTax().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas8 =netIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas9 =taxYouPay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-
+        var commas10 =totalOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var commas11 =free.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var commas12 =assessIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         document.getElementById("echoOut").innerHTML = "$ " + commas ;
         document.getElementById("taxPayable").innerHTML = "- $ " + commas2 ;
@@ -364,6 +382,9 @@ echo $this->Html->css('custom.css');
         document.getElementById("taxPaid").innerHTML = "- $ " + commas7 ;
         document.getElementById("netIncome").innerHTML = " $ " +  commas8 ;
         document.getElementById("Paid").innerHTML = "- $ " +  commas9 ;
+        document.getElementById("off").innerHTML = "+ $ " +  commas10 ;
+        document.getElementById("free").innerHTML = "- $ " +  commas11 ;
+        document.getElementById("assess").innerHTML = "$ " +  commas12 ;
 
         // document.getElementById("test1").innerHTML =  myFamily+ addMedicareLevy() ;
 

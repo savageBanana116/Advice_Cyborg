@@ -11,27 +11,62 @@ h2.text-uppercase{
     background-color: rgba(99, 99, 98, 0.06);
 
 }
+
 .outputIncome{
     margin-top: 5.3em;
-    padding: 3% ;
+    padding: 5% ;
     background-color: rgba(99, 99, 98, 0.06);
     border-left: 5px solid #fcba03;
     width: auto;
-    max-width:680px;
+    max-width:560px;
 }
 .outputResult{
     width: fit-content;
-    margin-top: 10%;
+    margin-top: 5%;
     padding-left: 5% ;
-    padding-right: 5%;
-    padding-top: 3%;
+    padding-right: 10%;
+    padding-top: 6%;
     background-color: rgba(99, 99, 98, 0.06);
 }
 
+.inputRow h2{
+    font-family: Helvetica;
+}
+.inputRow span{
+    font-family: Helvetica;
+    margin-bottom: 2em;
+}
+.outputResult h4{
+    font-family: Helvetica;
+}
+.outputResult h6{
+    font-weight: lighter;
+    font-family: Helvetica;
+}
+.outputResult h2{
+    font-family: Helvetica;
+}
+.outputIncome h5{
+
+    font-family: Helvetica;
+}
+/*.outputResult td{*/
+/*    padding-bottom: 2em;*/
+/*}*/
 .calculate{
     background-color: #000000;
     color: #ebe8e8;
 
+}
+.blue{
+    color: #0baccc;
+    font-weight: bold;
+}
+
+
+
+.inputInner h2{
+    color: white;
 }
 h5.number{
     margin-left: 10em;
@@ -60,7 +95,7 @@ h6.number{
 }
 @media only screen and (min-width: 1900px) {
     .outputIncome{
-        max-width: 698px;
+        max-width: 603px;
     }
 }
 @media only screen and (max-width: 450px) {
@@ -77,10 +112,10 @@ h6.number{
         margin: 10% 20%;
     }
 h5.number{
-    margin-left: 5em;
+    margin-left: 4em;
 }
 h6.number{
-    margin-left: 5em;
+    margin-left: 4em;
 }
 
 

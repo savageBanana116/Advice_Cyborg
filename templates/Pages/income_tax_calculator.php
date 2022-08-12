@@ -176,7 +176,7 @@ echo $this->Html->css('custom.css');
 
                         <tr style="border-bottom: 1px solid black ;">
                             <td> <h5 style="padding-bottom: 2em">Total Tax Payable </h5> </td>
-                            <td> <h5 style="padding-bottom: 2em" class="number" id="taxPaid" >$ 0</h5></td>
+                            <td> <h5 style="padding-bottom: 2em" class="number" id="Paid" >$ 0</h5></td>
                         </tr>
 
                         <tr >
@@ -199,7 +199,7 @@ echo $this->Html->css('custom.css');
 
                         <tr>
                             <td> <h3>Tax Payable </h3> </td>
-                            <td> <h5 class="number" id="Paid" >$ 0</h5></td>
+                            <td> <h5 class="number" id="taxPaid" >$ 0</h5></td>
                         </tr>
                     </table>
                 </div>
@@ -368,7 +368,7 @@ echo $this->Html->css('custom.css');
         var commas6 =addLowOffset().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas7 =addTotalTax().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas8 =netIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas9 =taxYouPay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var commas9 =totalTax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas10 =totalOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas11 =free.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas12 =assessIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

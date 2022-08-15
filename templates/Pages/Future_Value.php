@@ -29,65 +29,39 @@
                     <label for="Term">Terms (Year) :</label>
                     <input type="number" id="Term">
                 </li>
+
+
+                <button id="Submit_FV_Single_Sum"> Calculate </button>
+
+
+                <h4> Outputs </h4>
+                <li>
+                    <label for="Future_Value_Sum">Future Value :</label>
+                    <input type="text" id="Future_Value_Sum" readonly>
+                </li>
+                <li>
+                    <label for="Today_Value">Today's Value :</label>
+                    <input type="text" id="Today_Value" readonly>
+                </li>
             </ul>
         </form>
-        <button id="Submit_FV_Single_Sum"> Calculate </button>
-        <h4> Outputs </h4>
-                <form>
-                    <ul>
-                        <li>
-                            <label for="Future_Value_Sum">Future Value :</label>
-                            <input type="text" id="Future_Value_Sum" readonly>
-                        </li>
-                        <li>
-                            <label for="Today_Value">Today's Value :</label>
-                            <input type="text" id="Today_Value" readonly>
-                        </li>
-                    </ul>
-                </form>
 
-        <h4>Future Value of a single sum</h4>
-        <form id="FV_annual" >
+
+        <button id="Submit_Future_Value"> Calculate </button>
+
+        <form id="lease_form" >
             <ul class="no-bullets">
                 <li>
                     <label for="Loan_Date">Total Number of Payments:</label>
-                    <select id="Frequency">
-                        <option value="year">Year</option>
-                        <option value="month">Month</option>
-                        <option value="day">Day</option>
-                        <option value="quarter">Quarter</option>
-                        <option value="half">Half</option>
-                    </select>
+                    <input type="text" id="Total_NO_Payments" readonly>
                 </li>
                 <li>
-                    <label for="Amount_Pa">Amount Pa ($) :</label>
-                    <input type="number" id="Amount_Pa">
+                    <label for="Loan_Amount">Final Payment Date:</label>
+                    <input type="text" id="Final_Payment_Date" readonly>
                 </li>
                 <li>
-                    <label for="Interest_Pa">Interest Pa (%) :</label>
-                    <input type="number" id="Interest_Pa">
-                </li>
-                <li>
-                    <label for="Years">Number of Years :</label>
-                    <input type="number" id="Years">
-                </li>
-                <li>
-                    <label for="Inflation">Inflation :</label>
-                    <input type="number" id="Inflation">
-                </li>
-            </ul>
-        </form>
-        <button id="Submit_FV_ann"> Calculate </button>
-        <h4> Outputs </h4>
-        <form>
-            <ul>
-                <li>
-                    <label for="Future_Value_Sum">Future Value ($) :</label>
-                    <input type="text" id="Future_Value_Ann" readonly>
-                </li>
-                <li>
-                    <label for="Today_Value">Today's Value ($) :</label>
-                    <input type="text" id="Today_Value_Ann" readonly>
+                    <label for="Annual_Interest_Rate">Total Interest:</label>
+                    <input type="text" id="Total_Interest" readonly>
                 </li>
             </ul>
         </form>

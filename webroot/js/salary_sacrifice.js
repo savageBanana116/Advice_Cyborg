@@ -181,7 +181,7 @@ function getSSInput() {
     document.getElementById("Pre_Take_Home_Pay").value = Pre_Net_Income - 0;
 
     //output 5 for effect super contributions - Pre tax
-    const Less_Contribution_Tax = (SGContributions +  Number(Salary_Sacrifice_Amount)) * 15 / 100;
+    const Less_Contribution_Tax = (Number(Salary_Sacrifice_Amount) + SGContributions) * 15 / 100;
     document.getElementById("Pre_SG").value = SGContributions;
     document.getElementById("Pre_Salary_Sacrifice").value = 0;
     document.getElementById("Pre_Less_Contribution_Tax").value = Less_Contribution_Tax;

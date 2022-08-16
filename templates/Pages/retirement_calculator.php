@@ -8,7 +8,17 @@
 <!doctype html>
 <html lang="en">
 <style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
 </style>
 
 <body>
@@ -57,14 +67,14 @@
                 <div class="form-group row">
                         <label for="Age" class="col-4 col-form-label">Age: </label>
                     <div class="col-8">
-                        <input type="number" class="form-control" id="Age">
+                        <input type="number" class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Age">
                     </div>
                 </div>
                 <br>
                 <div class="form-group row">
                         <label for="Retirement_Age" class="col-4 col-form-label">Retirement Age:</label>
                     <div class="col-8">
-                        <input type="number" class="form-control" id="Retirement_Age" >
+                        <input type="number" class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Retirement_Age" >
                     </div>
                 </div>
                 <br>
@@ -84,16 +94,16 @@
                 <br>
 
                 <div class="form-group row">
-                        <label for="Indexation" class="col-4 col-form-label">Indexation: </label>
+                        <label for="Indexation" class="col-4 col-form-label">Indexation (%): </label>
                     <div class="col-8">
-                        <input type="number" class="form-control" id="Indexation">
+                        <input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" onInput="restrict(this); checkLength(this.id)"  id="Indexation">
                     </div>
                 </div>
                 <br>
                 <div class="form-group row">
-                        <label for="Interest_Rate" class="col-4 col-form-label">Interest Rate: </label>
+                        <label for="Interest_Rate" class="col-4 col-form-label">Interest Rate (%): </label>
                     <div class="col-8">
-                        <input type="number" class="form-control" id="Interest_Rate">
+                        <input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" onInput="restrict(this); checkLength(this.id)" id="Interest_Rate">
                     </div>
                 </div>
                 <br>
@@ -114,7 +124,7 @@
                 <div class="form-group row">
                         <label for="Estimated_Return_Rate" class="col-4 col-form-label">Current Rate of Return: </label>
                     <div class="col-8">
-                        <input type="number" class="form-control" id="Estimated_Return_Rate">
+                        <input type="number" class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)" id="Estimated_Return_Rate" required>
                     </div>
                 </div>
             </form>
@@ -137,7 +147,7 @@
                 <br>
                 <div class="form-group row" >
                         <label for="Value_Required" class="col-4 col-form-label">Value Required :</label>
-                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%6">
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
                         <output type="text" id="Value_Required" readonly></output>
                     </div>
                 </div>
@@ -211,5 +221,79 @@
     </div>
 </nav>
 -->
+
+    <script>
+        //input validation
+        Year_Payments.oninput = function () {
+            const maxlength = 10;
+            if (this.value.length > maxlength) {
+                this.value = this.value.slice(0,maxlength);
+            }
+        }
+
+        Payment_Required_Today.oninput = function () {
+            const maxlength = 10;
+            if (this.value.length > maxlength) {
+                this.value = this.value.slice(0,maxlength);
+            }
+        }
+
+        Current_Super.oninput = function () {
+            const maxlength = 10;
+            if (this.value.length > maxlength) {
+                this.value = this.value.slice(0,maxlength);
+            }
+        }
+        Current_Net_Contributions.oninput = function () {
+            const maxlength = 10;
+            if (this.value.length > maxlength) {
+                this.value = this.value.slice(0,maxlength);
+            }
+        }
+
+
+        function check(e,value){
+            //Check Charater
+            var unicode=e.charCode? e.charCode : e.keyCode;
+            if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+            if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+        }
+        function checkLength(id){
+            var fieldVal = document.getElementById(id).value;
+            const  limit_percent = 100, limit_age = 120;
+            if(id === "Indexation" || id === "Interest_Rate" || id === "Estimated_Return_Rate" ){
+                if(fieldVal <= limit_percent){
+                    return true;
+                }
+                else
+                {
+                    var str = document.getElementById(id).value;
+                    str = str.substring(0, str.length - 1);
+                    console.log(str);
+                    document.getElementById(id).value = str;
+                }
+            } else{
+                if(fieldVal <= limit_age){
+                    return true;
+                }
+                else
+                {
+                    var str = document.getElementById(id).value;
+                    str = str.substring(0, str.length - 1);
+                    document.getElementById(id).value = str;
+                }
+            }
+        }
+        function restrict(tis) {
+            var prev = tis.getAttribute("data-prev");
+            //console.log(prev);
+            prev = (prev != '') ? prev : '';
+            if (Math.round(tis.value*100)/100!=tis.value)
+                tis.value=prev;
+            tis.setAttribute("data-prev",tis.value)
+        }
+
+
+    </script>
 <script src="\team18-app_fit3048\webroot\js\retirement.js"></script>
 </body>

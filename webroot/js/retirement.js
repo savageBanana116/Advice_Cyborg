@@ -1,7 +1,11 @@
 const btn = document.getElementById("Submit_retirement");
 btn.addEventListener('click',getRetirementInput);
 
-function PMT(ir, np, pv, fv, type) {
+
+
+
+function PMT(ir, np, pv, fv, type)
+{
     /*
      * ir   - interest rate per month
      * np   - number of periods (months)
@@ -16,18 +20,21 @@ function PMT(ir, np, pv, fv, type) {
     fv || (fv = 0);
     type || (type = 0);
 
-    if (ir === 0)
-        return -(pv + fv)/np;
+    if (ir === 0) {
+        return -(pv + fv) / np;
+    }
 
     pvif = Math.pow(1 + ir, np);
     pmt = - ir * (pv * pvif + fv) / (pvif - 1);
 
-    if (type === 1)
+    if (type === 1) {
         pmt /= (1 + ir);
+    }
 
     return pmt;
 }
-function FV(rate, nper, pmt, pv, type) {
+function FV(rate, nper, pmt, pv, type)
+{
     var pow = Math.pow(1 + rate, nper),
         fv;
 
@@ -35,10 +42,11 @@ function FV(rate, nper, pmt, pv, type) {
     type = type || 0;
 
     if (rate) {
-        fv = (pmt*(1+rate*type)*(1-pow)/rate)-pv*pow;
+        fv = (pmt * (1 + rate * type) * (1 - pow) / rate) - pv * pow;
     } else {
         fv = -1 * (pv + pmt * nper);
     }
+
     return fv;
 }
 
@@ -102,10 +110,6 @@ function getValueRequire(Year_Payments,Future_Payment,Interest_Rate,Indexation)
     return lst[lst.length - 1];
 }
 
-function getSuper(Estimated_Return_Rate,Age,Retire_Age,Current_Net_Contributions,Current_Super)
-{
-    const Super = getFV()
-}
 
 function getRetirementInput()
 {
@@ -119,29 +123,40 @@ function getRetirementInput()
     const Current_Net_Contributions = document.getElementById("Current_Net_Contributions").value;
     const Estimated_Return_Rate = document.getElementById("Estimated_Return_Rate").value;
 
-    const Payment_Required_Future = getFV(Payment_Required_Today,Indexation,(Retirement_Age - age));
-    const Value_Required = getValueRequire(Year_Payments,Payment_Required_Future,Interest_Rate,Indexation);
+    if (age == 0 || Retirement_Age == 0 || Year_Payments == 0 || Payment_Required_Today == 0 || Indexation == 0 || Interest_Rate == 0 ||
+    Current_Super == 0 || Current_Net_Contributions || Estimated_Return_Rate == 0 ) {
+        document.getElementById("Payment_Required_Future").value = "Please Enter All Value";
+        document.getElementById("Value_Required").value = "Please Enter All Value";
+        document.getElementById("Estimated_Annual_Deduct").value = "Please Enter All Value";
+        document.getElementById("Estimated_Super").value = "Please Enter All Value";
+        document.getElementById("Lumpsum").value = "Please Enter All Value";
+        document.getElementById("Net_Payment").value = "Please Enter All Value";
+        document.getElementById("Gross_Payment").value = "Please Enter All Value";
+    }else {
 
-    const Estimated_Super = FV(Estimated_Return_Rate / 100,(Retirement_Age - age),-Current_Net_Contributions,-Current_Super);
-    const NetPayment = (PMT((Estimated_Return_Rate / 100) / 12,(Retirement_Age - age) / 12,-Current_Super,Value_Required));
+        const Payment_Required_Future = getFV(Payment_Required_Today, Indexation, (Retirement_Age - age));
+        const Value_Required = getValueRequire(Year_Payments, Payment_Required_Future, Interest_Rate, Indexation);
+
+        const Estimated_Super = FV(Estimated_Return_Rate / 100, (Retirement_Age - age), -Current_Net_Contributions, -Current_Super);
+        const NetPayment = (PMT((Estimated_Return_Rate / 100) / 12, (Retirement_Age - age) / 12, -Current_Super, Value_Required));
 
 
-    document.getElementById("Payment_Required_Future").value = Payment_Required_Future;
-    document.getElementById("Value_Required").value = Value_Required;
-    document.getElementById("Estimated_Annual_Deduct").value = Math.round(Value_Required / Year_Payments);
-    document.getElementById("Estimated_Super").value=Math.round(Estimated_Super);
-    document.getElementById("Lumpsum").value=Math.round(Value_Required - Estimated_Super);
+        document.getElementById("Payment_Required_Future").value = Payment_Required_Future;
+        document.getElementById("Value_Required").value = Value_Required;
+        document.getElementById("Estimated_Annual_Deduct").value = Math.round(Value_Required / Year_Payments);
+        document.getElementById("Estimated_Super").value = Math.round(Estimated_Super);
+        document.getElementById("Lumpsum").value = Math.round(Value_Required - Estimated_Super);
 
 
-    if(NetPayment < 0 ){
-        const New_Net = NetPayment * -1;
-        document.getElementById("Net_Payment").value = Math.round(New_Net);
-        document.getElementById("Gross_Payment").value = Math.round (New_Net / 0.7);
-    }else{
-        document.getElementById("Net_Payment").value = Math.round(NetPayment);
-        document.getElementById("Gross_Payment").value = Math.round (NetPayment / 0.7);
+        if (NetPayment < 0) {
+            const New_Net = NetPayment * -1;
+            document.getElementById("Net_Payment").value = Math.round(New_Net);
+            document.getElementById("Gross_Payment").value = Math.round(New_Net / 0.7);
+        } else {
+            document.getElementById("Net_Payment").value = Math.round(NetPayment);
+            document.getElementById("Gross_Payment").value = Math.round(NetPayment / 0.7);
+        }
+
     }
-
-
 }
 

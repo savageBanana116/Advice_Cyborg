@@ -68,7 +68,7 @@
             <div class="form-group row">
                 <label for="Annual_Interest_Rate" class="col-4 col-form-label">Annual Interest Rate (%)</label>
                 <div class="col-8">
-                <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="checkLength()" name="Annual_Interest_Rate" placeholder="5" type="number" min="0" max="100" class="form-control" required="required">
+                <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="restrict(this);checkLength() " name="Annual_Interest_Rate" placeholder="5" type="number" min="0" max="100" class="form-control" required="required">
                 </div>
                 </div>
             <br>
@@ -191,6 +191,14 @@
                 str = str.substring(0, str.length - 1);
                 document.getElementById('Annual_Interest_Rate').value = str;
             }
+        }
+        function restrict(tis) {
+            var prev = tis.getAttribute("data-prev");
+            //console.log(prev);
+            prev = (prev != '') ? prev : '';
+            if (Math.round(tis.value*100)/100!=tis.value)
+                tis.value=prev;
+            tis.setAttribute("data-prev",tis.value)
         }
     </script>
 <script src="\team18-app_fit3048\webroot\js\lease.js"></script>

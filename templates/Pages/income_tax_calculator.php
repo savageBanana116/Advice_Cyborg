@@ -72,7 +72,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" id="mySalary" value="0" >
+                        <input  type="number" class="form-control" id="mySalary" value="0" >
                     </div>
                     <span >Salary <span class="blue" >Sacrifice</span></span>
                     <div class="input-group mb-4">
@@ -137,7 +137,7 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="text-right" style="text-align: right">
-                        <button type="button" onclick="taxCalculator()" class="btn btn-success calculate ">Calculate</button>
+                        <button type="button" onclick="validator()" class="btn btn-success calculate ">Calculate</button>
                     </div>
             </div>
 
@@ -215,6 +215,34 @@ echo $this->Html->css('custom.css');
     </body>
 
 <script>
+    // validation
+    function validator(){
+        //Salary validation
+            if(document.getElementById("mySalary").value == 'e'  || document.getElementById("mySalary").value == '' || document.getElementById("mySalary").value == '+' ){
+                alert('Please enter a valid salary value');
+            } else if (document.getElementById("mySalarySacrifice").value == 'e'  || document.getElementById("mySalarySacrifice").value == '' || document.getElementById("mySalarySacrifice").value == '+'){
+                alert('Please enter a valid salary sacrifice value');
+            }else if (document.getElementById("myInvestment").value == 'e'  || document.getElementById("myInvestment").value == '' || document.getElementById("myInvestment").value == '+'){
+                alert('Please enter a valid investment value');
+            }else if (document.getElementById("myPension").value == 'e'  || document.getElementById("myPension").value == '' || document.getElementById("myPension").value == '+'){
+                alert('Please enter a valid pension value');
+            }else if (document.getElementById("myRental").value == 'e'  || document.getElementById("myRental").value == '' || document.getElementById("myRental").value == '+'){
+                alert('Please enter a valid rental value');
+            }else if (document.getElementById("myCredits").value == 'e'  || document.getElementById("myCredits").value == '' || document.getElementById("myCredits").value == '+'){
+                alert('Please enter a valid franked credit value');
+            }else if (document.getElementById("myTaxFree").value == 'e'  || document.getElementById("myTaxFree").value == '' || document.getElementById("myTaxFree").value == '+'){
+                alert('Please enter a valid tax free pension value');
+            }else if (document.getElementById("myOthers").value == 'e'  || document.getElementById("myOthers").value == '' || document.getElementById("myOthers").value == '+'){
+                alert('Please enter a valid others income value');
+            }
+            else {
+                taxCalculator();
+            }
+
+
+
+    }
+
     function taxCalculator(){
         const salary = parseFloat(document.getElementById("mySalary").value);
         const salarySacrifice = parseFloat(document.getElementById("mySalarySacrifice").value);
@@ -359,6 +387,8 @@ echo $this->Html->css('custom.css');
             let netIncome = (addIncome() + free) - taxYouPay;
 
             let assessIncome = addIncome()+free;
+
+
 
         var commas = addIncome().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas2 = addTaxPayable().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

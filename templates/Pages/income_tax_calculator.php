@@ -72,7 +72,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input  type="number" class="form-control" id="mySalary" value="0" >
+                        <input  type="number" class="form-control" id="mySalary" value="0" max="999" >
                     </div>
                     <span >Salary <span class="blue" >Sacrifice</span></span>
                     <div class="input-group mb-4">
@@ -218,21 +218,21 @@ echo $this->Html->css('custom.css');
     // validation
     function validator(){
         //Salary validation
-            if(document.getElementById("mySalary").value == 'e'  || document.getElementById("mySalary").value == '' || document.getElementById("mySalary").value == '+' ){
+            if(document.getElementById("mySalary").value == 'e'  || document.getElementById("mySalary").value == '' || document.getElementById("mySalary").value == '+' || parseFloat(document.getElementById("mySalary").value )  >=9999999999){
                 alert('Please enter a valid salary value');
-            } else if (document.getElementById("mySalarySacrifice").value == 'e'  || document.getElementById("mySalarySacrifice").value == '' || document.getElementById("mySalarySacrifice").value == '+'){
+            } else if (document.getElementById("mySalarySacrifice").value == 'e'  || document.getElementById("mySalarySacrifice").value == '' || document.getElementById("mySalarySacrifice").value == '+' || parseFloat(document.getElementById("mySalarySacrifice").value )  >=9999999999 ){
                 alert('Please enter a valid salary sacrifice value');
-            }else if (document.getElementById("myInvestment").value == 'e'  || document.getElementById("myInvestment").value == '' || document.getElementById("myInvestment").value == '+'){
+            }else if (document.getElementById("myInvestment").value == 'e'  || document.getElementById("myInvestment").value == '' || document.getElementById("myInvestment").value == '+' || parseFloat(document.getElementById("myInvestment").value )  >=9999999999){
                 alert('Please enter a valid investment value');
-            }else if (document.getElementById("myPension").value == 'e'  || document.getElementById("myPension").value == '' || document.getElementById("myPension").value == '+'){
+            }else if (document.getElementById("myPension").value == 'e'  || document.getElementById("myPension").value == '' || document.getElementById("myPension").value == '+' || parseFloat(document.getElementById("myPension").value )  >=9999999999){
                 alert('Please enter a valid pension value');
-            }else if (document.getElementById("myRental").value == 'e'  || document.getElementById("myRental").value == '' || document.getElementById("myRental").value == '+'){
+            }else if (document.getElementById("myRental").value == 'e'  || document.getElementById("myRental").value == '' || document.getElementById("myRental").value == '+' || parseFloat(document.getElementById("myRental").value )  >=9999999999){
                 alert('Please enter a valid rental value');
-            }else if (document.getElementById("myCredits").value == 'e'  || document.getElementById("myCredits").value == '' || document.getElementById("myCredits").value == '+'){
+            }else if (document.getElementById("myCredits").value == 'e'  || document.getElementById("myCredits").value == '' || document.getElementById("myCredits").value == '+' || parseFloat(document.getElementById("myCredits").value )  >=9999999999){
                 alert('Please enter a valid franked credit value');
-            }else if (document.getElementById("myTaxFree").value == 'e'  || document.getElementById("myTaxFree").value == '' || document.getElementById("myTaxFree").value == '+'){
+            }else if (document.getElementById("myTaxFree").value == 'e'  || document.getElementById("myTaxFree").value == '' || document.getElementById("myTaxFree").value == '+' || parseFloat(document.getElementById("myTaxFree").value )  >=9999999999){
                 alert('Please enter a valid tax free pension value');
-            }else if (document.getElementById("myOthers").value == 'e'  || document.getElementById("myOthers").value == '' || document.getElementById("myOthers").value == '+'){
+            }else if (document.getElementById("myOthers").value == 'e'  || document.getElementById("myOthers").value == '' || document.getElementById("myOthers").value == '+' || parseFloat(document.getElementById("myOthers").value )  >=9999999999){
                 alert('Please enter a valid others income value');
             }
             else {

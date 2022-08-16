@@ -72,7 +72,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input  type="number" class="form-control" id="mySalary" value="0" max="999" >
+                        <input  type="number" class="form-control" id="mySalary" value="0"  >
                     </div>
                     <span >Salary <span class="blue" >Sacrifice</span></span>
                     <div class="input-group mb-4">

@@ -27,23 +27,23 @@
         <form id="lease_form">
             <div class="form-group">
                 <label for="Loan_Date">Date Of Loan</label>
-                <input id="Loan_Date" name="Loan_date" placeholder="dd/mm/yyyy" type="date" class="form-control" required="required">
+                <input id="Loan_Date" name="Loan_date" placeholder="dd/mm/yyyy" type="date" class="form-control"  required="required">
             </div>
             <div class="form-group">
                 <label for="Loan_Amount">Amount Of Loan $</label>
-                <input id="Loan_Amount" name="Loan_Amount" placeholder="30000" type="number" class="form-control" required="required">
+                <input id="Loan_Amount" name="Loan_Amount" placeholder="30000" type="number" class="form-control" min="1" max="999999999" required="required">
             </div>
             <div class="form-group">
                 <label for="Annual_Interest_Rate">Annual Interest Rate (%)</label>
-                <input id="Annual_Interest_Rate" name="Annual_Interest_Rate" placeholder="5" type="number" class="form-control" required="required">
+                <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="checkLength()" name="Annual_Interest_Rate" placeholder="5" type="number" min="0" max="100" class="form-control" required="required">
             </div>
             <div class="form-group">
                 <label for="Terms_of_Loan">Term Of Loan (Years)</label>
-                <input id="Terms_of_Loan" name="Terms_of_Loan" placeholder="3" type="number" class="form-control" required="required">
+                <input id="Terms_of_Loan" name="Terms_of_Loan" placeholder="3" type="number" class="form-control" min="1" max="50" required="required">
             </div>
             <div class="form-group">
                 <label for="Number_of_Payment_Annually">Number of Payments Annually</label>
-                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" placeholder="32" type="number" class="form-control" required="required">
+                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" placeholder="32" type="number"  min="1" max="365" class="form-control" required="required">
             </div>
         </form>
 <br>
@@ -125,7 +125,26 @@
 </nav>
 -->
 
-
-
-<script src="\team18-app_fit3048\webroot\js\Lease_calculator.js"></script>
+    <script>
+        function check(e,value){
+            //Check Charater
+            var unicode=e.charCode? e.charCode : e.keyCode;
+            if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+            if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+        }
+        function checkLength(){
+            var fieldVal = document.getElementById('Annual_Interest_Rate').value;
+            //Suppose u want 3 number of character
+            if(fieldVal <= 100){
+                return true;
+            }
+            else
+            {
+                var str = document.getElementById('Annual_Interest_Rate').value;
+                str = str.substring(0, str.length - 1);
+                document.getElementById('Annual_Interest_Rate').value = str;
+            }
+        }
+    </script>
+<script src="\team18-app_fit3048\webroot\js\lease.js"></script>
 </body>

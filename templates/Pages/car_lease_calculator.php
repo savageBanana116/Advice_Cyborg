@@ -8,6 +8,20 @@
 <html lang="en">
 <style>
 
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    td {
+        padding-bottom: 2.5em;
+
+    }
 </style>
 <link rel="stylesheet" href="\team18-app_fit3048\webroot\css\styles.css" type="text/css">
 <body>

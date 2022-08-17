@@ -44,24 +44,36 @@ echo $this->Html->css('custom.css');
                 <a class="nav-item nav-link" href="income_tax_calculator">Income-Tax</a>
                 <a class="nav-item nav-link" href="retirement_calculator">Retirement</a>
                 <a class="nav-item nav-link " href="salary_sacrifice_calculator">Salary-Sacrifice</a>
-                <a class="nav-item nav-link " href="age_pension_calculator">Age-pension</a>
+                <a class="nav-item nav-link " href="#">Age-pension (Coming Soon)</a>
             </div>
         </div>
     </nav>
 
-    <div class="container-title" >
-        <div class="text-center" >
-            <h2 class="text-uppercase" >Income tax Calculators</h2>
-        </div>
+    <div class="container" >
+<!--        <div class="text-center" >-->
+<!--            <h2 class="text-uppercase" >Income tax Calculators</h2>-->
+<!--        </div>-->
+
+        <div class="text-center" style="margin-top: 5%">
+            <h1 >Income Tax Calculator</h1>
+            <div class="row">
+                <div class="col-5" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
+                    <br>
+                    <h5>Tell us about yourself! We will use this to calculate your net income and breakdown.</h5></div>
+                <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black; background-color: #403535; color: white;">
+
+                    <h2 style="color:white"> Your total net income will be: </h2>
+                    <h5 id="netIncome" style="color: white">$</></h5></div>
+            </div>
 
     </div>
 
 
-    <div class="container-fluid" >
-        <div class="row" >
-            <div class="inputRow col-sm-3 " >
+<!--    <div class="container-fluid" >-->
+        <div class="row">
+<!--            <div class="inputRow col-sm-3 " >-->
+            <div class="col-5" style="border-style:solid; border-color:black;" >
                 <form action="income_tax_calculator">
-                    <h2>To get started!</h2>
                     <span>My <span class="blue" >Salary</span> is</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
@@ -132,19 +144,16 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="text-right" style="text-align: right">
-                        <button type="button" onclick="validator()" class="btn btn-success calculate ">Calculate</button>
+                        <button type="button" onclick="validator()" class="btn btn-primary">Calculate</button>
                     </div>
             </div>
 
 
         </form>
 
-            <div class="col-md-5">
-                <div class="outputIncome">
-                <h5>Your Total Annual Net Income</h5>
-                <h1  id="netIncome" style="color: #2f3a82">$</h1>
-                </div>
-                <div class="outputResult">
+
+        <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black;">
+            <br>
                     <table>
                         <tr >
                             <td style="padding-bottom: 0.5em"> <h6> Your Total Assessable Income</h6> </td>

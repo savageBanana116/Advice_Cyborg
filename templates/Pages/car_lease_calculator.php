@@ -37,7 +37,7 @@
             <a class="nav-item nav-link" href="income_tax_calculator">Income-Tax</a>
             <a class="nav-item nav-link" href="retirement_calculator">Retirement</a>
             <a class="nav-item nav-link " href="salary_sacrifice_calculator">Salary-Sacrifice</a>
-            <a class="nav-item nav-link " href="age_pension_calculator">Age-pension</a>
+            <a class="nav-item nav-link " href="#">Age-pension (Coming Soon)</a>
         </div>
     </div>
 </nav>
@@ -59,37 +59,47 @@
         <form id="lease_form">
             <br>
             <div class="form-group row">
-                <label for="Loan_Date" class="col-4 col-form-label">Date Of Loan</label>
+                <label for="Loan_Date" class="col-4 col-form-label">When does your loan start?</label>
                 <div class="col-8">
                 <input id="Loan_Date" name="Loan_date" placeholder="dd/mm/yyyy" type="date" class="form-control"  required="required">
                 </div>
             </div>
             <br>
             <div class="form-group row">
-                <label for="Loan_Amount" class="col-4 col-form-label">Amount Of Loan $</label>
+                <label for="Loan_Amount" class="col-4 col-form-label">How much is your loan?</label>
                 <div class="col-8">
-                <input id="Loan_Amount" name="Loan_Amount" placeholder="30000" type="number" class="form-control" min="1" max="999999999" required="required">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                        </div>
+                        <input id="Loan_Amount" name="Loan_Amount" type="number" class="form-control" min="1" max="999999999" required="required">
+                    </div>
                 </div>
             </div>
             <br>
             <div class="form-group row">
-                <label for="Annual_Interest_Rate" class="col-4 col-form-label">Annual Interest Rate (%)</label>
+                <label for="Annual_Interest_Rate" class="col-4 col-form-label">What is your Annual Interest Rate?</label>
                 <div class="col-8">
-                <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="restrict(this);checkLength() " name="Annual_Interest_Rate" placeholder="5" type="number" min="0" max="100" class="form-control" required="required">
-                </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">%</div>
+                        </div>
+                <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="restrict(this);checkLength() " name="Annual_Interest_Rate" type="number" min="0" max="100" class="form-control" required="required">
+                    </div>
+                    </div>
                 </div>
             <br>
             <div class="form-group row">
-                <label for="Terms_of_Loan" class="col-4 col-form-label">Term Of Loan (Years)</label>
+                <label for="Terms_of_Loan" class="col-4 col-form-label">How many years would you like to have the loan for?</label>
                 <div class="col-8">
-                <input id="Terms_of_Loan" name="Terms_of_Loan" placeholder="3" type="number" class="form-control" min="1" max="50" required="required">
+                <input id="Terms_of_Loan" name="Terms_of_Loan" type="number" class="form-control" min="1" max="50" required="required">
             </div>
             </div>
             <br>
             <div class="form-group row">
-                <label for="Number_of_Payment_Annually" class="col-4 col-form-label">Number of Payments Annually</label>
+                <label for="Number_of_Payment_Annually" class="col-4 col-form-label">How many payments per year do you plan to make?</label>
                 <div class="col-8">
-                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" placeholder="32" type="number"  min="1" max="365" class="form-control" required="required">
+                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" type="number"  min="1" max="365" class="form-control" required="required">
             </div>
             </div>
             <br>

@@ -23,7 +23,7 @@
             <a class="nav-item nav-link" href="income_tax_calculator">Income-Tax</a>
             <a class="nav-item nav-link" href="retirement_calculator">Retirement</a>
             <a class="nav-item nav-link " href="salary_sacrifice_calculator">Salary-Sacrifice</a>
-            <a class="nav-item nav-link " href="age_pension_calculator">Age-pension</a>
+            <a class="nav-item nav-link " href="#">Age-pension (Coming Soon)</a>
         </div>
     </div>
 </nav>
@@ -56,22 +56,28 @@
                         <input type="date" class="form-control" id="DOB">
                     </div>
                 </div>
+                <br>
                 <div class="form-group row">
                         <label for="Salary" class="col-4 col-form-label">Salary ($):</label>
                     <div class="col-8">
                         <input type="number"  class="form-control"id="Salary" >
                     </div>
                 </div>
+                <br>
                 <div class="form-group row">
                         <label for="Salary_Sacrifice_Amount" class="col-4 col-form-label">Salary Sacrifice Amount :</label>
                     <div class="col-8">
                         <input type="number" class="form-control" id="Salary_Sacrifice_Amount">
                     </div>
                 </div>
+                <br>
                 <div class="form-group row">
-                        <label for="is_Family" class="col-4 col-form-label">Are you considered apart of a family :</label>
+                        <label class="col-4">Are you considered apart of a family?</label>
                     <div class="col-8">
-                        <input type="checkbox" style="padding-right: 20px" id="is_Family">
+                        <div class="form-check form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="is_Family">
+                            <label for="is_Family" class="form-check-label"></label>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -82,13 +88,12 @@
                 <div class="col" style="margin-left: 5%; border-style:solid; border-color:black;">
 
             <form id="Salary_Sacrifice_Form_Output" >
-                <br>
-                <div class="form-group row">
-                        <label for="Age" class="col-4 col-form-label">Age :</label>
-                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
-                        <ouput type="text" id="Age" readonly></ouput>
-                    </div>
-                </div>
+<!--                <div class="form-group row">-->
+<!--                        <label for="Age" class="col-4 col-form-label">Age :</label>-->
+<!--                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                        <ouput type="text" id="Age" readonly></ouput>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <br>
                 <div class="form-group row">
                         <label for="Finical_Year_Ending" class="col-4 col-form-label">Total Number of Payments:</label>

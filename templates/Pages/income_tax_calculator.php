@@ -234,19 +234,60 @@ echo $this->Html->css('custom.css');
 
 <script>
     //input validation
-    Salary.oninput = function () {
+    mySalary.oninput = function () {
         const maxlength = 10;
         if (this.value.length > maxlength) {
             this.value = this.value.slice(0,maxlength);
         }
     }
 
-    Salary_Sacrifice_Amount.oninput = function () {
+    mySalarySacrifice.oninput = function () {
         const maxlength = 10;
         if (this.value.length > maxlength) {
             this.value = this.value.slice(0,maxlength);
         }
     }
+    myInvestment.oninput = function () {
+        const maxlength = 10;
+        if (this.value.length > maxlength) {
+            this.value = this.value.slice(0,maxlength);
+        }
+    }
+
+    myPension.oninput = function () {
+        const maxlength = 10;
+        if (this.value.length > maxlength) {
+            this.value = this.value.slice(0,maxlength);
+        }
+    }
+
+    myRental.oninput = function () {
+        const maxlength = 10;
+        if (this.value.length > maxlength) {
+            this.value = this.value.slice(0,maxlength);
+        }
+    }
+
+    myCredits.oninput = function () {
+        const maxlength = 10;
+        if (this.value.length > maxlength) {
+            this.value = this.value.slice(0,maxlength);
+        }
+    }
+    myTaxFree.oninput = function () {
+        const maxlength = 10;
+        if (this.value.length > maxlength) {
+            this.value = this.value.slice(0,maxlength);
+        }
+    }
+
+    myOthers.oninput = function () {
+        const maxlength = 10;
+        if (this.value.length > maxlength) {
+            this.value = this.value.slice(0,maxlength);
+        }
+    }
+
 
 
     function check(e,value){

@@ -301,14 +301,14 @@ echo $this->Html->css('custom.css');
     <script>
         //input validation
         Year_Payments.oninput = function () {
-            const maxlength = 10;
+            const maxlength = 2;
             if (this.value.length > maxlength) {
                 this.value = this.value.slice(0,maxlength);
             }
         }
 
         Payment_Required_Today.oninput = function () {
-            const maxlength = 10;
+            const maxlength = 9;
             if (this.value.length > maxlength) {
                 this.value = this.value.slice(0,maxlength);
             }

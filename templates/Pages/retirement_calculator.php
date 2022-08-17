@@ -212,57 +212,112 @@ echo $this->Html->css('custom.css');
                 </div>
 
                 <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black;">
-            <form id="Retirement_Calculator_Form_Output" >
-                <br>
-                <div class="form-group row" s>
-                        <label for="Payment_Required_Future" class="col-4 col-form-label">Payment Required Amount Future :</label>
-                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
-                        <output type="text" id="Payment_Required_Future" readonly></output>
-                    </div>
-                </div>
-                <br>
-                <div class="form-group row" >
-                        <label for="Value_Required" class="col-4 col-form-label">Value Required :</label>
-                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
-                        <output type="text" id="Value_Required" readonly></output>
-                    </div>
-                </div>
-                <br>
-                <div class="form-group row" >
-                        <label for="Estimated_Annual_Deduct" class="col-4 col-form-label">Estimated Annual Deductible Amount:</label>
-                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
-                        <output type="text" id="Estimated_Annual_Deduct" readonly></output>
-                </div>
-                </div>
-                <br>
-                <div class="form-group row" >
-                        <label for="Estimated_Super" class="col-4 col-form-label">Estimated Value of Super at Retirement:</label>
-                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
-                        <output type="text" id="Estimated_Super" readonly></output>
-                    </div>
-                </div>
-                <br>
-                <div class="form-group row" >
-                        <label for="Lumpsum" class="col-4 col-form-label" >Lumpsum Shortfall:</label>
-                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
-                        <output type="text" id="Lumpsum" readonly></output>
-                    </div>
-                </div>
-                <br>
-                <div class="form-group row">
-                        <label for="Net_Payment" class="col-4 col-form-label">Net Payment Required to Reach Target(Surplus):</label>
-                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 10%">
-                        <output type="text" id="Net_Payment" readonly></output>
-                </div>
-                    <br>
-                </div>
-                <div class="form-group row" >
-                        <label for="Gross_Payment" class="col-4 col-form-label">Gross Payment (Inc Surcharge):</label>
-                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
-                        <output type="text" id="Gross_Payment" readonly></output>
-                    </div>
-                </div>
-                <br>
+            <form>
+                <table>
+<!--                    <br>-->
+<!--                    <div class="form-group row" >-->
+<!--                        <label for="Payment_Required_Future" class="col-4 col-form-label">Payment Required Amount Future :</label>-->
+<!--                        <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                            <output type="text" id="Payment_Required_Future" readonly></output>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <br>-->
+
+                    <tr>
+                        <td> <h5 style="padding-bottom: 2em" > Payment Required Amount Future : </h5> </td>
+                        <td> <h5  style="padding-bottom: 2em" class="number" >
+                                <output type="text" id="Payment_Required_Future" readonly></output>
+                            </h5>
+                        </td>
+                    </tr>
+<!--                <div class="form-group row" >-->
+<!--                        <label for="Value_Required" class="col-4 col-form-label">Value Required :</label>-->
+<!--                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                        <output type="text" id="Value_Required" readonly></output>-->
+<!--                    </div>-->
+<!--                </div>-->
+                        <tr>
+                        <td> <h5 style="padding-bottom: 2em" >Value Required : </h5> </td>
+                        <td> <h5  style="padding-bottom: 2em" class="number" >
+                                <output type="text" id="Value_Required" readonly></output>
+                            </h5>
+                        </td>
+                        </tr>
+
+<!--                <br>-->
+<!--                <div class="form-group row" >-->
+<!--                        <label for="Estimated_Annual_Deduct" class="col-4 col-form-label">Estimated Annual Deductible Amount:</label>-->
+<!--                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                        <output type="text" id="Estimated_Annual_Deduct" readonly></output>-->
+<!--                </div>-->
+<!--                </div>-->
+                    <tr>
+                        <td> <h5 style="padding-bottom: 2em" >Estimated Annual Deductible Amount : </h5> </td>
+                        <td> <h5  style="padding-bottom: 2em" class="number" >
+                                <output type="text" id="Estimated_Annual_Deduct" readonly></output>
+                            </h5>
+                        </td>
+                    </tr>
+<!--                <br>-->
+<!--                <div class="form-group row" >-->
+<!--                        <label for="Estimated_Super" class="col-4 col-form-label">Estimated Value of Super at Retirement:</label>-->
+<!--                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                        <output type="text" id="Estimated_Super" readonly></output>-->
+<!--                    </div>-->
+<!--                </div>-->
+                    <tr>
+                        <td> <h5 style="padding-bottom: 2em" >Estimated Value of Super at Retirement: </h5> </td>
+                        <td> <h5  style="padding-bottom: 2em" class="number" >
+                                <output type="text" id="Estimated_Super" readonly></output>
+                            </h5>
+                        </td>
+                    </tr>
+<!--                <br>-->
+<!--                <div class="form-group row" >-->
+<!--                        <label for="Lumpsum" class="col-4 col-form-label" >Lumpsum Shortfall:</label>-->
+<!--                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                        <output type="text" id="Lumpsum" readonly></output>-->
+<!--                    </div>-->
+<!--                </div>-->
+                    <tr>
+                        <td> <h5 style="padding-bottom: 2em" >Lumpsum Shortfall: </h5> </td>
+                        <td> <h5  style="padding-bottom: 2em" class="number" >
+                                <output type="text" id="Lumpsum" readonly></output>
+                            </h5>
+                        </td>
+                    </tr>
+<!--                <br>-->
+<!--                <div class="form-group row">-->
+<!--                        <label for="Net_Payment" class="col-4 col-form-label">Net Payment Required to Reach Target(Surplus):</label>-->
+<!--                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 10%">-->
+<!--                        <output type="text" id="Net_Payment" readonly></output>-->
+<!--                </div>-->
+<!--                    <br>-->
+<!--                </div>-->
+                    <tr>
+                        <td> <h5 style="padding-bottom: 2em" >Net Payment Required to Reach Target(Surplus): </h5> </td>
+                        <td> <h5  style="padding-bottom: 2em" class="number" >
+                                <output type="text" id="Net_Payment" readonly></output>
+                            </h5>
+                        </td>
+                    </tr>
+<!--                <div class="form-group row" >-->
+<!--                        <label for="Gross_Payment" class="col-4 col-form-label">Gross Payment (Inc Surcharge):</label>-->
+<!--                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                        <output type="text" id="Gross_Payment" readonly></output>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <br>-->
+                    <tr>
+
+                        <td> <h5 style="padding-bottom: 2em" >Gross Payment (Inc Surcharge): </h5> </td>
+                        <td> <h5  style="padding-bottom: 2em" class="number" >
+                                <output type="text" id="Gross_Payment" readonly></output>
+                            </h5>
+                        </td>
+                    </tr>
+                </table>
+
             </form>
         </div>
             </div>
@@ -308,20 +363,20 @@ echo $this->Html->css('custom.css');
         }
 
         Payment_Required_Today.oninput = function () {
-            const maxlength = 7;
+            const maxlength = 9;
             if (this.value.length > maxlength) {
                 this.value = this.value.slice(0,maxlength);
             }
         }
 
         Current_Super.oninput = function () {
-            const maxlength = 7;
+            const maxlength = 10;
             if (this.value.length > maxlength) {
                 this.value = this.value.slice(0,maxlength);
             }
         }
         Current_Net_Contributions.oninput = function () {
-            const maxlength = 7;
+            const maxlength = 10;
             if (this.value.length > maxlength) {
                 this.value = this.value.slice(0,maxlength);
             }

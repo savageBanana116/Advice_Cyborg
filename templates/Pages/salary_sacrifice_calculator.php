@@ -142,7 +142,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <br>
                         <div class="form-group row">
-                            <label for="Finical_Year_Ending" class="col-4 col-form-label">Total Number of Payments:</label>
+                            <label for="Finical_Year_Ending" class="col-4 col-form-label">Financial Year Ending:</label>
                             <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
                                 <output type="text" id="Finical_Year_Ending" readonly></output>
                             </div>

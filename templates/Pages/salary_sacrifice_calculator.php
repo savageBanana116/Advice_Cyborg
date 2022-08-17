@@ -141,7 +141,7 @@ echo $this->Html->css('custom.css');
 
                     <form id="Salary_Sacrifice_Form_Output" >
                         <br>
-                        <div class="form-group row" style="display:none">
+                        <div class="form-group row">
                             <label for="Age" class="col-4 col-form-label">Age :</label>
                             <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
                                 <ouput type="text" id="Age" readonly></ouput>

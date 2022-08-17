@@ -69,9 +69,9 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                        <label for="is_Family" class="col-4 col-form-label">Are you considered apart of a family  (Yes/No):</label>
+                        <label for="is_Family" class="col-4 col-form-label">Are you considered apart of a family :</label>
                     <div class="col-8">
-                        <input type="checkbox" class="form-control" id="is_Family">
+                        <input type="checkbox"  id="is_Family">
                     </div>
                 </div>
             </form>

@@ -318,7 +318,7 @@ echo $this->Html->css('custom.css');
 
            }
             totalLevy = mediLevy + basicLevy;
-            return totalLevy;
+            return Math.round(totalLevy) ;
 
         }
 

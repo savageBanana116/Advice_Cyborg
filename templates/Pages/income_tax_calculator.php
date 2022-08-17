@@ -74,28 +74,30 @@ echo $this->Html->css('custom.css');
 <!--            <div class="inputRow col-sm-3 " >-->
             <div class="col-5" style="border-style:solid; border-color:black;" >
                 <form action="income_tax_calculator">
-                    <span>My <span class="blue" >Salary</span> is</span>
+                    <br>
+                    <span>Each year my <span class="blue" >Salary</span> take home is</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
                         <input  type="number" class="form-control" id="mySalary" value="0"  >
                     </div>
-                    <span >Salary <span class="blue" >Sacrifice</span></span>
+                    <span >From my total <span class="blue" >Salary,</span> I'd like to <span class="blue"> Sacrifice</span></span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
                         <input type="number" class="form-control" id="mySalarySacrifice" value="0" >
                     </div>
-                    <span >Annual <span class="blue"> Investment </span></span>
+                    <span >Annually my <span class="blue"> Investment </span> value is on<span class="blue"> average</span></span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
                         <input type="number" class="form-control" id="myInvestment" value="0" >
                     </div>
-                    <span class="blue">Account Base pension</span>
+
+                    <span>I would like to contribute<span class="blue"> Account Based pension</span></form>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -103,14 +105,14 @@ echo $this->Html->css('custom.css');
                         <input type="number" class="form-control" id="myPension" value="0" >
                     </div>
 
-                    <span class="blue">Rental</span>
+                    <span>My current amount for<span class="blue"> Rental</span> is</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
                         <input type="number" class="form-control" id="myRental" value="0" >
                     </div>
-                    <span>My <span class="blue">Franked credits</span> </span>
+                    <span>What are your <span class="blue">Franked credits?</span> </span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -118,14 +120,14 @@ echo $this->Html->css('custom.css');
                         <input type="number" class="form-control" id="myCredits" value="0" >
                     </div>
 
-                    <span> <span class="blue"> Tax Free pension</span> amount</span>
+                    <span>What is your current<span class="blue"> Tax Free pension</span> amount</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
                         <input type="number" class="form-control" id="myTaxFree" value="0" >
                     </div>
-                    <span style="font-weight: bold">Others</span>
+                    <span>I have <span class="blue">Other </span>forms of income</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>

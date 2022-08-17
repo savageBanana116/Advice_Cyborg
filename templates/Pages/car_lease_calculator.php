@@ -6,6 +6,13 @@
 ?>
 <!doctype html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<?php
+echo $this->Html->css('custom.css');
+?>
 <style>
 
     input::-webkit-outer-spin-button,
@@ -46,62 +53,93 @@
     <div class="text-center" style="margin-top: 5%">
         <h1 >Car Lease Calculators</h1>
         <div class="row">
-            <div class="col" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
+            <div class="col-5" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
             <br>
-            <h5>Tell us about your Loan, we will use this to calculate the amount of the loan as well as the final payment date.</h5></div>
-            <div class="col" style="margin-left: 5%; border-style:solid; border-color:black; background-color: #403535; color: white;">
+            <h6>Tell us about your Loan, we will use this to calculate the amount of the loan as well as the final payment date.</h6></div>
+            <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black; background-color: #403535; color: white;">
                 <h5>Your Expected Loan Interest</h5></div>
         </div>
 <!--      -->
         <div class="row">
-            <div class="col" style="border-style:solid; border-color:black;" >
+            <div class="col-5" style="border-style:solid; border-color:black;" >
 
         <form id="lease_form">
             <br>
-            <div class="form-group row">
-                <label for="Loan_Date" class="col-4 col-form-label">When does your loan start?</label>
-                <div class="col-8">
+            <span style="float: left">When does your<span class="blue" > loan</span> start?</span>
+            <div class="input-group mb-4">
                 <input id="Loan_Date" name="Loan_date" placeholder="dd/mm/yyyy" type="date" class="form-control"  required="required">
-                </div>
             </div>
-            <br>
-            <div class="form-group row">
-                <label for="Loan_Amount" class="col-4 col-form-label">How much is your loan?</label>
-                <div class="col-8">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">$</div>
-                        </div>
-                        <input id="Loan_Amount" name="Loan_Amount" type="number" class="form-control" min="1" max="999999999" required="required">
+
+
+<!--            <div class="form-group row">-->
+<!--                <label for="Loan_Date" class="col-4 col-form-label">When does your loan start?</label>-->
+<!--                <div class="col-8">-->
+<!--                <input id="Loan_Date" name="Loan_date" placeholder="dd/mm/yyyy" type="date" class="form-control"  required="required">-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <span style="float: left">How much is your<span class="blue" > loan?</span></span>
+            <div class="input-group mb-4">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">$</div>
                     </div>
-                </div>
+                    <input id="Loan_Amount" name="Loan_Amount" type="number" class="form-control" min="1" max="999999999" required="required">
             </div>
-            <br>
-            <div class="form-group row">
-                <label for="Annual_Interest_Rate" class="col-4 col-form-label">What is your Annual Interest Rate?</label>
-                <div class="col-8">
+            </div>
+
+<!--            <div class="form-group row">-->
+<!--                <label for="Loan_Amount" class="col-4 col-form-label">How much is your loan?</label>-->
+<!--                <div class="col-8">-->
+<!--                    <div class="input-group">-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <div class="input-group-text">$</div>-->
+<!--                        </div>-->
+<!--                        <input id="Loan_Amount" name="Loan_Amount" type="number" class="form-control" min="1" max="999999999" required="required">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+                <span style="float: left">What is your Annual<span class="blue" > Interest</span> Rate?</span>
+                <div class="input-group mb-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">%</div>
                         </div>
-                <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="restrict(this);checkLength() " name="Annual_Interest_Rate" type="number" min="0" max="100" class="form-control" required="required">
-                    </div>
+                        <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="restrict(this);checkLength() " name="Annual_Interest_Rate" type="number" min="0" max="100" class="form-control" required="required">
                     </div>
                 </div>
-            <br>
-            <div class="form-group row">
-                <label for="Terms_of_Loan" class="col-4 col-form-label">How many years would you like to have the loan for?</label>
-                <div class="col-8">
+
+<!--            <div class="form-group row">-->
+<!--                <label for="Annual_Interest_Rate" class="col-4 col-form-label">What is your Annual Interest Rate?</label>-->
+<!--                <div class="col-8">-->
+<!--                    <div class="input-group">-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <div class="input-group-text">%</div>-->
+<!--                        </div>-->
+<!--                <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="restrict(this);checkLength() " name="Annual_Interest_Rate" type="number" min="0" max="100" class="form-control" required="required">-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            <span style="float: left">How many<span class="blue" > years</span> would you like to have the loan over?</span>
+            <div class="input-group mb-4">
                 <input id="Terms_of_Loan" name="Terms_of_Loan" type="number" class="form-control" min="1" max="50" required="required">
             </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="Number_of_Payment_Annually" class="col-4 col-form-label">How many payments per year do you plan to make?</label>
-                <div class="col-8">
-                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" type="number"  min="1" max="365" class="form-control" required="required">
-            </div>
-            </div>
+
+<!--            <div class="form-group row">-->
+<!--                <label for="Terms_of_Loan" class="col-4 col-form-label">How many years would you like to have the loan for?</label>-->
+<!--                <div class="col-8">-->
+<!--                <input id="Terms_of_Loan" name="Terms_of_Loan" type="number" class="form-control" min="1" max="50" required="required">-->
+<!--            </div>-->
+<!--            </div>-->
+            <span style="float: left">How many<span class="blue" > payments</span> do you plan to make <span class="blue">yearly?</span></span>
+            <div class="input-group mb-4">
+                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" type="number"  min="1" max="365" class="form-control" required="required">            </div>
+<!--            <div class="form-group row">-->
+<!--                <label for="Number_of_Payment_Annually" class="col-4 col-form-label">How many payments per year do you plan to make?</label>-->
+<!--                <div class="col-8">-->
+<!--                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" type="number"  min="1" max="365" class="form-control" required="required">-->
+<!--            </div>-->
+<!--            </div>-->
             <br>
         </form>
 <br>
@@ -138,7 +176,7 @@
 <!--        </form>-->
 
 <!--        <button id="Submit"> Calculate </button>-->
-            <div class="col" style="margin-left: 5%; border-style:solid; border-color:black;">
+            <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black;">
         <form id="lease_form" >
             <div class="form-group row" style="">
                     <label for="Loan_Date" class="col-4 col-form-label">Total Number of Payments:</label>

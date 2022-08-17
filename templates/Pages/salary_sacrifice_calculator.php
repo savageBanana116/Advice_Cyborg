@@ -115,8 +115,8 @@ echo $this->Html->css('custom.css');
 <!--                                <input type="number" class="form-control" id="Salary_Sacrifice_Amount">-->
 <!--                            </div>-->
 <!--                        </div>-->
-                        <span>Are you considered <span class="blue"> a part of a family?</span></span>
-                        <div class="input-group mb-4">
+                        <span style="float: left">Are you considered <span class="blue"> a part of a family?</span></span>
+                        <div class="input-group mb-4" style="float: left">
                             <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
                                 <input type="radio"  id="is_Family" class="custom-control-input" value="yes">
                                 <label class="custom-control-label" for="customRadioInline1">Yes</label>

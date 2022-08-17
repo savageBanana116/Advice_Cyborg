@@ -12,6 +12,21 @@
 </style>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="calculators">Calculator Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link " href="car_lease_calculator">Car-Lease </a>
+            <a class="nav-item nav-link" href="income_tax_calculator">Income-Tax</a>
+            <a class="nav-item nav-link" href="retirement_calculator">Retirement</a>
+            <a class="nav-item nav-link " href="salary_sacrifice_calculator">Salary-Sacrifice</a>
+            <a class="nav-item nav-link " href="age_pension_calculator">Age-pension</a>
+        </div>
+    </div>
+</nav>
 <div class="container">
     <!--
     <div class="text-center" style="margin-top: 5%">

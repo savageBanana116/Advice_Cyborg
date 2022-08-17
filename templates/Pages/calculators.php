@@ -7,45 +7,95 @@
 <!doctype html>
 <html lang="en">
 <style>
+    #portfolio .portfolio-item .portfolio-caption {
 
+        background-color: rgba(99, 99, 98, 0.06);
+    }
 </style>
 
 <body>
-<div class="container" >
-    <div class="text-center" style="margin-top: 5%">
-        <h2 class="text-uppercase" style="font-size: 56px">Calculators</h2>
-        <p class="text-muted">Please select the calculator you would like to use below</p>
+<section class="page-section" id="portfolio">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase" style="margin-bottom: 2em">Calculators</h2>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-6 mb-4">
+                <!-- Portfolio item 1-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link"  href="car_lease_calculator">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <?= $this->Html->image('modules/'."car.jpg", ['alt' => 'module_image',"class"=>"img-fluid"])?>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Car Lease Calculator</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6 mb-4">
+                <!-- Portfolio item 2-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link"  href="income_tax_calculator">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <?= $this->Html->image('modules/'."tax.jpg", ['alt' => 'module_image',"class"=>"img-fluid"])?>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Income Tax Calculator</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6 mb-4">
+                <!-- Portfolio item 3-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link"  href="retirement_calculator">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <?= $this->Html->image('modules/'."retire.jpg", ['alt' => 'module_image',"class"=>"img-fluid"])?>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Retirement Calculator</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6 mb-4 mb-lg-0">
+                <!-- Portfolio item 4-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link"  href="salary_sacrifice_calculator">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <?= $this->Html->image('modules/'."sacrifice.jpg", ['alt' => 'module_image',"class"=>"img-fluid"])?>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Salary Sacrifice Calculator</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6 mb-4 mb-lg-0">
+                <!-- Portfolio item 4-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link"  href="age_pension_calculator">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <?= $this->Html->image('modules/'."pension.jpg", ['alt' => 'module_image',"class"=>"img-fluid"])?>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Age Pension Calculator</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-</div>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success py-4 w-100" style="width: 100%; margin-bottom: 8%">
-
-    <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 300%;color: white">
-        <ul class="navbar-nav">
-            <li class="nav-item active px-5">
-                <a class="nav-link" href="car_lease_calculator">Car Lease <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item px-5">
-                <a class="nav-link" href="income_tax_calculator">Income Tax</a>
-            </li>
-            <li class="nav-item px-5">
-                <a class="nav-link" href="retirement_calculator">Retirement</a>
-            </li>
-            <li class="nav-item px-5">
-                <a class="nav-link" href="salary_sacrifice_calculator">Salary Sacrifice</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="age_pension_calculator">Age Pension</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="text-center" style="width:50%;margin-left: 23%;margin-bottom: 10%">
-
-    <p>What is Lorem Ipsum?
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-</div>
-
-
+</section>
 </body>

@@ -268,5 +268,7 @@ echo $this->Html->css('custom.css');
             tis.setAttribute("data-prev",tis.value)
         }
     </script>
-<script src="\team18-app_fit3048\webroot\js\lease.js"></script>
+
+    <?= $this -> Html -> script('lease.js') ?>
+
 </body>

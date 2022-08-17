@@ -455,7 +455,7 @@ echo $this->Html->css('custom.css');
             </div>
         </nav>
         -->
-        <script src = "\team18-app_fit3048\webroot\js\salary_sacrifice.js"></script>
+
         <script>
             function toggle_after_tax() {
                 var x = document.getElementById("after_tax_contributions");
@@ -475,4 +475,5 @@ echo $this->Html->css('custom.css');
                 }
             }
         </script>
+        <?= $this -> Html -> script('salary_sacrifice.js') ?>
 </body>

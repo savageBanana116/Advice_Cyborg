@@ -371,5 +371,7 @@ echo $this->Html->css('custom.css');
 
 
     </script>
-<script src="\team18-app_fit3048\webroot\js\retirement.js"></script>
+
+
+    <?= $this -> Html -> script('retirement.js') ?>
 </body>

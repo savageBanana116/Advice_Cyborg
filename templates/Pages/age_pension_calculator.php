@@ -136,5 +136,6 @@
 
 
 
-<script src="\team18-app_fit3048\webroot\js\FutureValue.js"></script>
+<?= $this -> Html -> script('FutureValue.js') ?>
+
 </body>

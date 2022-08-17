@@ -124,7 +124,7 @@ function getRetirementInput()
     const Estimated_Return_Rate = document.getElementById("Estimated_Return_Rate").value;
 
     if (age == 0 || Retirement_Age == 0 || Year_Payments == 0 || Payment_Required_Today == 0 || Indexation == 0 || Interest_Rate == 0 ||
-    Current_Super == 0 || Current_Net_Contributions || Estimated_Return_Rate == 0 ) {
+    Current_Super == 0 || Current_Net_Contributions == 0 || Estimated_Return_Rate == 0 ) {
         document.getElementById("Payment_Required_Future").value = "Please Enter All Value";
         document.getElementById("Value_Required").value = "Please Enter All Value";
         document.getElementById("Estimated_Annual_Deduct").value = "Please Enter All Value";

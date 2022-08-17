@@ -12,6 +12,22 @@
 </style>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="calculators">Calculator Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link " href="car_lease_calculator">Car-Lease </a>
+            <a class="nav-item nav-link" href="income_tax_calculator">Income-Tax</a>
+            <a class="nav-item nav-link" href="retirement_calculator">Retirement</a>
+            <a class="nav-item nav-link " href="salary_sacrifice_calculator">Salary-Sacrifice</a>
+            <a class="nav-item nav-link " href="age_pension_calculator">Age-pension</a>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
     <!--
     <div class="text-center" style="margin-top: 5%">
@@ -20,192 +36,325 @@
     </div>-->
     <div class="container" >
         <div class="text-center" style="margin-top: 5%">
-            <h2 class="text-uppercase" style="font-size: 56px">Salary Sacrifice Calculators</h2>
-            <form id="Salary_Sacrifice_Form" >
-                <ul class="no-bullets">
-                    <li>
-                        <label for="DOB">Date of Birth:</label>
-                        <input type="date" id="DOB">
-                    </li>
-                    <li>
-                        <label for="Salary">Salary ($):</label>
-                        <input type="number" id="Salary" >
-                    </li>
-                    <li>
-                        <label for="Salary_Sacrifice_Amount">Salary Sacrifice Amount :</label>
-                        <input type="number" id="Salary_Sacrifice_Amount">
-                    </li>
-                    <li>
-                        <label for="is_Family">Are you considered apart of a family  (Yes/No):</label>
-                        <input type="checkbox" id="is_Family">
-                    </li>
-                </ul>
-            </form>
+            <h2 class="text-uppercase" style="font-size: 56px">Salary Sacrifice Calculator</h2>
+            <div class="row">
+                <div class="col" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
+                    <br>
+                    <h5>Tell us about yourself </h5></div>
+                <div class="col" style="margin-left: 5%; border-style:solid; border-color:black; background-color: #403535; color: white;">
+                    <h5>Breakdown of your Costs</h5></div>
+            </div>
 
+            <div class="row">
+                <div class="col" style="border-style:solid; border-color:black;" >
+
+            <form id="Salary_Sacrifice_Form" >
+                <br>
+                <div class="form-group row">
+                        <label for="DOB" class="col-4 col-form-label">Date of Birth:</label>
+                    <div class="col-8">
+                        <input type="date" class="form-control" id="DOB">
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Salary" class="col-4 col-form-label">Salary ($):</label>
+                    <div class="col-8">
+                        <input type="number"  class="form-control"id="Salary" >
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Salary_Sacrifice_Amount" class="col-4 col-form-label">Salary Sacrifice Amount :</label>
+                    <div class="col-8">
+                        <input type="number" class="form-control" id="Salary_Sacrifice_Amount">
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="is_Family" class="col-4 col-form-label">Are you considered apart of a family  (Yes/No):</label>
+                    <div class="col-8">
+                        <input type="checkbox" class="form-control" id="is_Family">
+                    </div>
+                </div>
+            </form>
+                    <div class="form-group">
             <button id="Submit_Salary_Sacrifice"> Calculate </button>
-            <h3> Basic Information </h3>
+                    </div>
+                </div>
+                <div class="col" style="margin-left: 5%; border-style:solid; border-color:black;">
+
             <form id="Salary_Sacrifice_Form_Output" >
-                <ul class="no-bullets">
-                    <li>
-                        <label for="Age">Age :</label>
-                        <input type="text" id="Age" readonly>
-                    </li>
-                    <li>
-                        <label for="Finical_Year_Ending">Total Number of Payments:</label>
-                        <input type="text" id="Finical_Year_Ending" readonly>
-                    </li>
-                    <li>
-                        <label for="Concessional_Contribution_Cap">Concessional Contribution Cap:</label>
-                        <input type="text" id="Concessional_Contribution_Cap" readonly>
-                    </li>
-                    <li>
-                        <label for="SG_Contributions">SG Contributions:</label>
-                        <input type="text" id="SG_Contributions" readonly>
-                    </li>
-                    <li>
-                        <label for="Allowed_Salary_Sacrifice">Salary Sacrifice Allowable :</label>
-                        <input type="text" id="Allowed_Salary_Sacrifice" readonly>
-                    </li>
+                <br>
+                <div class="form-group row">
+                        <label for="Age" class="col-4 col-form-label">Age :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <ouput type="text" id="Age" readonly></ouput>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                        <label for="Finical_Year_Ending" class="col-4 col-form-label">Total Number of Payments:</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Finical_Year_Ending" readonly></output>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                        <label for="Concessional_Contribution_Cap" class="col-4 col-form-label">Concessional Contribution Cap:</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Concessional_Contribution_Cap" readonly></output>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                        <label for="SG_Contributions" class="col-4 col-form-label">SG Contributions:</label>
+                    <div class="col-8" >
+                        <output type="text" id="SG_Contributions" style="border-bottom: 0.5px solid black; padding-top: 5%" readonly></output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Allowed_Salary_Sacrifice" class="col-4 col-form-label">Salary Sacrifice Allowable :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Allowed_Salary_Sacrifice" readonly>
+                        </output>
+                    </div>
+                </div>
 
                     <h3>After Tax Contributions</h3>
-                    <li>
-                        <label for="Salary">Salary :</label>
-                        <input type="text" id="After_Tax_Salary" readonly>
-                    </li>
-                    <li>
-                        <label for="Salary_Sacrifice">Salary Sacrifice :</label>
-                        <input type="text" id="After_Tax_Salary_Sacrifice" readonly>
-                    </li>
-                    <li>
-                        <label for="Taxable_Income">Taxable Income:</label>
-                        <input type="text" id="After_Tax_Taxable_Income" readonly>
-                    </li>
-                    <li>
-                        <label for="Tax_Payable">Basic Tax Payable :</label>
-                        <input type="text" id="After_Tax_Payable_Basic" readonly>
-                    </li>
-                    <li>
-                        <label for="Levy"> Medicare Levy :</label>
-                        <input type="text" id="After_Levy" readonly>
-                    </li>
-                    <li>
-                        <label for="LM_Tax_Offset">Low & Middle Income Tax Offset :</label>
-                        <input type="text" id="After_LM_Tax_Offset" readonly>
-                    </li>
-                    <li>
-                        <label for="Low_Income_Tax_Offset">Low Income Tax Offset :</label>
-                        <input type="text" id="After_Low_Income_Tax_Offset" readonly>
-                    </li>
-                    <li>
-                        <label for="Tax_Payable">Tax Payable (Including ML) :</label>
-                        <input type="text" id="After_Tax_Payable" readonly>
-                    </li>
-                    <li>
-                        <label for="Net_Income">Net Income :</label>
-                        <input type="text" id="After_Net_Income" readonly>
-                    </li>
-                    <li>
-                        <label for="Less_After_Tax">Less After Tax Contributions :</label>
-                        <input type="text" id="After_Less_After_Tax" readonly>
-                    </li>
-                    <li>
-                        <label for="Take_Home_Pay">Take Home Pay :</label>
-                        <input type="text" id="After_Take_Home_Pay" readonly>
-                    </li>
+                <div class="form-group row">
+                        <label for="Salary" class="col-4 col-form-label">Salary :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Tax_Salary" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Salary_Sacrifice" class="col-4 col-form-label">Salary Sacrifice :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Tax_Salary_Sacrifice" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Taxable_Income" class="col-4 col-form-label">Taxable Income:</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Tax_Taxable_Income" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Tax_Payable" class="col-4 col-form-label">Basic Tax Payable :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Tax_Payable_Basic" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Levy" class="col-4 col-form-label"> Medicare Levy :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Levy" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="LM_Tax_Offset" class="col-4 col-form-label">Low & Middle Income Tax Offset :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_LM_Tax_Offset" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Low_Income_Tax_Offset" class="col-4 col-form-label">Low Income Tax Offset :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Low_Income_Tax_Offset" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Tax_Payable" class="col-4 col-form-label">Tax Payable (Including ML) :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Tax_Payable" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Net_Income" class="col-4 col-form-label">Net Income :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Net_Income" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Less_After_Tax" class="col-4 col-form-label">Less After Tax Contributions :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Less_After_Tax" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Take_Home_Pay" class="col-4 col-form-label">Take Home Pay :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Take_Home_Pay" readonly>
+                        </output>
+                    </div>
+                </div>
                     <h5> Effects on your Super Contributions - After Tax </h5>
-                    <li>
-                        <label for="After_SG">10% SG ($) :</label>
-                        <input type="text" id="After_SG" readonly>
-                    </li>
-                    <li>
-                        <label for="After_Salary_Sacrifice">Salary Sacrifice ($) :</label>
-                        <input type="text" id="After_Salary_Sacrifice" readonly>
-                    </li>
-                    <li>
-                        <label for="After_Less_Contribution_Tax">Less 15% Contributions Tax :</label>
-                        <input type="text" id="After_Less_Contribution_Tax" readonly>
-                    </li>
-                    <li>
-                        <label for="After_tax">After Tax ($) :</label>
-                        <input type="text" id="After_tax" readonly>
-                    </li>
+                <div class="form-group row">
+                        <label for="After_SG" class="col-4 col-form-label">10% SG ($) :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_SG" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="After_Salary_Sacrifice" class="col-4 col-form-label">Salary Sacrifice ($) :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Salary_Sacrifice" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="After_Less_Contribution_Tax" class="col-4 col-form-label">Less 15% Contributions Tax :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_Less_Contribution_Tax" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="After_tax" class="col-4 col-form-label">After Tax ($) :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="After_tax" readonly>
+                        </output>
+                    </div>
+                </div>
 
                     <h3>Pre-Tax Contributions</h3>
-                    <li>
-                        <label for="Salary">Salary :</label>
-                        <input type="text" id="Pre_Tax_Salary" readonly>
-                    </li>
-                    <li>
-                        <label for="Salary_Sacrifice">Salary Sacrifice :</label>
-                        <input type="text" id="Pre_Tax_Salary_Sacrifice" readonly>
-                    </li>
-                    <li>
-                        <label for="Taxable_Income">Taxable Income:</label>
-                        <input type="text" id="Pre_Tax_Taxable_Income" readonly>
-                    </li>
-                    <li>
-                        <label for="Tax_Payable">Basic Tax Payable :</label>
-                        <input type="text" id="Pre_Tax_Payable_Basic" readonly>
-                    </li>
-                    <li>
-                        <label for="Levy"> Medicare Levy :</label>
-                        <input type="text" id="Pre_Levy" readonly>
-                    </li>
-                    <li>
-                        <label for="LM_Tax_Offset">Low & Middle Income Tax Offset :</label>
-                        <input type="text" id="Pre_LM_Tax_Offset" readonly>
-                    </li>
-                    <li>
-                        <label for="Low_Income_Tax_Offset">Low Income Tax Offset :</label>
-                        <input type="text" id="Pre_Low_Income_Tax_Offset" readonly>
-                    </li>
-                    <li>
-                        <label for="Tax_Payable">Tax Payable (Including ML) :</label>
-                        <input type="text" id="Pre_Tax_Payable" readonly>
-                    </li>
-                    <li>
-                        <label for="Net_Income">Net Income :</label>
-                        <input type="text" id="Pre_Net_Income" readonly>
-                    </li>
-                    <li>
-                        <label for="Less_After_Tax">Less After Tax Contributions :</label>
-                        <input type="text" id="Pre_Less_After_Tax" readonly>
-                    </li>
-                    <li>
-                        <label for="Take_Home_Pay">Take Home Pay :</label>
-                        <input type="text" id="Pre_Take_Home_Pay" readonly>
-                    </li>
+                <div class="form-group row">
+                        <label for="Salary" class="col-4 col-form-label">Salary :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Tax_Salary" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Salary_Sacrifice" class="col-4 col-form-label">Salary Sacrifice :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Tax_Salary_Sacrifice" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Taxable_Income" class="col-4 col-form-label">Taxable Income:</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Tax_Taxable_Income" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Tax_Payable" class="col-4 col-form-label">Basic Tax Payable :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Tax_Payable_Basic" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Levy" class="col-4 col-form-label"> Medicare Levy :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Levy" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="LM_Tax_Offset" class="col-4 col-form-label">Low & Middle Income Tax Offset :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_LM_Tax_Offset" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Low_Income_Tax_Offset" class="col-4 col-form-label">Low Income Tax Offset :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Low_Income_Tax_Offset" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Tax_Payable" class="col-4 col-form-label">Tax Payable (Including ML) :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Tax_Payable" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Net_Income" class="col-4 col-form-label">Net Income :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Net_Income" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Less_After_Tax" class="col-4 col-form-label">Less After Tax Contributions :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Less_After_Tax" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Take_Home_Pay" class="col-4 col-form-label">Take Home Pay :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Take_Home_Pay" readonly>
+                        </output>
+                    </div>
+                </div>
                     <h5> Effects on your Super Contributions - Pre-Tax </h5>
-                    <li>
-                        <label for="Pre_SG">10% SG ($) :</label>
-                        <input type="text" id="Pre_SG" readonly>
-                    </li>
-                    <li>
-                        <label for="Pre_Salary_Sacrifice">Salary Sacrifice ($) :</label>
-                        <input type="text" id="Pre_Salary_Sacrifice" readonly>
-                    </li>
-                    <li>
-                        <label for="Pre_Less_Contribution_Tax">Less 15% Contributions Tax :</label>
-                        <input type="text" id="Pre_Less_Contribution_Tax" readonly>
-                    </li>
-                    <li>
-                        <label for="Pre_After_tax">After Tax ($) :</label>
-                        <input type="text" id="Pre_After_tax" readonly>
-                    </li>
+                <div class="form-group row">
+                        <label for="Pre_SG" class="col-4 col-form-label">10% SG ($) :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_SG" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Pre_Salary_Sacrifice" class="col-4 col-form-label">Salary Sacrifice ($) :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Salary_Sacrifice" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Pre_Less_Contribution_Tax" class="col-4 col-form-label">Less 15% Contributions Tax :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_Less_Contribution_Tax" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Pre_After_tax" class="col-4 col-form-label">After Tax ($) :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Pre_After_tax" readonly>
+                        </output>
+                    </div>
+                </div>
                     <h3> Summary </h3>
-                    <li>
-                        <label for="Tax_Saving">Personal Tax Saving :</label>
-                        <input type="text" id="Tax_Saving" readonly>
-                    </li>
-                    <li>
-                        <label for="Total_TaxSaving">Total Tax Saving :</label>
-                        <input type="text" id="Total_TaxSaving" readonly>
-                    </li>
-                    <li>
-                        <label for="Increase">Increase In Take Home Pay and Super :</label>
-                        <input type="text" id="Increase" readonly>
-                    </li>
-                </ul>
+                <div class="form-group row">
+                        <label for="Tax_Saving" class="col-4 col-form-label">Personal Tax Saving :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Tax_Saving" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Total_TaxSaving" class="col-4 col-form-label">Total Tax Saving :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Total_TaxSaving" readonly>
+                        </output>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label for="Increase" class="col-4 col-form-label">Increase In Take Home Pay and Super :</label>
+                    <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">
+                        <output type="text" id="Increase" readonly>
+                        </output>
+                    </div>
+                </div>
             </form>
 
 

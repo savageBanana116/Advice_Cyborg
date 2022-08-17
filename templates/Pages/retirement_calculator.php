@@ -308,20 +308,20 @@ echo $this->Html->css('custom.css');
         }
 
         Payment_Required_Today.oninput = function () {
-            const maxlength = 9;
+            const maxlength = 7;
             if (this.value.length > maxlength) {
                 this.value = this.value.slice(0,maxlength);
             }
         }
 
         Current_Super.oninput = function () {
-            const maxlength = 10;
+            const maxlength = 7;
             if (this.value.length > maxlength) {
                 this.value = this.value.slice(0,maxlength);
             }
         }
         Current_Net_Contributions.oninput = function () {
-            const maxlength = 10;
+            const maxlength = 7;
             if (this.value.length > maxlength) {
                 this.value = this.value.slice(0,maxlength);
             }

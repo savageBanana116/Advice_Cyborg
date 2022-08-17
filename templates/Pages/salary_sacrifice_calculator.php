@@ -465,14 +465,14 @@ echo $this->Html->css('custom.css');
         <script>
             //input validation
             Salary.oninput = function () {
-                const maxlength = 10;
+                const maxlength = 7;
                 if (this.value.length > maxlength) {
                     this.value = this.value.slice(0,maxlength);
                 }
             }
 
             Salary_Sacrifice_Amount.oninput = function () {
-                const maxlength = 10;
+                const maxlength = 7;
                 if (this.value.length > maxlength) {
                     this.value = this.value.slice(0,maxlength);
                 }

@@ -113,7 +113,7 @@ echo $this->Html->css('custom.css');
 <!--                </div>-->
                 <span style="float: left">How much do you plan to pay<span class="blue"> today?</span></span>
                 <div class="input-group mb-4">
-                    <input type="text"  class="form-control" onKeyPress="return check(event,value) id="Payment_Required_Today">
+                    <input type="text"  class="form-control" onKeyPress="return check(event,value)" id="Payment_Required_Today">
                 </div>
 
 <!--                <div class="form-group row">-->
@@ -161,7 +161,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                    <input type="number" class="form-control" onKeyPress="return check(event,value) id="Current_Super">
+                    <input type="number" class="form-control" onKeyPress="return check(event,value)" id="Current_Super">
                     </div>
                     </div>
 
@@ -177,7 +177,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                    <input type="number" class="form-control" onKeyPress="return check(event,value) id="Current_Net_Contributions">
+                    <input type="number" class="form-control" onKeyPress="return check(event,value)" id="Current_Net_Contributions">
                 </div>
                 </div>
 

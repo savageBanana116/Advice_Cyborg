@@ -233,6 +233,67 @@ echo $this->Html->css('custom.css');
     </body>
 
 <script>
+    //input validation
+    Salary.oninput = function () {
+        const maxlength = 10;
+        if (this.value.length > maxlength) {
+            this.value = this.value.slice(0,maxlength);
+        }
+    }
+
+    Salary_Sacrifice_Amount.oninput = function () {
+        const maxlength = 10;
+        if (this.value.length > maxlength) {
+            this.value = this.value.slice(0,maxlength);
+        }
+    }
+
+
+    function check(e,value){
+        //Check Character
+        var unicode=e.charCode? e.charCode : e.keyCode;
+        if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+        if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+    }
+    function checkLength(id){
+        var fieldVal = document.getElementById(id).value;
+        const  limit_percent = 100, limit_age = 120;
+        if(id === "Indexation" || id === "Interest_Rate" || id === "Estimated_Return_Rate" ){
+            if(fieldVal <= limit_percent){
+                return true;
+            }
+            else
+            {
+                var str = document.getElementById(id).value;
+                str = str.substring(0, str.length - 1);
+                console.log(str);
+                document.getElementById(id).value = str;
+            }
+        } else{
+            if(fieldVal <= limit_age){
+                return true;
+            }
+            else
+            {
+                var str = document.getElementById(id).value;
+                str = str.substring(0, str.length - 1);
+                document.getElementById(id).value = str;
+            }
+        }
+    }
+    function restrict(tis) {
+        var prev = tis.getAttribute("data-prev");
+        //console.log(prev);
+        prev = (prev != '') ? prev : '';
+        if (Math.round(tis.value*100)/100!=tis.value)
+            tis.value=prev;
+        tis.setAttribute("data-prev",tis.value)
+    }
+
+
+</script>
+
+<script>
     // validation
     function validator(){
         //Salary validation
@@ -440,6 +501,9 @@ echo $this->Html->css('custom.css');
     }
 
 </script>
+
+
+
 <!--<script>-->
 <!--    $('.input').on('input', function(){-->
 <!--       taxCalculator();-->

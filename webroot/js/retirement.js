@@ -125,13 +125,7 @@ function getRetirementInput()
 
     if (age == 0 || Retirement_Age == 0 || Year_Payments == 0 || Payment_Required_Today == 0 || Indexation == 0 || Interest_Rate == 0 ||
     Current_Super == 0 || Current_Net_Contributions == 0 || Estimated_Return_Rate == 0 ) {
-        document.getElementById("Payment_Required_Future").value = "Please Enter All Value";
-        document.getElementById("Value_Required").value = "Please Enter All Value";
-        document.getElementById("Estimated_Annual_Deduct").value = "Please Enter All Value";
-        document.getElementById("Estimated_Super").value = "Please Enter All Value";
-        document.getElementById("Lumpsum").value = "Please Enter All Value";
-        document.getElementById("Net_Payment").value = "Please Enter All Value";
-        document.getElementById("Gross_Payment").value = "Please Enter All Value";
+        alert('Please enter all input values');
     }else {
 
         const Payment_Required_Future = getFV(Payment_Required_Today, Indexation, (Retirement_Age - age));

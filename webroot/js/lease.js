@@ -42,9 +42,11 @@ function getInput()
         const Total_Interest = Loan_Amount * Interest_Rate_Percent * Loan_Term;
         const Interest = Math.round(Total_Interest * 100) / 100;
 
-        document.getElementById("Total_NO_Payments").value = Total_NO_Payments;
-        document.getElementById("Final_Payment_Date").value = Final_Payment_Date.toDateString();
-        document.getElementById("Total_Interest").value = Interest;
+        console.log(Total_Interest);
+
+        document.getElementById("Total_NO_Payments").innerHTML = Total_NO_Payments.toString();
+        document.getElementById("Final_Payment_Date").innerHTML = Final_Payment_Date.toDateString();
+        document.getElementById("Total_Interest").innerHTML = "$" + Interest;
     } else {
         alert('Please enter valid values');
     }

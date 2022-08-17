@@ -188,6 +188,7 @@ echo $this->Html->css('custom.css');
 <!--        </form>-->
 
 <!--        <button id="Submit"> Calculate </button>-->
+            <!--
             <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black;">
         <form id="lease_form" >
             <div class="form-group row" style="">
@@ -209,7 +210,36 @@ echo $this->Html->css('custom.css');
                 </div>
             </div>
         </form>
-    </div>
+    </div>-->
+
+            <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black;">
+                <br>
+                <form>
+                <table>
+
+                    <tr>
+                        <td> <h5 style="padding-bottom: 2em" > Total Number of Payments: </h5> </td>
+                        <td> <h5  style="padding-bottom: 2em" class="number" id="Total_NO_Payments" >0</h5>
+                        </td>
+                    </tr>
+
+
+                    <tr >
+                        <td> <h5 style="padding-bottom: 2em">Final Payment Date: </h5> </td>
+                        <td> <h5 style="padding-bottom: 2em" class="number" id="Final_Payment_Date" >0</h5></td>
+                    </tr>
+
+
+                    <tr>
+                        <td > <h5 style="padding-bottom: 2em">Total Interest </h5> </td>
+                        <td > <h5 style="padding-bottom: 2em" class="number" id="Total_Interest" >$0</h5></td>
+                    </tr>
+
+                </table>
+                </form>
+            </div>
+
+        </div>
 
 </div>
     </div>

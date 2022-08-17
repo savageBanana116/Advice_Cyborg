@@ -46,8 +46,6 @@ function getInput()
         document.getElementById("Final_Payment_Date").value = Final_Payment_Date.toDateString();
         document.getElementById("Total_Interest").value = Interest;
     } else {
-        document.getElementById("Total_NO_Payments").value = "Please Enter ALL Value";
-        document.getElementById("Final_Payment_Date").value = "Please Enter ALL Value";
-        document.getElementById("Total_Interest").value = "Please Enter ALL Value";
+        alert('Please enter valid values');
     }
 }

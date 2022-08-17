@@ -95,7 +95,7 @@ echo $this->Html->css('custom.css');
 <!--                        </div>-->
                         <span style="float: left">What is your<span class="blue" > Current Annual Salary?</span></span>
                         <div class="input-group mb-4">
-                            <input type="number"  class="form-control"id="Salary" >
+                            <input type="number"  class="form-control"   onKeyPress="return check(event,value)" id="Salary" >
                         </div>
 
 <!--                        <div class="form-group row">-->
@@ -106,7 +106,7 @@ echo $this->Html->css('custom.css');
 <!--                        </div>-->
                         <span style="float: left">What is your<span class="blue" > Current Salary Sacrifice?</span></span>
                         <div class="input-group mb-4">
-                            <input type="number" class="form-control" id="Salary_Sacrifice_Amount">
+                            <input type="number" class="form-control" onKeyPress="return check(event,value)"  id="Salary_Sacrifice_Amount">
                         </div>
 
 <!--                        <div class="form-group row">-->

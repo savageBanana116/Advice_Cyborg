@@ -96,7 +96,7 @@ echo $this->Html->css('custom.css');
                     <div class="input-group-prepend">
                         <div class="input-group-text">$</div>
                     </div>
-                    <input id="Loan_Amount" name="Loan_Amount" type="number" class="form-control" min="1" max="999999999" required="required">
+                    <input id="Loan_Amount" name="Loan_Amount" type="number" class="form-control" onKeyPress="return check(event,value)" min="1" max="999999999" required="required">
             </div>
             </div>
 
@@ -134,7 +134,7 @@ echo $this->Html->css('custom.css');
 <!--                </div>-->
             <span style="float: left">How many<span class="blue" > years</span> would you like to have the loan over?</span>
             <div class="input-group mb-4">
-                <input id="Terms_of_Loan" name="Terms_of_Loan" type="number" class="form-control" min="1" max="50" required="required">
+                <input id="Terms_of_Loan" name="Terms_of_Loan" type="number" class="form-control" onKeyPress="return check(event,value)" min="1" max="50" required="required">
             </div>
 
 <!--            <div class="form-group row">-->
@@ -145,7 +145,7 @@ echo $this->Html->css('custom.css');
 <!--            </div>-->
             <span style="float: left">How many<span class="blue" > payments</span> do you plan to make <span class="blue">yearly?</span></span>
             <div class="input-group mb-4">
-                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" type="number"  min="1" max="365" class="form-control" required="required">            </div>
+                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" type="number"  min="1" max="365" class="form-control" onKeyPress="return check(event,value)" required="required">            </div>
 <!--            <div class="form-group row">-->
 <!--                <label for="Number_of_Payment_Annually" class="col-4 col-form-label">How many payments per year do you plan to make?</label>-->
 <!--                <div class="col-8">-->
@@ -268,6 +268,7 @@ echo $this->Html->css('custom.css');
             tis.setAttribute("data-prev",tis.value)
         }
     </script>
+
 
     <?= $this -> Html -> script('lease.js') ?>
 

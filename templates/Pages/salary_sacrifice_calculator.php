@@ -115,9 +115,16 @@ echo $this->Html->css('custom.css');
 <!--                                <input type="number" class="form-control" id="Salary_Sacrifice_Amount">-->
 <!--                            </div>-->
 <!--                        </div>-->
-                        <span>Are you considered<span class="blue" > Apart of a Family?</span></span>
+                        <span>Are you considered <span class="blue"> a part of a family?</span></span>
                         <div class="input-group mb-4">
-                            <input type="checkbox" style="float:center" id="is_Family">
+                            <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
+                                <input type="radio"  id="is_Family" class="custom-control-input" value="yes">
+                                <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio"  id="is_Family" class="custom-control-input" value="no" checked>
+                                <label class="custom-control-label" for="customRadioInline2">No</label>
+                            </div>
                         </div>
 <!--                        <div class="form-group row">-->
 <!--                            <label for="is_Family" class="col-4 col-form-label">Are you considered apart of a family :</label>-->
@@ -455,7 +462,66 @@ echo $this->Html->css('custom.css');
             </div>
         </nav>
         -->
+        <script>
+            //input validation
+            Salary.oninput = function () {
+                const maxlength = 10;
+                if (this.value.length > maxlength) {
+                    this.value = this.value.slice(0,maxlength);
+                }
+            }
 
+            Salary_Sacrifice_Amount.oninput = function () {
+                const maxlength = 10;
+                if (this.value.length > maxlength) {
+                    this.value = this.value.slice(0,maxlength);
+                }
+            }
+
+
+            function check(e,value){
+                //Check Character
+                var unicode=e.charCode? e.charCode : e.keyCode;
+                if (value.indexOf(".") != -1)if( unicode == 46 )return false;
+                if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
+            }
+            function checkLength(id){
+                var fieldVal = document.getElementById(id).value;
+                const  limit_percent = 100, limit_age = 120;
+                if(id === "Indexation" || id === "Interest_Rate" || id === "Estimated_Return_Rate" ){
+                    if(fieldVal <= limit_percent){
+                        return true;
+                    }
+                    else
+                    {
+                        var str = document.getElementById(id).value;
+                        str = str.substring(0, str.length - 1);
+                        console.log(str);
+                        document.getElementById(id).value = str;
+                    }
+                } else{
+                    if(fieldVal <= limit_age){
+                        return true;
+                    }
+                    else
+                    {
+                        var str = document.getElementById(id).value;
+                        str = str.substring(0, str.length - 1);
+                        document.getElementById(id).value = str;
+                    }
+                }
+            }
+            function restrict(tis) {
+                var prev = tis.getAttribute("data-prev");
+                //console.log(prev);
+                prev = (prev != '') ? prev : '';
+                if (Math.round(tis.value*100)/100!=tis.value)
+                    tis.value=prev;
+                tis.setAttribute("data-prev",tis.value)
+            }
+
+
+        </script>
         <script>
             function toggle_after_tax() {
                 var x = document.getElementById("after_tax_contributions");

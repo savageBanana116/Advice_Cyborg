@@ -78,7 +78,7 @@ echo $this->Html->css('custom.css');
                 <br>
                 <span style="float: left">What is your<span class="blue" > age?</span></span>
                 <div class="input-group mb-4">
-                    <input type="number" min="0" step="1" oninput="validity.valid||(value='');" class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Age">
+                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Age">
                 </div>
 <!--
 <br>-->
@@ -90,7 +90,7 @@ echo $this->Html->css('custom.css');
 <!--                </div>-->
                 <span style="float: left">At what<span class="blue"> age</span> would you like to<span class="blue" > retire?</span></span>
                 <div class="input-group mb-4">
-                    <input type="number" min="0" step="1" oninput="validity.valid||(value='');" class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Retirement_Age" >
+                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Retirement_Age" >
                 </div>
 
 <!--                <div class="form-group row">-->

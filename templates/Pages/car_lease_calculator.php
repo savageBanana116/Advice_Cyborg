@@ -33,20 +33,32 @@ echo $this->Html->css('custom.css');
 <link rel="stylesheet" href="\team18-app_fit3048\webroot\css\styles.css" type="text/css">
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="calculators">Calculator Home</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link " href="car_lease_calculator">Car-Lease </a>
-            <a class="nav-item nav-link" href="income_tax_calculator">Income-Tax</a>
-            <a class="nav-item nav-link" href="retirement_calculator">Retirement</a>
-            <a class="nav-item nav-link " href="salary_sacrifice_calculator">Salary-Sacrifice</a>
-            <a class="nav-item nav-link " href="#">Age-pension (Coming Soon)</a>
-        </div>
-    </div>
+<nav class="navbar justify-content-center navbar-light bg-light">
+    <ul class="nav justify-content-center">
+        <li class="nav-item" >
+            <a class="navbar-brand" href="calculators">Calculator Home </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:lightblue" href="car_lease_calculator">Car-Lease </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:lightblue" href="income_tax_calculator">Income-Tax </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  style="color:lightblue"href="retirement_calculator">Retirement </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:lightblue" href="salary_sacrifice_calculator">Salary-Sacrifice </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:lightblue" href="#">Age-pension (Coming Soon) </a>
+        </li>
+    </ul>
+    <!--        <a class="nav-item " href="car_lease_calculator">Car-Lease </a>-->
+    <!--        <a class="nav-item " href="income_tax_calculator">Income-Tax </a>-->
+    <!--        <a class="nav-item " href="retirement_calculator">Retirement </a>-->
+    <!--        <a class="nav-item  " href="salary_sacrifice_calculator">Salary-Sacrifice </a>-->
+    <!--        <a class="nav-item  " href="#">Age-pension (Coming Soon) </a>-->
 </nav>
 
 <div class="container" >

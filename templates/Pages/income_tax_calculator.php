@@ -33,20 +33,32 @@ echo $this->Html->css('custom.css');
 
     <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="calculators">Calculator Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link " href="car_lease_calculator">Car-Lease </a>
-                <a class="nav-item nav-link" href="income_tax_calculator">Income-Tax</a>
-                <a class="nav-item nav-link" href="retirement_calculator">Retirement</a>
-                <a class="nav-item nav-link " href="salary_sacrifice_calculator">Salary-Sacrifice</a>
-                <a class="nav-item nav-link " href="#">Age-pension (Coming Soon)</a>
-            </div>
-        </div>
+    <nav class="navbar justify-content-center navbar-light bg-light">
+        <ul class="nav justify-content-center">
+        <li class="nav-item" >
+        <a class="navbar-brand" href="calculators">Calculator Home </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:lightblue" href="car_lease_calculator">Car-Lease </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:lightblue" href="income_tax_calculator">Income-Tax </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  style="color:lightblue"href="retirement_calculator">Retirement </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:lightblue" href="salary_sacrifice_calculator">Salary-Sacrifice </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:lightblue" href="#">Age-pension (Coming Soon) </a>
+        </li>
+        </ul>
+<!--        <a class="nav-item " href="car_lease_calculator">Car-Lease </a>-->
+<!--        <a class="nav-item " href="income_tax_calculator">Income-Tax </a>-->
+<!--        <a class="nav-item " href="retirement_calculator">Retirement </a>-->
+<!--        <a class="nav-item  " href="salary_sacrifice_calculator">Salary-Sacrifice </a>-->
+<!--        <a class="nav-item  " href="#">Age-pension (Coming Soon) </a>-->
     </nav>
 
     <div class="container" >
@@ -75,7 +87,7 @@ echo $this->Html->css('custom.css');
             <div class="col-5" style="border-style:solid; border-color:black;" >
                 <form action="income_tax_calculator">
                     <br>
-                    <span>Each year my <span class="blue" >Salary</span> take home is</span>
+                    <span>Each year my take home<span class="blue" > Salary</span> is</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -89,7 +101,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <input type="number" class="form-control" id="mySalarySacrifice" value="0" >
                     </div>
-                    <span >Annually my <span class="blue"> Investment </span> value is on<span class="blue"> average</span></span>
+                    <span >Annually my <span class="blue"> Investment </span> value is on<span class="blue"> Average</span></span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -97,7 +109,7 @@ echo $this->Html->css('custom.css');
                         <input type="number" class="form-control" id="myInvestment" value="0" >
                     </div>
 
-                    <span>I would like to contribute<span class="blue"> Account Based pension</span></form>
+                    <span>I would like to contribute<span class="blue"> Account Based Pension</span></form>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -112,7 +124,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <input type="number" class="form-control" id="myRental" value="0" >
                     </div>
-                    <span>What are your <span class="blue">Franked credits?</span> </span>
+                    <span>What are your <span class="blue">Franked Credits?</span> </span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -120,7 +132,7 @@ echo $this->Html->css('custom.css');
                         <input type="number" class="form-control" id="myCredits" value="0" >
                     </div>
 
-                    <span>What is your current<span class="blue"> Tax Free pension</span> amount</span>
+                    <span>What is your current<span class="blue"> Tax Free Pension</span> amount</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -134,7 +146,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <input type="number" class="form-control" id="myOthers" value="0" >
                     </div>
-                    <span>Are you considered <span class="blue"> apart of a family?</span></span>
+                    <span>Are you considered <span class="blue"> a part of a family?</span></span>
                     <div class="input-group mb-4">
                         <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
                             <input type="radio"  name="myFamily" class="custom-control-input" value="1116">
@@ -167,7 +179,7 @@ echo $this->Html->css('custom.css');
                         </tr>
                         <tr style="border-bottom: 1px solid black ;">
                             <td> <h5 style="padding-bottom: 2em" > Your Taxable Income</h5> </td>
-                            <td> <h5  style="padding-bottom: 2em" class="number" id="echoOut"  >$ 0</h5></td>
+                            <td> <h5  style="padding-bottom: 2em" class="number" id="echoOut" >$ 0</h5></td>
                         </tr>
 
 
@@ -180,7 +192,7 @@ echo $this->Html->css('custom.css');
                             <td style="padding-bottom: 0em"> <h6 class="number" id="medicareLevy" >$ 0</h6></td>
                         </tr>
 
-                        <tr style="border-bottom: 1px solid black ;">
+                        <tr >
                             <td> <h5 style="padding-bottom: 2em">Total Tax Payable </h5> </td>
                             <td> <h5 style="padding-bottom: 2em" class="number" id="Paid" >$ 0</h5></td>
                         </tr>

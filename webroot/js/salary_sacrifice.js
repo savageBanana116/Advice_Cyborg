@@ -115,20 +115,16 @@ function getSSInput() {
     const is_Family = document.getElementById("is_Family").checked;
 
 
-
+    //console.log(typeof Salary_Sacrifice_Amount, typeof Salary);
 
     if (DOB !== "" && Salary != 0 && Salary_Sacrifice_Amount != 0) {
-        if (Salary > Salary_Sacrifice_Amount) {
-
             const DOB_String = DOB.toString();
             const Age = getAge(DOB_String);
             const Current_date = new Date();
             const ConcessionalCap = getConcessionalCap(Age);
             const SGContributions = 0.1 * Salary;
             const Sacrifice_Allowable = ConcessionalCap - SGContributions;
-            if(Sacrifice_Allowable < 0 ){
-                alert("Enter a larger Salary")
-            }else {
+
                 //Variables for After Tax
                 const After_Basic_Tax_Payable = getTaxPayable(Salary);
                 const After_Levy = getLevy(Salary, is_Family);
@@ -206,11 +202,8 @@ function getSSInput() {
                 document.getElementById("Tax_Saving").value = Tax_Saving;
                 document.getElementById("Total_TaxSaving").value = Total_Tax_Saving;
                 document.getElementById("Increase").value = Increase;
-            }
-        }
-    else {
-        alert('Salary Sacrifice must be less than Salary');
-    }
+
+
 }
     else{
         alert('Please enter valid values');

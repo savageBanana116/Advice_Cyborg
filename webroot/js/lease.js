@@ -3,7 +3,7 @@ const btn = document.getElementById('Submit');
 btn.addEventListener('click',getInput);
 
 Loan_Amount.oninput = function () {
-    const maxlength = 10;
+    const maxlength = 8;
     if (this.value.length > maxlength) {
         this.value = this.value.slice(0,maxlength);
     }

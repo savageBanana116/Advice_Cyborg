@@ -25,10 +25,20 @@ echo $this->Html->css('custom.css');
     input[type=number] {
         -moz-appearance: textfield;
     }
-    td {
-        padding-bottom: 2.5em;
 
+    h7{
+        font-weight:bold;
     }
+    table {
+        table-layout: fixed;
+        width: 100%
+    }
+
+    td {
+        word-wrap: break-word;
+        white-space: nowrap;
+    }
+
 </style>
 <link rel="stylesheet" href="\team18-app_fit3048\webroot\css\styles.css" type="text/css">
 <body>
@@ -218,21 +228,21 @@ echo $this->Html->css('custom.css');
                 <table>
 
                     <tr>
-                        <td> <h5 style="padding-bottom: 2em" > Total Number of Payments: </h5> </td>
-                        <td> <h5  style="padding-bottom: 2em" class="number" id="Total_NO_Payments" >0</h5>
+                        <td> <h7 style="padding-bottom: 2em; float:left" > Total Number of Payments: </h7> </td>
+                        <td> <h7  style="padding-bottom: 2em" class="number" id="Total_NO_Payments" >0</h7>
                         </td>
                     </tr>
 
 
                     <tr >
-                        <td> <h5 style="padding-bottom: 2em">Final Payment Date: </h5> </td>
-                        <td> <h5 style="padding-bottom: 2em" class="number" id="Final_Payment_Date" >0</h5></td>
+                        <td> <h7 style="float:left;padding-bottom: 2em">Final Payment Date: </h7> </td>
+                        <td> <h7 style="padding-bottom: 2em" class="number" id="Final_Payment_Date" >0</h7></td>
                     </tr>
 
 
                     <tr>
-                        <td > <h5 style="padding-bottom: 2em">Total Interest </h5> </td>
-                        <td > <h5 style="padding-bottom: 2em" class="number" id="Total_Interest" >$0</h5></td>
+                        <td > <h7 style="float:left;padding-bottom: 2em">Total Interest </h7> </td>
+                        <td > <h7 style="padding-bottom: 2em" class="number" id="Total_Interest" >$0</h7></td>
                     </tr>
 
                 </table>

@@ -75,7 +75,7 @@ echo $this->Html->css('custom.css');
                 <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black; background-color: #403535; color: white;">
 
                     <h2 style="color:white"> Your total net income will be: </h2>
-                    <h5 id="netIncome" style="color: white">$</></h5></div>
+                    <h1 id="netIncome" style="color: white">$</h1></div>
             </div>
 
     </div>

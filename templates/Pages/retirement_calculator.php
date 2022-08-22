@@ -312,8 +312,8 @@ echo $this->Html->css('custom.css');
 <!--                    <br>-->
 <!--                </div>-->
                     <tr>
-                        <td width="60%"> <h7 style="float:left;" ><strong>Net Payment Required to Reach Target(Surplus):</strong></h7></td>
-                        <td style="width:40%"> <h6  style="" class="number" >
+                        <td > <h7 style="float:left;" ><strong>Net Payment Required to Reach Target(Surplus):</strong></h7></td>
+                        <td > <h6  style="" class="number" >
                                 <output type="text" id="Net_Payment" readonly></output>
                             </h6>
                         </td>

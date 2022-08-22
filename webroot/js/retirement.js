@@ -137,21 +137,46 @@ function getRetirementInput()
             const Estimated_Super = FV(Estimated_Return_Rate / 100, (Retirement_Age - age), -Current_Net_Contributions, -Current_Super);
             const NetPayment = (PMT((Estimated_Return_Rate / 100) / 12, (Retirement_Age - age) / 12, -Current_Super, Value_Required));
 
+            var Payment_Required_Future_commas = Payment_Required_Future.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var Value_Required_commas = Value_Required.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            let Estimated_Annual_Deduct = Math.round(Value_Required / Year_Payments);
+            var Estimated_Annual_Deduct_commas = Estimated_Annual_Deduct.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            let EstimatedSuper = Math.round(Estimated_Super);
+            var EstimatedSuper_commas = EstimatedSuper.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-            document.getElementById("Payment_Required_Future").value = Payment_Required_Future;
-            document.getElementById("Value_Required").value = Value_Required;
-            document.getElementById("Estimated_Annual_Deduct").value = Math.round(Value_Required / Year_Payments);
-            document.getElementById("Estimated_Super").value = Math.round(Estimated_Super);
-            document.getElementById("Lumpsum").value = Math.round(Value_Required - Estimated_Super);
+            let Lumpsum = Math.round(Value_Required - Estimated_Super);
+            var Lumpsum_commas = Lumpsum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+
+
+
+            document.getElementById("Payment_Required_Future").value ="$ " + Payment_Required_Future_commas;
+            document.getElementById("Value_Required").value = "$ " + Value_Required_commas;
+            document.getElementById("Estimated_Annual_Deduct").value = "$ " + Estimated_Annual_Deduct_commas;
+            document.getElementById("Estimated_Super").value ="$ " + EstimatedSuper_commas;
+            document.getElementById("Lumpsum").value = "$ " + Lumpsum_commas;
 
 
             if (NetPayment < 0) {
                 const New_Net = NetPayment * -1;
-                document.getElementById("Net_Payment").value = Math.round(New_Net);
-                document.getElementById("Gross_Payment").value = Math.round(New_Net / 0.7);
+                let Net_Payment = Math.round(New_Net);
+                var Net_Payment_commas = Net_Payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                let Gross_Payment = Math.round(New_Net / 0.7);
+                var Gross_Payment_commas = Gross_Payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+
+
+                document.getElementById("Net_Payment").value = "$ " + Net_Payment_commas;
+                document.getElementById("Gross_Payment").value ="$ " + Gross_Payment_commas;
             } else {
-                document.getElementById("Net_Payment").value = Math.round(NetPayment);
-                document.getElementById("Gross_Payment").value = Math.round(NetPayment / 0.7);
+                let small_Net_Payment = Math.round(NetPayment);
+                var commas = small_Net_Payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById("Net_Payment").value ="$ "+ commas;
+
+                let small_Gross_Payment = Math.round(NetPayment / 0.7);
+                var commas2 = small_Gross_Payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                document.getElementById("Gross_Payment").value ="$ "+ commas2;
             }
         }
 

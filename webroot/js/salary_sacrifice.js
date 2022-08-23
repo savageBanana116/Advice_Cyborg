@@ -145,51 +145,99 @@ function getSSInput() {
                 //output 1 - from 'step 1'
                 document.getElementById("Finical_Year_Ending").value = "30/June " + Current_date.getFullYear();
                 document.getElementById("Age").value = Age;
-                document.getElementById("Concessional_Contribution_Cap").value = ConcessionalCap;
-                document.getElementById("SG_Contributions").value = SGContributions;
-                document.getElementById("Allowed_Salary_Sacrifice").value = Sacrifice_Allowable;
+        var ConcessionalCap_commas = ConcessionalCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("Concessional_Contribution_Cap").value = "$ " +ConcessionalCap_commas;
+
+        var SGContributions_commas = Math.round(SGContributions).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById("SG_Contributions").value = "$ "+ SGContributions_commas;
+        var Sacrifice_Allowable_commas = Math.round(Sacrifice_Allowable).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Allowed_Salary_Sacrifice").value ="$ " +Sacrifice_Allowable_commas;
 
 
                 //output 2  (After Tax) - from 'results'
-                document.getElementById("After_Tax_Salary").value = Salary;
+        var Salary_commas = Salary.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("After_Tax_Salary").value = "$ "+Salary_commas;
                 document.getElementById("After_Tax_Salary_Sacrifice").value = 0;
-                document.getElementById("After_Tax_Taxable_Income").value = Salary;
-                document.getElementById("After_Tax_Payable_Basic").value = After_Basic_Tax_Payable;
-                document.getElementById("After_Levy").value = After_Levy;
-                document.getElementById("After_LM_Tax_Offset").value = After_LMTaxOffset;
-                document.getElementById("After_Low_Income_Tax_Offset").value = After_LIncomeTaxOffset;
-                document.getElementById("After_Tax_Payable").value = After_Tax_Payable;
-                document.getElementById("After_Net_Income").value = After_Net_Income;
+
+                document.getElementById("After_Tax_Taxable_Income").value = Salary_commas;
+        var After_Basic_Tax_Payable_commas = After_Basic_Tax_Payable.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("After_Tax_Payable_Basic").value = After_Basic_Tax_Payable_commas;
+        var After_Levy_commas =After_Levy.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("After_Levy").value = After_Levy_commas;
+        var After_LMTaxOffset_commas = After_LMTaxOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("After_LM_Tax_Offset").value = After_LMTaxOffset_commas;
+        var After_LIncomeTaxOffset_commas = After_LIncomeTaxOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("After_Low_Income_Tax_Offset").value = After_LIncomeTaxOffset_commas;
+        var After_Tax_Payable_commas = After_Tax_Payable.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("After_Tax_Payable").value = After_Tax_Payable_commas;
+        var After_Net_Income_commas = After_Net_Income.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("After_Net_Income").value = After_Net_Income_commas;
                 document.getElementById("After_Less_After_Tax").value = 0;
-                document.getElementById("After_Take_Home_Pay").value = After_Net_Income - 0;
+                document.getElementById("After_Take_Home_Pay").value = After_Net_Income_commas ;
 
                 //output 3 for effect super contributions - After tax
                 const After_Less_Contribution_Tax = (SGContributions) * 0.15;
                 console.log(SGContributions, Salary_Sacrifice_Amount, 0.15);
-                document.getElementById("After_SG").value = SGContributions;
-                document.getElementById("After_Salary_Sacrifice").value = Salary_Sacrifice_Amount;
-                document.getElementById("After_Less_Contribution_Tax").value = After_Less_Contribution_Tax;
+        var SGContributions_commas = Math.round(SGContributions).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                document.getElementById("After_SG").value = SGContributions_commas;
+        var Salary_Sacrifice_Amount_commas = Salary_Sacrifice_Amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("After_Salary_Sacrifice").value = Salary_Sacrifice_Amount_commas;
+        var After_Less_Contribution_Tax_commas = Math.round(After_Less_Contribution_Tax).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("After_Less_Contribution_Tax").value = After_Less_Contribution_Tax_commas;
                 document.getElementById("After_tax").value = 0;
 
 
                 //output 4 (Pre Tax) - from 'results'
-                document.getElementById("Pre_Tax_Salary").value = Salary;
-                document.getElementById("Pre_Tax_Salary_Sacrifice").value = Salary_Sacrifice_Amount;
-                document.getElementById("Pre_Tax_Taxable_Income").value = Pre_Taxable_Income;
-                document.getElementById("Pre_Tax_Payable_Basic").value = Pre_Basic_Tax_Payable;
-                document.getElementById("Pre_Levy").value = Pre_Levy;
-                document.getElementById("Pre_LM_Tax_Offset").value = Pre_LMTaxOffset;
-                document.getElementById("Pre_Low_Income_Tax_Offset").value = Pre_LIncomeTaxOffset;
-                document.getElementById("Pre_Tax_Payable").value = Pre_Tax_Payable;
-                document.getElementById("Pre_Net_Income").value = Pre_Net_Income;
+
+                document.getElementById("Pre_Tax_Salary").value = Salary_commas;
+        var Salary_Sacrifice_Amount_commas = Salary_Sacrifice_Amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_Tax_Salary_Sacrifice").value = Salary_Sacrifice_Amount_commas;
+        var Pre_Taxable_Income_commas = Pre_Taxable_Income.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_Tax_Taxable_Income").value = Pre_Taxable_Income_commas;
+        var Pre_Basic_Tax_Payable_commas = Pre_Basic_Tax_Payable.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_Tax_Payable_Basic").value = Pre_Basic_Tax_Payable_commas;
+        var Pre_Levy_commas = Pre_Levy.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_Levy").value = Pre_Levy_commas;
+        var Pre_LMTaxOffset_commas = Pre_LMTaxOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_LM_Tax_Offset").value = Pre_LMTaxOffset_commas;
+        var Pre_LIncomeTaxOffset_commas = Pre_LIncomeTaxOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_Low_Income_Tax_Offset").value = Pre_LIncomeTaxOffset_commas;
+        var Pre_Tax_Payable_commas = Pre_Tax_Payable.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_Tax_Payable").value =Pre_Tax_Payable_commas;
+        var Pre_Net_Income_commas = Pre_Net_Income.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_Net_Income").value = Pre_Net_Income_commas;
                 document.getElementById("Pre_Less_After_Tax").value = 0;
-                document.getElementById("Pre_Take_Home_Pay").value = Pre_Net_Income - 0;
+
+                document.getElementById("Pre_Take_Home_Pay").value = Pre_Net_Income_commas ;
 
                 //output 5 for effect super contributions - Pre tax
                 const Less_Contribution_Tax = (Number(Salary_Sacrifice_Amount) + SGContributions) * 15 / 100;
-                document.getElementById("Pre_SG").value = SGContributions;
+
+        var SGContributions_commas = Math.round(SGContributions).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_SG").value = SGContributions_commas;
                 document.getElementById("Pre_Salary_Sacrifice").value = 0;
-                document.getElementById("Pre_Less_Contribution_Tax").value = Less_Contribution_Tax;
+        var Less_Contribution_Tax_commas =Math.round(Less_Contribution_Tax).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Pre_Less_Contribution_Tax").value = Less_Contribution_Tax_commas;
                 document.getElementById("Pre_After_tax").value = 0;
 
                 //output 6 - summary
@@ -199,9 +247,14 @@ function getSSInput() {
                 const Increase_B = After_Net_Income + SGContributions - After_Less_Contribution_Tax
                 const Increase = Increase_A - Increase_B;
                 console.log(Increase_A, Increase_B);
-                document.getElementById("Tax_Saving").value = Tax_Saving;
-                document.getElementById("Total_TaxSaving").value = Total_Tax_Saving;
-                document.getElementById("Increase").value = Increase;
+
+        var Tax_Saving_commas = Math.round(Tax_Saving).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("Tax_Saving").value = "$ "+Tax_Saving_commas;
+        var Total_Tax_Saving_commas = Math.round(Total_Tax_Saving).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("Total_TaxSaving").value =  "$ "+Total_Tax_Saving_commas;
+        var Increase_commas =Math.round(Increase).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.getElementById("Increase").value = "$ "+ Increase_commas;
 
 
 }

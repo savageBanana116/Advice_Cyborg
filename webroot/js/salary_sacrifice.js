@@ -36,7 +36,7 @@ function getTaxPayable(salary){
 
 function getLevy(salary,is_Family){
 
-    if (is_Family == false){
+    if (is_Family === 'no'){
         const Taxable_Income = salary;
         const total = Taxable_Income * 2 / 100;
 
@@ -50,7 +50,7 @@ function getLevy(salary,is_Family){
             return total + (Taxable_Income * 1.5 / 100);
         }
 
-    }else if (is_Family == true){
+    }else if (is_Family === 'yes' ){
         const Taxable_Income = salary;
         const total = Taxable_Income * 2 / 100;
         if(Taxable_Income <= 180000){
@@ -112,7 +112,8 @@ function getSSInput() {
     const DOB = document.getElementById("DOB").value;
     const Salary = document.getElementById("Salary").value;
     const Salary_Sacrifice_Amount = document.getElementById("Salary_Sacrifice_Amount").value;
-    const is_Family = document.getElementById("is_Family").checked;
+    // const is_Family = document.getElementById("is_Family").checked;
+    var is_Family= document.querySelector('input[name="is_Family"]:checked').value;
 
 
     //console.log(typeof Salary_Sacrifice_Amount, typeof Salary);

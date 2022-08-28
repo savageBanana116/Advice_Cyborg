@@ -126,13 +126,23 @@ h7{
 <!--                            </div>-->
 <!--                        </div>-->
                         <span style="float: left">Are you considered <span class="blue"> a part of a family?</span></span>
+<!--                        <div class="input-group mb-4" style="float: left">-->
+<!--                            <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">-->
+<!--                                <input type="radio"  id="is_Family" class="custom-control-input" value="yes">-->
+<!--                                <label class="custom-control-label" for="customRadioInline1">Yes</label>-->
+<!--                            </div>-->
+<!--                            <div class="custom-control custom-radio custom-control-inline">-->
+<!--                                <input type="radio"  id="is_Family" class="custom-control-input" value="no" checked>-->
+<!--                                <label class="custom-control-label" for="customRadioInline2">No</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <div class="input-group mb-4" style="float: left">
                             <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
-                                <input type="radio"  id="is_Family" class="custom-control-input" value="yes">
+                                <input type="radio"  name="is_Family" class="custom-control-input" value="yes">
                                 <label class="custom-control-label" for="customRadioInline1">Yes</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio"  id="is_Family" class="custom-control-input" value="no" checked>
+                                <input type="radio"  name="is_Family" class="custom-control-input" value="no" checked>
                                 <label class="custom-control-label" for="customRadioInline2">No</label>
                             </div>
                         </div>

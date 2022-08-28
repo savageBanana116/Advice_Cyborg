@@ -94,7 +94,7 @@ h7{
                         <br>
                         <span style="float: left">What is your<span class="blue" > Date of Birth?</span></span>
                         <div class="input-group mb-4">
-                            <input type="date" class="form-control" id="DOB">
+                            <input type="date" placeholder="dd-mm-yyyy" min="1920-01-01" max="2006-12-31" class="form-control" id="DOB">
                         </div>
 
 <!--                        <div class="form-group row">-->

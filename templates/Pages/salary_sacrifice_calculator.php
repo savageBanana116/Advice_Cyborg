@@ -36,8 +36,8 @@ echo $this->Html->css('custom.css');
     }
 
     td {
-        word-wrap: break-word;
-        white-space: nowrap;
+       width: 50%;
+        text-align: left;
     }
 
     .col-xs-2 {
@@ -179,7 +179,7 @@ echo $this->Html->css('custom.css');
                         <table>
 
                             <tr>
-                                <td> <h7 style="float:left;" ><strong>Age :</strong> </h7> </td>
+                                <td> <h7  ><strong>Age:</strong> </h7> </td>
                                 <td> <h6  style="" class="number"  >
                                         <output type="text" id="Age" readonly></output>
                                     </h6>
@@ -194,7 +194,7 @@ echo $this->Html->css('custom.css');
                             <!--                            </div>-->
                             <!--                        </div>-->
                             <tr>
-                                <td> <h7 style="float:left;" ><strong>Financial Year Ending:</strong></h7> </td>
+                                <td> <h7  ><strong>Financial Year Ending:</strong></h7> </td>
                                 <td> <h6  style="" class="number"  >
                                         <output type="text" id="Finical_Year_Ending" readonly></output>
                                     </h6>
@@ -210,7 +210,7 @@ echo $this->Html->css('custom.css');
                             <!--                        </div>-->
 
                             <tr>
-                                <td> <h7 style="float:left;" ><strong>Concessional Contribution Cap:</strong></h7> </td>
+                                <td> <h7  ><strong>Concessional Contribution Cap:</strong></h7> </td>
                                 <td> <h7  style="" class="number"  >
                                         <output type="text" id="Concessional_Contribution_Cap" readonly></output>
                                     </h7>
@@ -225,7 +225,7 @@ echo $this->Html->css('custom.css');
                             <!--                            </div>-->
                             <!--                        </div>-->
                             <tr>
-                                <td> <h7 style="float:left;" ><strong>SG Contributions:</strong></h7> </td>
+                                <td> <h7  ><strong>SG Contributions:</strong></h7> </td>
                                 <td> <h7  style="" class="number"  >
                                         <output type="text" id="SG_Contributions" readonly></output>
                                     </h7>
@@ -241,7 +241,7 @@ echo $this->Html->css('custom.css');
                             <!--                        </div>-->
 
                             <tr>
-                                <td> <h7 style="float:left;" ><strong>Salary Sacrifice Allowable :</strong></h7> </td>
+                                <td> <h7  ><strong>Salary Sacrifice Allowable :</strong></h7> </td>
                                 <td> <h7  style=" q" class="number" >
                                         <output type="text" id="Allowed_Salary_Sacrifice" readonly></output>
                                     </h7>
@@ -269,8 +269,8 @@ echo $this->Html->css('custom.css');
                             <!--                        </div>-->
 
                             <tr>
-                                <td> <h7 style="float:left;padding-bottom: 1em" ><strong>Personal Tax Saving :</strong></h7> </td>
-                                <td> <h7  style="padding-bottom: 1em" class="number" >
+                                <td> <h7 ><strong>Personal Tax Saving :</strong></h7> </td>
+                                <td> <h7 class="number" >
                                         <output type="text" id="Tax_Saving" readonly></output>
                                     </h7>
                                 </td>
@@ -285,8 +285,8 @@ echo $this->Html->css('custom.css');
                             <!--                        </div>-->
 
                             <tr>
-                                <td> <h7 style="float:left;padding-bottom: 1em" ><strong>Total Tax Saving :</strong></h7> </td>
-                                <td> <h7  style="padding-bottom: 1em" class="number" >
+                                <td> <h7  ><strong>Total Tax Saving :</strong></h7> </td>
+                                <td> <h7   class="number" >
                                         <output type="text" id="Total_TaxSaving" readonly></output>
                                     </h7>
                                 </td>
@@ -301,8 +301,8 @@ echo $this->Html->css('custom.css');
                             <!--                        </div>-->
 
                             <tr>
-                                <td> <h7 style="float:left;padding-bottom: 1em" ><strong>Increase In Take Home Pay and Super :</strong></h7> </td>
-                                <td> <h7   style="padding-bottom: 1em" class="number" >
+                                <td> <h7 ><strong>Increase In Take Home Pay and Super :</strong></h7> </td>
+                                <td> <h7    class="number" >
                                         <output type="text" id="Increase" readonly></output>
                                     </h7>
                                 </td>
@@ -322,8 +322,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
                     <table>
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom:1em" >Salary :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7 >Salary :</h7> </td>
+                            <td> <h7 class="number" >
                                     <output type="text" id="After_Tax_Salary" readonly></output>
                                 </h7>
                             </td>
@@ -338,8 +338,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom: 1em" >Salary Sacrifice :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Salary Sacrifice :</h7> </td>
+                            <td> <h7  class="number" >
                                     <output type="text" id="After_Tax_Salary_Sacrifice" readonly></output>
                                 </h7>
                             </td>
@@ -355,8 +355,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom:1em" >Taxable Income:</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Taxable Income:</h7> </td>
+                            <td> <h7   class="number" >
                                     <output type="text" id="After_Tax_Taxable_Income" readonly></output>
                                 </h7>
                             </td>
@@ -371,8 +371,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom: 1em" >Basic Tax Payable :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Basic Tax Payable :</h7> </td>
+                            <td> <h7   class="number" >
                                     <output type="text" id="After_Tax_Payable_Basic" readonly></output>
                                 </h7>
                             </td>
@@ -387,8 +387,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom: 1em" >Medicare Levy :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Medicare Levy :</h7> </td>
+                            <td> <h7   class="number" >
                                     <output type="text" id="After_Levy" readonly></output>
                                 </h7>
                             </td>
@@ -403,8 +403,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom: 1em" >Low & Middle Income Tax Offset :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Low & Middle Income Tax Offset :</h7> </td>
+                            <td> <h7   class="number" >
                                     <output type="text" id="After_LM_Tax_Offset" readonly></output>
                                 </h7>
                             </td>
@@ -419,8 +419,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom: 1em" >Low Income Tax Offset :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Low Income Tax Offset :</h7> </td>
+                            <td> <h7   class="number" >
                                     <output type="text" id="After_Low_Income_Tax_Offset" readonly></output>
                                 </h7>
                             </td>
@@ -435,8 +435,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom: 1em" >Tax Payable (Including ML) :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Tax Payable (Including ML) :</h7> </td>
+                            <td> <h7   class="number" >
                                     <output type="text" id="After_Tax_Payable" readonly></output>
                                 </h7>
                             </td>
@@ -451,8 +451,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom: 1em" >Net Income :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Net Income :</h7> </td>
+                            <td> <h7   class="number" >
                                     <output type="text" id="After_Net_Income" readonly></output>
                                 </h7>
                             </td>
@@ -467,8 +467,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom: 1em" >Less After Tax Contributions :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Less After Tax Contributions :</h7> </td>
+                            <td> <h7   class="number" >
                                     <output type="text" id="After_Less_After_Tax" readonly></output>
                                 </h7>
                             </td>
@@ -483,8 +483,8 @@ echo $this->Html->css('custom.css');
                         <!--                            </div>-->
 
                         <tr>
-                            <td> <h7 style="float:left;padding-bottom: 1em" >Take Home Pay :</h7> </td>
-                            <td> <h7  style="padding-bottom: 1em" class="number" >
+                            <td> <h7  >Take Home Pay :</h7> </td>
+                            <td> <h7   class="number" >
                                     <output type="text" id="After_Take_Home_Pay" readonly></output>
                                 </h7>
                             </td>
@@ -501,8 +501,8 @@ echo $this->Html->css('custom.css');
                 <!--                            </div>-->
 
                 <tr>
-                    <td> <h7 style="float:left;padding-bottom: 1em" >10% SG ($) :</h7> </td>
-                    <td> <h7  style="padding-bottom: 1em" class="number" >
+                    <td> <h7  >10% SG ($) :</h7> </td>
+                    <td> <h7  class="number" >
                             <output type="text" id="After_SG" readonly></output>
                         </h7>
                     </td>
@@ -517,8 +517,8 @@ echo $this->Html->css('custom.css');
                 <!--                            </div>-->
 
                 <tr>
-                    <td> <h7 style="float:left;padding-bottom: 1em" >Salary Sacrifice ($) :</h7> </td>
-                    <td> <h7  style="padding-bottom: 1em" class="number" >
+                    <td> <h7  >Salary Sacrifice ($) :</h7> </td>
+                    <td> <h7  class="number" >
                             <output type="text" id="After_Salary_Sacrifice" readonly></output>
                         </h7>
                     </td>
@@ -533,8 +533,8 @@ echo $this->Html->css('custom.css');
                 <!--                            </div>-->
 
                 <tr>
-                    <td> <h7 style="float:left;padding-bottom: 1em" >Less 15% Contributions Tax :</h7> </td>
-                    <td> <h7  style="padding-bottom: 1em" class="number" >
+                    <td> <h7  >Less 15% Contributions Tax :</h7> </td>
+                    <td> <h7   class="number" >
                             <output type="text" id="After_Less_Contribution_Tax" readonly></output>
                         </h7>
                     </td>
@@ -549,8 +549,8 @@ echo $this->Html->css('custom.css');
                 <!--                            </div>-->
 
                 <tr>
-                    <td> <h7 style="float:left;padding-bottom: 1em" >After Tax ($) :</h7> </td>
-                    <td> <h7  style="padding-bottom: 1em" class="number" >
+                    <td> <h7  >After Tax ($) :</h7> </td>
+                    <td> <h7   class="number" >
                             <output type="text" id="After_tax" readonly></output>
                         </h7>
                     </td>
@@ -572,8 +572,8 @@ echo $this->Html->css('custom.css');
                 <!--                            </div>-->
                 <table>
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Salary :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Salary :</h7> </td>
+                        <td> <h7  class="number" >
                                 <output type="text" id="Pre_Tax_Salary" readonly></output>
                             </h7>
                         </td>
@@ -588,8 +588,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Salary Sacrifice :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Salary Sacrifice :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Tax_Salary_Sacrifice" readonly></output>
                             </h7>
                         </td>
@@ -604,8 +604,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Taxable Income:</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Taxable Income:</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Tax_Taxable_Income" readonly></output>
                             </h7>
                         </td>
@@ -620,8 +620,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Basic Tax Payable :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Basic Tax Payable :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Tax_Payable_Basic" readonly></output>
                             </h7>
                         </td>
@@ -636,8 +636,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Medicare Levy :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Medicare Levy :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Levy" readonly></output>
                             </h7>
                         </td>
@@ -652,8 +652,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Low & Middle Income Tax Offset :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Low & Middle Income Tax Offset :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_LM_Tax_Offset" readonly></output>
                             </h7>
                         </td>
@@ -669,8 +669,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Low Income Tax Offset :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Low Income Tax Offset :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Low_Income_Tax_Offset" readonly></output>
                             </h7>
                         </td>
@@ -685,8 +685,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Tax Payable (Including ML) :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Tax Payable (Including ML) :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Tax_Payable" readonly></output>
                             </h7>
                         </td>
@@ -701,8 +701,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Net Income :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Net Income :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Net_Income" readonly></output>
                             </h7>
                         </td>
@@ -717,8 +717,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Less After Tax Contributions :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Less After Tax Contributions :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Less_After_Tax" readonly></output>
                             </h7>
                         </td>
@@ -733,8 +733,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Take Home Pay :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Take Home Pay :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Take_Home_Pay" readonly></output>
                             </h7>
                         </td>
@@ -751,8 +751,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >10% SG ($) :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >10% SG ($) :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_SG" readonly></output>
                             </h7>
                         </td>
@@ -767,8 +767,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Salary Sacrifice ($) :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Salary Sacrifice ($) :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Salary_Sacrifice" readonly></output>
                             </h7>
                         </td>
@@ -783,8 +783,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >Less 15% Contributions Tax :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >Less 15% Contributions Tax :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_Less_Contribution_Tax" readonly></output>
                             </h7>
                         </td>
@@ -799,8 +799,8 @@ echo $this->Html->css('custom.css');
                     <!--                            </div>-->
 
                     <tr>
-                        <td> <h7 style="float:left;padding-bottom: 1em" >After Tax ($) :</h7> </td>
-                        <td> <h7  style="padding-bottom: 1em" class="number" >
+                        <td> <h7  >After Tax ($) :</h7> </td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Pre_After_tax" readonly></output>
                             </h7>
                         </td>

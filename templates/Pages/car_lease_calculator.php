@@ -35,8 +35,8 @@ echo $this->Html->css('custom.css');
     }
 
     td {
-        word-wrap: break-word;
-        white-space: nowrap;
+        width: 50%;
+        text-align: left;
     }
 
 </style>
@@ -228,21 +228,21 @@ echo $this->Html->css('custom.css');
                 <table>
 
                     <tr>
-                        <td> <h7 style="padding-bottom: 2em; float:left" > Total Number of Payments: </h7> </td>
-                        <td> <h7  style="padding-bottom: 2em" class="number" id="Total_NO_Payments" >0</h7>
+                        <td> <h7  > Total Number of Payments: </h7> </td>
+                        <td> <h7  class="number" id="Total_NO_Payments" >0</h7>
                         </td>
                     </tr>
 
 
                     <tr >
-                        <td> <h7 style="float:left;padding-bottom: 2em">Final Payment Date: </h7> </td>
-                        <td> <h7 style="padding-bottom: 2em" class="number" id="Final_Payment_Date" >0</h7></td>
+                        <td> <h7 >Final Payment Date: </h7> </td>
+                        <td> <h7  class="number" id="Final_Payment_Date" >0</h7></td>
                     </tr>
 
 
                     <tr>
-                        <td > <h7 style="float:left;padding-bottom: 2em">Total Interest </h7> </td>
-                        <td > <h7 style="padding-bottom: 2em" class="number" id="Total_Interest" >$0</h7></td>
+                        <td > <h7 >Total Interest: </h7> </td>
+                        <td > <h7  class="number" id="Total_Interest" >$0</h7></td>
                     </tr>
 
                 </table>

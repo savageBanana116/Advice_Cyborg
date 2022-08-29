@@ -32,14 +32,14 @@ echo $this->Html->css('custom.css');
         width: 100%
     }
 
+
     td {
-        word-wrap: break-word;
-        white-space:nowrap;
+        width: 50%;
+        text-align: left;
     }
 
     h7{
-        font-size:16px;
-        padding-bottom:1em;
+        font-weight:bold;
     }
 
 </style>
@@ -240,8 +240,8 @@ echo $this->Html->css('custom.css');
 <!--                    <br>-->
 
                     <tr>
-                        <td> <h7 style="float:left;font-size:15px" ><strong>Payment Required Amount Future:</strong></h7></td>
-                        <td> <h6  style="" class="number" >
+                        <td> <h7  ><strong>Payment Required Amount Future:</strong></h7></td>
+                        <td> <h6   class="number" >
                                 <output type="text" id="Payment_Required_Future" readonly></output>
                             </h6>
                         </td>
@@ -253,10 +253,10 @@ echo $this->Html->css('custom.css');
 <!--                    </div>-->
 <!--                </div>-->
                         <tr>
-                            <td> <h7 style="float:left;" ><strong>Value Required:</strong></h7></td>
-                        <td><h6  style="" class="number" >
+                            <td> <h7  ><strong>Value Required:</strong></h7></td>
+                        <td><h7   class="number" >
                                 <output type="text" id="Value_Required" readonly></output>
-                            </h6>
+                            </h7>
                         </td>
                         </tr>
 
@@ -268,10 +268,10 @@ echo $this->Html->css('custom.css');
 <!--                </div>-->
 <!--                </div>-->
                     <tr>
-                        <td> <h7 style="float:left;" ><strong>Estimated Annual Deductible Amount:</strong></h7></td>
-                        <td> <h6  style="" class="number" >
+                        <td> <h7  ><strong>Estimated Annual Deductible Amount:</strong></h7></td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Estimated_Annual_Deduct" readonly></output>
-                            </h6>
+                            </h7>
                         </td>
                     </tr>
 <!--                <br>-->
@@ -282,10 +282,10 @@ echo $this->Html->css('custom.css');
 <!--                    </div>-->
 <!--                </div>-->
                     <tr>
-                        <td> <h7 style="float:left;" ><strong>Estimated Value of Super at Retirement:</strong></h7></td>
-                        <td> <h6  style="" class="number" >
+                        <td> <h7  ><strong>Estimated Value of Super at Retirement:</strong></h7></td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Estimated_Super" readonly></output>
-                            </h6>
+                            </h7>
                         </td>
                     </tr>
 <!--                <br>-->
@@ -296,11 +296,11 @@ echo $this->Html->css('custom.css');
 <!--                    </div>-->
 <!--                </div>-->
                     <tr>
-                        <td> <h7 style="float:left;" ><strong>Lumpsum Shortfall:</strong>
+                        <td> <h7  ><strong>Lumpsum Shortfall:</strong>
                             </h7> </td>
-                        <td> <h6  style="" class="number" >
+                        <td> <h7  style="" class="number" >
                                 <output type="text" id="Lumpsum" readonly></output>
-                            </h6>
+                            </h7>
                         </td>
                     </tr>
 <!--                <br>-->
@@ -312,10 +312,10 @@ echo $this->Html->css('custom.css');
 <!--                    <br>-->
 <!--                </div>-->
                     <tr>
-                        <td > <h7 style="float:left;" ><strong>Net Payment Required to Reach Target(Surplus):</strong></h7></td>
-                        <td > <h6  style="" class="number" >
+                        <td > <h7  ><strong>Net Payment Required to Reach Target(Surplus):</strong></h7></td>
+                        <td > <h7   class="number" >
                                 <output type="text" id="Net_Payment" readonly></output>
-                            </h6>
+                            </h7>
                         </td>
                     </tr>
 <!--                <div class="form-group row" >-->
@@ -327,10 +327,10 @@ echo $this->Html->css('custom.css');
 <!--                <br>-->
                     <tr>
 
-                        <td> <h7 style="float:left;" ><strong>Gross Payment (Inc Surcharge):</strong></h7></td>
-                        <td> <h6  style="" class="number" >
+                        <td> <h7  ><strong>Gross Payment (Inc Surcharge):</strong></h7></td>
+                        <td> <h7   class="number" >
                                 <output type="text" id="Gross_Payment" readonly></output>
-                            </h6>
+                            </h7>
                         </td>
                     </tr>
                 </table>

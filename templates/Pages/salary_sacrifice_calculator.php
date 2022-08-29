@@ -84,14 +84,14 @@ echo $this->Html->css('custom.css');
         <div class="text-center" style="margin-top: 5%">
             <h2 class="myTitle" >Salary Sacrifice Calculator</h2>
             <div class="row">
-                <div class="col" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
+                <div class="col colorBox" ><h3 class="mySubTitle"> To Get Started!</h3>
                     <br>
-                    <h5>Tell us about yourself </h5></div>
+                    <h6 class="mySubTitle2">Tell us about yourself </h6></div>
 
             </div>
 
             <div class="row" style="padding-bottom:2em">
-                <div class="col" style="border-style:solid; border-color:black;" >
+                <div class="col thinBox"  >
 
                     <form class="form-inline" id="Salary_Sacrifice_Form" >
                         <br>
@@ -133,28 +133,19 @@ echo $this->Html->css('custom.css');
                         <!--                                <input type="number" class="form-control" id="Salary_Sacrifice_Amount">-->
                         <!--                            </div>-->
                         <!--                        </div>-->
-
+                        <div class="mb-4" style="margin-top: 1em; ">
                         <span>Are you considered <span class="blue"> a part of a family?</span></span>
-                        <!--                        <div class="input-group mb-4" style="float: left">-->
-                        <!--                            <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">-->
-                        <!--                                <input type="radio"  id="is_Family" class="custom-control-input" value="yes">-->
-                        <!--                                <label class="custom-control-label" for="customRadioInline1">Yes</label>-->
-                        <!--                            </div>-->
-                        <!--                            <div class="custom-control custom-radio custom-control-inline">-->
-                        <!--                                <input type="radio"  id="is_Family" class="custom-control-input" value="no" checked>-->
-                        <!--                                <label class="custom-control-label" for="customRadioInline2">No</label>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-
-                            <div class="custom-control custom-radio custom-control-inline" >
+                            <div style="border: 1px solid lightgray;border-radius: 5px;">
+                            <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio"  name="is_Family" class="custom-control-input" value="yes">
-                                <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                                <label class="custom-control-label" for="customRadioInline">Yes</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio"  name="is_Family" class="custom-control-input" value="no" checked>
-                                <label class="custom-control-label" for="customRadioInline2">No</label>
+                                <label class="custom-control-label" for="customRadioInline">No</label>
                             </div>
-
+                            </div>
+                        </div>
                         <!--                        <div class="form-group row">-->
                         <!--                            <label for="is_Family" class="col-4 col-form-label">Are you considered apart of a family :</label>-->
                         <!--                            <div class="col-8">-->
@@ -163,17 +154,17 @@ echo $this->Html->css('custom.css');
                         <!--                        </div>-->
                     </form>
                     <div class="form-group" style="padding-top:1em; padding-bottom:1em">
-                        <button id="Submit_Salary_Sacrifice" class="btn btn-primary"> Calculate </button>
+                        <button id="Submit_Salary_Sacrifice" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"> Calculate </button>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col" style=" border-style:solid; border-color:black; background-color: #403535; color: white;">
-                    <h5>Breakdown of your Costs</h5></div>
+                <div class="col colorBox" >
+                    <h3 class="mySubTitle">Breakdown of your Costs</h3></div>
             </div>
             <div class="row" style="overflow-y: scroll; height:25em;">
-                <div class="col-4" style="border-style:solid; border-color:black;">
+                <div class="col-4  thinBox" >
 
                     <div id="Salary_Sacrifice_Form_Output" >
                         <table>
@@ -310,7 +301,7 @@ echo $this->Html->css('custom.css');
                         </table>
                     </div>
                 </div>
-                <div class="col-4" style="border-style:solid; border-color:black;">
+                <div class="col-4 thinBox" >
 
                     <h3>After Tax Contributions</h3>
                     <!--                            <div class="form-group row">-->
@@ -561,7 +552,7 @@ echo $this->Html->css('custom.css');
 
 
 
-            <div class="col-4" style="border-style:solid; border-color:black;">
+            <div class="col-4 thinBox" >
                 <h3>Pre-Tax Contributions</h3>
                 <!--                            <div class="form-group row">-->
                 <!--                                <label for="Salary" class="col-4 col-form-label">Salary :</label>-->

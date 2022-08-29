@@ -15,7 +15,49 @@ h2.text-uppercase{
     text-transform: uppercase;
     font-size: 56px;
     justify-content: center;
+    color: #0d8abf;
+
 }
+.mySubTitle{
+    margin-top: 0.5em;
+    text-transform: capitalize;
+    color: white;
+    font-family: Helvetica;
+    font-weight: bold;
+    padding: 0.2em;
+    font-size: 3vh;
+
+}
+
+.mySubTitle2{
+    color: white;
+    font-family: Helvetica;
+    font-weight: lighter;
+    padding: 0.1em;
+    font-size: 1.5vh;
+
+}
+.colorBox{
+    border-style:solid;
+    border-width: 2px;
+    border-color:black;
+    background-color:#404245 ;
+}
+.thinBox{
+    border-style:solid; border-color:black;border-width: 2px;
+
+}
+.thinBox-carLease{
+    border-style:solid; border-color:black;border-width: 2px;
+
+}
+.thinBox-carLease h7{
+    font-size: x-large;
+}
+.thinBox-carLease td{
+    padding-top: 20px;
+}
+
 .row{
     justify-content: center;
 }
@@ -60,7 +102,31 @@ h2.text-uppercase{
     color: white;
 }
 
+@media only screen and (min-height: 1080px){
+    .mySubTitle{
+        margin-top: 0.5em;
+        text-transform: capitalize;
+        color: white;
+        font-family: Helvetica;
+        font-weight: bold;
+        padding: 0.2em;
+        font-size: 2.5vh;
 
+    }
+
+}
+
+@media only screen and (max-height: 1080px) {
+    .mySubTitle2{
+        color: white;
+        font-family: Helvetica;
+        font-weight: lighter;
+        padding: 0.1em;
+        font-size: 2vh;
+
+    }
+
+}
 
 @media only screen and (max-width: 1000px) {
 

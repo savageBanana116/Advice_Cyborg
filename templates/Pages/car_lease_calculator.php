@@ -26,18 +26,9 @@ echo $this->Html->css('custom.css');
         -moz-appearance: textfield;
     }
 
-    h7{
-        font-weight:bold;
-    }
-    table {
-        table-layout: fixed;
-        width: 100%
-    }
 
-    td {
-        width: 50%;
-        text-align: left;
-    }
+
+
 
 </style>
 <link rel="stylesheet" href="\team18-app_fit3048\webroot\css\styles.css" type="text/css">
@@ -76,15 +67,15 @@ echo $this->Html->css('custom.css');
         <h2 class="myTitle" >Car lease Calculator</h2>
         <div class="outputBox">
         <div class="row">
-            <div class="col-5" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
+            <div class="col-5 colorBox" ><h3 class="mySubTitle"> To Get Started!</h3>
             <br>
-            <h6>Tell us about your Loan, we will use this to calculate the amount of the loan as well as the final payment date.</h6></div>
-            <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black; background-color: #403535; color: white;">
-                <h5>Your Expected Loan Interest</h5></div>
+            <h6 class="mySubTitle2">Tell us about your Loan, we will use this to calculate the amount of the loan as well as the final payment date.</h6></div>
+            <div class="col-5 colorBox" style="margin-left: 5%;">
+                <h3 class="mySubTitle">Your Expected Loan Interest</h3></div>
         </div>
 <!--      -->
         <div class="row">
-            <div class="col-5" style="border-style:solid; border-color:black;" >
+            <div class="col-5 thinBox"  >
 
         <form id="lease_form">
             <br>
@@ -167,7 +158,7 @@ echo $this->Html->css('custom.css');
         </form>
 <br>
         <div class="form-group">
-            <button id="Submit" class="btn btn-primary">Calculate</button>
+            <button id="Submit" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase">Calculate</button>
         </div>
                 <br>
             </div>
@@ -223,27 +214,27 @@ echo $this->Html->css('custom.css');
         </form>
     </div>-->
 
-            <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black;">
+            <div class="col-5 thinBox-carLease" style="margin-left: 5%;">
                 <br>
                 <form>
-                <table>
+                <table >
 
-                    <tr>
-                        <td> <h7  > Total Number of Payments: </h7> </td>
-                        <td> <h7  class="number" id="Total_NO_Payments" >0</h7>
+                    <tr >
+                        <td style="text-align: left"> <h7> Total Number of Payments: </h7> </td>
+                        <td style="text-align: right; padding-left: 6vw"> <h7  class="number" id="Total_NO_Payments">0</h7>
                         </td>
                     </tr>
 
 
-                    <tr >
-                        <td> <h7 >Final Payment Date: </h7> </td>
-                        <td> <h7  class="number" id="Final_Payment_Date" >0</h7></td>
+                    <tr style="border-bottom: 1px solid black  ">
+                        <td style="text-align: left"> <h7 >Final Payment Date: </h7> </td>
+                        <td style="text-align: right"> <h7  class="number" id="Final_Payment_Date" >0</h7></td>
                     </tr>
 
 
                     <tr>
-                        <td > <h7 >Total Interest: </h7> </td>
-                        <td > <h7  class="number" id="Total_Interest" >$0</h7></td>
+                        <td style="text-align: left" > <h2 style="font-family: Helvetica" >Total Interest: </h2> </td>
+                        <td style="text-align: right"> <h2  class="number" id="Total_Interest" >$0</h2></td>
                     </tr>
 
                 </table>

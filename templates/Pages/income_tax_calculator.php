@@ -69,13 +69,13 @@ echo $this->Html->css('custom.css');
         <div class="text-center" style="margin-top: 5%">
             <h2 class="myTitle">Income Tax Calculator</h2>
             <div class="row">
-                <div class="col-5" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
+                <div class="col-5 colorBox" ><h3 class="mySubTitle"> To Get Started!</h3>
                     <br>
-                    <h5>Tell us about yourself! We will use this to calculate your net income and breakdown.</h5></div>
-                <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black; background-color: #403535; color: white;">
+                    <h6 class="mySubTitle2">Tell us about yourself! We will use this to calculate your net income and breakdown.</h6></div>
+                <div class="col-5 colorBox" style="margin-left: 5%;">
 
-                    <h2 style="color:white"> Your total net income will be: </h2>
-                    <h1 id="netIncome" style="color: white">$</h1></div>
+                    <h3 class="mySubTitle"> Your total net income will be: </h3>
+                    <h2 class="myTitle" id="netIncome" >$</h2></div>
             </div>
 
     </div>
@@ -84,7 +84,7 @@ echo $this->Html->css('custom.css');
 <!--    <div class="container-fluid" >-->
         <div class="row">
 <!--            <div class="inputRow col-sm-3 " >-->
-            <div class="col-5" style="border-style:solid; border-color:black;" >
+            <div class="col-5 thinBox"  >
                 <form action="income_tax_calculator">
                     <br>
                     <span>Each year my take home<span class="blue" > Salary</span> is</span>
@@ -157,8 +157,8 @@ echo $this->Html->css('custom.css');
                             <label class="custom-control-label" for="customRadioInline2">No</label>
                         </div>
                     </div>
-                    <div class="text-right" style="text-align: right">
-                        <button type="button" onclick="validator()" class="btn btn-primary">Calculate</button>
+                    <div class="text-right" style="text-align:center;padding-bottom: 2vh">
+                        <button type="button" onclick="validator()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Calculate</button>
                     </div>
             </div>
 
@@ -166,7 +166,7 @@ echo $this->Html->css('custom.css');
         </form>
 
 
-        <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black;">
+        <div class="col-5 thinBox" style="margin-left: 5%; ">
             <br>
                     <table>
                         <tr >

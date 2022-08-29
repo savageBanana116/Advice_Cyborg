@@ -82,14 +82,14 @@ echo $this->Html->css('custom.css');
         <div class="text-center" style="margin-top: 5%">
           <h2 class="myTitle">Retirement Calculators</h2>
             <div class="row">
-                <div class="col-5" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
+                <div class="col-5 colorBox"><h3 class="mySubTitle"> To Get Started!</h3>
                     <br>
-                    <h5>Tell us about your plans for retirement, we will use this to calculate the amount of contributions required for your planned retirement.</h5></div>
-                <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black; background-color: #403535; color: white;">
-                    <h5>Your Expected Payments Required</h5></div>
+                    <h6 class="mySubTitle2">Tell us about your plans for retirement, we will use this to calculate the amount of contributions required for your planned retirement.</h6></div>
+                <div class="col-5 colorBox" style="margin-left: 5%;">
+                    <h3 class="mySubTitle">Your Expected Payments Required</h3></div>
             </div>
             <div class="row">
-                <div class="col-5" style="border-style:solid; border-color:black;" >
+                <div class="col-5 thinBox"  >
             <form id="Retirement_Calculator_Form" >
                 <br>
                 <span style="float: left">What is your<span class="blue" > age?</span></span>
@@ -222,12 +222,12 @@ echo $this->Html->css('custom.css');
             </form>
                     <br>
                     <div class="form-group">
-            <button id="Submit_retirement" class="btn btn-primary" > Calculate </button>
+            <button id="Submit_retirement" class="btn btn-primary"  style="font-size: 2vh; border-radius: 12px; text-transform: uppercase"> Calculate </button>
                     </div>
                     <br>
                 </div>
 
-                <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black;">
+                <div class="col-5 thinBox" style="margin-left: 5%; ">
             <form>
                 <table>
 <!--                    <br>-->

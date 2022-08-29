@@ -44,18 +44,52 @@ h2.text-uppercase{
     background-color:#404245 ;
 }
 .thinBox{
-    border-style:solid; border-color:black;border-width: 2px;
+    border-style:solid;
+    border-color:black;
+    border-width: 2px;
 
 }
 .thinBox-carLease{
-    border-style:solid; border-color:black;border-width: 2px;
+    border-style:solid;
+    border-color:black;
+    border-width: 2px;
 
 }
 .thinBox-carLease h7{
-    font-size: x-large;
+    font-family: Helvetica;
+    font-size: 1.9vh;
 }
+.thinBox-retirement{
+    border-style:solid;
+    border-color:black;
+    border-width: 2px;
+
+
+
+}
+.thinBox-retirement h7 {
+    font-family: Helvetica;
+    font-size: 1.9vh;
+}
+
 .thinBox-carLease td{
     padding-top: 20px;
+}
+.thinBox-incomeTax{
+    border-style:solid;
+    border-color:black;
+    border-width: 2px;
+}
+.thinBox-incomeTax h6{
+    font-weight: normal;
+    font-size: 1.9vh;
+    font-family: Helvetica;
+
+}
+.thinBox-incomeTax h5{
+    font-weight:bold;
+    font-size: xx-large;
+    font-family: Helvetica;
 }
 
 .row{
@@ -125,7 +159,20 @@ h2.text-uppercase{
         font-size: 2vh;
 
     }
+    .thinBox-carLease h7{
+        font-family: Helvetica;
+        font-size: 2.5vh;
+    }
+    .thinBox-retirement h7 {
+        font-family: Helvetica;
+        font-size: 2.5vh;
+    }
+    .thinBox-incomeTax h6{
+        font-weight: normal;
+        font-size: 2.5vh;
+        font-family: Helvetica;
 
+    }
 }
 
 @media only screen and (max-width: 1000px) {

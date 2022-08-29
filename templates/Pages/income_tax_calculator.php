@@ -166,52 +166,52 @@ echo $this->Html->css('custom.css');
         </form>
 
 
-        <div class="col-5 thinBox" style="margin-left: 5%; ">
+        <div class="col-5 thinBox-incomeTax" style="margin-left: 5%; ">
             <br>
                     <table>
                         <tr >
                             <td style="padding-bottom: 0.5em"> <h6> Your Total Assessable Income</h6> </td>
-                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="assess" >$ 0</h6></td>
+                            <td style="padding-bottom: 0.5em;padding-left: 3em"> <h6 class="number" id="assess" >$ 0</h6></td>
                         </tr>
                         <tr style="border-bottom: 1px solid black ;" >
                             <td style="padding-bottom: 0em"> <h6> Your Total Deduction</h6> </td>
-                            <td style="padding-bottom: 0em"> <h6 class="number" id="free" >$ 0</h6></td>
+                            <td style="padding-bottom: 0em;padding-left: 3em"> <h6 class="number" id="free" >$ 0</h6></td>
                         </tr>
                         <tr style="border-bottom: 1px solid black ;">
                             <td> <h5 style="padding-bottom: 2em" > Your Taxable Income</h5> </td>
-                            <td> <h5  style="padding-bottom: 2em" class="number" id="echoOut" >$ 0</h5></td>
+                            <td> <h5  style="padding-bottom: 2em;padding-left: 1.4em" class="number" id="echoOut" >$ 0</h5></td>
                         </tr>
 
 
                         <tr >
                             <td style="padding-bottom: 0.5em"> <h6> Basic Tax Payable</h6> </td>
-                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="taxPayable" >$ 0</h6></td>
+                            <td style="padding-bottom: 0.5em;padding-left: 3em"> <h6 class="number" id="taxPayable" >$ 0</h6></td>
                         </tr>
                         <tr style="border-bottom: 1px solid black ;">
                             <td style="padding-bottom: 0em"> <h6> Medicare Levy </h6> </td>
-                            <td style="padding-bottom: 0em"> <h6 class="number" id="medicareLevy" >$ 0</h6></td>
+                            <td style="padding-bottom: 0em;padding-left: 3em"> <h6 class="number" id="medicareLevy" >$ 0</h6></td>
                         </tr>
 
                         <tr >
                             <td> <h5 style="padding-bottom: 2em">Total Tax Payable </h5> </td>
-                            <td> <h5 style="padding-bottom: 2em" class="number" id="Paid" >$ 0</h5></td>
+                            <td> <h5 style="padding-bottom: 2em;padding-left: 1.4em" class="number" id="Paid" >$ 0</h5></td>
                         </tr>
 
                         <tr >
                             <td style="padding-bottom: 0.5em"> <h6> Low & Middle Income Tax Offset </h6> </td>
-                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="middleOffset" >$ 0</h6></td>
+                            <td style="padding-bottom: 0.5em;padding-left: 3em"> <h6 class="number" id="middleOffset" >$ 0</h6></td>
                         </tr>
                         <tr >
                             <td style="padding-bottom: 0.5em"> <h6>Low Income Tax Offset </h6> </td>
-                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="lowOffset" >$ 0</h6></td>
+                            <td style="padding-bottom: 0.5em;padding-left: 3em"> <h6 class="number" id="lowOffset" >$ 0</h6></td>
                         </tr>
                         <tr style="border-bottom: 1px solid black ;">
                             <td style="padding-bottom: 0.5em"> <h6>Pension Rebate </h6> </td>
-                            <td style="padding-bottom: 0.5em"> <h6 class="number" id="pensionRebate" >$ 0</h6></td>
+                            <td style="padding-bottom: 0.5em;padding-left: 3em"> <h6 class="number" id="pensionRebate" >$ 0</h6></td>
                         </tr>
                         <tr>
                             <td > <h5 style="padding-bottom: 2em">Total Tax Offset </h5> </td>
-                            <td > <h5 style="padding-bottom: 2em" class="number" id="off" >$ 0</h5></td>
+                            <td > <h5 style="padding-bottom: 2em;padding-left: 1.4em" class="number" id="off" >$ 0</h5></td>
                         </tr>
 
 
@@ -523,7 +523,7 @@ echo $this->Html->css('custom.css');
         var commas11 =free.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         var commas12 =assessIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-        document.getElementById("echoOut").innerHTML = "$ " + commas ;
+        document.getElementById("echoOut").innerHTML = "$" + commas ;
         document.getElementById("taxPayable").innerHTML = "- $ " + commas2 ;
         document.getElementById("medicareLevy").innerHTML = "- $ " + commas3 ;
         document.getElementById("pensionRebate").innerHTML = "+ $ " + commas4 ;
@@ -531,7 +531,7 @@ echo $this->Html->css('custom.css');
         document.getElementById("lowOffset").innerHTML = "+ $ " + commas6 ;
         document.getElementById("taxPaid").innerHTML = "- $ " + commas7 ;
         document.getElementById("netIncome").innerHTML = " $ " +  commas8 ;
-        document.getElementById("Paid").innerHTML = "- $ " +  commas9 ;
+        document.getElementById("Paid").innerHTML = "-$" + commas9 ;
         document.getElementById("off").innerHTML = "+ $ " +  commas10 ;
         document.getElementById("free").innerHTML = "- $ " +  commas11 ;
         document.getElementById("assess").innerHTML = "$ " +  commas12 ;

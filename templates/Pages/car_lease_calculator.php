@@ -221,7 +221,7 @@ echo $this->Html->css('custom.css');
 
                     <tr >
                         <td style="text-align: left"> <h7> Total Number of Payments: </h7> </td>
-                        <td style="text-align: right; padding-left: 6vw"> <h7  class="number" id="Total_NO_Payments">0</h7>
+                        <td style="text-align: right; padding-left: 5vw"> <h7  class="number" id="Total_NO_Payments">0</h7>
                         </td>
                     </tr>
 

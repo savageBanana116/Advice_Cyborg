@@ -69,7 +69,7 @@ h2.text-uppercase{
     color: white;
 }
 h5.number{
-    margin-left: 10em;
+    margin-left: 5em;
 }
 h6.number{
     margin-left: 10em;
@@ -112,10 +112,10 @@ h6.number{
         margin: 10% 20%;
     }
 h5.number{
-    margin-left: 4em;
+    margin-left: 3em;
 }
 h6.number{
-    margin-left: 4em;
+    margin-left: 3em;
 }
 
 

@@ -40,13 +40,15 @@ function getInput()
         Final_Payment_Date.setFullYear(parseInt(Loan_Term) + Final_Payment_Date.getFullYear())
         const Total_NO_Payments = Loan_Term * No_Payment;
         const Total_Interest = Loan_Amount * Interest_Rate_Percent * Loan_Term;
-        const Interest = Math.round(Total_Interest * 100) / 100;
+        let Interest = Math.round(Total_Interest * 100) / 100;
 
         console.log(Total_Interest);
 
+        var commas = Interest.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
         document.getElementById("Total_NO_Payments").innerHTML = Total_NO_Payments.toString();
         document.getElementById("Final_Payment_Date").innerHTML = Final_Payment_Date.toDateString();
-        document.getElementById("Total_Interest").innerHTML = "$" + Interest;
+        document.getElementById("Total_Interest").innerHTML = "$" + commas;
     } else {
         alert('Please enter all values');
     }

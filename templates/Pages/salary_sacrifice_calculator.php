@@ -39,10 +39,6 @@ h7{
         white-space: nowrap;
     }
 
-     .col-xs-2{
-        width:33%;
-    }
-
 </style>
 
 <body>
@@ -84,81 +80,85 @@ h7{
         <div class="text-center" style="margin-top: 5%">
             <h2 class="text-uppercase" style="font-size: 56px">Salary Sacrifice Calculator</h2>
             <div class="row">
-                <div class="col" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
+                <div class="col-5" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
                     <br>
-                    <h5>Tell us about yourself </h5>
-                </div>
-                <div class="row" style="padding-bottom:2em">
-                    <div class="col" style="border-style:solid; border-color:black;">
-                        <form class="form-inline" id="Salary_Sacrifice_Form" >
-                            <br>
-                            <div class="form-group row">
-                                <div class="col-xs-2">
-                            <span >What is your<span class="blue" > Date of Birth?</span></span>
-                                <input type="date"  class="form-control" id="DOB">
-                            </div>
-
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="DOB" class="col-4 col-form-label">Date of Birth:</label>-->
-                            <!--                            <div class="col-8">-->
-                            <!--                                <input type="date" class="form-control" id="DOB">-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                                <div class="col-xs-2">
-                            <span >What is your<span class="blue" > Current Annual Salary?</span></span>
-                                <input type="number"  class="form-control"   onKeyPress="return check(event,value)" id="Salary" >
-                            </div>
-
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="Salary" class="col-4 col-form-label">Salary ($):</label>-->
-                            <!--                            <div class="col-8">-->
-                            <!--                                <input type="number"  class="form-control"id="Salary" >-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                                <div class="col-xs-2">
-                            <span>What is your<span class="blue" > Current Salary Sacrifice?</span></span>
-
-                                <input type="number" class="form-control" onKeyPress="return check(event,value)"  id="Salary_Sacrifice_Amount">
-                            </div>
-                                </div>
-
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="Salary_Sacrifice_Amount" class="col-4 col-form-label">Salary Sacrifice Amount :</label>-->
-                            <!--                            <div class="col-8">-->
-                            <!--                                <input type="number" class="form-control" id="Salary_Sacrifice_Amount">-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                            <span >Are you considered <span class="blue"> a part of a family?</span></span>
-
-                                <div class="custom-control custom-radio custom-control-inline" >
-                                    <input type="radio"  id="is_Family" class="custom-control-input" value="yes">
-                                    <label class="custom-control-label" for="customRadioInline1">Yes</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio"  id="is_Family" class="custom-control-input" value="no" checked>
-                                    <label class="custom-control-label" for="customRadioInline2">No</label>
-                                </div>
-
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="is_Family" class="col-4 col-form-label">Are you considered apart of a family :</label>-->
-                            <!--                            <div class="col-8">-->
-                            <!--                                <input type="checkbox" style="padding-right: 20px" id="is_Family">-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                        </form>
-
-                        <div class="form-group">
-                            <button id="Submit_Salary_Sacrifice" class="btn btn-primary"> Calculate </button>
-                        </div>
-
-                    </div>
-                </div>
-                    <div class="col" style="border-style:solid; border-color:black; background-color: #403535; color: white;">
+                    <h5>Tell us about yourself </h5></div>
+                <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black; background-color: #403535; color: white;">
                     <h5>Breakdown of your Costs</h5></div>
             </div>
 
             <div class="row">
-                <div class="col-4" style="border-style:solid; border-color:black;" >
+                <div class="col-5" style="border-style:solid; border-color:black;" >
+
+                    <form id="Salary_Sacrifice_Form" >
+                        <br>
+                        <span style="float: left">What is your<span class="blue" > Date of Birth?</span></span>
+                        <div class="input-group mb-4">
+                            <input type="date" placeholder="dd-mm-yyyy" min="1920-01-01" max="2006-12-31" class="form-control" id="DOB">
+                        </div>
+
+<!--                        <div class="form-group row">-->
+<!--                            <label for="DOB" class="col-4 col-form-label">Date of Birth:</label>-->
+<!--                            <div class="col-8">-->
+<!--                                <input type="date" class="form-control" id="DOB">-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <span style="float: left">What is your<span class="blue" > Current Annual Salary?</span></span>
+                        <div class="input-group mb-4">
+                            <input type="number"  class="form-control"   onKeyPress="return check(event,value)" id="Salary" >
+                        </div>
+
+<!--                        <div class="form-group row">-->
+<!--                            <label for="Salary" class="col-4 col-form-label">Salary ($):</label>-->
+<!--                            <div class="col-8">-->
+<!--                                <input type="number"  class="form-control"id="Salary" >-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <span style="float: left">What is your<span class="blue" > Current Salary Sacrifice?</span></span>
+                        <div class="input-group mb-4">
+                            <input type="number" class="form-control" onKeyPress="return check(event,value)"  id="Salary_Sacrifice_Amount">
+                        </div>
+
+<!--                        <div class="form-group row">-->
+<!--                            <label for="Salary_Sacrifice_Amount" class="col-4 col-form-label">Salary Sacrifice Amount :</label>-->
+<!--                            <div class="col-8">-->
+<!--                                <input type="number" class="form-control" id="Salary_Sacrifice_Amount">-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <span style="float: left">Are you considered <span class="blue"> a part of a family?</span></span>
+<!--                        <div class="input-group mb-4" style="float: left">-->
+<!--                            <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">-->
+<!--                                <input type="radio"  id="is_Family" class="custom-control-input" value="yes">-->
+<!--                                <label class="custom-control-label" for="customRadioInline1">Yes</label>-->
+<!--                            </div>-->
+<!--                            <div class="custom-control custom-radio custom-control-inline">-->
+<!--                                <input type="radio"  id="is_Family" class="custom-control-input" value="no" checked>-->
+<!--                                <label class="custom-control-label" for="customRadioInline2">No</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="input-group mb-4" style="float: left">
+                            <div class="custom-control custom-radio custom-control-inline" style="padding-right: 2em">
+                                <input type="radio"  name="is_Family" class="custom-control-input" value="yes">
+                                <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio"  name="is_Family" class="custom-control-input" value="no" checked>
+                                <label class="custom-control-label" for="customRadioInline2">No</label>
+                            </div>
+                        </div>
+<!--                        <div class="form-group row">-->
+<!--                            <label for="is_Family" class="col-4 col-form-label">Are you considered apart of a family :</label>-->
+<!--                            <div class="col-8">-->
+<!--                                <input type="checkbox" style="padding-right: 20px" id="is_Family">-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </form>
+                    <div class="form-group">
+                        <button id="Submit_Salary_Sacrifice" class="btn btn-primary"> Calculate </button>
+                    </div>
+                </div>
+                <div class="col-5" style="margin-left: 5%; border-style:solid; border-color:black;">
+
                     <table id="Salary_Sacrifice_Form_Output" >
                         <table>
 
@@ -170,13 +170,13 @@ h7{
                                 </td>
                             </tr>
 
-                            <!--                        <br>-->
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="Age" class="col-4 col-form-label">Age :</label>-->
-                            <!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
-                            <!--                                <ouput type="text" id="Age" readonly></ouput>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
+<!--                        <br>-->
+<!--                        <div class="form-group row">-->
+<!--                            <label for="Age" class="col-4 col-form-label">Age :</label>-->
+<!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                                <ouput type="text" id="Age" readonly></ouput>-->
+<!--                            </div>-->
+<!--                        </div>-->
                             <tr>
                                 <td> <h7 style="float:left;" ><strong>Financial Year Ending:</strong></h7> </td>
                                 <td> <h6  style="" class="number"  >
@@ -185,13 +185,13 @@ h7{
                                 </td>
                             </tr>
 
-                            <!--                        <br>-->
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="Finical_Year_Ending" class="col-4 col-form-label">Financial Year Ending:</label>-->
-                            <!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
-                            <!--                                <output type="text" id="Finical_Year_Ending" readonly></output>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
+<!--                        <br>-->
+<!--                        <div class="form-group row">-->
+<!--                            <label for="Finical_Year_Ending" class="col-4 col-form-label">Financial Year Ending:</label>-->
+<!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                                <output type="text" id="Finical_Year_Ending" readonly></output>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                             <tr>
                                 <td> <h7 style="float:left;" ><strong>Concessional Contribution Cap:</strong></h7> </td>
@@ -201,13 +201,13 @@ h7{
                                 </td>
                             </tr>
 
-                            <!--                        <br>-->
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="Concessional_Contribution_Cap" class="col-4 col-form-label">Concessional Contribution Cap:</label>-->
-                            <!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
-                            <!--                                <output type="text" id="Concessional_Contribution_Cap" readonly></output>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
+<!--                        <br>-->
+<!--                        <div class="form-group row">-->
+<!--                            <label for="Concessional_Contribution_Cap" class="col-4 col-form-label">Concessional Contribution Cap:</label>-->
+<!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                                <output type="text" id="Concessional_Contribution_Cap" readonly></output>-->
+<!--                            </div>-->
+<!--                        </div>-->
                             <tr>
                                 <td> <h7 style="float:left;" ><strong>SG Contributions:</strong></h7> </td>
                                 <td> <h7  style="" class="number"  >
@@ -216,13 +216,13 @@ h7{
                                 </td>
                             </tr>
 
-                            <!--                        <br>-->
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="SG_Contributions" class="col-4 col-form-label">SG Contributions:</label>-->
-                            <!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%" >-->
-                            <!--                                <output type="text" id="SG_Contributions" readonly></output>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
+<!--                        <br>-->
+<!--                        <div class="form-group row">-->
+<!--                            <label for="SG_Contributions" class="col-4 col-form-label">SG Contributions:</label>-->
+<!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%" >-->
+<!--                                <output type="text" id="SG_Contributions" readonly></output>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                             <tr>
                                 <td> <h7 style="float:left;" ><strong>Salary Sacrifice Allowable :</strong></h7> </td>
@@ -231,26 +231,26 @@ h7{
                                     </h7>
                                 </td>
                             </tr>
-                            <!---->
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="Allowed_Salary_Sacrifice" class="col-4 col-form-label">Salary Sacrifice Allowable :</label>-->
-                            <!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
-                            <!--                                <output type="text" id="Allowed_Salary_Sacrifice" readonly>-->
-                            <!--                                </output>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                            <br>
+<!---->
+<!--                        <div class="form-group row">-->
+<!--                            <label for="Allowed_Salary_Sacrifice" class="col-4 col-form-label">Salary Sacrifice Allowable :</label>-->
+<!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                                <output type="text" id="Allowed_Salary_Sacrifice" readonly>-->
+<!--                                </output>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <br>
 
                         </table>
                         <h3 style="padding-top:1%"> Summary </h3>
-                        <table>
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="Tax_Saving" class="col-4 col-form-label">Personal Tax Saving :</label>-->
-                            <!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
-                            <!--                                <output type="text" id="Tax_Saving" readonly>-->
-                            <!--                                </output>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
+                    <table>
+<!--                        <div class="form-group row">-->
+<!--                            <label for="Tax_Saving" class="col-4 col-form-label">Personal Tax Saving :</label>-->
+<!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                                <output type="text" id="Tax_Saving" readonly>-->
+<!--                                </output>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                             <tr>
                                 <td> <h7 style="float:left;padding-bottom: 1em" ><strong>Personal Tax Saving :</strong></h7> </td>
@@ -260,13 +260,13 @@ h7{
                                 </td>
                             </tr>
 
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="Total_TaxSaving" class="col-4 col-form-label">Total Tax Saving :</label>-->
-                            <!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
-                            <!--                                <output type="text" id="Total_TaxSaving" readonly>-->
-                            <!--                                </output>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
+<!--                        <div class="form-group row">-->
+<!--                            <label for="Total_TaxSaving" class="col-4 col-form-label">Total Tax Saving :</label>-->
+<!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                                <output type="text" id="Total_TaxSaving" readonly>-->
+<!--                                </output>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                             <tr>
                                 <td> <h7 style="float:left;padding-bottom: 1em" ><strong>Total Tax Saving :</strong></h7> </td>
@@ -276,13 +276,13 @@ h7{
                                 </td>
                             </tr>
 
-                            <!--                        <div class="form-group row">-->
-                            <!--                            <label for="Increase" class="col-4 col-form-label">Increase In Take Home Pay and Super :</label>-->
-                            <!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
-                            <!--                                <output type="text" id="Increase" readonly>-->
-                            <!--                                </output>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
+<!--                        <div class="form-group row">-->
+<!--                            <label for="Increase" class="col-4 col-form-label">Increase In Take Home Pay and Super :</label>-->
+<!--                            <div class="col-8" style="border-bottom: 0.5px solid black; padding-top: 5%">-->
+<!--                                <output type="text" id="Increase" readonly>-->
+<!--                                </output>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                             <tr>
                                 <td> <h7 style="float:left;padding-bottom: 1em" ><strong>Increase In Take Home Pay and Super :</strong></h7> </td>
@@ -292,9 +292,7 @@ h7{
                                 </td>
                             </tr>
                         </table>
-
-                </div>
-                <div class="col-4" style="border-style:solid; border-color:black;">
+                        <div id="after_tax_contributions" style="display:none">
 
                             <h3>After Tax Contributions</h3>
 <!--                            <div class="form-group row">-->
@@ -545,7 +543,7 @@ h7{
 
 
 
-            <div class="col-4" style="border-style:solid; border-color:black;">
+                        <div id="pre_tax_contributions" style="display:none">
                             <h3>Pre-Tax Contributions</h3>
 <!--                            <div class="form-group row">-->
 <!--                                <label for="Salary" class="col-4 col-form-label">Salary :</label>-->
@@ -792,9 +790,11 @@ h7{
                         </table>
 
                         </div>
-        </div>
 
-
+                        <br>
+                        <button type="button" class="btn btn-primary" onclick="toggle_pre_tax()">Pre Tax Contributions</button>
+                        <button type="button" class="btn btn-primary" onclick="toggle_after_tax()">After Tax Contributions</button>
+                        <br>
                     </form>
 
 

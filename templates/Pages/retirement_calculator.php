@@ -237,7 +237,7 @@ echo $this->Html->css('custom.css');
                     <tr   >
                         <td style="text-align: left;padding-bottom: 2.5em;padding-top: 2em"> <h7  >Payment Required Amount Future:</h7></td>
                         <td style="padding-bottom: 2.5em;padding-top: 2em;text-align: left"> <h7   class="number" >
-                                <output type="text" id="Payment_Required_Future" readonly></output>
+                                <output type="text" id="Payment_Required_Future" readonly style="padding-top: 1.8em"></output>
                             </h7>
                         </td >
                     </tr>

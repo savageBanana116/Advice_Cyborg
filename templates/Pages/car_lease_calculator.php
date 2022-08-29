@@ -73,7 +73,8 @@ echo $this->Html->css('custom.css');
 
 <div class="container" >
     <div class="text-center" style="margin-top: 5%">
-        <h1 >Car Lease Calculators</h1>
+        <h2 class="myTitle" >Car lease Calculator</h2>
+        <div class="outputBox">
         <div class="row">
             <div class="col-5" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
             <br>
@@ -249,6 +250,7 @@ echo $this->Html->css('custom.css');
                 </form>
             </div>
 
+        </div>
         </div>
 
 </div>

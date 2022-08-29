@@ -67,7 +67,7 @@ echo $this->Html->css('custom.css');
 <!--        </div>-->
 
         <div class="text-center" style="margin-top: 5%">
-            <h1 >Income Tax Calculator</h1>
+            <h2 class="myTitle">Income Tax Calculator</h2>
             <div class="row">
                 <div class="col-5" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
                     <br>

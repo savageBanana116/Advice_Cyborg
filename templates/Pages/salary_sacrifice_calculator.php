@@ -82,7 +82,7 @@ echo $this->Html->css('custom.css');
     </div>-->
     <div class="container" >
         <div class="text-center" style="margin-top: 5%">
-            <h2 class="text-uppercase" style="font-size: 56px">Salary Sacrifice Calculator</h2>
+            <h2 class="myTitle" >Salary Sacrifice Calculator</h2>
             <div class="row">
                 <div class="col" style="border-style:solid; border-color:black; background-color: #403535; color: white;"><h3> To Get Started!</h3>
                     <br>

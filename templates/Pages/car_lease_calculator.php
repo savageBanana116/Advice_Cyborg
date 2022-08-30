@@ -6,10 +6,15 @@
 ?>
 <!doctype html>
 <html lang="en">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
 <?php
 echo $this->Html->css('custom.css');
 ?>
@@ -81,7 +86,7 @@ echo $this->Html->css('custom.css');
             <br>
             <span style="float: left">When does your<span class="blue" > loan</span> start?</span>
             <div class="input-group mb-4">
-                <input id="Loan_Date" name="Loan_date" placeholder="dd/mm/yyyy" type="date" class="form-control"  required="required">
+                <input id="Loan_Date" name="Loan_date" placeholder="dd/mm/yyyy" type="date" class="form-control" min="1900-01-01" max="2007-01-01" required="required">
             </div>
 
 
@@ -98,7 +103,8 @@ echo $this->Html->css('custom.css');
                     <div class="input-group-prepend">
                         <div class="input-group-text">$</div>
                     </div>
-                    <input id="Loan_Amount" name="Loan_Amount" type="number" class="form-control" onKeyPress="return check(event,value)" min="1" max="999999999" required="required">
+                    <input id="Loan_Amount" name="Loan_Amount" style="width: 200px"  type="number" class="form-control" min="1" max="999999999" required="required">
+                   <!-- <input id="Loan_Amount" name="Loan_Amount" style="width: 200px"  type="number" class="form-control" onKeyPress="return check(event,value)" min="1" max="999999999" required="required">-->
             </div>
             </div>
 
@@ -119,7 +125,8 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">%</div>
                         </div>
-                        <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="restrict(this);checkLength() " name="Annual_Interest_Rate" type="number" min="0" max="100" class="form-control" required="required">
+                        <!--<input id="Annual_Interest_Rate" style="width: 200px" onKeyPress="return check(event,value)" onInput="restrict(this);checkLength() " name="Annual_Interest_Rate" type="number" min="0" max="100" class="form-control" required="required">-->
+                        <input id="Annual_Interest_Rate" style="width: 200px" name="Annual_Interest_Rate" onKeyPress="return check(event,value)"  name="Annual_Interest_Rate" type="number" min="0" max="100" class="form-control" required="required">
                     </div>
                 </div>
 
@@ -130,13 +137,13 @@ echo $this->Html->css('custom.css');
 <!--                        <div class="input-group-prepend">-->
 <!--                            <div class="input-group-text">%</div>-->
 <!--                        </div>-->
-<!--                <input id="Annual_Interest_Rate" onKeyPress="return check(event,value)" onInput="restrict(this);checkLength() " name="Annual_Interest_Rate" type="number" min="0" max="100" class="form-control" required="required">-->
+<!--                <input id="Annual_Interest_Rate" c type="number" min="0" max="100" class="form-control" required="required">-->
 <!--                    </div>-->
 <!--                    </div>-->
 <!--                </div>-->
             <span style="float: left">How many<span class="blue" > years</span> would you like to have the loan over?</span>
             <div class="input-group mb-4">
-                <input id="Terms_of_Loan" name="Terms_of_Loan" type="number" class="form-control" onKeyPress="return check(event,value)" min="1" max="50" required="required">
+                <input id="Terms_of_Loan" style="width: 200px" name="Terms_of_Loan" type="number" class="form-control" min="1" max="50" required="required">
             </div>
 
 <!--            <div class="form-group row">-->
@@ -147,7 +154,7 @@ echo $this->Html->css('custom.css');
 <!--            </div>-->
             <span style="float: left">How many<span class="blue" > payments</span> do you plan to make <span class="blue">yearly?</span></span>
             <div class="input-group mb-4">
-                <input id="Number_of_Payment_Annually" name="Number_of_Payment_Annually" type="number"  min="1" max="365" class="form-control" onKeyPress="return check(event,value)" required="required">            </div>
+                <input id="Number_of_Payment_Annually" style="width: 200px" name="Number_of_Payment_Annually" type="number"  min="1" max="365" class="form-control"  required="required">            </div>
 <!--            <div class="form-group row">-->
 <!--                <label for="Number_of_Payment_Annually" class="col-4 col-form-label">How many payments per year do you plan to make?</label>-->
 <!--                <div class="col-8">-->
@@ -273,12 +280,14 @@ echo $this->Html->css('custom.css');
 -->
 
     <script>
+
         function check(e,value){
             //Check Charater
             var unicode=e.charCode? e.charCode : e.keyCode;
             if (value.indexOf(".") != -1)if( unicode == 46 )return false;
             if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
         }
+        /*
         function checkLength(){
             var fieldVal = document.getElementById('Annual_Interest_Rate').value;
             //Suppose u want 3 number of character
@@ -299,7 +308,7 @@ echo $this->Html->css('custom.css');
             if (Math.round(tis.value*100)/100!=tis.value)
                 tis.value=prev;
             tis.setAttribute("data-prev",tis.value)
-        }
+        }*/
     </script>
 
 

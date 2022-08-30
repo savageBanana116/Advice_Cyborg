@@ -9,6 +9,10 @@
     <html lang="en">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
 <?php
 echo $this->Html->css('custom.css');
 ?>
@@ -85,28 +89,28 @@ echo $this->Html->css('custom.css');
         <div class="row">
 <!--            <div class="inputRow col-sm-3 " >-->
             <div class="col-5 thinBox"  >
-                <form action="income_tax_calculator">
+                <form action="income_tax_calculator" id="income_tax_form">
                     <br>
                     <span>Each year my take home<span class="blue" > Salary</span> is</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input  type="number" class="form-control" id="mySalary" value="0"  >
+                        <input  type="number" class="form-control" id="mySalary" min="0"  max="999999999" onKeyPress="return check(event,value)" value="0"  >
                     </div>
                     <span >From my total <span class="blue" >Salary,</span> I'd like to <span class="blue"> Sacrifice</span></span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" id="mySalarySacrifice" value="0" >
+                        <input type="number" class="form-control" id="mySalarySacrifice" min="0"  max="999999999" onKeyPress="return check(event,value)" value="0" >
                     </div>
                     <span >Annually my <span class="blue"> Investment </span> value is on<span class="blue"> Average</span></span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" id="myInvestment" value="0" >
+                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myInvestment" value="0" >
                     </div>
 
                     <span>I would like to contribute<span class="blue"> Account Based Pension</span></form>
@@ -114,7 +118,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" id="myPension" value="0" >
+                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myPension" value="0" >
                     </div>
 
                     <span>My current amount for<span class="blue"> Rental</span> is</span>
@@ -122,14 +126,14 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" id="myRental" value="0" >
+                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myRental" value="0" >
                     </div>
                     <span>What are your <span class="blue">Franked Credits?</span> </span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" id="myCredits" value="0" >
+                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myCredits" value="0" >
                     </div>
 
                     <span>What is your current<span class="blue"> Tax Free Pension</span> amount</span>
@@ -137,14 +141,14 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" id="myTaxFree" value="0" >
+                        <input type="number" class="form-control"  min="0"  max="999999999" onKeyPress="return check(event,value)" id="myTaxFree" value="0" >
                     </div>
                     <span>I have <span class="blue">Other </span>forms of income</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" id="myOthers" value="0" >
+                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myOthers" value="0" >
                     </div>
                     <span>Are you considered <span class="blue"> a part of a family?</span></span>
                     <div class="input-group mb-4">
@@ -234,6 +238,7 @@ echo $this->Html->css('custom.css');
 
 <script>
     //input validation
+    /*
     mySalary.oninput = function () {
         const maxlength = 10;
         if (this.value.length > maxlength) {
@@ -289,6 +294,21 @@ echo $this->Html->css('custom.css');
     }
 
 
+    */
+    jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+    });
+
+    $( "#income_tax_form" ).validate({
+        rules: {
+            errorElement:'div',
+            field: {
+                required: true,
+                number: true
+            }
+        }
+    });
 
     function check(e,value){
         //Check Character
@@ -296,6 +316,7 @@ echo $this->Html->css('custom.css');
         if (value.indexOf(".") != -1)if( unicode == 46 )return false;
         if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
     }
+    /*
     function checkLength(id){
         var fieldVal = document.getElementById(id).value;
         const  limit_percent = 100, limit_age = 120;
@@ -330,7 +351,7 @@ echo $this->Html->css('custom.css');
             tis.value=prev;
         tis.setAttribute("data-prev",tis.value)
     }
-
+*/
 
 </script>
 
@@ -374,171 +395,181 @@ echo $this->Html->css('custom.css');
         const free = parseFloat(document.getElementById("myTaxFree").value);
         var myFamily = document.querySelector('input[name="myFamily"]:checked').value;
 
+        if(salary == 0 || salarySacrifice == 0 || investment == 0 || pension == 0 ||  rental == 0 || credits == 0 || others == 0 ||  free == 0 ){
+            alert('Please enter all values');
+
+        }else {
 
             // Calculating basic tax payable
-        let taxPayable = 0;
-        function addTaxPayable(){
-        if (addIncome()<=18200){
-            taxPayable = 0;
-        }else if (18201<= addIncome() && addIncome()<=45000){
+            let taxPayable = 0;
 
-            taxPayable = (addIncome()-18200)*0.19;
+            function addTaxPayable() {
+                if (addIncome() <= 18200) {
+                    taxPayable = 0;
+                } else if (18201 <= addIncome() && addIncome() <= 45000) {
 
-        }else if(45001<= addIncome()&& addIncome()<=120000){
+                    taxPayable = (addIncome() - 18200) * 0.19;
 
-            taxPayable = (addIncome()-45000)*0.325+5092;
+                } else if (45001 <= addIncome() && addIncome() <= 120000) {
 
-        }else if( 120001<= addIncome()&& addIncome()<=180000){
+                    taxPayable = (addIncome() - 45000) * 0.325 + 5092;
 
-            taxPayable = (addIncome()-120000)*0.37+29467; // + 29467   / 5092
+                } else if (120001 <= addIncome() && addIncome() <= 180000) {
 
-        }else if( addIncome() >= 180001){
+                    taxPayable = (addIncome() - 120000) * 0.37 + 29467; // + 29467   / 5092
 
-            taxPayable = (addIncome()-180000)*0.45 +51667; // + 51667   / 29467
-        }
+                } else if (addIncome() >= 180001) {
 
-        return Math.round(taxPayable);
-        }
+                    taxPayable = (addIncome() - 180000) * 0.45 + 51667; // + 51667   / 29467
+                }
+
+                return Math.round(taxPayable);
+            }
 
             // calculate medicare levy
 
-        function addMedicareLevy(){
-            let mediLevy = 0;
-            let basicLevy = addIncome()*0.02;
-            let totalLevy = 0;
-            // is not a family member
-           if (myFamily ==='999'){
-                if (addIncome() <= 90000){
-                    mediLevy = 0;
-                }else {
-                    if(addIncome()>=90001 &&addIncome() <= 105000){
-                    mediLevy = addIncome() * 0.01;
-                    }else {
-                        if (addIncome() >= 105001 && addIncome() <= 140000){ // conflicting condition
-                            mediLevy = addIncome() * 0.0125;
-                        }else {
-                            if (addIncome() > 105000){  // conflicting condition
-                                mediLevy = addIncome() * 0.015;
+            function addMedicareLevy() {
+                let mediLevy = 0;
+                let basicLevy = addIncome() * 0.02;
+                let totalLevy = 0;
+                // is not a family member
+                if (myFamily === '999') {
+                    if (addIncome() <= 90000) {
+                        mediLevy = 0;
+                    } else {
+                        if (addIncome() >= 90001 && addIncome() <= 105000) {
+                            mediLevy = addIncome() * 0.01;
+                        } else {
+                            if (addIncome() >= 105001 && addIncome() <= 140000) { // conflicting condition
+                                mediLevy = addIncome() * 0.0125;
+                            } else {
+                                if (addIncome() > 105000) {  // conflicting condition
+                                    mediLevy = addIncome() * 0.015;
+                                }
                             }
                         }
                     }
+                    // is part of a family
+                } else if (myFamily === '1116') {
+                    if (addIncome() <= 180000) {
+                        mediLevy = 0;
+                    } else {
+                        if (addIncome() >= 180001 && addIncome() <= 210000) {
+                            mediLevy = addIncome() * 0.01;
+                        } else {
+                            if (addIncome() >= 210001 && addIncome() <= 280000) {
+                                mediLevy = addIncome() * 0.0125;
+                            } else {
+                                if (addIncome() > 210000) {
+                                    mediLevy = addIncome() * 0.015;
+                                }
+                            }
+                        }
+                    }
+
                 }
-                // is part of a family
-           }else if (myFamily === '1116'){
-               if (addIncome() <= 180000){
-                   mediLevy = 0;
-               }else {
-                   if(addIncome() >= 180001 && addIncome() <= 210000){
-                       mediLevy = addIncome() * 0.01;
-                   }else {
-                       if (addIncome()>=210001 && addIncome() <= 280000){
-                           mediLevy = addIncome() * 0.0125;
-                       }else {
-                           if (addIncome() > 210000){
-                               mediLevy = addIncome() * 0.015;
-                           }
-                       }
-                   }
-               }
+                totalLevy = mediLevy + basicLevy;
+                return Math.round(totalLevy);
 
-           }
-            totalLevy = mediLevy + basicLevy;
-            return Math.round(totalLevy) ;
+            }
 
-        }
+            // calculate total taxable income
+            function addIncome() {
+                let c1 = 0;
+                let c18 = 0.1 * salary + salarySacrifice;
+                if (27500 > c18) {
+                    c1 = 0;
+                } else {
+                    c1 = salarySacrifice;
+                }
+                const totalIncome = salary + investment + pension + rental + credits + others - c1 - free;
+                return Math.round(totalIncome);
+            }
 
-        // calculate total taxable income
-        function addIncome(){
-            let c1 =0;
-            let c18= 0.1*salary+ salarySacrifice;
-            if (27500>c18){
-                c1 = 0;
-            }else {
-                c1 = salarySacrifice;
-            }
-            const totalIncome = salary + investment + pension + rental + credits + others - c1 -free ;
-           return Math.round(totalIncome)  ;
-        }
+            // calculate the low & middle income tax offset
+            let middleOffset = 0;
 
-        // calculate the low & middle income tax offset
-        let middleOffset = 0;
-        function addMiddleOffset(){
-            if (addIncome() <= 37000){
-                middleOffset = 255;
-            }else if ( addIncome() >= 37001 && addIncome() <= 48000){
-                middleOffset = (255 + (0.075*(addIncome() - 37000)));
-            } else if (addIncome()>=48001 && addIncome()<= 90000){
-                middleOffset = 1080;
-            }else if (addIncome()>= 90001 && addIncome() <=126000){
-                middleOffset = 1080-(0.03*(addIncome()-90000));
-            }else {
-                middleOffset = 0;
+            function addMiddleOffset() {
+                if (addIncome() <= 37000) {
+                    middleOffset = 255;
+                } else if (addIncome() >= 37001 && addIncome() <= 48000) {
+                    middleOffset = (255 + (0.075 * (addIncome() - 37000)));
+                } else if (addIncome() >= 48001 && addIncome() <= 90000) {
+                    middleOffset = 1080;
+                } else if (addIncome() >= 90001 && addIncome() <= 126000) {
+                    middleOffset = 1080 - (0.03 * (addIncome() - 90000));
+                } else {
+                    middleOffset = 0;
+                }
+                return Math.round(middleOffset);
             }
-            return Math.round(middleOffset);
-        }
-        // calculate the low income tax offset
-        let lowOffset = 0;
-        function addLowOffset(){
-            if (addIncome() <= 37500){
-                lowOffset = 700;
-            } else if (addIncome()>=37501 && addIncome()<= 45000){
-                lowOffset = (700-(0.05*(addIncome()-37500)));
-            }else if( addIncome() >= 45001 && addIncome()<= 66667){
-                lowOffset = (325-(0.015*(addIncome()-45000)));
-            }else {
-                lowOffset = 0;
+
+            // calculate the low income tax offset
+            let lowOffset = 0;
+
+            function addLowOffset() {
+                if (addIncome() <= 37500) {
+                    lowOffset = 700;
+                } else if (addIncome() >= 37501 && addIncome() <= 45000) {
+                    lowOffset = (700 - (0.05 * (addIncome() - 37500)));
+                } else if (addIncome() >= 45001 && addIncome() <= 66667) {
+                    lowOffset = (325 - (0.015 * (addIncome() - 45000)));
+                } else {
+                    lowOffset = 0;
+                }
+                return Math.round(lowOffset);
             }
-            return Math.round(lowOffset);
-        }
-        // calculate total tax payable
-        let pensionRebate = (pension - free) * 0.15;
-        let totalTax = addMedicareLevy() + addTaxPayable();
-        let totalOffset = addMiddleOffset() + addLowOffset()+ pensionRebate;
-        let taxPaid = 0;
-        function addTotalTax(){
-            if (totalOffset>=totalTax){
-                taxPaid = 0;
-            }else {
-                taxPaid = totalTax - totalOffset;
+
+            // calculate total tax payable
+            let pensionRebate = (pension - free) * 0.15;
+            let totalTax = addMedicareLevy() + addTaxPayable();
+            let totalOffset = addMiddleOffset() + addLowOffset() + pensionRebate;
+            let taxPaid = 0;
+
+            function addTotalTax() {
+                if (totalOffset >= totalTax) {
+                    taxPaid = 0;
+                } else {
+                    taxPaid = totalTax - totalOffset;
+                }
+                return Math.round(taxPaid);
             }
-            return Math.round(taxPaid);
-        }
-        let taxYouPay = addTotalTax() - credits;
+
+            let taxYouPay = addTotalTax() - credits;
             let netIncome = (addIncome() + free) - taxYouPay;
 
-            let assessIncome = addIncome()+free;
+            let assessIncome = addIncome() + free;
 
 
+            var commas = addIncome().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas2 = addTaxPayable().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas3 = addMedicareLevy().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas4 = pensionRebate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas5 = addMiddleOffset().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas6 = addLowOffset().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas7 = addTotalTax().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas8 = netIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas9 = totalTax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas10 = totalOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas11 = free.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var commas12 = assessIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-        var commas = addIncome().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas2 = addTaxPayable().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas3 = addMedicareLevy().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas4 = pensionRebate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas5 =addMiddleOffset().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas6 =addLowOffset().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas7 =addTotalTax().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas8 =netIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas9 =totalTax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas10 =totalOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas11 =free.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var commas12 =assessIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            document.getElementById("echoOut").innerHTML = "$" + commas;
+            document.getElementById("taxPayable").innerHTML = "- $ " + commas2;
+            document.getElementById("medicareLevy").innerHTML = "- $ " + commas3;
+            document.getElementById("pensionRebate").innerHTML = "+ $ " + commas4;
+            document.getElementById("middleOffset").innerHTML = "+ $ " + commas5;
+            document.getElementById("lowOffset").innerHTML = "+ $ " + commas6;
+            document.getElementById("taxPaid").innerHTML = "- $ " + commas7;
+            document.getElementById("netIncome").innerHTML = " $ " + commas8;
+            document.getElementById("Paid").innerHTML = "-$" + commas9;
+            document.getElementById("off").innerHTML = "+ $ " + commas10;
+            document.getElementById("free").innerHTML = "- $ " + commas11;
+            document.getElementById("assess").innerHTML = "$ " + commas12;
 
-        document.getElementById("echoOut").innerHTML = "$" + commas ;
-        document.getElementById("taxPayable").innerHTML = "- $ " + commas2 ;
-        document.getElementById("medicareLevy").innerHTML = "- $ " + commas3 ;
-        document.getElementById("pensionRebate").innerHTML = "+ $ " + commas4 ;
-        document.getElementById("middleOffset").innerHTML = "+ $ " + commas5 ;
-        document.getElementById("lowOffset").innerHTML = "+ $ " + commas6 ;
-        document.getElementById("taxPaid").innerHTML = "- $ " + commas7 ;
-        document.getElementById("netIncome").innerHTML = " $ " +  commas8 ;
-        document.getElementById("Paid").innerHTML = "-$" + commas9 ;
-        document.getElementById("off").innerHTML = "+ $ " +  commas10 ;
-        document.getElementById("free").innerHTML = "- $ " +  commas11 ;
-        document.getElementById("assess").innerHTML = "$ " +  commas12 ;
+            // document.getElementById("test1").innerHTML =  myFamily+ addMedicareLevy() ;
 
-        // document.getElementById("test1").innerHTML =  myFamily+ addMedicareLevy() ;
-
-
+        }
     }
 
 </script>

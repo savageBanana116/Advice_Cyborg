@@ -31,7 +31,14 @@ echo $this->Html->css('custom.css');
         table-layout: fixed;
         width: 100%
     }
+    td {
+        width: 50%;
+        text-align: left;
+    }
 
+    .col-xs-2 {
+        width:33%;
+    }
 
 
 
@@ -77,18 +84,17 @@ echo $this->Html->css('custom.css');
         <div class="text-center" style="margin-top: 5%">
           <h2 class="myTitle">Retirement Calculators</h2>
             <div class="row">
-                <div class="col-5 colorBox"><h3 class="mySubTitle"> To Get Started!</h3>
+                <div class="col colorBox"><h3 class="mySubTitle"> To Get Started!</h3>
                     <br>
                     <h6 class="mySubTitle2">Tell us about your plans for retirement, we will use this to calculate the amount of contributions required for your planned retirement.</h6></div>
-                <div class="col-6 colorBox" style="margin-left: 5%;">
-                    <h3 class="mySubTitle">Your Expected Payments Required</h3></div>
             </div>
-            <div class="row">
-                <div class="col-5 thinBox"  >
+            <div class="row" style="padding-bottom:2em">
+                <div class="col thinBox"  >
             <form id="Retirement_Calculator_Form" >
                 <br>
-                <span style="float: left">What is your<span class="blue" > age?</span></span>
-                <div class="input-group mb-4">
+                <div class="form-group row">
+                    <div class="col-xs-2">
+                <span>What is your<span class="blue" > age?</span></span>
                     <input type="number"  class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Age">
                 </div>
 <!--
@@ -99,8 +105,8 @@ echo $this->Html->css('custom.css');
 <!--                        <input type="number" class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Age">-->
 <!--                    </div>-->
 <!--                </div>-->
-                <span style="float: left">At what<span class="blue"> age</span> would you like to<span class="blue" > retire?</span></span>
-                <div class="input-group mb-4">
+                    <div class="col-xs-2">
+                <span>At what<span class="blue"> age</span> would you like to<span class="blue" > retire?</span></span>
                     <input type="number"  class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Retirement_Age" >
                 </div>
 
@@ -110,10 +116,10 @@ echo $this->Html->css('custom.css');
 <!--                        <input type="number" class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Retirement_Age" >-->
 <!--                    </div>-->
 <!--                </div>-->
-
-                <span style="float: left">The total number of <span class="blue">payment years</span> are</span>
-                <div class="input-group mb-4">
+                    <div class="col-xs-2">
+                <span >The total number of <span class="blue">payment years</span> are</span>
                     <input type="number" class="form-control" id="Year_Payments">
+                </div>
                 </div>
 
 <!--                <div class="form-group row">-->
@@ -122,8 +128,9 @@ echo $this->Html->css('custom.css');
 <!--                        <input type="number" class="form-control" id="Year_Payments">-->
 <!--                    </div>-->
 <!--                </div>-->
-                <span style="float: left">How much do you plan to pay<span class="blue"> today?</span></span>
-                <div class="input-group mb-4">
+                <div class="form-group row">
+                    <div class="col-xs-2">
+                <span >How much do you plan to pay<span class="blue"> today?</span></span>
                     <input type="text"  class="form-control" onKeyPress="return check(event,value)" id="Payment_Required_Today">
                 </div>
 
@@ -133,8 +140,8 @@ echo $this->Html->css('custom.css');
 <!--                        <input type="text"  class="form-control" id="Payment_Required_Today">-->
 <!--                    </div>-->
 <!--                </div>-->
-                <span style="float: left">The rate of <span class="blue">Indexation</span> is</span>
-                <div class="input-group mb-4">
+                    <div class="col-xs-2">
+                <span >The rate of <span class="blue">Indexation</span> is</span>
                     <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text">%</div>
@@ -150,8 +157,8 @@ echo $this->Html->css('custom.css');
 <!--                        <input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" onInput="restrict(this); checkLength(this.id)"  id="Indexation">-->
 <!--                    </div>-->
 <!--                </div>-->
-                <span style="float: left">The current <span class="blue">Interest Rate</span> is</span>
-                <div class="input-group mb-4">
+                    <div class="col-xs-2">
+                <span >The current <span class="blue">Interest Rate</span> is</span>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">%</div>
@@ -159,6 +166,8 @@ echo $this->Html->css('custom.css');
                         <input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" onInput="restrict(this); checkLength(this.id)" id="Interest_Rate">
                     </div>
                 </div>
+                </div>
+                <div class="form-group row">
 
 <!--                <div class="form-group row">-->
 <!--                        <label for="Interest_Rate" class="col-4 col-form-label">Interest Rate (%): </label>-->
@@ -166,8 +175,8 @@ echo $this->Html->css('custom.css');
 <!--                        <input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" onInput="restrict(this); checkLength(this.id)" id="Interest_Rate">-->
 <!--                    </div>-->
 <!--                </div>-->
-                <span style="float: left">What is your current <span class="blue">Superannuation?</span></span>
-                <div class="input-group mb-4">
+                    <div class="col-xs-2">
+                <span >What is your current <span class="blue">Superannuation?</span></span>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -182,8 +191,8 @@ echo $this->Html->css('custom.css');
 <!--                        <input type="number" class="form-control" id="Current_Super">-->
 <!--                    </div>-->
 <!--                </div>-->
-                <span style="float: left">What is your current <span class="blue">Net Contributions?</span></span>
-                <div class="input-group mb-4">
+                    <div class="col-xs-2">
+                <span >What is your current <span class="blue">Net Contributions?</span></span>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
@@ -191,20 +200,20 @@ echo $this->Html->css('custom.css');
                     <input type="number" class="form-control" onKeyPress="return check(event,value)" id="Current_Net_Contributions">
                 </div>
                 </div>
-
 <!--                <div class="form-group row">-->
 <!--                        <label for="Current_Net_Contributions" class="col-4 col-form-label">Current Net Contributions: </label>-->
 <!--                    <div class="col-8">-->
 <!--                        <input type="number" class="form-control" id="Current_Net_Contributions">-->
 <!--                    </div>-->
 <!--                </div>-->
-                <span style="float: left">What is your current <span class="blue">Rate of Return?</span></span>
-                <div class="input-group mb-4">
+                    <div class="col-xs-2">
+                <span >What is your current <span class="blue">Rate of Return?</span></span>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">%</div>
                         </div>
                     <input type="number" class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)" id="Estimated_Return_Rate" required>
+                </div>
                 </div>
                 </div>
 
@@ -221,8 +230,14 @@ echo $this->Html->css('custom.css');
                     </div>
                     <br>
                 </div>
+            </div>
 
-                <div class="col-6 thinBox-retirement" style="margin-left: 5%; ">
+            <div class="row">
+                <div class="col colorBox"><h3 class="mySubTitle"> Breakdown of your costs</h3></div>
+            </div>
+
+            <div class="row">
+                <div class="col thinBox-retirement">
             <form>
                 <table>
 <!--                    <br>-->
@@ -331,6 +346,7 @@ echo $this->Html->css('custom.css');
                 </table>
 
             </form>
+
         </div>
             </div>
 

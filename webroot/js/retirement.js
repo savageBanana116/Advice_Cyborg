@@ -127,9 +127,32 @@ function getRetirementInput()
     Current_Super == 0 || Current_Net_Contributions == 0 || Estimated_Return_Rate == 0 ) {
         alert('Please enter all input values');
     }else {
-        if(age >= Retirement_Age){
-            alert("Please enter the right age");
-        }else {
+        if(parseInt(age) > parseInt(Retirement_Age)){
+            alert("Retirement age must be greater than the current age");
+        }
+        else if( age < 0 || age > 120){
+            alert('Please enter an appropriate age');
+        }
+        else if(Retirement_Age < 0 || Retirement_Age > 120){
+            alert('Please enter an appropriate retirement age');
+        }
+        else if(Year_Payments < 1 || Year_Payments > 60){
+            alert('Please enter an appropriate total number of payment years');
+        }
+        else if (Payment_Required_Today < 0 || Payment_Required_Today > 9999999999){
+            alert('Please enter an appropriate amount to pay today');
+        }else if (Indexation > 100) {
+            alert('Please enter an appropriate Indexation rate');
+        }else if (Interest_Rate > 100) {
+            alert('Please enter an appropriate Interest rate');
+        }else if (Current_Super < 0 || Current_Super > 999999999) {
+            alert('Please enter an appropriate current super amount');
+        }else if (Current_Net_Contributions < 0 || Current_Net_Contributions > 999999999) {
+            alert('Please enter an appropriate current net contribution amount');
+        }else if (Estimated_Return_Rate > 100) {
+            alert('Please enter an appropriate rate of return');
+        }
+        else {
 
             const Payment_Required_Future = getFV(Payment_Required_Today, Indexation, (Retirement_Age - age));
             const Value_Required = getValueRequire(Year_Payments, Payment_Required_Future, Interest_Rate, Indexation);
@@ -182,4 +205,19 @@ function getRetirementInput()
 
     }
 }
+//basic input validator
+jQuery.validator.setDefaults({
+    debug: true,
+    success: "valid"
+});
+
+$( "#Retirement_Calculator_Form" ).validate({
+    rules: {
+        errorElement:'div',
+        field: {
+            required: true,
+            number: true
+        }
+    }
+});
 

@@ -11,6 +11,10 @@
 <html lang="en">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
 <?php
 echo $this->Html->css('custom.css');
 ?>
@@ -95,7 +99,8 @@ echo $this->Html->css('custom.css');
                 <div class="form-group row">
                     <div class="col-xs-2">
                 <span>What is your<span class="blue" > age?</span></span>
-                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Age">
+                    <input type="number"  class="form-control" min="18" max="120" id="Age">
+                        <!--<input type="number"  class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Age">-->
                 </div>
 <!--
 <br>-->
@@ -107,7 +112,7 @@ echo $this->Html->css('custom.css');
 <!--                </div>-->
                     <div class="col-xs-2">
                 <span>At what<span class="blue"> age</span> would you like to<span class="blue" > retire?</span></span>
-                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)"  id="Retirement_Age" >
+                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
                 </div>
 
 <!--                <div class="form-group row">-->
@@ -118,7 +123,7 @@ echo $this->Html->css('custom.css');
 <!--                </div>-->
                     <div class="col-xs-2">
                 <span >The total number of <span class="blue">payment years</span> are</span>
-                    <input type="number" class="form-control" id="Year_Payments">
+                    <input type="number" class="form-control" min="1" max="60" id="Year_Payments">
                 </div>
                 </div>
 
@@ -131,7 +136,7 @@ echo $this->Html->css('custom.css');
                 <div class="form-group row">
                     <div class="col-xs-2">
                 <span >How much do you plan to pay<span class="blue"> today?</span></span>
-                    <input type="text"  class="form-control" onKeyPress="return check(event,value)" id="Payment_Required_Today">
+                    <input type="text"  class="form-control" min="0" max="999999999" id="Payment_Required_Today">
                 </div>
 
 <!--                <div class="form-group row">-->
@@ -146,7 +151,8 @@ echo $this->Html->css('custom.css');
                     <div class="input-group-prepend">
                         <div class="input-group-text">%</div>
                     </div>
-                    <input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" onInput="restrict(this); checkLength(this.id)"  id="Indexation">
+                    <input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" min="0" max="100"  id="Indexation">
+                        <!--<input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" onInput="restrict(this); checkLength(this.id)"  id="Indexation">-->
                 </div>
                 </div>
 
@@ -163,7 +169,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">%</div>
                         </div>
-                        <input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" onInput="restrict(this); checkLength(this.id)" id="Interest_Rate">
+                        <input type="number" class="form-control" class="form-control" onKeyPress="return check(event,value)" min="0" max="100" id="Interest_Rate">
                     </div>
                 </div>
                 </div>
@@ -181,7 +187,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                    <input type="number" class="form-control" onKeyPress="return check(event,value)" id="Current_Super">
+                    <input type="number" class="form-control" min="0" max="999999999" id="Current_Super">
                     </div>
                     </div>
 
@@ -197,7 +203,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                    <input type="number" class="form-control" onKeyPress="return check(event,value)" id="Current_Net_Contributions">
+                    <input type="number" class="form-control" min="0" max="999999999" id="Current_Net_Contributions">
                 </div>
                 </div>
 <!--                <div class="form-group row">-->
@@ -212,7 +218,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">%</div>
                         </div>
-                    <input type="number" class="form-control" onKeyPress="return check(event,value)" onInput="checkLength(this.id)" id="Estimated_Return_Rate" required>
+                    <input type="number" class="form-control" onKeyPress="return check(event,value)" min="0" max="100" id="Estimated_Return_Rate" required>
                 </div>
                 </div>
                 </div>
@@ -383,6 +389,7 @@ echo $this->Html->css('custom.css');
 
     <script>
         //input validation
+        /*
         Year_Payments.oninput = function () {
             const maxlength = 2;
             if (this.value.length > maxlength) {
@@ -409,14 +416,14 @@ echo $this->Html->css('custom.css');
                 this.value = this.value.slice(0,maxlength);
             }
         }
-
+*/
 
         function check(e,value){
             //Check Character
             var unicode=e.charCode? e.charCode : e.keyCode;
             if (value.indexOf(".") != -1)if( unicode == 46 )return false;
             if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
-        }
+        }/*
         function checkLength(id){
             var fieldVal = document.getElementById(id).value;
             const  limit_percent = 100, limit_age = 120;
@@ -451,7 +458,7 @@ echo $this->Html->css('custom.css');
                 tis.value=prev;
             tis.setAttribute("data-prev",tis.value)
         }
-
+*/
 
     </script>
 

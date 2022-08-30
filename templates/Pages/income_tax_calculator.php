@@ -96,21 +96,21 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input  type="number" class="form-control" id="mySalary" min="0"  max="999999999" onKeyPress="return check(event,value)" value="0"  >
+                        <input  type="number" class="form-control" style="width: 200px" id="mySalary" min="0"  max="999999999" onKeyPress="return check(event,value)" value="0"  >
                     </div>
                     <span >From my total <span class="blue" >Salary,</span> I'd like to <span class="blue"> Sacrifice</span></span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" id="mySalarySacrifice" min="0"  max="999999999" onKeyPress="return check(event,value)" value="0" >
+                        <input type="number" class="form-control" id="mySalarySacrifice" style="width: 200px" min="0"  max="999999999" onKeyPress="return check(event,value)" value="0" >
                     </div>
                     <span >Annually my <span class="blue"> Investment </span> value is on<span class="blue"> Average</span></span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myInvestment" value="0" >
+                        <input type="number" class="form-control" style="width: 200px" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myInvestment" value="0" >
                     </div>
 
                     <span>I would like to contribute<span class="blue"> Account Based Pension</span></form>
@@ -118,7 +118,7 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myPension" value="0" >
+                        <input type="number" class="form-control" style="width: 200px" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myPension" value="0" >
                     </div>
 
                     <span>My current amount for<span class="blue"> Rental</span> is</span>
@@ -126,14 +126,14 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myRental" value="0" >
+                        <input type="number" class="form-control" style="width: 200px" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myRental" value="0" >
                     </div>
                     <span>What are your <span class="blue">Franked Credits?</span> </span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myCredits" value="0" >
+                        <input type="number" class="form-control" style="width: 200" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myCredits" value="0" >
                     </div>
 
                     <span>What is your current<span class="blue"> Tax Free Pension</span> amount</span>
@@ -141,14 +141,14 @@ echo $this->Html->css('custom.css');
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control"  min="0"  max="999999999" onKeyPress="return check(event,value)" id="myTaxFree" value="0" >
+                        <input type="number" class="form-control" style="width: 200px" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myTaxFree" value="0" >
                     </div>
                     <span>I have <span class="blue">Other </span>forms of income</span>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                         </div>
-                        <input type="number" class="form-control" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myOthers" value="0" >
+                        <input type="number" class="form-control" style="width: 200px" min="0"  max="999999999" onKeyPress="return check(event,value)" id="myOthers" value="0" >
                     </div>
                     <span>Are you considered <span class="blue"> a part of a family?</span></span>
                     <div class="input-group mb-4">

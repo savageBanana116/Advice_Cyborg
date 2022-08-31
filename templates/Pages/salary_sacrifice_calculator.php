@@ -100,7 +100,7 @@ echo $this->Html->css('custom.css');
                         <div class="form-group row">
                             <div class="col-xs-2">
                                 <span >What is your<span class="blue" > Date of Birth?</span></span>
-                                <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2007-01-01" class="form-control" id="DOB">
+                                <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="DOB">
 
                             </div>
 

@@ -86,7 +86,7 @@ echo $this->Html->css('custom.css');
             <br>
             <span style="float: left">When does your<span class="blue" > loan</span> start?</span>
             <div class="input-group mb-4">
-                <input id="Loan_Date" name="Loan_date" placeholder="dd/mm/yyyy" type="date" class="form-control" min="1900-01-01" max="2007-01-01" required="required">
+                <input id="Loan_Date" name="Loan_date" placeholder="dd/mm/yyyy" type="date" class="form-control" min="1900-01-01" required="required">
             </div>
 
 

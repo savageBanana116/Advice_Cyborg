@@ -42,9 +42,9 @@ function getInput()
     if (Loan_Date !== "" && Loan_Amount !== 0 && Interest_Rate !== 0 && Loan_Term !== 0 && No_Payment !== 0) {
         const Final_Payment_Date = new Date(Date.parse(Loan_Date_String));
         console.log(parseInt(Final_Payment_Date.getFullYear().toString()), parseInt(minDate.getFullYear().toString()), parseInt(maxDate.getFullYear().toString()));
-        if (parseInt(Final_Payment_Date.getFullYear().toString()) > parseInt(minDate.getFullYear().toString()) || parseInt(Final_Payment_Date.getFullYear().toString()) < parseInt(maxDate.getFullYear().toString())) {
-            alert('Please enter an appropriate date');
-        } else if (Loan_Amount <= 0 || Loan_Amount > 99999999) {
+        // if (parseInt(Final_Payment_Date.getFullYear().toString()) > parseInt(minDate.getFullYear().toString()) || parseInt(Final_Payment_Date.getFullYear().toString()) < parseInt(maxDate.getFullYear().toString())) {
+        //     alert('Please enter an appropriate date');
+         if (Loan_Amount <= 0 || Loan_Amount > 99999999) {
             alert('Please enter an appropriate loan amount');
         } else if (Interest_Rate > 100) {
             alert('Please enter an appropriate interest rate');

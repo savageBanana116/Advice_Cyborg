@@ -10,7 +10,9 @@
 <html lang="en">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 <?php
 echo $this->Html->css('custom.css');
 ?>
@@ -98,7 +100,7 @@ echo $this->Html->css('custom.css');
                         <div class="form-group row">
                             <div class="col-xs-2">
                                 <span >What is your<span class="blue" > Date of Birth?</span></span>
-                                <input type="date" placeholder="dd-mm-yyyy" min="1920-01-01" max="2006-12-31" class="form-control" id="DOB">
+                                <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2007-01-01" class="form-control" id="DOB">
 
                             </div>
 
@@ -111,7 +113,7 @@ echo $this->Html->css('custom.css');
                             <div class="col-xs-2">
                                 <span >What is your<span class="blue" > Current Annual Salary?</span></span>
 
-                                <input type="number"  class="form-control"   onKeyPress="return check(event,value)" id="Salary" >
+                                <input type="number"  class="form-control" min="0" max="999999999"  onKeyPress="return check(event,value)" id="Salary" >
                             </div>
 
                             <!--                        <div class="form-group row">-->
@@ -123,7 +125,7 @@ echo $this->Html->css('custom.css');
                             <div class="col-xs-2">
                                 <span >What is your<span class="blue" > Current Salary Sacrifice?</span></span>
 
-                                <input type="number" class="form-control" onKeyPress="return check(event,value)"  id="Salary_Sacrifice_Amount">
+                                <input type="number" class="form-control" min="0" max="999999999" onKeyPress="return check(event,value)"  id="Salary_Sacrifice_Amount">
                             </div>
 
                         </div>
@@ -843,6 +845,7 @@ echo $this->Html->css('custom.css');
 -->
 <script>
     //input validation
+    /*
     Salary.oninput = function () {
         const maxlength = 7;
         if (this.value.length > maxlength) {
@@ -856,14 +859,14 @@ echo $this->Html->css('custom.css');
             this.value = this.value.slice(0,maxlength);
         }
     }
-
-
+    */
     function check(e,value){
         //Check Character
         var unicode=e.charCode? e.charCode : e.keyCode;
         if (value.indexOf(".") != -1)if( unicode == 46 )return false;
         if (unicode!=8)if((unicode<48||unicode>57)&&unicode!=46)return false;
     }
+    /*
     function checkLength(id){
         var fieldVal = document.getElementById(id).value;
         const  limit_percent = 100, limit_age = 120;
@@ -899,7 +902,7 @@ echo $this->Html->css('custom.css');
         tis.setAttribute("data-prev",tis.value)
     }
 
-
+*/
 </script>
 <script>
     function toggle_after_tax() {

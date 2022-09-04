@@ -99,7 +99,12 @@ class ModulesController extends AppController
 
             return $this->redirect($redirect);
 
-        }
+        }if ($id == 14){
+        $redirect = $this->request->getQuery('redirect', ['controller' => 'Pages', 'action' => 'display', 'retirement']);
+
+        return $this->redirect($redirect);
+
+    }
 
         $this->set(compact('module'));
     }

@@ -1,3 +1,44 @@
+
+.carousel-caption {
+    color: black;
+    top: 10%;
+}
+.carousel-caption h5{
+    padding-bottom: 2vh;
+}
+.carousel-caption span{
+    font-size: 2vh;
+
+}
+span.hint{
+    font-size: 1.5vh;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 50px;
+    width: 50px;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+    content: '>';
+    font-size: 25px;
+    color: #0d8abf;
+}
+
+.carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 25px;
+    color: #0d8abf;
+}
+
+
+
 h2.text-uppercase{
     margin-top: 1em;
     font-size: 56px;

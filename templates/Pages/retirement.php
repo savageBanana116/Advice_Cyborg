@@ -24,13 +24,17 @@ echo $this->Html->css('custom.css');
         margin-top: 2em;
 
     }
+    .hide{
+        display: none;
+    }
 </style>
 
 <div class="container-fluid">
     <form>
 <div class="row">
     <div class="col-5">
-    <div class="card text-center" >
+        <h3 id="title"></h3>
+    <div class="card text-center" id="input">
         <div class="card-header">
             Fill in your personal details
         </div>
@@ -161,7 +165,7 @@ echo $this->Html->css('custom.css');
                                         <input type="number" class="form-control" id="inputInvestment" placeholder="Enter here">
                                     </div>
                                 </div>
-                                <button type="button" onclick="myFunction()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>
+                                <button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>
 
                             </div>
                             <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
@@ -183,35 +187,49 @@ echo $this->Html->css('custom.css');
 <!--            2 days ago-->
 <!--        </div>-->
     </div>
+        <div class="hide" id="output">
+            <div class="container-fluid">
+                <div class="text-center">
+                    <h2>Your Results</h2>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <table>
+                            <tr>
+                                <td><h5>Your Age: </h5></td>
+                                <td> <h6 id="myAge">age</h6></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Your required income: </h5></td>
+                                <td> <h6 id="myIncome">Income</h6></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Your income from other sources: </h5></td>
+                                <td><h6 id="myOtherIncome">Other</h6></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Your required lump sum: </h5></td>
+                                <td> <h6 id="myLump">Lump</h6></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Your current Super investment: </h5></td>
+                                <td><h6 id="mySuper">Super</h6></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Your current Non-Super investment: </h5></td>
+                                <td> <h6 id="myInvestment">Investment</h6></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
 </div>
-<div>
-    <h5 id="myAge">age</h5>
-    <h5 id="myIncome">Income</h5>
-    <h5 id="myOtherIncome">Other</h5>
-    <h5 id="myLump">Lump</h5>
-    <h5 id="mySuper">Super</h5>
-    <h5 id="myInvestment">Investment</h5>
-</div>
+
 <script>
-function myFunction(){
-    const age = document.getElementById("inputAge").value;
-    const income = document.getElementById("inputIncome").value;
-    const otherIncome = document.getElementById("inputOthers").value;
-    const lump = document.getElementById("inputLump").value;
-    const superAnnual = document.getElementById("inputSuper").value;
-    const investment = document.getElementById("inputInvestment").value;
-
-
-
-    document.getElementById("myAge").innerHTML = age;
-    document.getElementById("myIncome").innerHTML = income;
-    document.getElementById("myOtherIncome").innerHTML = otherIncome;
-    document.getElementById("myLump").innerHTML = lump;
-    document.getElementById("mySuper").innerHTML = superAnnual;
-    document.getElementById("myInvestment").innerHTML = investment;
-}
 
 </script>
 

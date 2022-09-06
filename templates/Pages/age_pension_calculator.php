@@ -102,11 +102,11 @@ echo $this->Html->css('custom.css');
                             <span>Are you <span class="blue"> a single or a couple?</span></span>
                             <div style="border: 1px solid lightgray;border-radius: 5px;">
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio"  name="is_relationship" id="is_single" class="custom-control-input" value="single" >
+                                    <input type="radio"  name="is_relationship" id="is_single" class="custom-control-input" value="single"checked >
                                     <label class="custom-control-label" for="customRadioInline">Single</label>
                                 </div>
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio"  name="is_relationship" id="is_couple"  class="custom-control-input" value="couple" checked>
+                                    <input type="radio"  name="is_relationship" id="is_couple"  class="custom-control-input" value="couple" >
                                     <label class="custom-control-label" for="customRadioInline">Couple</label>
                                 </div>
                             </div>
@@ -138,12 +138,12 @@ echo $this->Html->css('custom.css');
                             <div class="col-xs-2">
                                 <h2>Client</h2>
                                 <span>What is your<span class="blue" > name?</span></span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Age">
+                                <input type="number"  class="form-control" min="18" max="120" id="name">
                             </div>
                             <div class="col-xs-2">
                                 <h2>Spouse</h2>
                                 <span>What is your spouse's <span class="blue"> name</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="spouse_name" >
                             </div>
                         </div>
                         <div class="form-group row">
@@ -153,15 +153,15 @@ echo $this->Html->css('custom.css');
                                     <div class="custom-control custom-radio custom-control-inline">
 
                                         <label class="custom-control-label" for="customRadioInline">Male
-                                            <input type="radio"  name="is_gender" id="is_gender" class="custom-control-input" value="Male" checked>
+                                            <input type="radio"  name="is_gender" id="is_gender_male" class="custom-control-input" value="Male" checked>
                                         </label>
 
                                         <label class="custom-control-label" for="customRadioInline" style="padding-right: 15px; padding-left: 15px; padding-top: 10px">Female
-                                            <input type="radio" name="is_gender" id="is_gender" class="custom-control-input" value="Female" checked>
+                                            <input type="radio" name="is_gender" id="is_gender_female" class="custom-control-input" value="Female">
                                         </label>
 
                                         <label class="custom-control-label" for="customRadioInline">Other
-                                            <input type="radio"  name="is_gender" id="is_gender" class="custom-control-input" value="Other" checked>
+                                            <input type="radio"  name="is_gender" id="is_gender_other" class="custom-control-input" value="Other" >
                                         </label>
                                     </div>
                                 </div>
@@ -171,15 +171,15 @@ echo $this->Html->css('custom.css');
                                 <div style="border: 1px solid lightgray;border-radius: 5px; height: 50px; ">
                                     <div class="custom-control custom-radio custom-control-inline" >
                                         <label class="custom-control-label" for="customRadioInline">Male
-                                            <input type="radio"  name="is_gender_spouse" id="is_gender_spouse" class="custom-control-input" value="Male" checked>
+                                            <input type="radio"  name="is_gender_spouse" id="is_gender_male_spouse" class="custom-control-input" value="Male" checked>
                                         </label>
 
                                         <label class="custom-control-label" for="customRadioInline" style="padding-right: 15px; padding-left: 15px; padding-top: 10px">Female
-                                            <input type="radio"  name="is_gender_spouse" id="is_gender_spouse" class="custom-control-input" value="Female" checked>
+                                            <input type="radio"  name="is_gender_spouse" id="is_gender_female_spouse" class="custom-control-input" value="Female" checked>
                                         </label>
 
                                         <label class="custom-control-label" for="customRadioInline">Other
-                                            <input type="radio"  name="is_gender_spouse" id="is_gender_spouse" class="custom-control-input" value="Other" checked>
+                                            <input type="radio"  name="is_gender_spouse" id="is_gender_other_spouse" class="custom-control-input" value="Other" checked>
                                         </label>
                                     </div>
                                 </div>
@@ -188,31 +188,31 @@ echo $this->Html->css('custom.css');
                             <div class="form-group row">
                                 <div class="col-xs-2">
                                     <span>What is your<span class="blue" > date of birth?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Age">
+                                    <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="DOB">
                                 </div>
                                 <div class="col-xs-2">
                                     <span>What is your spouse's <span class="blue"> date of birth?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="spouse_DOB">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-xs-2">
                                     <span>What is your<span class="blue" > Gross annual salary?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Age">
+                                    <input type="number"  class="form-control" min="18" max="120" id="Gross_annual_salary">
                                 </div>
                                 <div class="col-xs-2">
                                     <span>What is your spouse's <span class="blue">Gross annual salary?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="spouse_Gross_annual_salary" >
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-xs-2">
                                     <span>What is your<span class="blue" > Superannuation?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Age">
+                                    <input type="number"  class="form-control" min="18" max="120" id="Super">
                                 </div>
                                 <div class="col-xs-2">
                                     <span>What is your spouse's <span class="blue">Superannuation?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="spouse_Super" >
                                 </div>
 
                             </div>
@@ -220,58 +220,53 @@ echo $this->Html->css('custom.css');
                             <H1> Non Financial Assets </H1>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Car/s, Caravan, Boat etc?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="vehicle_invest" >
                             </div>
 
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> contents?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="content_invest" >
                             </div>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Investment property?</span></span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="property_invest" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <H1> Financial Assets </H1>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Bank accounts?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="bank_accounts_invest" >
                             </div>
 
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Shares?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="shares_invest" >
                             </div>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Managed funds?</span></span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="funds_invest" >
                             </div>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> life insurance?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="insurance_invest" >
                             </div>
 
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Loans,Debentures/Bonds?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="loans_invest" >
                             </div>
-                            <div class="col-xs-2">
-                                <span>How much in <span class="blue"> Superannuation?</span></span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
-                            </div>
-
                         </div>
                         <div class="form-group row">
                             <H1> Other Assets </H1>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Gifted assets?(max $10,000 p.a)</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="gifted_assets" >
                             </div>
 
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Funeral Bond?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                <input type="number"  class="form-control" min="18" max="120" id="funeral_bond" >
                             </div>
                         </div>
                         <div class="form-group" style="padding-top:1em; padding-bottom:1em">
@@ -285,23 +280,47 @@ echo $this->Html->css('custom.css');
 
                     <form class="form-inline" style="display: none" id="age_pension_input_single_form">
                             <h1>Personal Information</h1>
-                            <div class="form-group row">
+                        <div class="form-group row">
+                            <div class="col-xs-2">
+                                <span>What is your<span class="blue" > name?</span></span>
+                                <input type="number"  class="form-control" min="18" max="120" id="name_single">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-2">
+                                <span>What is your<span class="blue" > gender?</span></span>
+                                <div style="border: 1px solid lightgray;border-radius: 5px; height: 50px; ">
+                                    <div class="custom-control custom-radio custom-control-inline">
 
-                                <div class="col-xs-2">
+                                        <label class="custom-control-label" for="customRadioInline">Male
+                                            <input type="radio"  name="is_gender" id="is_gender_male_single" class="custom-control-input" value="Male" >
+                                        </label>
 
-                                    <span>What is your<span class="blue"> Name ?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
-                                </div>
+                                        <label class="custom-control-label" for="customRadioInline" style="padding-right: 15px; padding-left: 15px; padding-top: 10px">Female
+                                            <input type="radio" name="is_gender" id="is_gender_female_single" class="custom-control-input" value="Female">
+                                        </label>
 
-                                <div class="col-xs-2">
-                                    <span>What is your <span class="blue"> date of birth?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
-                                </div>
-                                <div class="col-xs-2">
-                                    <span>What is your<span class="blue"> Gross annual salary ?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                        <label class="custom-control-label" for="customRadioInline">Other
+                                            <input type="radio"  name="is_gender" id="is_gender_other_single" class="custom-control-input" value="Other" checked>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-2">
+                                <span>What is your<span class="blue" > date of birth?</span></span>
+                                <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="DOB_single">
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-2">
+                                <span>What is your<span class="blue" > Gross annual salary?</span></span>
+                                <input type="number"  class="form-control" min="18" max="120" id="Gross_annual_salary_single">
+                            </div>
+
+                        </div>
                             </br>
 
 
@@ -309,45 +328,45 @@ echo $this->Html->css('custom.css');
                                 <H1> Non Financial Assets </H1>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Car/s, Caravan, Boat etc?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="vehicle_invest_single" >
                                 </div>
 
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> contents?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="content_invest_single" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Investment property?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="property_invest_single" >
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <H1> Financial Assets </H1>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Bank accounts?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="bank_accounts_invest_single" >
                                 </div>
 
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Shares?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="shares_invest_single" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Managed funds?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="funds_invest_single" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> life insurance?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="insurance_invest_single" >
                                 </div>
 
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Loans,Debentures/Bonds?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="loans_invest_single" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Superannuation?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="super_single" >
                                 </div>
 
                             </div>
@@ -355,16 +374,16 @@ echo $this->Html->css('custom.css');
                                 <H1> Other Assets </H1>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Gifted assets?(max $10,000 p.a)</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="gifted_assets-single" >
                                 </div>
 
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Funeral Bond?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Retirement_Age" >
+                                    <input type="number"  class="form-control" min="18" max="120" id="funeral_bond_single" >
                                 </div>
                             </div>
                         <div tclass="form-group" style="padding-top:1em; padding-bottom:1em">
-                            <button type="button" id="Submit_Age_pension_Basic" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"> Calculate </button>
+                            <button type="button" id="Submit_Age_pension_single" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"> Calculate </button>
                         </div>
                         </form>
 

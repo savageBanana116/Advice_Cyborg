@@ -222,7 +222,18 @@ echo $this->Html->css('custom.css');
                         </table>
                     </div>
                 </div>
+                <div class="row" style="margin-top: 10%;margin-bottom: 10%">
+                    <h3 class="text-center " style="margin-bottom: 1em">Choose your step</h3>
+                    <div class="col-3">                    <button type="button"  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Step 1</button>
+                    </div>
+                    <div class="col-3">                    <button type="button"  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Step 2</button>
+                    </div>
+                    <div class="col-3">                    <button type="button"  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Step 3</button>
+                    </div>
+                    <div class="col-3">                    <button type="button" onclick="location.href='income_stream'" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Step 4</button>
+                    </div>
 
+                </div>
             </div>
         </div>
     </div>

@@ -75,7 +75,7 @@
                                 <p id="result-investorprofiledesc" class="text-center text-muted">Investor profile description</p>
                             </div>
                             <div class="d-grid gap-2 col-md-6 mx-auto">
-                                <button type="button" class="btn btn-secondary" onclick="">Let me manage my investments myself</button>
+                                <button type="button" class="btn btn-secondary" onclick="location.href= '<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>'">Let me manage my investments myself</button>
                                 <button type="button" class="btn btn-primary mt-1" onclick="">Manage my investing for me</button>
                             </div>
                         </div>

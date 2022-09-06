@@ -78,7 +78,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputAge" placeholder="Enter here">
+                                        <input type="number" class="form-control" id="inputIncome" placeholder="Enter here">
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputAge" placeholder="Enter here">
+                                        <input type="number" class="form-control" id="inputOthers" placeholder="Enter here">
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputAge" placeholder="Enter here">
+                                        <input type="number" class="form-control" id="inputLump" placeholder="Enter here">
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputAge" placeholder="Enter here">
+                                        <input type="number" class="form-control" id="inputSuper" placeholder="Enter here">
                                     </div>
                                 </div>
                             </div>
@@ -158,10 +158,10 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputAge" placeholder="Enter here">
+                                        <input type="number" class="form-control" id="inputInvestment" placeholder="Enter here">
                                     </div>
                                 </div>
-                                <button type="button" onclick="validator()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>
+                                <button type="button" onclick="myFunction()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>
 
                             </div>
                             <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
@@ -187,16 +187,30 @@ echo $this->Html->css('custom.css');
 </div>
 </div>
 <div>
-
+    <h5 id="myAge">age</h5>
+    <h5 id="myIncome">Income</h5>
+    <h5 id="myOtherIncome">Other</h5>
+    <h5 id="myLump">Lump</h5>
+    <h5 id="mySuper">Super</h5>
+    <h5 id="myInvestment">Investment</h5>
 </div>
 <script>
-function submit(){
+function myFunction(){
     const age = document.getElementById("inputAge").value;
-        var my = age +666;
-    document.getElementById("myAge").innerHTML = my;
+    const income = document.getElementById("inputIncome").value;
+    const otherIncome = document.getElementById("inputOthers").value;
+    const lump = document.getElementById("inputLump").value;
+    const superAnnual = document.getElementById("inputSuper").value;
+    const investment = document.getElementById("inputInvestment").value;
 
 
 
+    document.getElementById("myAge").innerHTML = age;
+    document.getElementById("myIncome").innerHTML = income;
+    document.getElementById("myOtherIncome").innerHTML = otherIncome;
+    document.getElementById("myLump").innerHTML = lump;
+    document.getElementById("mySuper").innerHTML = superAnnual;
+    document.getElementById("myInvestment").innerHTML = investment;
 }
 
 </script>

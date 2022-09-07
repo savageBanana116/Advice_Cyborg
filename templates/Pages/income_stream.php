@@ -208,6 +208,7 @@
                         <div class="container-fluid">
                             <div class="row justify-content-around pb-3">
                                 <div class="col-auto col-md-10 align-self-center">
+                                    <h5 id="enquiry-confirmation2" class="card-subtitle mb-2 text-center" style="display:none; color: green">Thank you for submitting your enquiry! Our team will be in contact within 3-5 business days.</h5>
                                     <h5 class="card-title text-center">Income Stream: <span id="section-title">Enquiry into our funds</span></h5>
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">Where do you want to open an <span class="blue">income stream?</span></h6>
                                 </div>
@@ -276,22 +277,21 @@
                             alert("Please Enter a Valid Email")
                         }
                         else {
-                            document.getElementById('display').innerHTML = document.getElementById("name2").value;
-                            document.getElementById('display2').innerHTML = document.getElementById("phone-number2").value;
-                            document.getElementById('display3').innerHTML = document.getElementById("email2").value;
-                            document.getElementById('display4').innerHTML = income;
+                            $("submit-button").attr("disabled", true);
+                            document.getElementById("enquiry-confirmation1").style.display = "block";
                         }
                     }
-                }
-                else if(fundChoice === "1"){
+                } else if(fundChoice === "1"){
                     if(document.getElementById("name").value === "" || document.getElementById("phone-number").value === "" ||document.getElementById("email").value === "" || !$("input[name='options']:checked").val() ){
                         alert("Please enter all values");
                     }
                     else {
                         if(!validateEmail(document.getElementById("email").value)){
-                            alert("Please Enter a Valid Email")
+                            alert("Please Enter a Valid Email");
                         }
                         else {
+                            $("submit-button").attr("disabled", true);
+                            document.getElementById("enquiry-confirmation2").style.display = "block";
                             document.getElementById('display').innerHTML = document.getElementById("name").value;
                             document.getElementById('display2').innerHTML = document.getElementById("phone-number").value;
                             document.getElementById('display3').innerHTML = document.getElementById("email").value;
@@ -313,6 +313,7 @@
                                 <div class="container-fluid">
                                     <div class="row justify-content-around pb-3">
                                         <div class="col-auto col-md-10 align-self-center">
+                                            <h5 id="enquiry-confirmation1" class="card-subtitle mb-2 text-center" style="display:none; color: green">Thank you for submitting your enquiry! Our team will be in contact within 3-5 business days.</h5>
                                             <h5 class="card-title text-center">Income Stream: <span id="section-title">Submit an Enquiry</span></h5>
                                             <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">Thank you for filling out this form! Fill out your details below and we will contact you regarding your options utilizing your current fund</span></h6>
                                         </div>
@@ -353,6 +354,7 @@
                             </div>
                         </div>
 
+
                         <script>
                             function onNext() {
                                 var y = document.getElementById("risk_profile")
@@ -373,19 +375,17 @@
                                 }
                             }
                         </script>
-
+                    </div>
 
         <div id="result-card" style="display: none" class="card">
             <div class="card-body">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-md-12 mx-auto">
-                            <h5 id="result-title" class="card-title text-center">Card title</h5>
-                            <h6 id="result-subtitle" class="card-subtitle mb-2 text-muted text-center">Card subtitle</h6>
+                            <h5 id="result-title" class="card-title text-center">Enquiry Submittted!</h5>
+                            <h6 id="result-subtitle" class="card-subtitle mb-2 text-muted text-center">Thank you for submitting your enquiry about your income stream to our team!</h6>
                             <div class="col-md-6 mx-auto py-5">
-
-                                <p id="result-amountSaved" class="text-center text-muted">Amount Saved</p>
-                                <h2 id="result-recommendation" class="text-center">Recommendation</h2>
+                                <h2 id="result-recommendation" class="text-center">We will be in contact with you within 2-3 business days regarding your enquiry.</h2>
                             </div>
 
                         </div>
@@ -394,7 +394,6 @@
             </div>
         </div>
     </div>
-</div>
         <?= $this->Html->script('questionnaire.js') ?>
         <script>
 

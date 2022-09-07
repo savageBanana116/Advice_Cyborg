@@ -589,7 +589,7 @@
     <p>Do you wish to see options for After Tax Contributions?</p>
     <div class="row text-center" style="justify-content: center">
         <div class="col-1">
-            <button class="btn btn-primary"  onclick="location.href='income_stream' ">Yes</button>
+            <button class="btn btn-primary"  onclick="location.href='' ">Yes</button>
         </div>
         <div class="col-1">
             <a class="btn btn-primary " href="<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>">No</a>

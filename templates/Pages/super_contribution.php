@@ -41,7 +41,7 @@
         }
 
         .col-xs-2 {
-            width:50%;
+            width:33%;
         }
 
         .colorBox{
@@ -566,10 +566,36 @@
 
         <div class="hide" id="beforeTaxResult">
             <div class="text-center">
-
+                <div class="row"><p>PAYG - Tell your employer to salary sacrifice</p></div>
+                <div class="row"><P>Self-Employed Lodge tax deduction claim  ,  <a href="https://www.ato.gov.au/Individuals/Income-and-deductions/Deductions-you-can-claim/" target="_blank">here!</a></P>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block mt-5" onclick="wishAfter()" type="button">Next</button>
             </div>
         </div>
 
+<script>
+    function wishAfter(){
+        var x = document.getElementById("beforeTaxResult");
+        var y = document.getElementById("askForAfter");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+            y.style.display ="block";
+        }
+    }
+</script>
+<div class="hide" id="askForAfter">
+    <p>Do you wish to see options for After Tax Contributions?</p>
+    <div class="row text-center" style="justify-content: center">
+        <div class="col-1">
+            <button class="btn btn-primary"  onclick="location.href='income_stream' ">Yes</button>
+        </div>
+        <div class="col-1">
+            <a class="btn btn-primary " href="<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>">No</a>
+        </div>
+    </div>
+</div>
 <script>
 
     function check(e,value){

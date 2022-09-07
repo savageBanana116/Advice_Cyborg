@@ -30,7 +30,7 @@ echo $this->Html->css('custom.css');
 </style>
 
 <div class="container-fluid">
-    <form>
+
 <div class="row">
     <div class="col-5">
         <h3 id="title"></h3>
@@ -46,7 +46,7 @@ echo $this->Html->css('custom.css');
 <!--                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
 <!--                </div>-->
                 <div class="carousel-inner">
-                    <form>
+                    <form action="retirement_results" method="get" >
                     <div class="carousel-item active" style="background: white">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Question 1</h5>
@@ -62,7 +62,7 @@ echo $this->Html->css('custom.css');
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-5">
-                                    <input type="number" class="form-control" id="inputAge" placeholder="Enter your age here">
+                                    <input type="number" class="form-control" name="age" id="inputAge" placeholder="Enter your age here">
                                 </div>
                             </div>
 
@@ -82,7 +82,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputIncome" placeholder="Enter here">
+                                        <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here">
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputOthers" placeholder="Enter here">
+                                        <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here">
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputLump" placeholder="Enter here">
+                                        <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here">
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputSuper" placeholder="Enter here">
+                                        <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here">
                                     </div>
                                 </div>
                             </div>
@@ -162,11 +162,11 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" id="inputInvestment" placeholder="Enter here">
+                                        <input type="number" class="form-control" name="investment" id="inputInvestment" placeholder="Enter here">
                                     </div>
                                 </div>
-                                <button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>
-
+<!--                                <button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
+                                    <input type="submit" class="btn btn-primary"  >
                             </div>
                             <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
                         </div>

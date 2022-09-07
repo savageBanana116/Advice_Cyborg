@@ -73,6 +73,7 @@
                 <div class="row justify-content-center">
                     <div class="col-auto">
                         <p class="lead">Choose which method you want to proceed!</p>
+
                     </div>
 
                 </div>
@@ -81,28 +82,28 @@
                         <button class="btn btn-primary btn-lg btn-block mt-5" onclick="startBefore()" type="button">Before Tax</button>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="startAfter()" type="button">After Tax</button>
+                        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="window.location.href='super_contribution_after'" type="button">After Tax</button>
                     </div>
                 </div>
                 <br>
                 <br>
         </div>
         <script>
-            function startAfter() {
-                if (getAges()<'75'){
-                var x = document.getElementById("initialQuestion");
-                var y = document.getElementById("eligibility");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                    y.style.display ="block";
-                }
-                }else if (getAges()>'75'){
-                    alert('You cannot contribute into superannuation.');
-                    document.location.href='retirement';
-                }
-            }
+            // function startAfter() {
+            //    if (getAges()<75){
+            //     var x = document.getElementById("initialQuestion");
+            //     var y = document.getElementById("under75");
+            //     if (x.style.display === "none") {
+            //         x.style.display = "block";
+            //     } else {
+            //         x.style.display = "none";
+            //         y.style.display ="block";
+            //     }
+            //     }else if (getAges()>'75'){
+            //         alert('You cannot contribute into superannuation.');
+            //         document.location.href='retirement';
+            //     }
+            // }
 
             function startBefore(){
                 var x = document.getElementById("initialQuestion");
@@ -115,6 +116,9 @@
                 }
             }
         </script>
+
+
+
 <div class="hide" id="beforeTax">
 
 
@@ -589,7 +593,7 @@
     <p>Do you wish to see options for After Tax Contributions?</p>
     <div class="row text-center" style="justify-content: center">
         <div class="col-1">
-            <button class="btn btn-primary"  onclick="location.href='' ">Yes</button>
+            <button class="btn btn-primary"  onclick="location.href='super_contribution_after' ">Yes</button>
         </div>
         <div class="col-1">
             <a class="btn btn-primary " href="<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>">No</a>

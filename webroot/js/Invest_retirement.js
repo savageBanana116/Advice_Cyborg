@@ -1,12 +1,6 @@
 
 
 function hideInput(){
-    var x = document.getElementById("input");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
 
     myResults();
 }
@@ -21,7 +15,20 @@ function myResults(){
     const superAnnual = document.getElementById("inputSuper").value;
     const investment = document.getElementById("inputInvestment").value;
 
-    let myAge = age;
+    if(age < '58'){
+        alert("Sorry, we can't help at this stage.\n" +
+            "Minimum age for retirement is 58")
+     document.location.href='retirement';
+    }else {
+
+        var x = document.getElementById("input");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+
+        let myAge = age;
     let myIncome = income;
     let myOther = otherIncome;
     let myLump = lump;
@@ -35,7 +42,7 @@ function myResults(){
     document.getElementById("mySuper").innerHTML = mySuper;
     document.getElementById("myInvestment").innerHTML = myInvestment;
 
-
+    }
 
 }
 

@@ -3,19 +3,25 @@
 function hideInput(){
 
     myResults();
+    getAges()
+}
+function getAges(){
+    const age = document.getElementById("inputAge").value;
+    return age;
+
 }
 function myResults(){
 
     var showOut = document.getElementById('output');
      showOut.style.display = 'block';
-    const age = document.getElementById("inputAge").value;
+    // const age = document.getElementById("inputAge").value;
     const income = document.getElementById("inputIncome").value;
     const otherIncome = document.getElementById("inputOthers").value;
     const lump = document.getElementById("inputLump").value;
     const superAnnual = document.getElementById("inputSuper").value;
     const investment = document.getElementById("inputInvestment").value;
 
-    if(age < '58'){
+    if(getAges() < '58'){
         alert("Sorry, we can't help at this stage.\n" +
             "Minimum age for retirement is 58")
      document.location.href='retirement';
@@ -28,7 +34,7 @@ function myResults(){
             x.style.display = "none";
         }
 
-        let myAge = age;
+        let myAge = getAges();
     let myIncome = income;
     let myOther = otherIncome;
     let myLump = lump;

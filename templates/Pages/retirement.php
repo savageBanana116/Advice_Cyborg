@@ -224,7 +224,7 @@ echo $this->Html->css('custom.css');
                 </div>
                 <div class="row" style="margin-top: 10%;margin-bottom: 10%">
                     <h3 class="text-center " style="margin-bottom: 1em">Choose your step</h3>
-                    <div class="col-3">                    <button type="button"  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super</button>
+                    <div class="col-3">                    <button type="button" onclick="location.href='super_contribution' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super</button>
                     </div>
                     <div class="col-3">                    <button type="button" onclick="location.href='risk_profile' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio</button>
                     </div>

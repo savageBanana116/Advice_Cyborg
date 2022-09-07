@@ -1,6 +1,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
 <body class="bg-light">
 <div class="container-fluid">
     <main class="py-5 text-center">
@@ -15,7 +26,9 @@
             <p>You cannot contribute into superannuation.</p>
                     <a class="btn btn-primary " href="<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>">Back to Dashboard</a>
             <?php } else {?>
+            <div class="row" style="justify-content: center">
 
+            </div>
 
 
 

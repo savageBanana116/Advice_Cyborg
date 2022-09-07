@@ -46,7 +46,7 @@ echo $this->Html->css('custom.css');
 <!--                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
 <!--                </div>-->
                 <div class="carousel-inner">
-                    <form action="retirement_results" method="get" >
+                    <form action="retirement_results" method="get" id="onSubmit" >
                     <div class="carousel-item active" style="background: white">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Question 1</h5>
@@ -62,7 +62,7 @@ echo $this->Html->css('custom.css');
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-5">
-                                    <input type="number" class="form-control" name="age" id="inputAge" placeholder="Enter your age here">
+                                    <input type="number" class="form-control" name="age" id="inputAge" placeholder="Enter your age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2" required step="1" pattern="[0-9]+">
                                 </div>
                             </div>
 
@@ -72,7 +72,7 @@ echo $this->Html->css('custom.css');
                         <div class="carousel-item" style="background: white">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 2</h5>
-                                <span>At retirement I need a monthly income after tax of ____</span><br>
+                                <span>At retirement I need a monthly income after tax of $____</span><br>
                                 <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
                                     Help
                                 </button>
@@ -82,7 +82,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here">
+                                        <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1" pattern="[0-9]+">
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@ echo $this->Html->css('custom.css');
                         <div class="carousel-item" style="background: white">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 3</h5>
-                                <span>I will receive a monthly gross income of other sources of ____</span><br>
+                                <span>I will receive a monthly gross income of other sources of $____</span><br>
                                 <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
                                     Help
                                 </button>
@@ -102,7 +102,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here">
+                                        <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1">
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@ echo $this->Html->css('custom.css');
                         <div class="carousel-item" style="background: white">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 4</h5>
-                                <span>I will need a lump sum of _________ to settle my liabilities</span><br>
+                                <span>I will need a lump sum of $____ to settle my liabilities</span><br>
                                 <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
                                     Help
                                 </button>
@@ -121,7 +121,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here">
+                                        <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1">
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@ echo $this->Html->css('custom.css');
                         <div class="carousel-item" style="background: white">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 5</h5>
-                                <span>The current value of my Super investments: ____</span><br>
+                                <span>The current value of my Super investments: $____</span><br>
                                 <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
                                     Help
                                 </button>
@@ -141,7 +141,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here">
+                                        <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1">
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@ echo $this->Html->css('custom.css');
                         <div class="carousel-item" style="background: white">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 6</h5>
-                                <span>The current value of my Non-Super investments: ____</span><br>
+                                <span>The current value of my Non-Super investments: $____</span><br>
                                 <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
                                     Help
                                 </button>
@@ -162,12 +162,16 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="investment" id="inputInvestment" placeholder="Enter here">
+                                        <input type="number" class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1">
                                     </div>
                                 </div>
 <!--                                <button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
-                                    <input type="submit" class="btn btn-primary"  >
+                                    <input type="submit" name="submit" class="btn btn-primary" style="margin-top: 1em" >
+
                             </div>
+                            <?php if (isset($_POST['submit'])) {
+                                echo '<script>alert("Welcome to Geeks for Geeks")</script>';
+                            }?>
                             <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
                         </div>
                     </form>

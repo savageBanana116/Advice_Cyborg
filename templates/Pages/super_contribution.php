@@ -2,7 +2,6 @@
 
 <head>
     <!-- Custom styles for this template -->
-    <link href="../webroot/css/form-validation.css" rel="stylesheet">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -42,7 +41,7 @@
         }
 
         .col-xs-2 {
-            width:33%;
+            width:50%;
         }
 
         .colorBox{
@@ -124,11 +123,6 @@
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-
-    <body>
-
-
-    <div class="container">
 
         <div class="container" >
             <div class="text-center" >

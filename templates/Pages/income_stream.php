@@ -303,12 +303,6 @@
 
             }
         </script>
-        <p><span id='display'></span>
-            <span id='display2'></span>
-            <span id='display3'></span>
-            <span id='display4'></span>
-            <span id='display5'></span>
-            <span id='display6'></span></p>
 
 
 <!--    submit enquiry current fund-->

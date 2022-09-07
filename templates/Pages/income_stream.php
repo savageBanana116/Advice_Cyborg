@@ -70,6 +70,16 @@
                 </form>
             </div>
             <script>
+                function validation(){
+                    if( ($('#streamPayment').val() === "" && $('#centrelinkPayment').val() !== "") ||
+                        ($('#streamPayment').val() !== "" && $('#centrelinkPayment').val() === "")){
+                        return true;
+                    }
+                    else{
+                        alert('Please enter an input')
+                        return false;
+                    }
+                }
                 function socialSecurity() {
                     var y = document.getElementById("eligibility")
                     var test = $('#test').val();
@@ -95,7 +105,9 @@
                         <form action="test1" method="get" class="pb-2">
                             <p class="lead">What is your Potential Monthly Centrelink Payment?</p>
                                 <div class="col-auto" id="amount">
-                                    <input class="form-control" type="number" min="0" placeholder="$" id="centrelinkPayment" name="centrelinkPayment" onkeyup="myFunction()" />
+                                    <input class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                           type = "number"
+                                           maxlength = "6" required placeholder="$" id="centrelinkPayment" name="centrelinkPayment"/>
                                 </div>
                         </form>
                     </div>
@@ -112,7 +124,9 @@
                         <form action="test1" method="get" class="pb-2">
                             <p class="lead">What is your required income stream payment? (or minimum rate allowed by government, whichever is greater)</p>
                             <div class="col-auto" id="amount">
-                                <input class="form-control" type="number" min="0" placeholder="$" id="streamPayment" name="streamPayment" onkeyup="myFunction()" />
+                                <input class="form-control" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                       type = "number"
+                                       maxlength = "6" required placeholder="$" id="streamPayment" name="streamPayment" />
                             </div>
                         </form>
                     </div>
@@ -202,35 +216,36 @@
                                 <div class="col-md-8 align-content-center">
                                     <div class="d-flex justify-content-center">
                                         <div id="section-input" class="col">
-                                            <form>
                                             <p>Features</p>
-                                            <span>- Industry / Not For Profit Fund</span>
-                                            <span>- Hands off Option</span>
-                                            <span>- Paper Application</span>
+                                            <p>- Industry / Not For Profit Fund</p>
+                                            <p>- Hands off Option</p>
+                                            <p>- Paper Application</p>
                                             <br>
-                                            <input type="radio" value="option-1" name ="options" id="option-1">
+                                            <input type="radio" style="vertical-align: bottom" value="option-1" name ="options" id="option-1" required>
                                         </div>
                                         <div id="section-input" class="col">
                                             <p>Features</p>
-                                            <span>- Low cost retail fund</span>
-                                            <span>- Transparent Fees</span>
-                                            <span>- Hands off Option</span>
-                                            <span>- Online Application</span>
+                                            <p>- Low cost retail fund</p>
+                                            <p>- Transparent Fees</p>
+                                            <p>- Hands off Option</p>
+                                            <p>- Online Application</p>
                                             <br>
-                                            <input type="radio" value="option-2" name ="options" id="option-2">
+                                            <input type="radio" style="vertical-align: bottom" value="option-2" name ="options" id="option-2">
                                         </div>
                                     </div>
                                         <div id="section-input" class="row">
                                             <span> Name</span>
-                                            <input type="text" id="name" name="name">
+                                            <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                   maxlength = "30" id="name" name="name">
                                             <span> Mobile Number</span>
-                                            <input type="tel" id="phone-number" name="phone-number">
+                                            <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                   maxlength = "10" id="phone-number" name="phone-number">
                                             <span> Email Address</span>
-                                            <input type="email" id="email" name="email">
+                                            <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                   maxlength = "30" id="email" name="email">
                                     </div>
                                 </div>
                                 <a id="submit-button" class="btn btn-primary mt-3" onclick="sendResults()">Submit Enquiry</a>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -238,6 +253,10 @@
             </div>
         </div>
         <script>
+            function validateEmail($email) {
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                return emailReg.test( $email );
+            }
             function sendResults() {
                 var test = $('#test').val();
                 var income;
@@ -249,17 +268,37 @@
                 }
                 var fundChoice = $('#income-stream-options').val();
                 if(fundChoice === "0"){
-                    document.getElementById('display').innerHTML = document.getElementById("name2").value;
-                    document.getElementById('display2').innerHTML = document.getElementById("phone-number2").value;
-                    document.getElementById('display3').innerHTML = document.getElementById("email2").value;
-                    document.getElementById('display4').innerHTML = income;
+                    if(document.getElementById("name2").value === "" || document.getElementById("phone-number2").value === "" || document.getElementById("email2").value == ""){
+                        alert("Please enter all values");
+                    }
+                    else {
+                        if(!validateEmail(document.getElementById("email2").value)){
+                            alert("Please Enter a Valid Email")
+                        }
+                        else {
+                            document.getElementById('display').innerHTML = document.getElementById("name2").value;
+                            document.getElementById('display2').innerHTML = document.getElementById("phone-number2").value;
+                            document.getElementById('display3').innerHTML = document.getElementById("email2").value;
+                            document.getElementById('display4').innerHTML = income;
+                        }
+                    }
                 }
                 else if(fundChoice === "1"){
-                    document.getElementById('display').innerHTML = document.getElementById("name").value;
-                    document.getElementById('display2').innerHTML = document.getElementById("phone-number").value;
-                    document.getElementById('display3').innerHTML = document.getElementById("email").value;
-                    document.getElementById('display4').innerHTML = $('input[name="options"]:checked').val();
-                    document.getElementById('display5').innerHTML = income;
+                    if(document.getElementById("name").value === "" || document.getElementById("phone-number").value === "" ||document.getElementById("email").value === "" || !$("input[name='options']:checked").val() ){
+                        alert("Please enter all values");
+                    }
+                    else {
+                        if(!validateEmail(document.getElementById("email").value)){
+                            alert("Please Enter a Valid Email")
+                        }
+                        else {
+                            document.getElementById('display').innerHTML = document.getElementById("name").value;
+                            document.getElementById('display2').innerHTML = document.getElementById("phone-number").value;
+                            document.getElementById('display3').innerHTML = document.getElementById("email").value;
+                            document.getElementById('display4').innerHTML = $('input[name="options"]:checked').val();
+                            document.getElementById('display5').innerHTML = income;
+                        }
+                    }
                 }
 
             }
@@ -303,11 +342,14 @@
                                             <div class="d-flex justify-content-center">
                                                 <div id="section-input" class="col">
                                                     <span> Name</span>
-                                                    <input type="text" id="name2" name="name2">
+                                                    <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                           maxlength = "30" id="name2" name="name2">
                                                     <span> Mobile Number</span>
-                                                    <input type="tel" id="phone-number2" name="phone-number2">
+                                                    <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                           maxlength = "10" id="phone-number2" name="phone-number2">
                                                     <span> Email Address</span>
-                                                    <input type="email" id="email2" name="email2">
+                                                    <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                           maxlength = "30" id="email2" name="email2">
                                                 </div>
                                             </div>
                                         </div>
@@ -361,194 +403,22 @@
 </div>
         <?= $this->Html->script('questionnaire.js') ?>
         <script>
-            // var questionnaire = new Questionnaire('income-stream', 'Income Stream', 'Used to understand your options for an income stream');
-            //
-            // var question = new Question("stream-options",
-            //     new SelectMenu("stream-options", "stream options", "Please select an answer...", [
-            //         new SelectOption(10, "Your Current Fund", false),
-            //         new SelectOption(20, "Explore our low cost options", false)
-            //     ])
-            // );
-            // var section = new Section("stream-options", "Question 1", "Where do you want to open an Income Stream?")
-            // section.addQuestion(question);
-            // questionnaire.addSection(section);
-            //
-            // question = new Question("return-expectation",
-            //     new SelectMenu("return-expectation", "return expectation", "Please select an answer...", [
-            //         new SelectOption(10, "A reasonable return without losing any capital", false),
-            //         new SelectOption(20, "1-3%", false),
-            //         new SelectOption(30, "4-6%", false),
-            //         new SelectOption(40, "7-9%", false),
-            //         new SelectOption(50, "Over 9%", false)
-            //     ])
-            // );
-            // var section = new Section("return-expectation", "Question 2", "If you consider current interest rates what overall level of return (after inflation) do you reasonably expect to achieve from your investments over the period you wish to invest for?")
-            // section.addQuestion(question);
-            // questionnaire.addSection(section);
-            //
-            // question = new Question("poorly-performing-cash-in",
-            //     new SelectMenu("poorly-performing-cash-in", "poorly performing cash in", "Please select an answer...", [
-            //         new SelectOption(0, "You would cash it in if there was any loss in value", false),
-            //         new SelectOption(10, "Less than 1 year", false),
-            //         new SelectOption(20, "Up to 3 years", false),
-            //         new SelectOption(30, "Up to 5 years", false),
-            //         new SelectOption(40, "Up to 7 years", false),
-            //         new SelectOption(50, "Up to 10 years", false)
-            //     ])
-            // );
-            // var section = new Section("poorly-performing-cash-in", "Question 3", "Assuming you had no need for capital, how long would you allow a poorly performing investment to continue before cashing it in (assuming the poor performance was mainly due to market influences)?")
-            // section.addQuestion(question);
-            // questionnaire.addSection(section);
-            //
-            // question = new Question("investment-experience",
-            //     new SelectMenu("investment-experience", "investment-experience", "Please select an answer...", [
-            //         new SelectOption(10, "Very little understanding or interest", false),
-            //         new SelectOption(20, "Not very familiar", false),
-            //         new SelectOption(30, "Have had enough experience to understand the importance of diversification", false),
-            //         new SelectOption(40, "I understand that markets may fluctuate and that different market sectors offer different income, growth and taxation characteristics.", false),
-            //         new SelectOption(50, "I am experienced with all investment classes and understand the various factors that may influence performance.", false)
-            //     ])
-            // );
-            // var section = new Section("investment-experience", "Question 4", "How familiar are you with investment markets?")
-            // section.addQuestion(question);
-            // questionnaire.addSection(section);
-            //
-            // question = new Question("tax-efficiency",
-            //     new SelectMenu("tax-efficiency", "tax efficiency", "Please select an answer...", [
-            //         new SelectOption(10, "Preferably guaranteed returns, ahead of tax-savings", false),
-            //         new SelectOption(20, "Stable, reliable returns with minimal tax savings", false),
-            //         new SelectOption(30, "Some variability in returns, some tax savings", false),
-            //         new SelectOption(40, "Moderate variability in returns, reasonable tax savings", false),
-            //         new SelectOption(50, "Higher variability but potentially higher returns, maximising tax savings", false)
-            //     ])
-            // );
-            // var section = new Section("tax-efficiency", "Question 5", "There is generally a greater tax efficiency when investing in more volatile investments. With this in mind, which of the following would you be more comfortable with?")
-            // section.addQuestion(question);
-            // questionnaire.addSection(section);
-            //
-            // question = new Question("paper-hands",
-            //     new SelectMenu("paper-hands", "portfolio decrease scenario", "Please select an answer...", [
-            //         new SelectOption(10, "Horror – Security of your capital is critical and you do not intend to take risks.", false),
-            //         new SelectOption(20, "You would cut your losses and transfer your funds to more secure investment sectors.", false),
-            //         new SelectOption(30, "You would be concerned, but would wait to see if the investments improve.", false),
-            //         new SelectOption(40, "This was a risk you understood – you would leave your investments in place expecting performance to improve.", false),
-            //         new SelectOption(50, "You would invest more funds to take advantage of the lower unit/share prices expecting future growth.", false)
-            //     ])
-            // );
-            // var section = new Section("paper-hands", "Question 6", "What would your reaction be if six months after placing your investments, you discovered that due mainly to market conditions your portfolio had decreased in value by 20%?")
-            // section.addQuestion(question);
-            // questionnaire.addSection(section);
-            //
-            // question = new Question("investing-purpose",
-            //     new SelectMenu("investing-purpose", "investment purpose", "Please select an answer...", [
-            //         new SelectOption(50, "You have an investment time frame of over 5 years. You understand investment markets and are mainly investing for growth to accumulate long-term wealth, or are prepared to use aggressive investments to provide income.", false),
-            //         new SelectOption(40, "You are not nearing retirement, have surplus funds to invest and are aiming to accumulate long term wealth from a balanced portfolio.", false),
-            //         new SelectOption(30, "You have a lump sum (eg inheritance or a superannuation rollover payment from your employer) and you are uncertain about what sort of investment alternatives are available.", false),
-            //         new SelectOption(20, "You are nearing retirement and you are investing to ensure you have sufficient funds available to enjoy your retirement.", false),
-            //         new SelectOption(20, "You have some specific objectives within the next 5 years for which you want to accumulate sufficient funds.", false),
-            //         new SelectOption(10, "You want to provide a regular income and/or totally protect the value of your investment capital.", false)
-            //     ])
-            // );
-            // var section = new Section("investing-purpose", "Question 7", "Which of the following best describes your purpose for investing?")
-            // section.addQuestion(question);
-            // questionnaire.addSection(section);
-            //
-            // var section = new Section("additional-notes", "Additional question", "Please note your preference for higher risk returns in relation to protecting your investment.")
-            // var conditionalQuestion = new Question("additional-notes",
-            //     new InputField("additional-question", "text", "Enter your response here", "...", true),
-            //     false //required if not skipped
-            // );
-            // section.addQuestion(conditionalQuestion);
-            // questionnaire.addSection(section);
-            //
-            // questionnaire.getCurrentSection().show();
-            //
-            // function shouldConditionalQuestionBeSkipped() {
-            //     if (calculateTotalScore() > 100 && (questionnaire.getAnswerByQuestionId("return-expectation") == 10 || questionnaire.getAnswerByQuestionId("poorly-performing-cash-in") == 0 || questionnaire.getAnswerByQuestionId("paper-hands") == 10 || questionnaire.getAnswerByQuestionId("investing-purpose") == 10)) {
-            //         return false;
-            //     } else {
-            //         return true;
-            //     }
-            // }
-            // function calculateTotalScore() {
-            //     var total = 0;
-            //     total += parseFloat(questionnaire.getAnswerByQuestionId("stream-options"));
-            //     total += parseFloat(questionnaire.getAnswerByQuestionId("return-expectation"));
-            //     total += parseFloat(questionnaire.getAnswerByQuestionId("poorly-performing-cash-in"));
-            //     total += parseFloat(questionnaire.getAnswerByQuestionId("investment-experience"));
-            //     total += parseFloat(questionnaire.getAnswerByQuestionId("tax-efficiency"));
-            //     total += parseFloat(questionnaire.getAnswerByQuestionId("paper-hands"));
-            //     total += parseFloat(questionnaire.getAnswerByQuestionId("investing-purpose"));
-            //     return total;
-            // }
-            //
-            // function skipConditionalQuestion() {
-            //     questionnaire.addSectionToSkipById("additional-notes");
-            // }
-            //
-            // function doNotSkipConditionalQuestion() {
-            //     questionnaire.removeSectionToSkipById("additional-notes");
-            // }
-            //
-            // function onNext() {
-            //     questionnaire.saveAnswersForCurrentSection();
-            //
-            //     if (shouldConditionalQuestionBeSkipped()) {
-            //         skipConditionalQuestion();
-            //     } else {
-            //         doNotSkipConditionalQuestion();
-            //     }
-            //
-            //     questionnaire.nextSection();
-            //
-            //     if (shouldSubmitButtonBeShown()) {
-            //         showSubmitButton();
-            //     }
-            // }
-            //
-            // function onPrevious() {
-            //     questionnaire.saveAnswersForCurrentSection();
-            //
-            //     if (shouldConditionalQuestionBeSkipped()) {
-            //         skipConditionalQuestion();
-            //     } else {
-            //         doNotSkipConditionalQuestion();
-            //     }
-            //
-            //     questionnaire.previousSection();
-            //
-            //     if (shouldSubmitButtonBeShown()) {
-            //         showSubmitButton();
-            //     }
-            // }
-            //
-            // function shouldSubmitButtonBeShown() {
-            //     return questionnaire.haveAllSectionsBeenAnswered();
-            // }
-            //
-            // function showSubmitButton() {
-            //     var submit = document.getElementById("submit-button");
-            //     submit.style.display = "block";
-            //     console.log("Submit button displayed")
-            // }
-            //
-            // function onSubmit() {
-            //     showResults();
-            // }
 
 
             function riskProfileShow() {
-                var s = document.getElementById("risk_profile");
-                if (s.style.display === "block") {
-                    s.style.display = "none";
-                } else {
-                    s.style.display = "block";
-                }
-                var i = document.getElementById("investment_form");
-                if (i.style.display === "none") {
-                    i.style.display = "block";
-                } else {
-                    i.style.display = "none"
+                if(validation() === true) {
+                    var s = document.getElementById("risk_profile");
+                    if (s.style.display === "block") {
+                        s.style.display = "none";
+                    } else {
+                        s.style.display = "block";
+                    }
+                    var i = document.getElementById("investment_form");
+                    if (i.style.display === "none") {
+                        i.style.display = "block";
+                    } else {
+                        i.style.display = "none"
+                    }
                 }
             }
 

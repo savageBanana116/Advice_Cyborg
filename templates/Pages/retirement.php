@@ -1,7 +1,7 @@
 <?php
 echo $this->Html->css('custom.css');
 ?>
-
+<?= $this->Html->script('Invest_retirement.js') ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en">
 
@@ -46,7 +46,36 @@ echo $this->Html->css('custom.css');
 <!--                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
 <!--                </div>-->
                 <div class="carousel-inner">
-                    <form action="retirement_results" method="get" id="onSubmit" >
+                    <script>
+                        function formValidator(){
+                            const age = document.getElementById("inputAge").value;
+                            const income = document.getElementById("inputIncome").value;
+                            const otherIncome = document.getElementById("inputOthers").value;
+                            const lump = document.getElementById("inputLump").value;
+                            const superAnnual = document.getElementById("inputSuper").value;
+                            const investment = document.getElementById("inputInvestment").value;
+                            if (age == ''){
+                                alert("Please enter your age.");
+                                return false;
+                            }else if (income == ''){
+                                alert("Please enter your after tax monthly income.");
+                                return false;
+                            }else if (otherIncome == ''){
+                                alert("Please enter your other sources of income.");
+                                return false;
+                            }else if (lump == ''){
+                                alert("Please enter your required lump.");
+                                return false;
+                            }else if (superAnnual == ''){
+                                alert("Please enter your super investments.");
+                                return false;
+                            }else if (investment == ''){
+                                alert("Please enter your Non-Super investments.");
+                                return false;
+                            }
+                        }
+                    </script>
+                    <form action="retirement_results" method="get" id="retirementForm" onsubmit="return formValidator()" >
                     <div class="carousel-item active" style="background: white">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Question 1</h5>
@@ -62,7 +91,7 @@ echo $this->Html->css('custom.css');
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-5">
-                                    <input type="number" class="form-control" name="age" id="inputAge" placeholder="Enter your age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2" required step="1" pattern="[0-9]+">
+                                    <input type="number" class="form-control" name="age" id="inputAge" placeholder="Enter your age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="1" pattern="[0-9]+">
                                 </div>
                             </div>
 
@@ -82,7 +111,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1" pattern="[0-9]+">
+                                        <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+">
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +131,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1">
+                                        <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="1">
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +150,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1">
+                                        <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1">
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +170,7 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1">
+                                        <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="1">
                                     </div>
                                 </div>
                             </div>
@@ -162,16 +191,13 @@ echo $this->Html->css('custom.css');
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" required step="1">
+                                        <input type="number" class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1">
                                     </div>
                                 </div>
 <!--                                <button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
-                                    <input type="submit" name="submit" class="btn btn-primary" style="margin-top: 1em" >
+                                    <input type="submit" name="submit" id="submit"  class="btn btn-primary" style="margin-top: 1em" >
 
                             </div>
-                            <?php if (isset($_POST['submit'])) {
-                                echo '<script>alert("Welcome to Geeks for Geeks")</script>';
-                            }?>
                             <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
                         </div>
                     </form>
@@ -248,6 +274,6 @@ echo $this->Html->css('custom.css');
 
 </script>
 
-<?= $this->Html->script('Invest_retirement.js') ?>
+
 
 

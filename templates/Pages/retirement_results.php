@@ -37,23 +37,23 @@ $_SESSION["age"] = $myAge;
                     </tr>
                     <tr>
                         <td><h5>Your required income: </h5></td>
-                        <td> <h6><?php echo $myIncome ?></h6></td>
+                        <td> <h6><?php echo "$" . number_format($myIncome) ?></h6></td>
                     </tr>
                     <tr>
                         <td><h5>Your income from other sources: </h5></td>
-                        <td><h6><?php echo $myOthers ?></h6></td>
+                        <td><h6><?php echo "$" . number_format($myOthers) ?></h6></td>
                     </tr>
                     <tr>
                         <td><h5>Your required lump sum: </h5></td>
-                        <td> <h6><?php echo $myLump ?></h6></td>
+                        <td> <h6><?php echo "$" . number_format($myLump) ?></h6></td>
                     </tr>
                     <tr>
                         <td><h5>Your current Super investment: </h5></td>
-                        <td><h6><?php echo $mySuper ?></h6></td>
+                        <td><h6><?php echo "$" . number_format($mySuper) ?></h6></td>
                     </tr>
                     <tr>
                         <td><h5>Your current Non-Super investment: </h5></td>
-                        <td> <h6><?php echo $myInvestment ?></h6></td>
+                        <td> <h6><?php echo "$" . number_format($myInvestment) ?></h6></td>
                     </tr>
                 </table>
 

@@ -18,7 +18,7 @@
 <div class="container">
     <main class="py-5 text-center">
         <div class="py-5 text-center">
-            <div class="col-3">                    <button type="button" onclick="location.href='<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Back to Dashboard</button>
+            <div class="text-center" style="vertical-align: center; margin-bottom:2em">                    <button type="button" onclick="location.href='<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Back to Dashboard</button>
             </div>
             <h2 class="section-heading text-uppercase">Setting up an income stream</h2>
             <p class="section-subheading text-muted">Let's help you set up your income stream!</p>

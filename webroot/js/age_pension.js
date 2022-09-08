@@ -145,7 +145,9 @@ function Deemed_Personal_Assets_H13(vehicles_invest,content_invest,property_inve
     return vehicles_invest + content_invest + property_invest;
 }
 
-
+function Total_Assessable_assets_H15(H12,H13){
+    return H12+H13;
+}
 
 
 function Maximum_fortnightly_pension_H18(relationship,Age,is_gender){
@@ -171,6 +173,75 @@ function Maximum_fortnightly_pension_H18(relationship,Age,is_gender){
     }
 }
 
+function Asset_test_pension_reduction_u3(relationship,gross_annual_salary_spouse,maximum_asset_full_pension){
+    //c5 relationship
+    //h15 gross annual salary spouse
+    //h8 maximum assest for full pension
+    //m17 = 1.5
+    //m16 = 3
+    if(relationship === "couple"){
+        return ((gross_annual_salary_spouse - maximum_asset_full_pension) / 1000) * 1.5;
+    }else if(relationship === 'single'){
+        return ((gross_annual_salary_spouse - maximum_asset_full_pension) / 1000) * 3;
+    }
+}
+
+
+function pensionReduction_H19(maximum_fortnightly_pension,total_assessable_asset,maximum_asset_part_pension,asset_test_pension_reduction,maximum_asset_full_pension){
+    //H18 maximum fortnightly pension
+    //H15 total assessable assets
+    //H9 maximum assets for part pension
+    //H8
+    //U3 asset test pension reduction
+
+    if(maximum_fortnightly_pension === 'N/A'){
+        return 'N/A';
+    }else if(total_assessable_asset >= maximum_asset_part_pension){
+        return 0;
+    }else if(maximum_asset_full_pension < total_assessable_asset && total_assessable_asset > maximum_asset_part_pension){
+        return asset_test_pension_reduction;
+    }
+
+}
+
+function Total_fortnightly_pension_payableH21(maximum_fortnightly_pension,pension_reduction){
+    const diff = maximum_fortnightly_pension - pension_reduction;
+    if(maximum_fortnightly_pension === "N/A"){
+        return "N/A";
+    }else {
+        if(diff > 0){
+            return diff;
+        }else{
+            return 0;
+        }
+    }
+
+}
+
+function pharma_allowance_H22(maximum_fortnightly_pension,total_assessable_asset,maximum_asset_part_pension,relationship,gender,age){
+
+    /*
+     //H18 maximum fortnightly pension
+    //H15 total assessable assets
+    //H9 maximum assets for part pension
+    //c5 relationship
+     //c12 = gender
+    //c11 = age
+     M37 single 8.8
+     M36 couple each 7.9
+     */
+
+    if(total_assessable_asset > maximum_asset_part_pension){
+        return 0;
+    }
+}
+
+function total_benefit_payable_H25(){
+    //h21
+    //h22
+    //I21
+    //I22
+}
 
 
 

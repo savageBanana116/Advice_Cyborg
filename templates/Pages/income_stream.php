@@ -18,6 +18,8 @@
 <div class="container">
     <main class="py-5 text-center">
         <div class="py-5 text-center">
+            <div class="col-3">                    <button type="button" onclick="location.href='/team18-app_fit3048/modules/dashboard' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Back to Dashboard</button>
+            </div>
             <h2 class="section-heading text-uppercase">Setting up an income stream</h2>
             <p class="section-subheading text-muted">Let's help you set up your income stream!</p>
         </div>

@@ -182,7 +182,7 @@ echo $this->Html->css('custom.css');
                                             <input type="radio"  name="is_gender_spouse" id="is_gender_other_spouse" class="custom-control-input" value="Other" checked>
                                         </label>
                                     </div>
-                                </div>
+                                </div>b
                             </div>
                         </div>
                             <div class="form-group row">

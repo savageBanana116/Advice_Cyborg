@@ -9,11 +9,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en">
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 <?php
 echo $this->Html->css('custom.css');
 ?>
@@ -383,11 +388,23 @@ echo $this->Html->css('custom.css');
                                 </div>
                             </div>
                         <div tclass="form-group" style="padding-top:1em; padding-bottom:1em">
-                            <button type="button" id="Submit_Age_pension_single" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"> Calculate </button>
+                            <button type="button" id="Submit_Age_pension_single" onclick="document.getElementById('id01').style.display='block'" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
+                                Calculate
+                            </button>
                         </div>
                         </form>
 
-
+                    <!-- The Modal -->
+                    <div id="id01" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+                                <p> Total fortnightly Benefit Payable: </p>
+                                <output></output>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 </div>
                 </div>
@@ -398,8 +415,6 @@ echo $this->Html->css('custom.css');
                 <br>
             </div>
         </div>
-
-
 
 
 

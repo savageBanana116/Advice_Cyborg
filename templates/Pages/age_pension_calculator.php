@@ -17,7 +17,6 @@
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
 <?php
 echo $this->Html->css('custom.css');
@@ -388,26 +387,37 @@ echo $this->Html->css('custom.css');
                                 </div>
                             </div>
                         <div tclass="form-group" style="padding-top:1em; padding-bottom:1em">
-                            <button type="button" id="Submit_Age_pension_single" onclick="document.getElementById('id01').style.display='block'" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
+                            <button type="button" id="Submit_Age_pension_single"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
                                 Calculate
                             </button>
                         </div>
                         </form>
 
-                    <!-- The Modal -->
-                    <div id="id01" class="w3-modal">
-                        <div class="w3-modal-content">
-                            <div class="w3-container">
-      <span onclick="document.getElementById('id01').style.display='none'"
-            class="w3-button w3-display-topright">&times;</span>
-                                <p> Total fortnightly Benefit Payable: </p>
-                                <output></output>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Pension Output</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <output id="model_output"></output>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
                 </div>
+
+
 
 
 
@@ -419,6 +429,9 @@ echo $this->Html->css('custom.css');
 
 
 <script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
     //input validation
     /*
     Salary.oninput = function () {

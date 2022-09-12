@@ -582,6 +582,9 @@ function PensionSingle(){
 
     console.log(pharma_allowance,total_fortnightly_pension_payable);
 
+    let output;
+
+    document.getElementById("model_output").innerHTML = "$ " + 0;
 
 }
 

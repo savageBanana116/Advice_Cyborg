@@ -101,48 +101,53 @@ echo $this->Html->css('custom.css');
                 <div class="col thinBox" class="form-group row" style="padding-bottom: 40px" >
 
                     <form class="form-inline" id="age_pension_basic_form" >
-                        <br>
-                        <div  class="mb-4" style="margin-top: 1em; ">
-                            <span>Are you <span class="blue"> a single or a couple?</span></span>
-                            <div style="border: 1px solid lightgray;border-radius: 5px;">
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio"  name="is_relationship" id="is_single" class="custom-control-input" value="single"checked >
-                                    <label class="custom-control-label" for="customRadioInline">Single</label>
+
+                        <div class="container" style="padding-bottom: 20px">
+                            <div class="row">
+                                <div  class="col-sm" style="margin-top: 1em; ">
+                                    <span>Are you <span class="blue"> a single or a couple?</span></span>
+                                    <div style="border: 1px solid lightgray;border-radius: 5px;">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio"  name="is_relationship" id="is_single" class="custom-control-input" value="single"checked >
+                                            <label class="custom-control-label" for="customRadioInline">Single</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio"  name="is_relationship" id="is_couple"  class="custom-control-input" value="couple" >
+                                            <label class="custom-control-label" for="customRadioInline">Couple</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio"  name="is_relationship" id="is_couple"  class="custom-control-input" value="couple" >
-                                    <label class="custom-control-label" for="customRadioInline">Couple</label>
+                                <div class="col-sm" style="margin-top: 1em; ">
+                                    <span>Do you own <span class="blue">a home ?</span></span>
+                                    <div style="border: 1px solid lightgray;border-radius: 5px;">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio"  name="is_house" id="is_homeowner" class="custom-control-input" value="yes">
+                                            <label class="custom-control-label" for="customRadioInline">Yes</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio"  name="is_house" id="not_homeowner" class="custom-control-input" value="no" checked>
+                                            <label class="custom-control-label" for="customRadioInline">No</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-4" style="margin-top: 1em; ">
-                            <span>Do you own <span class="blue">a home ?</span></span>
-                            <div style="border: 1px solid lightgray;border-radius: 5px;">
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio"  name="is_house" id="is_homeowner" class="custom-control-input" value="yes">
-                                    <label class="custom-control-label" for="customRadioInline">Yes</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio"  name="is_house" id="not_homeowner" class="custom-control-input" value="no" checked>
-                                    <label class="custom-control-label" for="customRadioInline">No</label>
-                                </div>
-                            </div>
-                        </div>
+
+
 
                         <div tclass="form-group" syle="padding-top:1em; padding-bottom:1em">
                             <button type="button" id="Submit_Age_pension_Basic" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"> Continue </button>
                         </div>
-                        <br>
+
                     </form>
 
                     <form style="display: none" class="form-inline" id="age_pension_input_double">
-
                         <H1>Personal Information</H1>
                         <div class="form-group row">
                             <div class="col-xs-2">
                                 <h2>Client</h2>
                                 <span>What is your<span class="blue" > name?</span></span>
-                                <input type="number"  class="form-control" min="18" max="120" id="name">
+                                <input type="text"  class="form-control" min="18" max="120" id="name">
                             </div>
                             <div class="col-xs-2">
                                 <h2>Spouse</h2>
@@ -164,9 +169,7 @@ echo $this->Html->css('custom.css');
                                             <input type="radio" name="is_gender" id="is_gender_female" class="custom-control-input" value="Female">
                                         </label>
 
-                                        <label class="custom-control-label" for="customRadioInline">Other
-                                            <input type="radio"  name="is_gender" id="is_gender_other" class="custom-control-input" value="Other" >
-                                        </label>
+
                                     </div>
                                 </div>
                             </div>
@@ -175,30 +178,30 @@ echo $this->Html->css('custom.css');
                                 <div style="border: 1px solid lightgray;border-radius: 5px; height: 50px; ">
                                     <div class="custom-control custom-radio custom-control-inline" >
                                         <label class="custom-control-label" for="customRadioInline">Male
-                                            <input type="radio"  name="is_gender_spouse" id="is_gender_male_spouse" class="custom-control-input" value="Male" checked>
+                                            <input type="radio"  name="is_gender_spouse" id="is_gender_male_spouse" class="custom-control-input" value="Male" >
                                         </label>
 
                                         <label class="custom-control-label" for="customRadioInline" style="padding-right: 15px; padding-left: 15px; padding-top: 10px">Female
                                             <input type="radio"  name="is_gender_spouse" id="is_gender_female_spouse" class="custom-control-input" value="Female" checked>
                                         </label>
 
-                                        <label class="custom-control-label" for="customRadioInline">Other
-                                            <input type="radio"  name="is_gender_spouse" id="is_gender_other_spouse" class="custom-control-input" value="Other" checked>
-                                        </label>
+
                                     </div>
-                                </div>b
+                                </div>
                             </div>
                         </div>
                             <div class="form-group row">
-                                <div class="col-xs-2">
+                                <div class="col-xs-2" >
                                     <span>What is your<span class="blue" > date of birth?</span></span>
                                     <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="DOB">
                                 </div>
+
                                 <div class="col-xs-2">
                                     <span>What is your spouse's <span class="blue"> date of birth?</span> </span>
                                     <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="spouse_DOB">
                                 </div>
                             </div>
+
                             <div class="form-group row">
                                 <div class="col-xs-2">
                                     <span>What is your<span class="blue" > Gross annual salary?</span></span>
@@ -273,8 +276,10 @@ echo $this->Html->css('custom.css');
                                 <input type="number"  class="form-control" min="18" max="120" id="funeral_bond" >
                             </div>
                         </div>
-                        <div class="form-group" style="padding-top:1em; padding-bottom:1em">
-                            <button type="button" id="Submit_Age_pension_Basic" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"> Calculate </button>
+                        <div tclass="form-group" style="padding-top:1em; padding-bottom:1em">
+                            <button type="button" id="Submit_Age_pension_single"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
+                                Calculate
+                            </button>
                         </div>
 
                     </form>
@@ -284,47 +289,39 @@ echo $this->Html->css('custom.css');
 
                     <form class="form-inline" style="display: none" id="age_pension_input_single_form">
                             <h1>Personal Information</h1>
-                        <div class="form-group row">
-                            <div class="col-xs-2">
-                                <span>What is your<span class="blue" > name?</span></span>
-                                <input type="number"  class="form-control" min="18" max="120" id="name_single">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xs-2">
-                                <span>What is your<span class="blue" > gender?</span></span>
-                                <div style="border: 1px solid lightgray;border-radius: 5px; height: 50px; ">
-                                    <div class="custom-control custom-radio custom-control-inline">
 
-                                        <label class="custom-control-label" for="customRadioInline">Male
-                                            <input type="radio"  name="is_gender" id="is_gender_male_single" class="custom-control-input" value="Male" >
-                                        </label>
+                            <div class="form-group row">
 
-                                        <label class="custom-control-label" for="customRadioInline" style="padding-right: 15px; padding-left: 15px; padding-top: 10px">Female
-                                            <input type="radio" name="is_gender" id="is_gender_female_single" class="custom-control-input" value="Female">
-                                        </label>
 
-                                        <label class="custom-control-label" for="customRadioInline">Other
-                                            <input type="radio"  name="is_gender" id="is_gender_other_single" class="custom-control-input" value="Other" checked>
-                                        </label>
+                                <div class="col-xs-2">
+                                    <span>What is your<span class="blue" > name?</span></span>
+                                    <input type="text"  class="form-control" min="18" max="120" id="name_single" required>
+                                </div>
+
+                                <div class="col-xs-2">
+                                    <span>What is your<span class="blue" > gender?</span></span>
+                                    <div style="border: 1px solid lightgray;border-radius: 5px; height: 35px; ">
+                                        <div class="custom-control custom-radio custom-control-inline">
+
+                                            <label class="custom-control-label" for="customRadioInline">Male
+                                                <input type="radio"  name="is_gender" id="is_gender_male_single" class="custom-control-input" value="Male" checked>
+                                            </label>
+
+                                            <label class="custom-control-label" for="customRadioInline" style="padding-right: 15px; padding-left: 15px; padding-top: 10px">Female
+                                                <input type="radio" name="is_gender" id="is_gender_female_single" class="custom-control-input" value="Female">
+                                            </label>
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xs-2">
-                                <span>What is your<span class="blue" > date of birth?</span></span>
-                                <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="DOB_single">
+
+                                <div class="col-xs-2">
+                                    <span>What is your<span class="blue" > date of birth?</span></span>
+                                    <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="DOB_single" required>
+                                </div>
+
                             </div>
 
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xs-2">
-                                <span>What is your<span class="blue" > Gross annual salary?</span></span>
-                                <input type="number"  class="form-control" min="18" max="120" id="Gross_annual_salary_single">
-                            </div>
-
-                        </div>
                             </br>
 
 
@@ -332,7 +329,7 @@ echo $this->Html->css('custom.css');
                                 <H1> Non Financial Assets </H1>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Car/s, Caravan, Boat etc?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="vehicle_invest_single" >
+                                    <input type="number"  class="form-control"  min="0" max="999999999"  onKeyPress="return check(event,value)" id="vehicle_invest_single" >
                                 </div>
 
                                 <div class="col-xs-2">
@@ -343,7 +340,8 @@ echo $this->Html->css('custom.css');
                                     <span>How much in <span class="blue"> Investment property?</span></span>
                                     <input type="number"  class="form-control" min="18" max="120" id="property_invest_single" >
                                 </div>
-                            </div>
+
+                            </div><br>
                             <div class="form-group row">
                                 <H1> Financial Assets </H1>
                                 <div class="col-xs-2">
@@ -373,7 +371,7 @@ echo $this->Html->css('custom.css');
                                     <input type="number"  class="form-control" min="18" max="120" id="super_single" >
                                 </div>
 
-                            </div>
+                            </div><br>
                             <div class="form-group row">
                                 <H1> Other Assets </H1>
                                 <div class="col-xs-2">
@@ -385,8 +383,14 @@ echo $this->Html->css('custom.css');
                                     <span>How much in <span class="blue"> Funeral Bond?</span> </span>
                                     <input type="number"  class="form-control" min="18" max="120" id="funeral_bond_single" >
                                 </div>
+                                    <div class="col-xs-2">
+                                        <span>What is your<span class="blue" > Gross annual salary?</span></span>
+                                        <input type="number"  class="form-control" min="18" max="120" id="Gross_annual_salary_single">
+                                    </div>
+
+
                             </div>
-                        <div tclass="form-group" style="padding-top:1em; padding-bottom:1em">
+                        <div class="form-group" style="padding-top:1em; padding-bottom:1em">
                             <button type="button" id="Submit_Age_pension_single"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
                                 Calculate
                             </button>
@@ -404,7 +408,7 @@ echo $this->Html->css('custom.css');
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <output id="model_output"></output>
+                                    <output id="model_output">0</output>
 
                                 </div>
                                 <div class="modal-footer">

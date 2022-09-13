@@ -36,7 +36,10 @@ echo $this->Html->css('custom.css');
         <h3 id="title"></h3>
     <div class="card text-center" id="input">
         <div class="card-header">
-            Fill in your personal details
+            Fill in your personal details so that we can help know more about you!
+        </div>
+        <div class="card-header">
+            We use this information to help guide you to reach your retirement goals
         </div>
         <div class="card-body">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" data-bs-interval="false">
@@ -47,6 +50,20 @@ echo $this->Html->css('custom.css');
 <!--                </div>-->
                 <div class="carousel-inner">
                     <script>
+
+                        $('#myCarousel').on('slid', '', function() {
+                            var $this = $(this);
+
+                            $this.children('.carousel-control').show();
+
+                            if($('.carousel-inner .item:first').hasClass('active')) {
+                                $this.children('.left.carousel-control').hide();
+                            } else if($('.carousel-inner .item:last').hasClass('active')) {
+                                $this.children('.right.carousel-control').hide();
+                            }
+
+                        });
+
                         function formValidator(){
                             const age = document.getElementById("inputAge").value;
                             const income = document.getElementById("inputIncome").value;
@@ -82,19 +99,14 @@ echo $this->Html->css('custom.css');
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Question 1</h5>
                             <span>I am ____ years old and would like to retire now.</span><br>
-                            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                               Help
-                            </button>
-                            <div class="collapse" id="collapseExample">
-                                <div class="card card-body">
-                                    Help: To be able to access your super benefits, you need to be 58 or older.
-                                    If you have reasons to retire before the age of 58,
-                                    please contact our office.                                </div>
-                            </div>
+
                             <div class="form-group row">
                                 <div class="col-sm-5">
                                     <input type="number" class="form-control" name="age" id="inputAge" placeholder="Enter your age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                 </div>
+                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">Help: To be able to access your super benefits, you need to be 58 or older.
+                                    If you have reasons to retire before the age of 58,
+                                    please contact our office. </span>
                             </div>
 
                         </div>
@@ -104,38 +116,27 @@ echo $this->Html->css('custom.css');
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 2</h5>
                                 <span>At retirement I need a monthly income after tax of $____</span><br>
-                                <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-                                    Help
-                                </button>
-                                <div class="collapse" id="collapseExample1">
-                                    <div class="card card-body">
-                                        Help: The net monthly income you require to enjoy your desired lifestyle                                </div>
-                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
                                         <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" pattern="[0-9]+"onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                     </div>
                                 </div>
-                            </div>
+                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The net monthly income you require to enjoy your desired lifestyle. Note: If you're unsure how much you need contact a financial planner for further advice </span>
+
+                        </div>
                             <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
                         </div>
                         <div class="carousel-item" style="background: white">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 3</h5>
                                 <span>I will receive a monthly gross income of other sources of $____</span><br>
-                                <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-                                    Help
-                                </button>
-                                <div class="collapse" id="collapseExample2">
-                                    <div class="card card-body">
-                                        Help: Your non-super source of income.
-                                        Examples: rental, investment income                               </div>
-                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
                                         <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                     </div>
                                 </div>
+                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: Your non-super source of income.
+                                           Examples: rental, investment income               </span>
                             </div>
                             <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
                         </div>
@@ -143,18 +144,12 @@ echo $this->Html->css('custom.css');
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 4</h5>
                                 <span>I will need a lump sum of $____ to settle my liabilities</span><br>
-                                <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
-                                    Help
-                                </button>
-                                <div class="collapse" id="collapseExample3">
-                                    <div class="card card-body">
-                                        Help: This is the amount you need to settle your debts and retire debt-free.                            </div>
-                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
                                         <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                     </div>
                                 </div>
+                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: This is the amount you need to settle your debts and retire debt-free.   </span>
                             </div>
                             <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
                         </div>
@@ -162,19 +157,14 @@ echo $this->Html->css('custom.css');
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 5</h5>
                                 <span>The current value of my Super investments: $____</span><br>
-                                <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
-                                    Help
-                                </button>
-                                <div class="collapse" id="collapseExample4">
-                                    <div class="card card-body">
-                                        Help: The value of your Super/Retirement funds.
-                                        Does not include: investment funds, shares, bonds, term deposits, etc.                        </div>
-                                </div>
+
                                 <div class="form-group row">
                                     <div class="col-sm-5">
                                         <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                     </div>
                                 </div>
+                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The value of your Super/Retirement funds.
+                                           Does not include: investment funds, shares, bonds, term deposits, etc.   </span>
                             </div>
                             <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
                         </div>
@@ -183,19 +173,14 @@ echo $this->Html->css('custom.css');
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Question 6</h5>
                                 <span>The current value of my Non-Super investments: $____</span><br>
-                                <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
-                                    Help
-                                </button>
-                                <div class="collapse" id="collapseExample5">
-                                    <div class="card card-body">
-                                        Help: The value of your other investments.
-                                        Examples: investment funds, shares, bonds, term deposits, etc.                     </div>
-                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5">
                                         <input type="number" class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                     </div>
                                 </div>
+                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of your other investments.
+                                          Examples: investment funds, shares, bonds, term deposits, etc.  </span>
+                                <br>
 <!--                                <button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
                                     <input type="submit" name="submit" id="submit"  class="btn btn-primary" style="margin-top: 1em" >
 

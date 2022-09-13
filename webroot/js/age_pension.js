@@ -535,10 +535,20 @@ function pharmaceutical_allowance_H45(gender,age,relationship,gifted_assets,sum_
 
 }
 
+function lettersOnly()
+{
+    var charCode = event.keyCode;
 
+    if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 8)
+
+        return true;
+    else
+        return false;
+}
 function PensionSingle(){
     const relationship = 'single';
     const DOB = document.getElementById('DOB_single').value;
+    const name_single = document.getElementById('name_single').value;
     let bank_accounts = document.getElementById('bank_accounts_invest_single').value;
     let shares = document.getElementById('shares_invest_single').value;
     let funds = document.getElementById('funds_invest_single').value;
@@ -553,38 +563,41 @@ function PensionSingle(){
     let Super = document.getElementById('super_single').value;
 
 
-    const DOB_String = DOB.toString();
-    const age = getAge(DOB_String);
-    let gender = getGender();
-    let is_Homeowner = getHomeStatus();
+        const DOB_String = DOB.toString();
+        const age = getAge(DOB_String);
+        let gender = getGender();
+        let is_Homeowner = getHomeStatus();
 
-    shares = parseInt(shares);
-    funds = parseInt(funds);
-    bank_accounts = parseInt(bank_accounts);
-    gross_annual_salary = parseInt(gross_annual_salary);
-    funeral_bond = parseInt(funeral_bond);
-    gifted_assets = parseInt(gifted_assets);
-    insurance = parseInt(insurance);
-    bond = parseInt(bond);
-    Super = parseInt(Super);
+        shares = parseInt(shares);
+        funds = parseInt(funds);
+        bank_accounts = parseInt(bank_accounts);
+        gross_annual_salary = parseInt(gross_annual_salary);
+        funeral_bond = parseInt(funeral_bond);
+        gifted_assets = parseInt(gifted_assets);
+        insurance = parseInt(insurance);
+        bond = parseInt(bond);
+        Super = parseInt(Super);
 
 
-    const sum_financialAssets = sum_financialAssetsC23toC27(bank_accounts,shares,funds,insurance,bond,Super,0);
-    const pharma_allowance = pharmaceutical_allowance_H45(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,0,bank_accounts,shares,funds,insurance,bond,Super,0);
+        const sum_financialAssets = sum_financialAssetsC23toC27(bank_accounts,shares,funds,insurance,bond,Super,0);
+        const pharma_allowance = pharmaceutical_allowance_H45(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,0,bank_accounts,shares,funds,insurance,bond,Super,0);
 
-    const total_fortnightly_pension_payable =  total_fortnightly_pension_payable_H44(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,0,bank_accounts,shares,funds,insurance,bond,Super,0);
-    //console.log(gender,age,relationship,parseInt(gifted_assets),sum_financialAssets,parseInt(funeral_bond), parseInt(gross_annual_salary),0, parseInt(bank_accounts),parseInt(shares),parseInt(funds),parseInt(insurance),parseInt(bond),parseInt(Super),0);
-    const H18 = Maximum_fortnightly_pension_H18(relationship,age,gender);
-    const H42 = pension_reductionH42(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,0,bank_accounts,shares,funds,insurance,bond,Super,0);
-    console.log(H18,H42);
+        const total_fortnightly_pension_payable =  total_fortnightly_pension_payable_H44(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,0,bank_accounts,shares,funds,insurance,bond,Super,0);
+        //console.log(gender,age,relationship,parseInt(gifted_assets),sum_financialAssets,parseInt(funeral_bond), parseInt(gross_annual_salary),0, parseInt(bank_accounts),parseInt(shares),parseInt(funds),parseInt(insurance),parseInt(bond),parseInt(Super),0);
+        const H18 = Maximum_fortnightly_pension_H18(relationship,age,gender);
+        const H42 = pension_reductionH42(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,0,bank_accounts,shares,funds,insurance,bond,Super,0);
+        console.log(H18,H42);
 
-    console.log(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,bank_accounts,shares,funds,insurance,bond,Super);
+        console.log(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,bank_accounts,shares,funds,insurance,bond,Super);
 
-    console.log(pharma_allowance,total_fortnightly_pension_payable);
+        console.log(pharma_allowance,total_fortnightly_pension_payable);
 
-    let output;
+        let output;
 
-    document.getElementById("model_output").innerHTML = "$ " + 0;
+        document.getElementById("model_output").innerHTML = "$ " + 0;
+
+
+
 
 }
 

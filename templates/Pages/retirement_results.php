@@ -59,18 +59,23 @@ $_SESSION["age"] = $myAge;
 
         </div>
 
-        <div class="row" style="margin-top: 10%;margin-bottom: 10%;justify-content: center">
-            <h3 class="text-center " style="margin-bottom: 1em">Choose your step</h3>
-            <div class="col-3">                    <button type="button" onclick="location.href='#' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super (Coming Soon)</button>
-            </div>
-            <div class="col-3">
-<!--                <button type="button" onclick="location.href='risk_profile' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio</button>-->
-                <button type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio(Coming Soon)</button>
+        <div class="row" style="justify-content: center">
+            <h3 class="text-center ">Continue your retirement journey!</h3>
+            <h6 class="text-center" style="margin-bottom: 1em">Help further your retirement goals by going through our questionnaires to help reach your retirement goals!</h6>
+        </div>
 
+            <div class="row" style="margin-bottom:0.5em">
+                <button style="width:15%;" type="button" onclick="location.href='#' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super (Coming Soon)</button>
             </div>
-            <div class="col-3">                    <button type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">consolidate super(Coming Soon)</button>
+            <div class="row" style="margin-bottom:0.5em">
+<!--                <button type="button" onclick="location.href='risk_profile' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio</button>-->
+                <button style="width:15%;" type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio(Coming Soon)</button>
             </div>
-            <div class="col-3">                    <button type="button" onclick="location.href='income_stream' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">income stream</button>
+            <div class="row" style="margin-bottom:0.5em">
+                <button style="width:15%;" type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Consolidate Super(Coming Soon)</button>
+            </div>
+            <div class="row" style="margin-bottom:0.5em">
+                <button style="width:15%;" type="button" onclick="location.href='income_stream' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Set up an Income Stream</button>
             </div>
 
         </div>

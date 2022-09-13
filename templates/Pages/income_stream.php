@@ -29,7 +29,7 @@
             <form>
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <p class="lead">To start! Please go to the Centrelink Payment and Services Finder to see if you are eligible for any payments</p>
+                        <p class="lead">To start! You may be eligible for certain Centrelink payments to assist you with establishing your income stream.</p>
                         <P class="lead">You can access this <a href="https://www.centrelink.gov.au/custsite_pfe/pymtfinderest/paymentFinderEstimatorPage.jsf?wec-appid=pymtfinderest&wec-locale=en_US#stay" target="_blank">here!</a></P>
                     </div>
                     <div class="col-auto">
@@ -106,8 +106,8 @@
 
                         <form action="test1" method="get" class="pb-2">
                             <p class="lead">What is your Potential Monthly Centrelink Payment?</p>
-                                <div class="col-auto" id="amount">
-                                    <input class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                <div class="col" id="amount" style="justify-content: center;">
+                                    <input class="form-control" style="width:30%;margin:auto" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                            type = "number"
                                            maxlength = "6" required placeholder="$" id="centrelinkPayment" name="centrelinkPayment"/>
                                 </div>
@@ -125,8 +125,8 @@
 
                         <form action="test1" method="get" class="pb-2">
                             <p class="lead">What is your required income stream payment? (or minimum rate allowed by government, whichever is greater)</p>
-                            <div class="col-auto" id="amount">
-                                <input class="form-control" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            <div class="col" id="amount" style="justify-content: center;">
+                                <input class="form-control" style="width:30%;margin:auto" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                        type = "number"
                                        maxlength = "6" required placeholder="$" id="streamPayment" name="streamPayment" />
                             </div>
@@ -247,8 +247,8 @@
                                             <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                    maxlength = "30" id="email" name="email">
                                     </div>
+                                    <a id="submit-button" class="btn btn-primary mt-3" style="width:30%" onclick="sendResults()">Submit Enquiry</a>
                                 </div>
-                                <a id="submit-button" class="btn btn-primary mt-3" onclick="sendResults()">Submit Enquiry</a>
                             </div>
                         </div>
                     </div>
@@ -349,8 +349,8 @@
                                                            maxlength = "30" id="email2" name="email2">
                                                 </div>
                                             </div>
+                                            <a id="submit-button" class="btn btn-primary mt-3" style="width:30%" onclick="sendResults()">Submit Your Enquiry</a>
                                         </div>
-                                        <a id="submit-button" class="btn btn-primary mt-3" onclick="sendResults()">Submit Your Enquiry</a>
                                     </div>
                                 </div>
                             </div>

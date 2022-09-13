@@ -27,6 +27,7 @@ $_SESSION["age"] = $myAge;
     <div class="container-fluid">
         <div class="text-center">
             <h2>Your Results</h2>
+            <p>These results help us guide you through following our flow below and allow you to take control of your retirement plans</p>
         </div>
         <div class="row">
 

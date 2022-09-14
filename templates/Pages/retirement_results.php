@@ -24,6 +24,15 @@ $_SESSION["age"] = $myAge;
 
     </div>
 <?php } else{?>
+    <style>
+        h5, h6 {
+            font-weight: normal;
+        }
+        h7{
+            font-size: 25px;
+        }
+
+    </style>
     <div class="container-fluid">
         <div class="text-center">
             <h2>Your Results</h2>
@@ -34,27 +43,27 @@ $_SESSION["age"] = $myAge;
                 <table style="width: 40%">
                     <tr>
                         <td><h5>Your Age: </h5></td>
-                        <td> <h6 ><?php echo $myAge ?></h6></td>
+                        <td> <h7 ><?php echo $myAge ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your required income: </h5></td>
-                        <td> <h6><?php echo "$" . number_format($myIncome) ?></h6></td>
+                        <td> <h7><?php echo "$" . number_format($myIncome) ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your income from other sources: </h5></td>
-                        <td><h6><?php echo "$" . number_format($myOthers) ?></h6></td>
+                        <td><h7><?php echo "$" . number_format($myOthers) ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your required lump sum: </h5></td>
-                        <td> <h6><?php echo "$" . number_format($myLump) ?></h6></td>
+                        <td> <h7><?php echo "$" . number_format($myLump) ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your current Super investment: </h5></td>
-                        <td><h6><?php echo "$" . number_format($mySuper) ?></h6></td>
+                        <td><h7><?php echo "$" . number_format($mySuper) ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your current Non-Super investment: </h5></td>
-                        <td> <h6><?php echo "$" . number_format($myInvestment) ?></h6></td>
+                        <td> <h7><?php echo "$" . number_format($myInvestment) ?></h7></td>
                     </tr>
                 </table>
 

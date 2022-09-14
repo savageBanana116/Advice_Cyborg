@@ -142,17 +142,17 @@ echo $this->Html->css('custom.css');
                     </form>
 
                     <form style="display: none" class="form-inline" id="age_pension_input_double">
-                        <H1>Personal Information</H1>
+                        <H1>PERSONAL INFORMATION</H1>
                         <div class="form-group row">
                             <div class="col-xs-2">
                                 <h2>Client</h2>
                                 <span>What is your<span class="blue" > name?</span></span>
-                                <input type="text"  class="form-control" min="18" max="120" id="name">
+                                <input type="text"   class="form-control" min="18" max="120" onkeypress="return lettersOnly(event)" id="name">
                             </div>
                             <div class="col-xs-2">
                                 <h2>Spouse</h2>
                                 <span>What is your spouse's <span class="blue"> name</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="spouse_name" >
+                                <input type="text"  class="form-control" min="18" max="120"  onkeypress="return lettersOnly(event)" id="spouse_name" >
                             </div>
                         </div>
                         <div class="form-group row">
@@ -205,79 +205,82 @@ echo $this->Html->css('custom.css');
                             <div class="form-group row">
                                 <div class="col-xs-2">
                                     <span>What is your<span class="blue" > Gross annual salary?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Gross_annual_salary">
+                                    <input type="number"  class="form-control" min="18" max="120" onKeyPress="return check(event,value)" id="Gross_annual_salary">
                                 </div>
                                 <div class="col-xs-2">
                                     <span>What is your spouse's <span class="blue">Gross annual salary?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="spouse_Gross_annual_salary" >
+                                    <input type="number"  class="form-control" min="18" max="120" onKeyPress="return check(event,value)" id="spouse_Gross_annual_salary" >
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-xs-2">
                                     <span>What is your<span class="blue" > Superannuation?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="Super">
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="Super">
                                 </div>
                                 <div class="col-xs-2">
                                     <span>What is your spouse's <span class="blue">Superannuation?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="spouse_Super" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="spouse_Super" >
                                 </div>
 
                             </div>
+                        <br>
                         <div class="form-group row">
-                            <H1> Non Financial Assets </H1>
+                            <H1> NON FINANCIAL ASSETS </H1>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Car/s, Caravan, Boat etc?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="vehicle_invest" >
+                                <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="vehicle_invest" >
                             </div>
 
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> contents?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="content_invest" >
+                                <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="content_invest" >
                             </div>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Investment property?</span></span>
-                                <input type="number"  class="form-control" min="18" max="120" id="property_invest" >
+                                <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="property_invest" >
                             </div>
                         </div>
+                        <br>
                         <div class="form-group row">
-                            <H1> Financial Assets </H1>
+                            <H1> FINANCIAL ASSETS </H1>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Bank accounts?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="bank_accounts_invest" >
+                                <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="bank_accounts_invest" >
                             </div>
 
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Shares?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="shares_invest" >
+                                <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="shares_invest" >
                             </div>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Managed funds?</span></span>
-                                <input type="number"  class="form-control" min="18" max="120" id="funds_invest" >
+                                <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="funds_invest" >
                             </div>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> life insurance?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="insurance_invest" >
+                                <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="insurance_invest" >
                             </div>
 
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Loans,Debentures/Bonds?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="loans_invest" >
+                                <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="loans_invest" >
                             </div>
                         </div>
+                        <br>
                         <div class="form-group row">
-                            <H1> Other Assets </H1>
+                            <H1> OTHER ASSETS </H1>
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Gifted assets?(max $10,000 p.a)</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="gifted_assets" >
+                                <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="gifted_assets" >
                             </div>
 
                             <div class="col-xs-2">
                                 <span>How much in <span class="blue"> Funeral Bond?</span> </span>
-                                <input type="number"  class="form-control" min="18" max="120" id="funeral_bond" >
+                                <input type="number"  class="form-control"  onKeyPress="return check(event,value)" min="18" max="120" id="funeral_bond" >
                             </div>
                         </div>
                         <div tclass="form-group" style="padding-top:1em; padding-bottom:1em">
-                            <button type="button" id="Submit_Age_pension_single"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
+                            <button type="button" id="Submit_Age_pension_single" onKeyPress="return check(event,value)"  data-bs-toggle="modal" onclick="openModel_double()" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
                                 Calculate
                             </button>
                         </div>
@@ -295,7 +298,7 @@ echo $this->Html->css('custom.css');
 
                                 <div class="col-xs-2">
                                     <span>What is your<span class="blue" > name?</span></span>
-                                    <input type="text"  class="form-control" min="18" max="120" id="name_single" required>
+                                    <input type="text"  class="form-control" min="18" max="120" id="name_single" onkeypress="return lettersOnly(event)"  required>
                                 </div>
 
                                 <div class="col-xs-2">
@@ -319,6 +322,10 @@ echo $this->Html->css('custom.css');
                                     <span>What is your<span class="blue" > date of birth?</span></span>
                                     <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="DOB_single" required>
                                 </div>
+                                <div class="col-xs-2">
+                                    <span>What is your<span class="blue" > Gross annual salary?</span></span>
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="Gross_annual_salary_single">
+                                </div>
 
                             </div>
 
@@ -329,16 +336,16 @@ echo $this->Html->css('custom.css');
                                 <H1> Non Financial Assets </H1>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Car/s, Caravan, Boat etc?</span> </span>
-                                    <input type="number"  class="form-control"  min="0" max="999999999"  onKeyPress="return check(event,value)" id="vehicle_invest_single" >
+                                    <input type="number"  class="form-control"   min="0" max="999999999"  onKeyPress="return check(event,value)" id="vehicle_invest_single" >
                                 </div>
 
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> contents?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="content_invest_single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="content_invest_single" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Investment property?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="property_invest_single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="property_invest_single" >
                                 </div>
 
                             </div><br>
@@ -346,29 +353,29 @@ echo $this->Html->css('custom.css');
                                 <H1> Financial Assets </H1>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Bank accounts?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="bank_accounts_invest_single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="bank_accounts_invest_single" >
                                 </div>
 
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Shares?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="shares_invest_single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="shares_invest_single" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Managed funds?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="funds_invest_single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="funds_invest_single" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> life insurance?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="insurance_invest_single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="insurance_invest_single" >
                                 </div>
 
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Loans,Debentures/Bonds?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="loans_invest_single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="loans_invest_single" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Superannuation?</span></span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="super_single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="super_single" >
                                 </div>
 
                             </div><br>
@@ -376,29 +383,26 @@ echo $this->Html->css('custom.css');
                                 <H1> Other Assets </H1>
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Gifted assets?(max $10,000 p.a)</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="gifted_assets-single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="gifted_assets-single" >
                                 </div>
 
                                 <div class="col-xs-2">
                                     <span>How much in <span class="blue"> Funeral Bond?</span> </span>
-                                    <input type="number"  class="form-control" min="18" max="120" id="funeral_bond_single" >
+                                    <input type="number"  class="form-control" onKeyPress="return check(event,value)" min="18" max="120" id="funeral_bond_single" >
                                 </div>
-                                    <div class="col-xs-2">
-                                        <span>What is your<span class="blue" > Gross annual salary?</span></span>
-                                        <input type="number"  class="form-control" min="18" max="120" id="Gross_annual_salary_single">
-                                    </div>
+
 
 
                             </div>
                         <div class="form-group" style="padding-top:1em; padding-bottom:1em">
-                            <button type="button" id="Submit_Age_pension_single"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
+                            <button type="button" id="Submit_Age_pension_single"  data-bs-toggle="modal" onclick="openModel_single()"  class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
                                 Calculate
                             </button>
                         </div>
                         </form>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal"   tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -433,9 +437,57 @@ echo $this->Html->css('custom.css');
 
 
 <script>
-    $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    })
+    function openModel_single(){
+        let DOB  = document.getElementById('DOB_single').value;
+        const DOB_String = DOB.toString();
+        let DOB_check = new Date(Date.parse(DOB_String));
+        let name = document.getElementById('name_single').value;
+        let GAS = document.getElementById('Gross_annual_salary_single').value;
+        let minDate = new Date();
+        let maxDate = new Date();
+        minDate.setFullYear(minDate.getFullYear() - 18);
+        maxDate.setFullYear(maxDate.getFullYear() - 120);
+        if(DOB != '' && name != '' && GAS != 0){
+            if (parseInt(DOB_check.getFullYear().toString()) > parseInt(minDate.getFullYear().toString()) || parseInt(DOB_check.getFullYear().toString()) < parseInt(maxDate.getFullYear().toString())) {
+                alert('Please enter an appropriate date');
+            }else{
+                $('#exampleModal').modal('show');
+            }
+
+        }else{
+            alert('Please enter your personal information');
+        }
+    }
+    function openModel_double(){
+        let DOB  = document.getElementById('DOB').value;
+        let DOB_spouse  = document.getElementById('spouse_DOB').value;
+        const DOB_String = DOB.toString();
+        let DOB_check = new Date(Date.parse(DOB_String));
+        const DOB_String_spouse = DOB_spouse.toString();
+        let DOB_check_spouse = new Date(Date.parse(DOB_String_spouse));
+        let minDate = new Date();
+        let maxDate = new Date();
+        minDate.setFullYear(minDate.getFullYear() - 18);
+        maxDate.setFullYear(maxDate.getFullYear() - 120);
+
+
+
+        let name = document.getElementById('name').value;
+        let name_spouse = document.getElementById('spouse_name').value;
+        let GAS = document.getElementById('Gross_annual_salary').value;
+        let GAS_spouse = document.getElementById('spouse_Gross_annual_salary').value;
+
+        if(DOB != ''&& DOB_spouse != '' && name != '' && name_spouse != '' && GAS_spouse != 0 && GAS != 0){
+            if(parseInt(DOB_check.getFullYear().toString()) > parseInt(minDate.getFullYear().toString()) || parseInt(DOB_check_spouse.getFullYear().toString()) < parseInt(maxDate.getFullYear().toString()) && parseInt(DOB_check_spouse.getFullYear().toString()) > parseInt(minDate.getFullYear().toString()) || parseInt(DOB_check_spouse.getFullYear().toString()) < parseInt(maxDate.getFullYear().toString())){
+                alert('Please enter an appropriate date');
+            }else{
+                $('#exampleModal').modal('show');
+            }
+
+        }else{
+            alert('Please enter your personal information');
+        }
+    }
     //input validation
     /*
     Salary.oninput = function () {

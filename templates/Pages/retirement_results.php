@@ -69,7 +69,7 @@ $_SESSION["age"] = $myAge;
 
         </div>
 
-        <div class="row" style="justify-content: center">
+        <div class="row" style="justify-content: center;margin-top: 2vh">
             <h3 class="text-center ">Continue your retirement journey!</h3>
             <h6 class="text-center" style="margin-bottom: 1em">Help further your retirement goals by going through our questionnaires to help reach your retirement goals!</h6>
         </div>

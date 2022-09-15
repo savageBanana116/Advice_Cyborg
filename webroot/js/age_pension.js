@@ -593,8 +593,9 @@ function PensionSingle(){
         console.log(pharma_allowance,total_fortnightly_pension_payable);
 
         let output;
+        output = total_fortnightly_pension_payable - pharma_allowance;
 
-        document.getElementById("model_output").innerHTML = "$ " + 0;
+        document.getElementById("model_output").innerHTML = "$ " + output;
 
 
 

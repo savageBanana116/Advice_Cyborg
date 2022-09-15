@@ -395,7 +395,7 @@ echo $this->Html->css('custom.css');
 
                             </div>
                         <div class="form-group" style="padding-top:1em; padding-bottom:1em">
-                            <button type="button" id="Submit_Age_pension_single"  data-bs-toggle="modal" onclick="openModel_single()"  class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
+                            <button type="button" id="Submit_Age_pension_single"  data-bs-toggle="exampleModal" onclick="openModel_single()"  class="btn btn-primary" style=" font-size: 2vh; border-radius: 12px; text-transform: uppercase"  >
                                 Calculate
                             </button>
                         </div>
@@ -412,7 +412,7 @@ echo $this->Html->css('custom.css');
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <output id="model_output">0</output>
+                                    <output id="model_output"></output>
 
                                 </div>
                                 <div class="modal-footer">
@@ -451,6 +451,7 @@ echo $this->Html->css('custom.css');
             if (parseInt(DOB_check.getFullYear().toString()) > parseInt(minDate.getFullYear().toString()) || parseInt(DOB_check.getFullYear().toString()) < parseInt(maxDate.getFullYear().toString())) {
                 alert('Please enter an appropriate date');
             }else{
+                PensionSingle();
                 $('#exampleModal').modal('show');
             }
 
@@ -481,6 +482,7 @@ echo $this->Html->css('custom.css');
             if(parseInt(DOB_check.getFullYear().toString()) > parseInt(minDate.getFullYear().toString()) || parseInt(DOB_check_spouse.getFullYear().toString()) < parseInt(maxDate.getFullYear().toString()) && parseInt(DOB_check_spouse.getFullYear().toString()) > parseInt(minDate.getFullYear().toString()) || parseInt(DOB_check_spouse.getFullYear().toString()) < parseInt(maxDate.getFullYear().toString())){
                 alert('Please enter an appropriate date');
             }else{
+                PensionSingle();
                 $('#exampleModal').modal('show');
             }
 
@@ -488,6 +490,7 @@ echo $this->Html->css('custom.css');
             alert('Please enter your personal information');
         }
     }
+
     //input validation
     /*
     Salary.oninput = function () {

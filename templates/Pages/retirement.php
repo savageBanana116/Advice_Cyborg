@@ -128,19 +128,19 @@ echo $this->Html->css('custom.css');
 
 </script>
 </html>
-
+<div class="text-center">
+    <h5>Fill in your personal details so that we can help know more about you!</h5>
+</div>
+<div class="text-center">
+    We use this information to help guide you to reach your retirement goals
+</div>
 <div class="container-fluid">
 
 <div class="row">
     <div class="col-5">
         <h3 id="title"></h3>
     <div class="card text-center" id="input">
-        <div class="card-header">
-            Fill in your personal details so that we can help know more about you!
-        </div>
-        <div class="card-header">
-            We use this information to help guide you to reach your retirement goals
-        </div>
+
 
         <div id="questionnaire-card" class="card">
             <form action="retirement_results" method="get" id="retirementForm" onsubmit="return formValidator()" >

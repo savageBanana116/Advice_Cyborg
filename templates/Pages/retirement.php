@@ -172,8 +172,8 @@ echo $this->Html->css('custom.css');
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I am ____ years old and would like to retire now.</h6>
                                     <div class="form-group row">
-                                        <div class="col-sm-5">
-                                            <input type="number" class="form-control" name="age" id="inputAge" placeholder="Enter your age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        <div class="col-sm-6">
+                                            <input type="number" width = 40% class="form-control" name="age" id="inputAge" placeholder="Enter age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
                                         <span id="age_error" style="display: none; color: red">Please input a value greater than or equal to 58</span>
                                     </div>
@@ -392,7 +392,7 @@ echo $this->Html->css('custom.css');
                                     </h6>
                                     <div class="form-group row">
                                         <div class="col-sm-5">
-                                            <input type="number" required ="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" required class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
                                         <span id="investment_error" style="display: none; color: red">Please input a value</span>
                                     </div>

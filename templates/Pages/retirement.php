@@ -29,6 +29,106 @@ echo $this->Html->css('custom.css');
     }
 </style>
 
+<script>
+    var question = 0;
+    function onNext() {
+        var q1 = document.getElementById("question_1");
+        var q2 = document.getElementById("question_2");
+        var q3 = document.getElementById("question_3");
+        var q4 = document.getElementById("question_4");
+        var q5 = document.getElementById("question_5");
+        var q6 = document.getElementById("question_6");
+        if(question === 0) {
+            if(document.getElementById("inputAge").value === '' || document.getElementById("inputAge").value < 58){
+                document.getElementById("age_error").style.display = "block";
+            }
+            else {
+                q1.style.display = "none";
+                q2.style.display = "block";
+                question += 1;
+            }
+        }
+        // question 2
+        else if(question === 1){
+            if(document.getElementById("inputIncome").value === ''){
+                document.getElementById("income_error").style.display = "block";
+            }
+            else {
+                q2.style.display = "none";
+                q3.style.display = "block";
+                question += 1;
+            }
+        }
+        else if(question === 2){
+            if(document.getElementById("inputOthers").value === ''){
+                document.getElementById("others_error").style.display = "block";
+            }
+            else {
+                q3.style.display = "none";
+                q4.style.display = "block";
+                question += 1;
+            }
+        }
+        else if(question === 3){
+            if(document.getElementById("inputLump").value === ''){
+                document.getElementById("lump_error").style.display = "block";
+            }
+            else {
+                q4.style.display = "none";
+                q5.style.display = "block";
+                question += 1;
+            }
+        }
+        else if(question === 4){
+            if(document.getElementById("inputSuper").value === ''){
+                document.getElementById("super_error").style.display = "block";
+            }
+            else {
+                q5.style.display = "none";
+                q6.style.display = "block";
+                question += 1;
+            }
+        }
+    }
+
+    function onPrevious() {
+        var q1 = document.getElementById("question_1");
+        var q2 = document.getElementById("question_2");
+        var q3 = document.getElementById("question_3")
+        var q4 = document.getElementById("question_4");
+        var q5 = document.getElementById("question_5");
+        var q6 = document.getElementById("question_6");
+        if(question === 1) {
+            q1.style.display = "block";
+            q2.style.display= "none";
+            question -= 1;
+        }
+        //question 2
+        else if(question === 2){
+            q3.style.display ="none";
+            q2.style.display = "block";
+            question -= 1;
+        }
+        else if(question ===3){
+            q4.style.display = "none";
+            q3.style.display = "block";
+            question -= 1;
+        }
+        else if(question ===4){
+            q5.style.display = "none";
+            q4.style.display = "block";
+            question -= 1;
+        }
+        else if(question ===5){
+            q6.style.display = "none";
+            q5.style.display = "block";
+            question -= 1;
+        }
+    }
+
+</script>
+</html>
+
 <div class="container-fluid">
 
 <div class="row">
@@ -41,28 +141,312 @@ echo $this->Html->css('custom.css');
         <div class="card-header">
             We use this information to help guide you to reach your retirement goals
         </div>
-        <div class="card-body">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" data-bs-interval="false">
-<!--                <div class="carousel-indicators">-->
-<!--                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
-<!--                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
-<!--                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
-<!--                </div>-->
-                <div class="carousel-inner">
+
+        <div id="questionnaire-card" class="card">
+            <form action="retirement_results" method="get" id="retirementForm" onsubmit="return formValidator()" >
+            <div id="question_1">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row justify-content-around pb-3">
+                        <div class="col-auto col-md-10 align-self-center">
+                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 1</span></h5>
+                        </div>
+                        <div class="col-6 col-md-1 order-md-first align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-1 order-last align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="nextBtnTop" class="btn btn-primary" onclick="onNext();" role="button">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 align-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div id="section-input" class="col">
+                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I am ____ years old and would like to retire now.</h6>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <input type="number" class="form-control" name="age" id="inputAge" placeholder="Enter your age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <span id="age_error" style="display: none; color: red">Please input a value greater than or equal to 58</span>
+                                    </div>
+                                        <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">Help: To be able to access your super benefits, you need to be 58 or older.
+                                    If you have reasons to retire before the age of 58,
+                                    please contact our office. </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="question_2" style="display:none">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row justify-content-around pb-3">
+                            <div class="col-auto col-md-10 align-self-center">
+                                <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 2</span></h5>
+                            </div>
+                            <div class="col-6 col-md-1 order-md-first align-self-center">
+                                <div class="d-grid gap-2">
+                                    <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-1 order-last align-self-center">
+                                <div class="d-grid gap-2">
+                                    <a id="nextBtnTop" class="btn btn-primary" onclick="onNext();" role="button">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 align-content-center">
+                                <div class="d-flex justify-content-center">
+                                    <div id="section-input" class="col">
+                                        <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">At retirement I need a monthly income after tax of $____</h6>
+                                        <div class="form-group row">
+                                            <div class="col-sm-5">
+                                                <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" pattern="[0-9]+"onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            </div>
+                                            <span id="income_error" style="display: none; color: red">Please input a value</span>
+                                        </div>
+                                        <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The net monthly income you require to enjoy your desired lifestyle. Note: If you're unsure how much you need contact a financial planner for further advice </span>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <div id="question_3" style="display:none">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row justify-content-around pb-3">
+                        <div class="col-auto col-md-10 align-self-center">
+                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 3</span></h5>
+                        </div>
+                        <div class="col-6 col-md-1 order-md-first align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-1 order-last align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="nextBtnTop" class="btn btn-primary" onclick="onNext();" role="button">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 align-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div id="section-input" class="col">
+                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I will receive a monthly gross income of other sources of $____</h6>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <span id="others_error" style="display: none; color: red">Please input a value</span>
+                                    </div>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: Your non-super source of income.
+                                           Examples: rental, investment income               </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="question_4" style="display:none">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row justify-content-around pb-3">
+                        <div class="col-auto col-md-10 align-self-center">
+                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 4</span></h5>
+                        </div>
+                        <div class="col-6 col-md-1 order-md-first align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-1 order-last align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="nextBtnTop" class="btn btn-primary" onclick="onNext();" role="button">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 align-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div id="section-input" class="col">
+                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
+                                        I will need a lump sum of $____ to settle my liabilities
+                                    </h6>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <span id="lump_error" style="display: none; color: red">Please input a value</span>
+                                    </div>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: This is the amount you need to settle your debts and retire debt-free.   </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="question_5" style="display:none">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row justify-content-around pb-3">
+                        <div class="col-auto col-md-10 align-self-center">
+                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 5</span></h5>
+                        </div>
+                        <div class="col-6 col-md-1 order-md-first align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-1 order-last align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="nextBtnTop" class="btn btn-primary" onclick="onNext();" role="button">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 align-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div id="section-input" class="col">
+                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
+                                        The current value of my Super investments: $____
+                                    </h6>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <span id="super_error" style="display: none; color: red">Please input a value</span>
+                                    </div>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The value of your Super/Retirement funds.
+                                           Does not include: investment funds, shares, bonds, term deposits, etc.   </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="question_6" style="display:none">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row justify-content-around pb-3">
+                        <div class="col-auto col-md-10 align-self-center">
+                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 6</span></h5>
+                        </div>
+                        <div class="col-6 col-md-1 order-md-first align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-1 order-last align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="nextBtnTop" class="btn btn-primary" onclick="onNext();" role="button">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 align-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div id="section-input" class="col">
+                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
+                                        The current value of my Non-Super investments: $____
+                                    </h6>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <input type="number" required ="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <span id="investment_error" style="display: none; color: red">Please input a value</span>
+                                    </div>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of your other investments.
+                                          Examples: investment funds, shares, bonds, term deposits, etc.  </span>
+                                    <br>
+                                    <!--                                <button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
+                                    <input type="submit" name="submit" id="submit" onclick="onsubmit()" class="btn btn-primary" style="margin-top: 1em" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+        </div>
+
+</div>
+
                     <script>
 
-                        $('#myCarousel').on('slid', '', function() {
-                            var $this = $(this);
+                        function onsubmit(){
+                            $('retirementForm').on('submit', function() {
+                                // do validation here
+                                if(document.getElementById("inputInvestment").value === '')
+                                    return false;
+                            });
+                        }
 
-                            $this.children('.carousel-control').show();
 
-                            if($('.carousel-inner .item:first').hasClass('active')) {
-                                $this.children('.left.carousel-control').hide();
-                            } else if($('.carousel-inner .item:last').hasClass('active')) {
-                                $this.children('.right.carousel-control').hide();
-                            }
+                        $(document).ready(function() {
+                            $('#carouselExampleIndicators').carousel({
+                                interval: 1000,
+                                wrap: false
+                            })
 
-                        });
+                            $('#carouselExampleIndicators').on('slid.bs.carousel', function() {
+                                //alert("slid");
+                            });
+
+
+                            $('#carouselExampleIndicators').on('slid.bs.carousel', '', function() {
+                                var $this = $(this);
+
+                                $this.find('.carousel-control').show();
+
+                                if($('.carousel-inner .item:first').hasClass('active')) {
+                                    $this.find('.carousel-control-prev').hide();
+                                } else if($('.carousel-inner .item:last').hasClass('active')) {
+                                    $this.find('.carousel-control-next').hide();
+                                }
+
 
                         function formValidator(){
                             const age = document.getElementById("inputAge").value;
@@ -94,111 +478,6 @@ echo $this->Html->css('custom.css');
                             }
                         }
                     </script>
-                    <form action="retirement_results" method="get" id="retirementForm" onsubmit="return formValidator()" >
-                    <div class="carousel-item active" style="background: white">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Question 1</h5>
-                            <span>I am ____ years old and would like to retire now.</span><br>
-
-                            <div class="form-group row">
-                                <div class="col-sm-5">
-                                    <input type="number" class="form-control" name="age" id="inputAge" placeholder="Enter your age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                </div>
-                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">Help: To be able to access your super benefits, you need to be 58 or older.
-                                    If you have reasons to retire before the age of 58,
-                                    please contact our office. </span>
-                            </div>
-
-                        </div>
-                        <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
-                    </div>
-                        <div class="carousel-item" style="background: white">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Question 2</h5>
-                                <span>At retirement I need a monthly income after tax of $____</span><br>
-                                <div class="form-group row">
-                                    <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" pattern="[0-9]+"onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                    </div>
-                                </div>
-                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The net monthly income you require to enjoy your desired lifestyle. Note: If you're unsure how much you need contact a financial planner for further advice </span>
-
-                        </div>
-                            <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
-                        </div>
-                        <div class="carousel-item" style="background: white">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Question 3</h5>
-                                <span>I will receive a monthly gross income of other sources of $____</span><br>
-                                <div class="form-group row">
-                                    <div class="col-sm-5">
-                                        <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                    </div>
-                                </div>
-                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: Your non-super source of income.
-                                           Examples: rental, investment income               </span>
-                            </div>
-                            <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
-                        </div>
-                        <div class="carousel-item" style="background: white">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Question 4</h5>
-                                <span>I will need a lump sum of $____ to settle my liabilities</span><br>
-                                <div class="form-group row">
-                                    <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                    </div>
-                                </div>
-                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: This is the amount you need to settle your debts and retire debt-free.   </span>
-                            </div>
-                            <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
-                        </div>
-                        <div class="carousel-item" style="background: white">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Question 5</h5>
-                                <span>The current value of my Super investments: $____</span><br>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                    </div>
-                                </div>
-                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The value of your Super/Retirement funds.
-                                           Does not include: investment funds, shares, bonds, term deposits, etc.   </span>
-                            </div>
-                            <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
-                        </div>
-
-                        <div class="carousel-item" style="background: white">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Question 6</h5>
-                                <span>The current value of my Non-Super investments: $____</span><br>
-                                <div class="form-group row">
-                                    <div class="col-sm-5">
-                                        <input type="number" class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                    </div>
-                                </div>
-                                <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of your other investments.
-                                          Examples: investment funds, shares, bonds, term deposits, etc.  </span>
-                                <br>
-<!--                                <button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
-                                    <input type="submit" name="submit" id="submit"  class="btn btn-primary" style="margin-top: 1em" >
-
-                            </div>
-                            <?= $this->Html->image('modules/'."White_full.png", ['alt' => 'module_image',"class"=>"img-fluid","style"=>"width:75%"])?>
-                        </div>
-                    </form>
-
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
         </div>
 <!--        <div class="card-footer text-muted">-->
 <!--            2 days ago-->

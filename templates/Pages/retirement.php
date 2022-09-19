@@ -43,6 +43,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("age_error").style.display = "block";
             }
             else {
+                document.getElementById("age_error").style.display = "none";
                 q1.style.display = "none";
                 q2.style.display = "block";
                 question += 1;
@@ -54,6 +55,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("income_error").style.display = "block";
             }
             else {
+                document.getElementById("income_error").style.display = "none";
                 q2.style.display = "none";
                 q3.style.display = "block";
                 question += 1;
@@ -64,6 +66,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("others_error").style.display = "block";
             }
             else {
+                document.getElementById("others_error").style.display = "none";
                 q3.style.display = "none";
                 q4.style.display = "block";
                 question += 1;
@@ -74,6 +77,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("lump_error").style.display = "block";
             }
             else {
+                document.getElementById("lump_error").style.display = "none";
                 q4.style.display = "none";
                 q5.style.display = "block";
                 question += 1;
@@ -84,6 +88,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("super_error").style.display = "block";
             }
             else {
+                document.getElementById("super_error").style.display = "none";
                 q5.style.display = "none";
                 q6.style.display = "block";
                 question += 1;
@@ -134,6 +139,7 @@ echo $this->Html->css('custom.css');
 <div class="text-center">
     We use this information to help guide you to reach your retirement goals
 </div>
+<br>
 <div class="container-fluid">
 
 <div class="row">
@@ -167,16 +173,17 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I am ____ years old and would like to retire now.</h6>
                                     <div class="form-group row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6" style="padding-bottom: 2vh">
                                             <input type="number" width = 40% class="form-control" name="age" id="inputAge" placeholder="Enter age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="age_error" style="display: none; color: red">Please input a value greater than or equal to 58</span>
+                                        <span id="age_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value greater than or equal to 58</span>
                                     </div>
+                                    <br>
                                         <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">Help: To be able to access your super benefits, you need to be 58 or older.
                                     If you have reasons to retire before the age of 58,
                                     please contact our office. </span>
@@ -211,16 +218,17 @@ echo $this->Html->css('custom.css');
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-md-6 align-content-center">
+                            <div class="col-md-10 align-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div id="section-input" class="col">
                                         <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">At retirement I need a monthly income after tax of $____</h6>
                                         <div class="form-group row">
-                                            <div class="col-sm-5">
+                                            <div class="col-sm-6" style="padding-bottom: 2vh">
                                                 <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" pattern="[0-9]+"onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                             </div>
-                                            <span id="income_error" style="display: none; color: red">Please input a value</span>
+                                            <span id="income_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                         </div>
+                                        <br>
                                         <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The net monthly income you require to enjoy your desired lifestyle. Note: If you're unsure how much you need contact a financial planner for further advice </span>
                                     </div>
                                     </div>
@@ -252,16 +260,17 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I will receive a monthly gross income of other sources of $____</h6>
                                     <div class="form-group row">
-                                        <div class="col-sm-5">
+                                        <div class="col-sm-6" style="padding-bottom: 2vh">
                                             <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="others_error" style="display: none; color: red">Please input a value</span>
+                                        <span id="others_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
+                                    <br>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: Your non-super source of income.
                                            Examples: rental, investment income               </span>
                                 </div>
@@ -295,18 +304,19 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
                                         I will need a lump sum of $____ to settle my liabilities
                                     </h6>
                                     <div class="form-group row">
-                                        <div class="col-sm-5">
+                                        <div class="col-sm-6" style="padding-bottom: 2vh">
                                             <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="lump_error" style="display: none; color: red">Please input a value</span>
+                                        <span id="lump_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
+                                <br>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: This is the amount you need to settle your debts and retire debt-free.   </span>
                                 </div>
                             </div>
@@ -339,18 +349,19 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
                                         The current value of my Super investments: $____
                                     </h6>
                                     <div class="form-group row">
-                                        <div class="col-sm-5">
+                                        <div class="col-sm-6" style="padding-bottom: 2vh">
                                             <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="super_error" style="display: none; color: red">Please input a value</span>
+                                        <span id="super_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
+                                    <br>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The value of your Super/Retirement funds.
                                            Does not include: investment funds, shares, bonds, term deposits, etc.   </span>
                                 </div>
@@ -384,23 +395,25 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
                                         The current value of my Non-Super investments: $____
                                     </h6>
                                     <div class="form-group row">
-                                        <div class="col-sm-5">
+                                        <div class="col-sm-6" style="padding-bottom: 2vh">
                                             <input type="number" required class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="investment_error" style="display: none; color: red">Please input a value</span>
+                                        <span id="investment_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
+                                    <div>
+                                        <!--<button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
+                                        <input type="submit" name="submit" id="submit" onclick="onsubmit()" class="btn btn-primary" style="margin-top: 1em" >
+                                    </div>
+                                    <br>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of your other investments.
                                           Examples: investment funds, shares, bonds, term deposits, etc.  </span>
-                                    <br>
-                                    <!--                                <button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
-                                    <input type="submit" name="submit" id="submit" onclick="onsubmit()" class="btn btn-primary" style="margin-top: 1em" >
                                 </div>
                             </div>
                         </div>

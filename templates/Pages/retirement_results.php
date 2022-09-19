@@ -40,14 +40,14 @@ $_SESSION["age"] = $myAge;
         </div>
         <div class="row">
 
-                <table style="width: 40%">
+                <table class="table table-bordered table-hover table-dark" style="width: 35%">
                     <tr>
                         <td><h5>Your Age: </h5></td>
-                        <td> <h7 ><?php echo $myAge ?></h7></td>
+                        <td><h7 ><?php echo $myAge ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your required income: </h5></td>
-                        <td> <h7><?php echo "$" . number_format($myIncome) ?></h7></td>
+                        <td><h7><?php echo "$" . number_format($myIncome) ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your income from other sources: </h5></td>
@@ -75,17 +75,17 @@ $_SESSION["age"] = $myAge;
         </div>
 
             <div class="row" style="margin-bottom:0.5em">
-                <button style="width:15%;" type="button" onclick="location.href='#' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super (Coming Soon)</button>
+                <button style="width:35%;" type="button" onclick="location.href='#' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super (Coming Soon)</button>
             </div>
             <div class="row" style="margin-bottom:0.5em">
 <!--                <button type="button" onclick="location.href='risk_profile' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio</button>-->
-                <button style="width:15%;" type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio(Coming Soon)</button>
+                <button style="width:35%;" type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio (Coming Soon)</button>
             </div>
             <div class="row" style="margin-bottom:0.5em">
-                <button style="width:15%;" type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Consolidate Super(Coming Soon)</button>
+                <button style="width:35%;" type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Consolidate Super (Coming Soon)</button>
             </div>
             <div class="row" style="margin-bottom:0.5em">
-                <button style="width:15%;" type="button" onclick="location.href='income_stream' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Set up an Income Stream</button>
+                <button style="width:35%;" type="button" onclick="location.href='income_stream' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Set up an Income Stream</button>
             </div>
 
         </div>

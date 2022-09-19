@@ -181,7 +181,7 @@ echo $this->Html->css('custom.css');
                                         <div class="col-sm-6">
                                             <input type="number" width = 40% class="form-control" name="age" id="inputAge" placeholder="Enter age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="age_error" style="display: none; color: red;margin-top: 2vh">Please input a value greater than or equal to 58</span>
+                                        <span id="age_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value greater than or equal to 58</span>
                                     </div>
                                         <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">Help: To be able to access your super benefits, you need to be 58 or older.
                                     If you have reasons to retire before the age of 58,
@@ -225,7 +225,7 @@ echo $this->Html->css('custom.css');
                                             <div class="col-sm-5">
                                                 <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" pattern="[0-9]+"onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                             </div>
-                                            <span id="income_error" style="display: none; color: red">Please input a value</span>
+                                            <span id="income_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                         </div>
                                         <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The net monthly income you require to enjoy your desired lifestyle. Note: If you're unsure how much you need contact a financial planner for further advice </span>
                                     </div>
@@ -266,7 +266,7 @@ echo $this->Html->css('custom.css');
                                         <div class="col-sm-5">
                                             <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="others_error" style="display: none; color: red">Please input a value</span>
+                                        <span id="others_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: Your non-super source of income.
                                            Examples: rental, investment income               </span>
@@ -311,7 +311,7 @@ echo $this->Html->css('custom.css');
                                         <div class="col-sm-5">
                                             <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="lump_error" style="display: none; color: red">Please input a value</span>
+                                        <span id="lump_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: This is the amount you need to settle your debts and retire debt-free.   </span>
                                 </div>
@@ -355,7 +355,7 @@ echo $this->Html->css('custom.css');
                                         <div class="col-sm-5">
                                             <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="super_error" style="display: none; color: red">Please input a value</span>
+                                        <span id="super_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The value of your Super/Retirement funds.
                                            Does not include: investment funds, shares, bonds, term deposits, etc.   </span>
@@ -400,7 +400,7 @@ echo $this->Html->css('custom.css');
                                         <div class="col-sm-5">
                                             <input type="number" required class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="investment_error" style="display: none; color: red">Please input a value</span>
+                                        <span id="investment_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of your other investments.
                                           Examples: investment funds, shares, bonds, term deposits, etc.  </span>

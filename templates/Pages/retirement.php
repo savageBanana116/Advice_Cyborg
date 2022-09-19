@@ -43,6 +43,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("age_error").style.display = "block";
             }
             else {
+                document.getElementById("age_error").style.display = "none";
                 q1.style.display = "none";
                 q2.style.display = "block";
                 question += 1;
@@ -54,6 +55,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("income_error").style.display = "block";
             }
             else {
+                document.getElementById("income_error").style.display = "none";
                 q2.style.display = "none";
                 q3.style.display = "block";
                 question += 1;
@@ -64,6 +66,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("others_error").style.display = "block";
             }
             else {
+                document.getElementById("others_error").style.display = "none";
                 q3.style.display = "none";
                 q4.style.display = "block";
                 question += 1;
@@ -74,6 +77,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("lump_error").style.display = "block";
             }
             else {
+                document.getElementById("lump_error").style.display = "none";
                 q4.style.display = "none";
                 q5.style.display = "block";
                 question += 1;
@@ -84,6 +88,7 @@ echo $this->Html->css('custom.css');
                 document.getElementById("super_error").style.display = "block";
             }
             else {
+                document.getElementById("super_error").style.display = "none";
                 q5.style.display = "none";
                 q6.style.display = "block";
                 question += 1;
@@ -134,6 +139,7 @@ echo $this->Html->css('custom.css');
 <div class="text-center">
     We use this information to help guide you to reach your retirement goals
 </div>
+<br>
 <div class="container-fluid">
 
 <div class="row">
@@ -167,7 +173,7 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I am ____ years old and would like to retire now.</h6>
@@ -175,7 +181,7 @@ echo $this->Html->css('custom.css');
                                         <div class="col-sm-6">
                                             <input type="number" width = 40% class="form-control" name="age" id="inputAge" placeholder="Enter age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="age_error" style="display: none; color: red">Please input a value greater than or equal to 58</span>
+                                        <span id="age_error" style="display: none; color: red;margin-top: 2vh">Please input a value greater than or equal to 58</span>
                                     </div>
                                         <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">Help: To be able to access your super benefits, you need to be 58 or older.
                                     If you have reasons to retire before the age of 58,
@@ -211,7 +217,7 @@ echo $this->Html->css('custom.css');
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-md-6 align-content-center">
+                            <div class="col-md-10 align-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div id="section-input" class="col">
                                         <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">At retirement I need a monthly income after tax of $____</h6>
@@ -252,7 +258,7 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I will receive a monthly gross income of other sources of $____</h6>
@@ -295,7 +301,7 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
@@ -339,7 +345,7 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
@@ -384,7 +390,7 @@ echo $this->Html->css('custom.css');
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-md-6 align-content-center">
+                        <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">

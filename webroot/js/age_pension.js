@@ -450,9 +450,9 @@ function total_deemed_fortnightly_income_H38(gender,age,relationship,gifted_asse
     const Deemed_income_complying_annuities = Deemed_income_from_complying_annuitiesH34(); //H34
     const Deemed_income_from_allocate_pensions = Deemed_income_from_allocated_pensionsH35(gender,age); //H35
     let temp = income_from_salary + sum_assets + Deemed_income_financial_assets + Deemed_income_complying_annuities + Deemed_income_from_allocate_pensions;
-    console.log(temp);
-    console.log(income_from_salary,sum_assets,Deemed_income_financial_assets,Deemed_income_complying_annuities,Deemed_income_from_allocate_pensions);
-    console.log(income_from_salary+Deemed_income_financial_assets+Deemed_income_complying_annuities+Deemed_income_from_allocate_pensions);
+    //console.log(temp);
+   // console.log(income_from_salary,sum_assets,Deemed_income_financial_assets,Deemed_income_complying_annuities,Deemed_income_from_allocate_pensions);
+    //console.log(income_from_salary+Deemed_income_financial_assets+Deemed_income_complying_annuities+Deemed_income_from_allocate_pensions);
 
     return temp;
 }
@@ -470,7 +470,7 @@ function pension_reductionH42(gender,age,relationship,gifted_assets,sum_financia
     const maximum_fortnightly_pension = Maximum_fortnightly_pension_H18(relationship,age,gender);
     const total_deemed_fortnightly_come = total_deemed_fortnightly_income_H38(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,gross_annual_salary_spouse,banks,share,funds,insurance,bonds,Super,super_spouse);
     const maximum_fortnightly_income_full_pension = maximum_fortnightly_income_full_pensionH29(relationship);
-    console.log(maximum_fortnightly_pension,total_deemed_fortnightly_come ,maximum_fortnightly_income_full_pension);
+   // console.log(maximum_fortnightly_pension,total_deemed_fortnightly_come ,maximum_fortnightly_income_full_pension);
 
     if(maximum_fortnightly_pension === "N/A"){
         return "N/A";
@@ -478,12 +478,12 @@ function pension_reductionH42(gender,age,relationship,gifted_assets,sum_financia
         return 0;
     }else if(total_deemed_fortnightly_come > maximum_fortnightly_income_full_pension && relationship ==="couple"){
         let temp = (total_deemed_fortnightly_come - maximum_fortnightly_income_full_pension) * 0.25;
-        console.log(temp);
+       // console.log(temp);
         return Math.min(temp,maximum_fortnightly_pension);
 
     }else if (total_deemed_fortnightly_come > maximum_fortnightly_income_full_pension && relationship ==="single"){
         let temp = (total_deemed_fortnightly_come - maximum_fortnightly_income_full_pension) * 0.5;
-        console.log(temp);
+        //console.log(temp);
         return Math.min(temp,maximum_fortnightly_pension);
     }
 
@@ -492,7 +492,7 @@ function pension_reductionH42(gender,age,relationship,gifted_assets,sum_financia
 function total_fortnightly_pension_payable_H44(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,gross_annual_salary_spouse,banks,share,funds,insurance,bonds,Super,super_spouse){
     const Maximum_fortnightly_pension =  Maximum_fortnightly_pension_H18(relationship,age,gender);
     const pension_reduction =  pension_reductionH42(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,gross_annual_salary_spouse,banks,share,funds,insurance,bonds,Super,super_spouse);
-    console.log(Maximum_fortnightly_pension,pension_reduction);
+   // console.log(Maximum_fortnightly_pension,pension_reduction);
 
     if(Maximum_fortnightly_pension === "N/A"){
         return Maximum_fortnightly_pension;
@@ -517,7 +517,7 @@ function pharmaceutical_allowance_H45(gender,age,relationship,gifted_assets,sum_
     const maximum_fortnightly_income_part_pension = maximum_fortnightly_income_part_pensionH30(relationship);
     const maximum_fortnightly_pension =  Maximum_fortnightly_pension_H18(relationship,age,gender);
 
-    console.log(total_deemed_fortnightly_income,maximum_fortnightly_income_part_pension);
+    //console.log(total_deemed_fortnightly_income,maximum_fortnightly_income_part_pension);
 
     if(total_deemed_fortnightly_income > maximum_fortnightly_income_part_pension){
         return 0;
@@ -586,16 +586,21 @@ function PensionSingle(){
         //console.log(gender,age,relationship,parseInt(gifted_assets),sum_financialAssets,parseInt(funeral_bond), parseInt(gross_annual_salary),0, parseInt(bank_accounts),parseInt(shares),parseInt(funds),parseInt(insurance),parseInt(bond),parseInt(Super),0);
         const H18 = Maximum_fortnightly_pension_H18(relationship,age,gender);
         const H42 = pension_reductionH42(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,0,bank_accounts,shares,funds,insurance,bond,Super,0);
-        console.log(H18,H42);
+        //console.log(H18,H42);
 
-        console.log(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,bank_accounts,shares,funds,insurance,bond,Super);
+        //console.log(gender,age,relationship,gifted_assets,sum_financialAssets,funeral_bond,gross_annual_salary,bank_accounts,shares,funds,insurance,bond,Super);
 
-        console.log(pharma_allowance,total_fortnightly_pension_payable);
+        //console.log(pharma_allowance,total_fortnightly_pension_payable);
 
         let output;
         output = total_fortnightly_pension_payable - pharma_allowance;
+        //console.log(output);
+        if(output == "NaN"){
+            document.getElementById("model_output").innerHTML = "$ " + output;
+        } else{
+            document.getElementById("model_output").innerHTML = "$ " + 0;
+        }
 
-        document.getElementById("model_output").innerHTML = "$ " + output;
 
 
 

@@ -40,14 +40,14 @@ $_SESSION["age"] = $myAge;
         </div>
         <div class="row">
 
-                <table style="width: 40%">
+                <table class="table table-bordered table-hover table-dark" style="width: 35%">
                     <tr>
                         <td><h5>Your Age: </h5></td>
-                        <td> <h7 ><?php echo $myAge ?></h7></td>
+                        <td><h7 ><?php echo $myAge ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your required income: </h5></td>
-                        <td> <h7><?php echo "$" . number_format($myIncome) ?></h7></td>
+                        <td><h7><?php echo "$" . number_format($myIncome) ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your income from other sources: </h5></td>

@@ -79,7 +79,7 @@ $_SESSION["age"] = $myAge;
             </div>
             <div class="row" style="margin-bottom:0.5em">
 <!--                <button type="button" onclick="location.href='risk_profile' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio</button>-->
-                <button style="width:35%;" type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio (Coming Soon)</button>
+                <button style="width:35%;" type="button" onclick="location.href='investment_portfolio_1' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio</button>
             </div>
             <div class="row" style="margin-bottom:0.5em">
                 <button style="width:35%;" type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Consolidate Super (Coming Soon)</button>

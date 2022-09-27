@@ -112,6 +112,10 @@
                                         <td>0.49%</td>
                                         <td>70000</td>
                                     </tr>
+                                    <tr>
+                                        <th scope="row" >Total Fee</th>
+                                        <td colspan="2">612.5</td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -147,6 +151,10 @@
                                         <th scope="row">Admin Fees</th>
                                         <td>0.15%</td>
                                         <td>70000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" >Total Fee</th>
+                                        <td colspan="2">914.5</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -184,6 +192,10 @@
                                         <td>0.56%</td>
                                         <td>70000</td>
                                     </tr>
+                                    <tr>
+                                        <th scope="row" >Total Fee</th>
+                                        <td colspan="2">1786</td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -219,6 +231,10 @@
                                         <th scope="row">Admin Fees</th>
                                         <td>0.48%</td>
                                         <td>70000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" >Total Fee</th>
+                                        <td colspan="2">1411</td>
                                     </tr>
                                     </tbody>
                                 </table>

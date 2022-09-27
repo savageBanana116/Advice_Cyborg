@@ -12,8 +12,221 @@
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
+            <div id="risk">
             <h2 class="section-heading text-uppercase">Risk Profile</h2>
             <h3 class="section-subheading text-muted">Please complete the questionnaire</h3>
+            </div>
+            <div id="compare" style="display: none">
+                <h2 class="section-heading text-uppercase">Compare funds</h2>
+                <p class="section-subheading text-muted">Let's help you find the most suitable product!</p>
+                <br>
+                <h2 class="section-heading text-uppercase" style="color: #0d8abf">results</h2>
+                <h2 id="result-profile"  class="text-center">Investor profile</h2>
+                <h6 id="result-mix" class="text-center text-muted">Benchmark asset mix</h6>
+                <table class="table">
+                    <thead >
+                    <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Fee</th>
+                        <th scope="col">Growth</th>
+                        <th scope="col">Defensive</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">BlackRock Global Allocation Aus D</th>
+                        <td>0.22</td>
+                        <td>60.45</td>
+                        <td>39.55</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">BlackRock W Monthly Income D</th>
+                        <td>0.55</td>
+                        <td>0</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Vanguard Australian Shares Index</th>
+                        <td>0.46</td>
+                        <td>100</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Vanguard International Shares Index</th>
+                        <td>0.38</td>
+                        <td>100</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CFS Wholesale Enhanced Yield</th>
+                        <td>0.53</td>
+                        <td>21.12</td>
+                        <td>78.88</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">AMP Capital Wholesale Global Equity - Value Fund</th>
+                        <td>0.98</td>
+                        <td>98.43</td>
+                        <td>1.57</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Netwealth Active Balanced Fund</th>
+                        <td>0.7</td>
+                        <td>55.09</td>
+                        <td>44.91</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+                <p class="section-subheading text-muted">Notice: E.g  70,000 balance with $35,000 in BlackRock Global Allocation AUS D and BlackRock W Monthly Income D</p>
+               <br>
+                <div class="row" style="justify-content: center">
+                    <div class="col-auto">
+                        <div class="card" style="margin-bottom: 2vh">
+                            <div class="card-header">
+                                Macquarie Investment Manager II
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Rate</th>
+                                        <th scope="col">Balance</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">BlackRock Global Allocation Aus D</th>
+                                        <td>0.22</td>
+                                        <td>35000.00</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">BlackRock W Monthly Income D</th>
+                                        <td>0.55</td>
+                                        <td>35000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Admin Fees</th>
+                                        <td>0.49%</td>
+                                        <td>70000</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="card"  style="margin-bottom: 2vh">
+                            <div class="card-header">
+                                BT Panorama
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Rate</th>
+                                        <th scope="col">Balance</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">BlackRock Global Allocation Aus D</th>
+                                        <td>0.22</td>
+                                        <td>35000.00</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">BlackRock W Monthly Income D</th>
+                                        <td>0.55</td>
+                                        <td>35000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Admin Fees</th>
+                                        <td>0.15%</td>
+                                        <td>70000</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="card" style="margin-bottom: 2vh">
+                            <div class="card-header">
+                                AMP North
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Rate</th>
+                                        <th scope="col">Balance</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">BlackRock Global Allocation Aus D</th>
+                                        <td>0.22</td>
+                                        <td>35000.00</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">BlackRock W Monthly Income D</th>
+                                        <td>0.55</td>
+                                        <td>35000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Admin Fees</th>
+                                        <td>0.56%</td>
+                                        <td>70000</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="card" style="margin-bottom: 2vh">
+                            <div class="card-header">
+                                Special title treatment
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Rate</th>
+                                        <th scope="col">Balance</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">BlackRock Global Allocation Aus D</th>
+                                        <td>0.22</td>
+                                        <td>35000.00</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">BlackRock W Monthly Income D</th>
+                                        <td>0.55</td>
+                                        <td>35000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Admin Fees</th>
+                                        <td>0.48%</td>
+                                        <td>70000</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="questionnaire-card" class="card">
             <div class="card-body">
@@ -70,13 +283,13 @@
                             <h5 id="result-title" class="card-title text-center">Card title</h5>
                             <h6 id="result-subtitle" class="card-subtitle mb-2 text-muted text-center">Card subtitle</h6>
                             <div class="col-md-6 mx-auto py-5">
-                                <h2 id="result-investorprofile" class="text-center">Investor profile</h2>
+                                <h2 id="result-investorprofile"  class="text-center">Investor profile</h2>
                                 <h6 id="result-benchmarkassetmix" class="text-center text-muted">Benchmark asset mix</h6>
                                 <p id="result-investorprofiledesc" class="text-center text-muted">Investor profile description</p>
                             </div>
                             <div class="d-grid gap-2 col-md-6 mx-auto">
                                 <button type="button" class="btn btn-secondary" onclick="location.href= '<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>'">Let me manage my investments myself</button>
-                                <button type="button" class="btn btn-primary mt-1" onclick="">Manage my investing for me</button>
+                                <button type="button" class="btn btn-primary mt-1" onclick="comparisonTool()">Run Comparison Tool</button>
                             </div>
                         </div>
                     </div>
@@ -265,7 +478,8 @@
     function onSubmit() {
         showResults();
     }
-
+    var profile ="";
+    var mix = "";
     function showResults() {
 
         document.getElementById("result-title").innerHTML = "Results";
@@ -309,7 +523,8 @@
         document.getElementById("result-investorprofile").innerHTML = investorprofile;
         document.getElementById("result-investorprofiledesc").innerHTML = investorprofiledesc;
         document.getElementById("result-benchmarkassetmix").innerHTML = benchmarkassetmix;
-
+            profile = investorprofile;
+            mix = benchmarkassetmix;
         document.getElementById("result-card").style.display = "block";
         document.getElementById("questionnaire-card").style.display = "none";
 
@@ -331,6 +546,18 @@
             document.cookie = escape(name) + "=" +
                 escape(value) + expires + "; path=/";
         }
+
+
+    }
+
+    function comparisonTool(){
+        document.getElementById("risk").style.display = "none";
+        document.getElementById("compare").style.display = "block";
+        document.getElementById("result-card").style.display = "none";
+        document.getElementById("result-profile").innerHTML = profile;
+        document.getElementById("result-mix").innerHTML = mix;
+
+
 
 
     }

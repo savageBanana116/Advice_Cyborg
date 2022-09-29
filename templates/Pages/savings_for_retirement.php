@@ -38,11 +38,12 @@ echo $this->Html->css('custom.css');
         var q4 = document.getElementById("question_4");
         var q5 = document.getElementById("question_5");
         var q6 = document.getElementById("question_6");
-        if(question === 0) {
-            if(document.getElementById("inputAge").value === '' || document.getElementById("inputAge").value < 18){
+        var q7 = document.getElementById("question_7");
+        var q8 = document.getElementById("question_8");
+        if (question === 0) {
+            if (document.getElementById("inputAge").value === '' || document.getElementById("inputAge").value < 18) {
                 document.getElementById("age_error").style.display = "block";
-            }
-            else {
+            } else {
                 document.getElementById("age_error").style.display = "none";
                 q1.style.display = "none";
                 q2.style.display = "block";
@@ -50,47 +51,69 @@ echo $this->Html->css('custom.css');
             }
         }
         // question 2
-        else if(question === 1){
-            if(document.getElementById("inputIncome").value === '' || document.getElementById("inputIncome").value < 15000){
+        else if (question === 1) {
+            if (document.getElementById("inputIncome").value === '' || document.getElementById("inputIncome").value < 15000) {
                 document.getElementById("income_error").style.display = "block";
-            }
-            else {
+            } else {
                 document.getElementById("income_error").style.display = "none";
-                q2.style.display = "none";
-                q3.style.display = "block";
+                q2.style.display = "none";//q1
+                q3.style.display = "block";//q2
                 question += 1;
             }
-        }
-        else if(question === 2){
-            if(document.getElementById("inputOthers").value === ''){
-                document.getElementById("others_error").style.display = "block";
-            }
-            else {
-                document.getElementById("others_error").style.display = "none";
-                q3.style.display = "none";
-                q4.style.display = "block";
-                question += 1;
-            }
-        }
-        else if(question === 3){
-            if(document.getElementById("inputLump").value === ''){
-                document.getElementById("lump_error").style.display = "block";
-            }
-            else {
-                document.getElementById("lump_error").style.display = "none";
-                q4.style.display = "none";
-                q5.style.display = "block";
-                question += 1;
-            }
-        }
-        else if(question === 4){
-            if(document.getElementById("inputSuper").value === ''){
+        } else if (question === 2) {
+            // if(document.getElementById("inputOthers").value === '' ){
+            //     document.getElementById("others_error").style.display = "block";
+            // }
+            // else {
+            //     document.getElementById("others_error").style.display = "none";
+            q3.style.display = "none";//q2
+            q4.style.display = "block";//q3
+            question += 1;
+            //}
+        } else if (question === 3) {
+            // if(document.getElementById("inputLump").value === ''){
+            //     document.getElementById("lump_error").style.display = "block";
+            // }
+            // else {
+            document.getElementById("lump_error").style.display = "none";
+            q4.style.display = "none";//q3
+            q5.style.display = "block";//q4
+            question += 1;
+            //}
+        } else if (question === 4) {//current_super
+            if (document.getElementById("inputSuper").value === '') {
                 document.getElementById("super_error").style.display = "block";
-            }
-            else {
+            } else {
                 document.getElementById("super_error").style.display = "none";
-                q5.style.display = "none";
-                q6.style.display = "block";
+                q5.style.display = "none";//q4
+                q6.style.display = "block";//q5
+                question += 1;
+            }
+        } else if (question === 5) {//monthly_super
+            if (document.getElementById("inputSuper").value === '') {
+                document.getElementById("super_error").style.display = "block";
+            } else {
+                document.getElementById("super_error").style.display = "none";
+                q6.style.display = "none";//q5
+                q7.style.display = "block";//q6
+                question += 1;
+            }
+        } else if (question === 6) {//non_super_funds
+            if (document.getElementById("inputSuper").value === '') {
+                document.getElementById("super_error").style.display = "block";
+            } else {
+                document.getElementById("super_error").style.display = "none";
+                q7.style.display = "none";//q6
+                q8.style.display = "block";//q7
+                question += 1;
+            }
+        } else if (question === 7) {//monthly_non_super
+            if (document.getElementById("inputSuper").value === '') {
+                document.getElementById("super_error").style.display = "block";
+            } else {
+                document.getElementById("super_error").style.display = "none";
+                q8.style.display = "none";//q7
+                q9.style.display = "block";//q8
                 question += 1;
             }
         }
@@ -103,6 +126,9 @@ echo $this->Html->css('custom.css');
         var q4 = document.getElementById("question_4");
         var q5 = document.getElementById("question_5");
         var q6 = document.getElementById("question_6");
+        var q7= document.getElementById("question_7");
+        var q8 = document.getElementById("question_8");
+        var q9 = document.getElementById("question_9");
         if(question === 1) {
             q1.style.display = "block";
             q2.style.display= "none";
@@ -129,6 +155,22 @@ echo $this->Html->css('custom.css');
             q5.style.display = "block";
             question -= 1;
         }
+        else if(question ===6){
+            q7.style.display = "none";
+            q6.style.display = "block";
+            question -= 1;
+        }
+        else if(question ===7){
+            q8.style.display = "none";
+            q7.style.display = "block";
+            question -= 1;
+        }
+        else if(question ===8){
+            q9.style.display = "none";
+            q8.style.display = "block";
+            question -= 1;
+        }
+
     }
 
 </script>
@@ -203,7 +245,7 @@ echo $this->Html->css('custom.css');
                             </div>
                             <div class="col-6 col-md-1 order-md-first align-self-center">
                                 <div class="d-grid gap-2">
-                                    <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                    <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
                                         <i class="fas fa-chevron-left"></i>
                                     </a>
                                 </div>
@@ -247,7 +289,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
-                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                             </div>
@@ -305,7 +347,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
-                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                             </div>
@@ -329,11 +371,11 @@ echo $this->Html->css('custom.css');
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
 <!--                                            <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">-->
 
-                                            <select id="retirement_income" name="retirement_income">
-                                                <option value="Couple_Comfortable">Couple Comfortable: $62,269 </option>
-                                                <option value="Single_Comfortable">Single Comfortable: $44,146 </option>
-                                                <option value="Couple_Modest">Couple Modest:  $40,560 </option>
-                                                <option value="Single_Modest">Single Modest:  $28,165 </option>
+                                            <select id="retirement_income" class="form-control" name="retirement_income">
+                                                <option value="Couple_Comfortable" style="text-align-last: center">Couple Comfortable: $62,269 </option>
+                                                <option value="Single_Comfortable" style="text-align-last: center">Single Comfortable: $44,146 </option>
+                                                <option value="Couple_Modest" style="text-align-last: center">Couple Modest:  $40,560 </option>
+                                                <option value="Single_Modest" style="text-align-last: center">Single Modest:  $28,165 </option>
                                             </select>
 
 
@@ -359,7 +401,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
-                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                             </div>
@@ -397,6 +439,150 @@ echo $this->Html->css('custom.css');
         </div>
 
         <div id="question_6" style="display:none">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row justify-content-around pb-3">
+                        <div class="col-auto col-md-10 align-self-center">
+                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 6</span></h5>
+                        </div>
+                        <div class="col-6 col-md-1 order-md-first align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-1 order-last align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="nextBtnTop" class="btn btn-primary" onclick="onNext();" role="button">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 align-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div id="section-input" class="col">
+                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
+                                        The current value of my Super investments: $____
+                                    </h6>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6" style="padding-bottom: 2vh">
+                                            <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <span id="super_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
+                                    </div>
+                                    <br>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The value of your Super/Retirement funds.
+                                           Does not include: investment funds, shares, bonds, term deposits, etc.   </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="question_7" style="display:none">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row justify-content-around pb-3">
+                        <div class="col-auto col-md-10 align-self-center">
+                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 7</span></h5>
+                        </div>
+                        <div class="col-6 col-md-1 order-md-first align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-1 order-last align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="nextBtnTop" class="btn btn-primary" onclick="onNext();" role="button">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 align-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div id="section-input" class="col">
+                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
+                                        My current monthly super contributions: $____
+                                    </h6>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6" style="padding-bottom: 2vh">
+                                            <input type="number" required class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <span id="investment_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
+                                    </div>
+
+                                    <br>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: How much you regularly contribute to your super account. Examples employers contributions, salary sacrifice, etc </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="question_8" style="display:none">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row justify-content-around pb-3">
+                        <div class="col-auto col-md-10 align-self-center">
+                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 8</span></h5>
+                        </div>
+                        <div class="col-6 col-md-1 order-md-first align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-1 order-last align-self-center">
+                            <div class="d-grid gap-2">
+                                <a id="nextBtnTop" class="btn btn-secondary" onclick="" role="button" >
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 align-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div id="section-input" class="col">
+                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
+                                        The current value of my Non-Super investments: $____
+                                    </h6>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6" style="padding-bottom: 2vh">
+                                            <input type="number" required class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                        <span id="investment_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
+                                    </div>
+                                    <div>
+                                        <!--<button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
+                                        <input type="submit" name="submit" id="submit" onclick="onsubmit()" class="btn btn-primary" style="margin-top: 1em" >
+                                    </div>
+                                    <br>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of your other investments.
+                                          Examples: investment funds, shares, bonds, term deposits, etc.  </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="question_9" style="display:none">
             <div class="card-body">
                 <div class="container-fluid">
                     <div class="row justify-content-around pb-3">
@@ -445,6 +631,7 @@ echo $this->Html->css('custom.css');
                 </div>
             </div>
         </div>
+
     </form>
     </div>
         </div>
@@ -462,6 +649,7 @@ echo $this->Html->css('custom.css');
                         event_income.onchange = onChange;
                         onChange();
                         //
+
 
                         // generate the age group based on today's date
                         function getAges(){
@@ -520,6 +708,17 @@ echo $this->Html->css('custom.css');
 
                         }
                         getAges();
+
+                        //get retire age on select
+
+                        // let event_age = document.getElementById("retirement_age");
+                        // function onChange() {
+                        //     let value = event_age.value;
+                        //     let text = event_age.options[event_age.selectedIndex].text;
+                        //     console.log(value, text);
+                        // }
+                        // event_income.onchange = onChange;
+                        // onChange();
 
                         ///////////*******\\\\\\\\\
 

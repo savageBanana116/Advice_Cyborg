@@ -191,7 +191,7 @@ echo $this->Html->css('custom.css');
 
 
         <div id="questionnaire-card" class="card">
-            <form action="retirement_results" method="get" id="retirementForm" onsubmit="return formValidator()" >
+            <form action="savings_results" method="get" id="savingsForm" onsubmit="return formValidator()" >
             <div id="question_1">
             <div class="card-body">
                 <div class="container-fluid">
@@ -221,7 +221,7 @@ echo $this->Html->css('custom.css');
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I am ____ years old.</h6>
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" width = 40% class="form-control" name="age" id="inputAge" placeholder="Enter age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" width = 40% class="form-control" name="savings_age" id="inputAge" placeholder="Enter age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
                                         <span id="age_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value greater than or equal to 18</span>
                                     </div>
@@ -265,7 +265,7 @@ echo $this->Html->css('custom.css');
                                         <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">My annual income before tax is $____</h6>
                                         <div class="form-group row">
                                             <div class="col-sm-6" style="padding-bottom: 2vh">
-                                                <input type="number" class="form-control" name="income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" pattern="[0-9]+"onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                                <input type="number" class="form-control" name="savings_income"  id="inputIncome" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" pattern="[0-9]+"onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                             </div>
                                             <span id="income_error" style="display: none; color: red;margin-bottom: 2vh"> Please enter a value that is greater or equal to $15,000</span>
                                         </div>
@@ -314,12 +314,12 @@ echo $this->Html->css('custom.css');
 <!--                                            <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">-->
 
                                             <select id="retirement_age" class="form-control" name="retirement_age">
-                                                <option id="age_group1" style="text-align-last: center"  value="age_group1"></option>
-                                                <option id="age_group2" style="text-align-last: center" value="age_group2"></option>
-                                                <option id="age_group3" style="text-align-last: center" value="age_group3"></option>
-                                                <option id="age_group4" style="text-align-last: center" value="age_group4"></option>
-                                                <option id="age_group5" style="text-align-last: center" value="age_group5"></option>
-                                                <option id="age_group6" style="text-align-last: center" value="age_group6"></option>
+                                                <option selected="selected" id="age_group1" style="text-align-last: center"  "></option>
+                                                <option id="age_group2" style="text-align-last: center" ></option>
+                                                <option id="age_group3" style="text-align-last: center" ></option>
+                                                <option id="age_group4" style="text-align-last: center" ></option>
+                                                <option id="age_group5" style="text-align-last: center" ></option>
+                                                <option id="age_group6" style="text-align-last: center" ></option>
                                             </select>
                                         </div>
                                         <span id="others_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
@@ -372,10 +372,10 @@ echo $this->Html->css('custom.css');
 <!--                                            <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">-->
 
                                             <select id="retirement_income" class="form-control" name="retirement_income">
-                                                <option value="Couple_Comfortable" style="text-align-last: center">Couple Comfortable: $62,269 </option>
-                                                <option value="Single_Comfortable" style="text-align-last: center">Single Comfortable: $44,146 </option>
-                                                <option value="Couple_Modest" style="text-align-last: center">Couple Modest:  $40,560 </option>
-                                                <option value="Single_Modest" style="text-align-last: center">Single Modest:  $28,165 </option>
+                                                <option style="text-align-last: center">$62,269 </option>
+                                                <option  style="text-align-last: center">$44,146 </option>
+                                                <option style="text-align-last: center">$40,560 </option>
+                                                <option  style="text-align-last: center">$28,165 </option>
                                             </select>
 
 
@@ -397,7 +397,7 @@ echo $this->Html->css('custom.css');
                 <div class="container-fluid">
                     <div class="row justify-content-around pb-3">
                         <div class="col-auto col-md-10 align-self-center">
-                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 5</span></h5>
+                            <h5 class="card-title text-center">Saving Goals: <span id="section-title">Question 5</span></h5>
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
@@ -419,11 +419,11 @@ echo $this->Html->css('custom.css');
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
-                                        The current value of my Super investments: $____
+                                        The current value of my Super fund: $____
                                     </h6>
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" class="form-control" name="savings_super" id="inputSuper" value="0" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
                                         <span id="super_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
@@ -443,7 +443,7 @@ echo $this->Html->css('custom.css');
                 <div class="container-fluid">
                     <div class="row justify-content-around pb-3">
                         <div class="col-auto col-md-10 align-self-center">
-                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 6</span></h5>
+                            <h5 class="card-title text-center">Savings Goals: <span id="section-title">Question 6</span></h5>
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
@@ -465,17 +465,16 @@ echo $this->Html->css('custom.css');
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
-                                        The current value of my Super investments: $____
+                                        The current monthly value of my Super contributions: $____
                                     </h6>
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" class="form-control" name="super" id="inputSuper" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" class="form-control" name="savings_monthly_super" id="inputSuper" value="0" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
                                         <span id="super_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The value of your Super/Retirement funds.
-                                           Does not include: investment funds, shares, bonds, term deposits, etc.   </span>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: How much you regularly contribute to your super account. Examples employers contributions, salary sacrifice, etc   </span>
                                 </div>
                             </div>
                         </div>
@@ -490,7 +489,7 @@ echo $this->Html->css('custom.css');
                 <div class="container-fluid">
                     <div class="row justify-content-around pb-3">
                         <div class="col-auto col-md-10 align-self-center">
-                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 7</span></h5>
+                            <h5 class="card-title text-center">Saving Goals: <span id="section-title">Question 7</span></h5>
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
@@ -512,17 +511,17 @@ echo $this->Html->css('custom.css');
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
-                                        My current monthly super contributions: $____
+                                       Current value of Non-Super contributions: $____
                                     </h6>
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" required class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" required class="form-control" name="savings_non_super" value="0" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
                                         <span id="investment_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
 
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: How much you regularly contribute to your super account. Examples employers contributions, salary sacrifice, etc </span>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of other investments. Examples investment funds, shares, bonds, term deposits, etc </span>
                                 </div>
                             </div>
                         </div>
@@ -537,7 +536,7 @@ echo $this->Html->css('custom.css');
                 <div class="container-fluid">
                     <div class="row justify-content-around pb-3">
                         <div class="col-auto col-md-10 align-self-center">
-                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 8</span></h5>
+                            <h5 class="card-title text-center">Saving Goals: <span id="section-title">Question 8</span></h5>
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
@@ -559,11 +558,11 @@ echo $this->Html->css('custom.css');
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
-                                        The current value of my Non-Super investments: $____
+                                        Current monthly value of my Non-Super contributions: $____
                                     </h6>
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" required class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" required class="form-control" value="0" name="savings_non_monthly_super" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
                                         <span id="investment_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
@@ -572,8 +571,7 @@ echo $this->Html->css('custom.css');
                                         <input type="submit" name="submit" id="submit" onclick="onsubmit()" class="btn btn-primary" style="margin-top: 1em" >
                                     </div>
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of your other investments.
-                                          Examples: investment funds, shares, bonds, term deposits, etc.  </span>
+                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: How much you regularly contribute to your investment account. </span>
                                 </div>
                             </div>
                         </div>
@@ -582,55 +580,6 @@ echo $this->Html->css('custom.css');
             </div>
         </div>
 
-        <div id="question_9" style="display:none">
-            <div class="card-body">
-                <div class="container-fluid">
-                    <div class="row justify-content-around pb-3">
-                        <div class="col-auto col-md-10 align-self-center">
-                            <h5 class="card-title text-center">Retirement Goals: <span id="section-title">Question 6</span></h5>
-                        </div>
-                        <div class="col-6 col-md-1 order-md-first align-self-center">
-                            <div class="d-grid gap-2">
-                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
-                                    <i class="fas fa-chevron-left"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-1 order-last align-self-center">
-                            <div class="d-grid gap-2">
-                                <a id="nextBtnTop" class="btn btn-primary" onclick="onNext();" role="button">
-                                    <i class="fas fa-chevron-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-md-10 align-content-center">
-                            <div class="d-flex justify-content-center">
-                                <div id="section-input" class="col">
-                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">
-                                        The current value of my Non-Super investments: $____
-                                    </h6>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" required class="form-control" name="investment" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                        </div>
-                                        <span id="investment_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
-                                    </div>
-                                    <div>
-                                        <!--<button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->
-                                        <input type="submit" name="submit" id="submit" onclick="onsubmit()" class="btn btn-primary" style="margin-top: 1em" >
-                                    </div>
-                                    <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of your other investments.
-                                          Examples: investment funds, shares, bonds, term deposits, etc.  </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </form>
     </div>
@@ -709,82 +658,81 @@ echo $this->Html->css('custom.css');
                         }
                         getAges();
 
+
                         //get retire age on select
 
-                        // let event_age = document.getElementById("retirement_age");
-                        // function onChange() {
-                        //     let value = event_age.value;
-                        //     let text = event_age.options[event_age.selectedIndex].text;
-                        //     console.log(value, text);
-                        // }
-                        // event_income.onchange = onChange;
-                        // onChange();
+                        let event_age = document.getElementById("retirement_age");
+                        function onChange_age() {
+                            let value = event_age.value;
+                            let text = event_age.options[event_age.selectedIndex].text;
+                            console.log(value, text);
+                        }
+                        event_age.onchange = onChange_age;
+                        onChange_age();
 
                         ///////////*******\\\\\\\\\
 
-                        function onsubmit() {
-                            $('retirementForm').on('submit', function () {
+                        function onsubmit(){
+                            $('savingsForm').on('submit', function() {
                                 // do validation here
-                                if (document.getElementById("inputInvestment").value === '')
+                                if(document.getElementById("inputInvestment").value === '')
                                     return false;
                             });
                         }
+                        //
+                        //
+                        // $(document).ready(function() {
+                        //     $('#carouselExampleIndicators').carousel({
+                        //         interval: 1000,
+                        //         wrap: false
+                        //     })
+                        //
+                        //     $('#carouselExampleIndicators').on('slid.bs.carousel', function() {
+                        //         //alert("slid");
+                        //     });
+                        //
+                        //
+                        //     $('#carouselExampleIndicators').on('slid.bs.carousel', '', function() {
+                        //         var $this = $(this);
+                        //
+                        //         $this.find('.carousel-control').show();
+                        //
+                        //         if($('.carousel-inner .item:first').hasClass('active')) {
+                        //             $this.find('.carousel-control-prev').hide();
+                        //         } else if($('.carousel-inner .item:last').hasClass('active')) {
+                        //             $this.find('.carousel-control-next').hide();
+                        //         }
+                        //
+
+                                function formValidator(){
+                                    const age = document.getElementById("inputAge").value;
+                                    const income = document.getElementById("inputIncome").value;
+                                    const otherIncome = document.getElementById("inputOthers").value;
+                                    const lump = document.getElementById("inputLump").value;
+                                    const superAnnual = document.getElementById("inputSuper").value;
+                                    const investment = document.getElementById("inputInvestment").value;
 
 
-                        $(document).ready(function() {
-                            $('#carouselExampleIndicators').carousel({
-                                interval: 1000,
-                                wrap: false
-                            });
-
-                            $('#carouselExampleIndicators').on('slid.bs.carousel', function () {
-                                //alert("slid");
-                            });
-
-
-                            $('#carouselExampleIndicators').on('slid.bs.carousel', '', function () {
-                                var $this = $(this);
-
-                                $this.find('.carousel-control').show();
-
-                                if ($('.carousel-inner .item:first').hasClass('active')) {
-                                    $this.find('.carousel-control-prev').hide();
-                                } else if ($('.carousel-inner .item:last').hasClass('active')) {
-                                    $this.find('.carousel-control-next').hide();
+                                    if (age == '' ){
+                                        alert("Please enter a valid value for your age.");
+                                        return false;
+                                    }else if (income == ''){
+                                        alert("Please enter your after tax monthly income.");
+                                        return false;
+                                    }else if (otherIncome == ''){
+                                        alert("Please enter your other sources of income.");
+                                        return false;
+                                    }else if (lump == ''){
+                                        alert("Please enter your required lump.");
+                                        return false;
+                                    }else if (superAnnual == ''){
+                                        alert("Please enter your super investments.");
+                                        return false;
+                                    }else if (investment == ''){
+                                        alert("Please enter your Non-Super investments.");
+                                        return false;
+                                    }
                                 }
-
-                            });
-                        });
-
-                        function formValidator(){
-                            const age = document.getElementById("inputAge").value;
-                            const income = document.getElementById("inputIncome").value;
-                            const otherIncome = document.getElementById("inputOthers").value;
-                            const lump = document.getElementById("inputLump").value;
-                            const superAnnual = document.getElementById("inputSuper").value;
-                            const investment = document.getElementById("inputInvestment").value;
-
-
-                            if (age == '' ){
-                                alert("Please enter a valid value for your age.");
-                                return false;
-                            }else if (income == ''){
-                                alert("Please enter your after tax monthly income.");
-                                return false;
-                            }else if (otherIncome == ''){
-                                alert("Please enter your other sources of income.");
-                                return false;
-                            }else if (lump == ''){
-                                alert("Please enter your required lump.");
-                                return false;
-                            }else if (superAnnual == ''){
-                                alert("Please enter your super investments.");
-                                return false;
-                            }else if (investment == ''){
-                                alert("Please enter your Non-Super investments.");
-                                return false;
-                            }
-                        }
 
                     </script>
         </div>

@@ -626,24 +626,30 @@ echo $this->Html->css('custom.css');
                             const age_group5 = document.getElementById("age_group5");
                             const age_group6 = document.getElementById("age_group6");
 
+                            age_group6.text = "60";
+                            age_group5.text = "59";
+                            age_group4.text = "58";
+                            age_group3.text = "57";
+                            age_group2.text = "56";
+                            age_group1.text = "55";
 
-                            age_group6.text="Before 1 July "+age6;
-                            age_group6.value="Before 1 July "+age6;
-
-                            age_group5.text="1 July "+age6+" - 30 June "+age5;
-                            age_group5.value="1 July "+age6+" 30 June "+age5;
-
-                            age_group4.text="1 July "+age5+" - 30 June "+age4;
-                            age_group4.value="1 July "+age5+" 30 June "+age4;
-
-                            age_group3.text="1 July "+age4+" - 30 June "+age3;
-                            age_group3.value="1 July "+age5+" 30 June "+age4;
-
-                            age_group2.text="1 July "+age3+" - 30 June "+age2;
-                            age_group2.value="1 July "+age5+" 30 June "+age4;
-
-                            age_group1.text="After 1 July "+age1;
-                            age_group1.value="After 1 July "+age1;
+                            // age_group6.text="Before 1 July "+age6+ " - 60";
+                            // age_group6.value="Before 1 July "+age6 + " ";
+                            //
+                            // age_group5.text="1 July "+age6+" - 30 June "+age5 + " - 59 ";
+                            // //age_group5.value="1 July "+age6+" 30 June "+age5 + "- 59";
+                            //
+                            // age_group4.text="1 July "+age5+" - 30 June "+age4 + " - 58";
+                            // //age_group4.value="1 July "+age5+" 30 June "+age4+ " - 58 ";
+                            //
+                            // age_group3.text="1 July "+age4+" - 30 June "+age3 + " - 57";
+                            // //age_group3.value="1 July "+age5+" 30 June "+age4 +" - 57";
+                            //
+                            // age_group2.text="1 July "+age3+" - 30 June "+age2 + " - 56";
+                            // //age_group2.value="1 July "+age5+" 30 June "+age4;
+                            //
+                            // age_group1.text="After 1 July "+age1 + " - 55";
+                            // //age_group1.value="After 1 July "+age1;
 
 
                             dropdown.add(age_group6);

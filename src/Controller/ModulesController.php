@@ -105,7 +105,7 @@ class ModulesController extends AppController
         return $this->redirect($redirect);
 
     }if ($id == 15){
-        $redirect = $this->request->getQuery('redirect', ['controller' => 'Pages', 'action' => 'display', 'savings_for_retirement']);
+        $redirect = $this->request->getQuery('redirect', ['controller' => 'Pages', 'action' => 'display', 'savings']);
 
         return $this->redirect($redirect);
 

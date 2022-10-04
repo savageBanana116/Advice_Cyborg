@@ -23,7 +23,7 @@
                 <h2 class="section-heading text-uppercase" style="color: #0d8abf">results</h2>
                 <h2 id="result-profile"  class="text-center">Investor profile</h2>
                 <h6 id="result-mix" class="text-center text-muted">Benchmark asset mix</h6>
-                <table class="table">
+                <table class="table table-bordered table-hover table-dark" style="width:40%;margin:auto">
                     <thead >
                     <tr>
                         <th scope="col">Product Name</th>
@@ -80,6 +80,46 @@
                 <br>
                 <p class="section-subheading text-muted">Notice: E.g  70,000 balance with $35,000 in BlackRock Global Allocation AUS D and BlackRock W Monthly Income D</p>
                <br>
+                <div id="risk_profile_question">
+                <h3 class="section-subheading text-muted" style="margin-bottom: 0;">Do your investments match your risk profile?</h3>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="window.location.href='consolidate_super'" type="button">Yes</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="risk_profile_no_match()" type="button">No </button>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                </div>
+                <script>
+                function risk_profile_no_match() {
+                var x = document.getElementById("risk_profile_question");
+                var y = document.getElementById("risk_no")
+                if (x.style.display === "none") {
+                x.style.display = "block";
+                } else {
+                x.style.display = "none";
+                y.style.display ="block";
+                }
+                }
+                </script>
+                <div id="risk_no" style="display:none">
+                <h3 class="section-subheading text-muted" style="margin-bottom: 0;">Do you wish to stay in this super fund?</h3>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <button class="btn btn-primary btn-lg btn-block mt-5" type="button">Yes</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="window.location.href='consolidate_super'" type="button">No </button>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                </div>
+
+
                 <div class="row" style="justify-content: center">
                     <div class="col-auto">
                         <div class="card" style="margin-bottom: 2vh">
@@ -87,7 +127,7 @@
                                 Macquarie Investment Manager II
                             </div>
                             <div class="card-body">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered table-hover table-dark"">
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
@@ -127,7 +167,7 @@
                                 BT Panorama
                             </div>
                             <div class="card-body">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered table-hover table-dark">
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
@@ -167,7 +207,7 @@
                                 AMP North
                             </div>
                             <div class="card-body">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered table-hover table-dark">
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
@@ -207,7 +247,7 @@
                                 Special title treatment
                             </div>
                             <div class="card-body">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered table-hover table-dark">
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>

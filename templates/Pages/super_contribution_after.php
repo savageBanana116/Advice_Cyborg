@@ -24,9 +24,9 @@
     <main class="py-5 text-center">
         <div class="py-5 text-center">
             <h2 class="section-heading text-uppercase">Make contribution to your super</h2>
-            <p class="section-subheading text-muted">Let's help you !</p>
+            <p class="section-subheading text-muted">Let's help you set up your retirement goals by guiding you through making contributions to your super!</p>
         </div>
-
+        <div class="card" style="width:50%;margin:auto">
         <div class="text-center">
             <?php if ($_SESSION['age']>75){ ?>
                 <p>Sorry, Your age is over 75!</p>
@@ -51,8 +51,12 @@
                         </tr>
                     </table>
                     <button type="button" class="btn btn-primary" style="margin-top: 1em" onclick="displayOutput()">calculate</button>
+                    <br>
+                    <br>
                 </form>
+
             </div>
+        </div>
                 <script>
                     function displayOutput(){
                         const thisYear = document.getElementById("thisYear").value;

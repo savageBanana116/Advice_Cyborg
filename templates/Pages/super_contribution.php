@@ -66,13 +66,13 @@
     <main class="py-5 text-center">
         <div class="py-5 text-center">
             <h2 class="section-heading text-uppercase">Make contribution to your super</h2>
-            <p class="section-subheading text-muted">Let's help you !</p>
+            <p class="section-subheading text-muted">Let's help you set up your retirement goals by guiding you through making contributions to your super!</p>
         </div>
-
         <div id="initialQuestion">
+            <div class="card" style="width:50%;margin:auto">
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <p class="lead">Choose which method you want to proceed!</p>
+                        <p class="lead">How would you like to contribute to your super?</p>
 
                     </div>
 
@@ -85,8 +85,10 @@
                         <button class="btn btn-primary btn-lg btn-block mt-5" onclick="window.location.href='super_contribution_after'" type="button">After Tax</button>
                     </div>
                 </div>
+
                 <br>
-                <br>
+                <br></div>
+
         </div>
         <script>
             // function startAfter() {
@@ -569,11 +571,13 @@
 
 
         <div class="hide" id="beforeTaxResult">
+            <div class="card" style="width:50%;margin:auto">
             <div class="text-center">
                 <div class="row"><p>PAYG - Tell your employer to salary sacrifice</p></div>
                 <div class="row"><P>Self-Employed Lodge tax deduction claim  ,  <a href="https://www.ato.gov.au/Individuals/Income-and-deductions/Deductions-you-can-claim/" target="_blank">here!</a></P>
                 </div>
                 <button class="btn btn-primary btn-lg btn-block mt-5" onclick="wishAfter()" type="button">Next</button>
+            </div>
             </div>
         </div>
 
@@ -590,6 +594,7 @@
     }
 </script>
 <div class="hide" id="askForAfter">
+    <div class="card" style="width:50%;margin:auto">
     <p>Do you wish to see options for After Tax Contributions?</p>
     <div class="row text-center" style="justify-content: center">
         <div class="col-1">
@@ -598,6 +603,7 @@
         <div class="col-1">
             <a class="btn btn-primary " href="<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>">No</a>
         </div>
+    </div>
     </div>
 </div>
 <script>

@@ -24,16 +24,17 @@
     </div>
 
     <div id="initialQuestion">
-
+        <div class="card" >
             <div class="row justify-content-center">
                 <div class="col-auto">
-                    <p class="lead">To start! You need to review your investment profile first, complete the risk profile questionnaire to continue.</p></div>
+                    <p class="section-subheading text-muted">To start! You need to review your investment profile first, complete the risk profile questionnaire to continue.</p></div>
                 <div class="col-auto">
                     <button class="btn btn-primary btn-lg btn-block mt-5" onclick="location.href='risk_profile_portfolio'" type="button">Start Questionnaire!</button>
                 </div>
             </div>
             <br>
             <br>
+        </div>
     </div>
 </div>
 </body>

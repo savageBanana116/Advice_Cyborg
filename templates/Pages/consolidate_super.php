@@ -24,6 +24,7 @@
 
         <div id="initialQuestion">
             <form>
+                <div class="card" style="width:50%;margin:auto">
                 <div class="row justify-content-center">
                     <div class="col-auto">
                         <p class="lead">To start! Please go to the ATO online (MyGov) to see if you have any lost super</p>
@@ -38,6 +39,7 @@
                 </div>
                 <br>
                 <br>
+                </div>
             </form>
         </div>
         <script>
@@ -54,6 +56,7 @@
         </script>
         <div class="hide" id="eligibility">
             <form>
+                <div class="card" style="width:50%;margin:auto">
                 <div class="row justify-content-center">
                     <div class="col-auto">
                         <p class="lead">Do you have only one super account?</p>
@@ -70,6 +73,7 @@
                     <button class="btn btn-primary btn-lg btn-block mt-5" onclick="socialSecurity();" type="button">Next</button>
                 </div>
             </form>
+        </div>
         </div>
         <script>
             function socialSecurity() {
@@ -98,7 +102,7 @@
                     <p class="section-subheading text-muted">Let's help you find the most suitable product!</p>
                     <br>
 
-                    <table class="table">
+                    <table class="table table-bordered table-hover table-dark" style="width:40%;margin:auto">
                         <thead >
                         <tr>
                             <th scope="col">Product Name</th>
@@ -162,7 +166,7 @@
                                     Macquarie Investment Manager II
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-hover table-dark">
                                         <thead>
                                         <tr>
                                             <th scope="col">Name</th>
@@ -202,7 +206,7 @@
                                     BT Panorama
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-hover table-dark">
                                         <thead>
                                         <tr>
                                             <th scope="col">Name</th>
@@ -242,7 +246,7 @@
                                     AMP North
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-hover table-dark">
                                         <thead>
                                         <tr>
                                             <th scope="col">Name</th>
@@ -282,7 +286,7 @@
                                     Special title treatment
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-hover table-dark">
                                         <thead>
                                         <tr>
                                             <th scope="col">Name</th>
@@ -331,12 +335,14 @@
            <div class="container-fluid" style="width: 50%">
                <h2>Important:</h2>
                <br>
+               <div class="card" style="width:50%;margin:auto">
                <p>Important: If you choose to consolidate your super
                    accounts into one, this will close your other accounts
                    and may cancel any insurance or any other
                    entitlements associated with those accounts.</p>
                <br>
                <button class="btn btn-primary" onclick="nextImportant()">Next</button>
+           </div>
            </div>
         </div>
         <script>
@@ -346,6 +352,7 @@
             }
         </script>
         <div class="hide" id="afterImportant">
+            <div class="card" style="width:50%;margin:auto">
             <div class="row text-center" style="justify-content: center">
                 <p>Do you want to explore other options?</p>
                 <div class="col-1">
@@ -355,9 +362,11 @@
                     <button class="btn btn-primary" onclick="readyRetire()">No</button>
                 </div>
             </div>
+            </div>
         </div>
 
         <div class="hide" id="selectYes">
+            <div class="card" style="width:50%;margin:auto">
             <div class="allHere" id="allHere">
                 <div class="form-group fieldGroup">
                         <p class="lead">You don't need to consolidate your super.</p>
@@ -371,6 +380,7 @@
                         <button class="btn btn-primary" onclick="readyRetire()">No</button>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
 
@@ -391,6 +401,7 @@
             }
         </script>
         <div class="hide" id="readyRetire">
+            <div class="card" style="width:50%;margin:auto">
             <div class="allHere" id="allHere">
                 <div class="form-group fieldGroup">
                     <p class="lead">Are you ready to retire now?</p>
@@ -403,6 +414,7 @@
                         <a class="btn btn-primary " href="<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>">No</a>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </main>

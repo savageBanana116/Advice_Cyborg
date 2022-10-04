@@ -56,7 +56,7 @@
         </script>
         <div class="hide" id="eligibility">
             <form>
-                <div class="card" style="width:50%;margin:auto">
+                <div class="card" style="width:50%;margin:auto;padding: 2vh">
                 <div class="row justify-content-center">
                     <div class="col-auto">
                         <p class="lead">Do you have only one super account?</p>
@@ -329,19 +329,21 @@
             function toolImportant(){
                 document.getElementById("selectNo").style.display ="none";
                 document.getElementById("importantNote").style.display ="block";
+                document.getElementById("title").style.display ="block";
             }
         </script>
         <div class="hide" id="importantNote">
            <div class="container-fluid" style="width: 50%">
                <h2>Important:</h2>
                <br>
-               <div class="card" style="width:50%;margin:auto">
+               <div class="card" style="width:50%;margin:auto;padding: 2vh">
                <p>Important: If you choose to consolidate your super
                    accounts into one, this will close your other accounts
                    and may cancel any insurance or any other
                    entitlements associated with those accounts.</p>
                <br>
-               <button class="btn btn-primary" onclick="nextImportant()">Next</button>
+                   <div class="col-auto"> <button class="btn btn-primary" onclick="nextImportant()">Next</button></div>
+
            </div>
            </div>
         </div>
@@ -352,7 +354,7 @@
             }
         </script>
         <div class="hide" id="afterImportant">
-            <div class="card" style="width:50%;margin:auto">
+            <div class="card" style="width:50%;margin:auto;padding: 2vh">
             <div class="row text-center" style="justify-content: center">
                 <p>Do you want to explore other options?</p>
                 <div class="col-1">
@@ -366,7 +368,7 @@
         </div>
 
         <div class="hide" id="selectYes">
-            <div class="card" style="width:50%;margin:auto">
+            <div class="card" style="width:50%;margin:auto;padding: 2vh">
             <div class="allHere" id="allHere">
                 <div class="form-group fieldGroup">
                         <p class="lead">You don't need to consolidate your super.</p>
@@ -401,7 +403,7 @@
             }
         </script>
         <div class="hide" id="readyRetire">
-            <div class="card" style="width:50%;margin:auto">
+            <div class="card" style="width:50%;margin:auto;padding: 2vh">
             <div class="allHere" id="allHere">
                 <div class="form-group fieldGroup">
                     <p class="lead">Are you ready to retire now?</p>

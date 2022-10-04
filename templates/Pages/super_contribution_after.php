@@ -26,7 +26,7 @@
             <h2 class="section-heading text-uppercase">Make contribution to your super</h2>
             <p class="section-subheading text-muted">Let's help you set up your retirement goals by guiding you through making contributions to your super!</p>
         </div>
-        <div class="card" style="width:50%;margin:auto">
+        <div class="card" style="width:50%;margin:auto;padding: 2vh">
         <div class="text-center">
             <?php if ($_SESSION['age']>75){ ?>
                 <p>Sorry, Your age is over 75!</p>
@@ -123,7 +123,7 @@
                                 <button class="btn btn-primary"  onclick="location.href='super_contribution' ">Yes</button>
                             </div>
                             <div class="col-1">
-                                <a class="btn btn-primary " href="<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>">No</a>
+                                <a class="btn btn-primary " href="investment_portfolio_1">No</a>
                             </div>
                         </div>
 
@@ -135,3 +135,4 @@
     </main>
 </div>
 </body>
+

@@ -39,15 +39,15 @@
                     <table style="margin-left: auto;margin-right: auto;text-align: left">
                         <tr>
                             <td>This year</td>
-                            <td><input type="number" id="thisYear" class="form-control" placeholder="$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+"></td>
+                            <td><input type="number" id="thisYear" class="form-control" placeholder="$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+"></td>
                         </tr>
                         <tr>
                             <td>Last year</td>
-                            <td><input type="number" id="lastYear" class="form-control" placeholder="$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+"></td>
+                            <td><input type="number" id="lastYear" class="form-control" placeholder="$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+"></td>
                         </tr>
                         <tr>
                             <td>The year before</td>
-                            <td><input type="number" id="yearBefore" class="form-control" placeholder="$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+" ></td>
+                            <td><input type="number" id="yearBefore" class="form-control" placeholder="$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+" ></td>
                         </tr>
                     </table>
                     <button type="button" class="btn btn-primary" style="margin-top: 1em" onclick="displayOutput()">calculate</button>
@@ -62,8 +62,8 @@
                         const thisYear = document.getElementById("thisYear").value;
                         const lastYear = document.getElementById("lastYear").value;
                         const yearBefore = document.getElementById("yearBefore").value;
-                        if (thisYear == ''){
-                            alert("Please enter your contribution for this year.");
+                        if (thisYear == ''|| thisYear > 110000){
+                            alert("Please a value not greater than 110,000 for this year.");
                         }else if (lastYear == ''){
                             alert("Please enter your contribution for last year.");
 
@@ -99,7 +99,7 @@
                     <h4>Or</h4>
                     <p>You can bring forward 2 years and contribute up to:$<span id="myLastYear"></span></p>
                 </div>
-                    <button type="button" class="btn btn-primary" onclick="seePre()">Next</button>
+                    <button style="margin-bottom: 1vh" type="button" class="btn btn-primary" onclick="seePre()">Next</button>
                 </div>
 
                 <script>
@@ -116,7 +116,7 @@
                     }
                 </script>
                 <div class="hide" id="seePre">
-                    <div class="col-auto">
+                    <div class="col-auto" style="padding: 2vh">
                         <p class="lead">Do you wish to see options for Before Tax Contributions?</p>
                         <div class="row text-center" style="justify-content: center">
                             <div class="col-1">

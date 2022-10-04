@@ -571,7 +571,7 @@
 
 
         <div class="hide" id="beforeTaxResult">
-            <div class="card" style="width:50%;margin:auto">
+            <div class="card" style="width:50%;margin:auto;padding: 2vh">
             <div class="text-center">
                 <div class="row"><p>PAYG - Tell your employer to salary sacrifice</p></div>
                 <div class="row"><P>Self-Employed Lodge tax deduction claim  ,  <a href="https://www.ato.gov.au/Individuals/Income-and-deductions/Deductions-you-can-claim/" target="_blank">here!</a></P>
@@ -594,7 +594,7 @@
     }
 </script>
 <div class="hide" id="askForAfter">
-    <div class="card" style="width:50%;margin:auto">
+    <div class="card" style="width:50%;margin:auto;padding: 2vh">
     <p>Do you wish to see options for After Tax Contributions?</p>
     <div class="row text-center" style="justify-content: center">
         <div class="col-1">

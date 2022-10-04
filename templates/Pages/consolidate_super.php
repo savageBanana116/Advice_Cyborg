@@ -376,8 +376,9 @@
                 <div class="row text-center" style="justify-content: center">
                     <p>Do you want to explore other options?</p>
                     <div class="col-1">
-                        <button class="btn btn-primary"  onclick="location.href='super_options' ">Yes</button>
+                        <button class="btn btn-primary"  onclick="location.href= '<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>'" >Yes</button>
                     </div>
+
                     <div class="col-1">
                         <button class="btn btn-primary" onclick="readyRetire()">No</button>
                     </div>

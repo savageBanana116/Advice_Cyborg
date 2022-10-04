@@ -601,7 +601,7 @@
             <button class="btn btn-primary"  onclick="location.href='super_contribution_after' ">Yes</button>
         </div>
         <div class="col-1">
-            <a class="btn btn-primary " href="<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>">No</a>
+            <a class="btn btn-primary " href="investment_portfolio_1">No</a>
         </div>
     </div>
     </div>

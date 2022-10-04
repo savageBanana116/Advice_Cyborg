@@ -10,7 +10,7 @@ $savings_non_super = $_GET["savings_non_super"];
 $savings_non_monthly_super = $_GET["savings_non_monthly_super"];
 
 
-//$_SESSION["age"] = $myAge;
+$_SESSION["my_age"] = $age;
 
 ?>
 <html>
@@ -81,7 +81,7 @@ $savings_non_monthly_super = $_GET["savings_non_monthly_super"];
         </div>
 
             <div class="row" style="margin-bottom:0.5em">
-                <button style="width:35%;" type="button" onclick="location.href='#' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super (Coming Soon)</button>
+                <button style="width:35%;" type="button" onclick="location.href='iteration3_super_contribution' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super (Coming Soon)</button>
             </div>
             <div class="row" style="margin-bottom:0.5em">
 <!--                <button type="button" onclick="location.href='risk_profile' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio</button>-->

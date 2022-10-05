@@ -146,12 +146,12 @@
                                 <div class="col-xs-2">
                                     <span >What is your<span class="blue" > Current Annual Salary?</span></span>
 
-                                    <input type="number"  class="form-control" min="0" max="999999999"  onKeyPress="return check(event,value)" id="Salary" >
+                                    <input type="number"  class="form-control" min="0" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onKeyPress="return check(event,value)" id="Salary" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span >What is your<span class="blue" > Current Salary Sacrifice?</span></span>
 
-                                    <input type="number" class="form-control" min="0" max="999999999" onKeyPress="return check(event,value)"  id="Salary_Sacrifice_Amount">
+                                    <input type="number" class="form-control" min="0" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onKeyPress="return check(event,value)"  id="Salary_Sacrifice_Amount">
                                 </div>
 
                             </div>

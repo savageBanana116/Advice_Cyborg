@@ -409,6 +409,9 @@
     }
 </script>
 <div class="hide" id="readyRetire">
+    <div style="padding-bottom: 1em">
+        <button type="button" onclick="location.href='<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>' "  class="btn btn-primary" style="font-size: 1.3vh; border-radius: 12px; text-transform: uppercase">Back to Dashboard</button>
+    </div>
     <div class="card" style="width:50%;margin:auto;padding: 2vh">
         <div class="allHere" id="allHere">
             <div class="form-group fieldGroup">
@@ -422,7 +425,7 @@
                         <div class="d-flex justify-content-center">
                             <div id="contact_form" class="col">
                                 <span> Name</span>
-                                <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                <input required type="text" onkeydown="return /[a-z]/i.test(event.key)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                        maxlength = "30" id="name2" name="name2">
                                 <span> Mobile Number</span>
                                 <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
@@ -438,9 +441,6 @@
                     </div>
 
                 </div>
-            </div>
-            <div>
-                <button type="button" onclick="location.href='<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>' "  class="btn btn-primary" style="font-size: 1.3vh; border-radius: 12px; text-transform: uppercase">Back to Dashboard</button>
             </div>
         </div>
     </div>
@@ -459,8 +459,10 @@
             if(!validateEmail(document.getElementById("email2").value)){
                 alert("Please Enter a Valid Email")
             }
+            else if(document.getElementById("phone-number2").value.length < 8){
+                alert("Please Enter a Valid Mobile Number")
+            }
             else {
-                $("contact_submit").attr("disabled", true);
                 x.style.display = "block";
             }
         }

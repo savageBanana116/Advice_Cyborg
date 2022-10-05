@@ -411,6 +411,28 @@
                     below in case we find a better
                     solution for you
                     (Our promise - no spamming)</p>
+                <p class="lead" id="confirmation_message" style="display:none;color:green">Thank you for submitting your enquiry! Our team will be in contact with you within 3-5 business days.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 align-content-center">
+                        <div class="d-flex justify-content-center">
+                            <div id="contact_form" class="col">
+                                <span> Name</span>
+                                <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                       maxlength = "30" id="name2" name="name2">
+                                <span> Mobile Number</span>
+                                <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                       maxlength = "10" id="phone-number2" name="phone-number2">
+                                <span> Email Address</span>
+                                <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                       maxlength = "30" id="email2" name="email2">
+                            </div>
+                        </div>
+                        <a id="contact_submit" class="btn btn-primary mt-3" style="width:30%" onclick="sendResults()">Submit Your Enquiry</a>
+                        <br>
+                        <br>
+                    </div>
+
+                </div>
             </div>
             <div>
                 <button type="button" onclick="location.href='<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>' "  class="btn btn-primary" style="font-size: 1.3vh; border-radius: 12px; text-transform: uppercase">Back to Dashboard</button>
@@ -418,6 +440,27 @@
         </div>
     </div>
 </div>
+<script>
+    function validateEmail($email) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        return emailReg.test( $email );
+    }
+    function sendResults(){
+        var x = document.getElementById("confirmation_message");
+        if(document.getElementById("name2").value === "" || document.getElementById("phone-number2").value === "" || document.getElementById("email2").value === ""){
+            alert("Please enter all values");
+        }
+        else {
+            if(!validateEmail(document.getElementById("email2").value)){
+                alert("Please Enter a Valid Email")
+            }
+            else {
+                $("contact_submit").attr("disabled", true);
+                x.style.display = "block";
+            }
+        }
+    }
+</script>
 </main>
 </div>
 </body>

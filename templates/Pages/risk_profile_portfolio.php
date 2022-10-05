@@ -23,7 +23,7 @@
                 <h2 class="section-heading text-uppercase" style="color: #0d8abf">results</h2>
                 <h2 id="result-profile"  class="text-center">Investor profile</h2>
                 <h6 id="result-mix" class="text-center text-muted">Benchmark asset mix</h6>
-                <table class="table table-bordered table-hover table-dark" style="width:40%;margin:auto">
+                <table class="table table-bordered table-hover table-dark">
                     <thead >
                     <tr>
                         <th scope="col">Product Name</th>
@@ -109,7 +109,7 @@
                 <h3 class="section-subheading text-muted" style="margin-bottom: 0;">Do you wish to stay in this super fund?</h3>
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <button class="btn btn-primary btn-lg btn-block mt-5" type="button">Yes</button>
+                        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="contact_form()" type="button">Yes</button>
                     </div>
                     <div class="col-auto">
                         <button class="btn btn-primary btn-lg btn-block mt-5" onclick="window.location.href='consolidate_super'" type="button">No </button>
@@ -118,6 +118,73 @@
                     <br>
                 </div>
                 </div>
+                <script>
+                function contact_form() {
+                var x = document.getElementById("contact_form");
+                var y = document.getElementById("risk_no")
+                if (x.style.display === "none") {
+                x.style.display = "block";
+                } else {
+                x.style.display = "none";
+                y.style.display ="block";
+                }
+                }
+                </script>
+                <div id="contact_form" style="display:none">
+                <p class="lead">Please fill out contact details
+                    below in case we find a better
+                    solution for you
+                    (Our promise - no spamming)</p>
+                <p class="lead" id="confirmation_message" style="display:none;color:green">Thank you for submitting your enquiry! Our team will be in contact with you within 3-5 business days.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 align-content-center">
+                        <div class="d-flex justify-content-center" style="width:70%;margin:auto">
+                            <div id="contact_form2" class="col" style="align-content: center">
+                                <span> Name</span>
+                                <br>
+                                <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                       maxlength = "30" id="name2" name="name2">
+                                <br>
+                                <br>
+                                <span> Mobile Number</span>
+                                <br>
+                                <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                       maxlength = "10" id="phone-number2" name="phone-number2">
+                                <br>
+                                <br>
+                                <span> Email Address</span>
+                                <br>
+                                <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                       maxlength = "30" id="email2" name="email2">
+                            </div>
+                        </div>
+                        <a id="contact_submit" class="btn btn-primary mt-3" style="width:30%" onclick="sendEnquiry()">Submit Your Enquiry</a>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                </div>
+
+                <script>
+                    function validateEmail($email) {
+                        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                        return emailReg.test( $email );
+                    }
+                    function sendEnquiry(){
+                        var x = document.getElementById("confirmation_message");
+                        if(document.getElementById("name2").value === "" || document.getElementById("phone-number2").value === "" || document.getElementById("email2").value === ""){
+                            alert("Please enter all values");
+                        }
+                        else {
+                            if(!validateEmail(document.getElementById("email2").value)){
+                                alert("Please Enter a Valid Email")
+                            }
+                            else {
+                                x.style.display = "block";
+                            }
+                        }
+                    }
+                </script>
 
 
                 <div class="row" style="justify-content: center">

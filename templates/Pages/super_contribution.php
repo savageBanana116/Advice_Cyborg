@@ -140,18 +140,18 @@
                             <div class="form-group row">
                                 <div class="col-xs-2">
                                     <span >What is your<span class="blue" > Date of Birth?</span></span>
-                                    <input type="date" placeholder="dd-mm-yyyy" min="1900-01-01" max="2004-01-01" class="form-control" id="DOB">
+                                    <input type="date" placeholder="dd-mm-yyyy" min="1920-01-01" max="2004-01-01" class="form-control" id="DOB">
 
                                 </div>
                                 <div class="col-xs-2">
                                     <span >What is your<span class="blue" > Current Annual Salary?</span></span>
 
-                                    <input type="number"  class="form-control" min="0" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onKeyPress="return check(event,value)" id="Salary" >
+                                    <input type="number"  class="form-control" min="0" max="999999999"  onKeyPress="return check(event,value)" id="Salary" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57" >
                                 </div>
                                 <div class="col-xs-2">
                                     <span >What is your<span class="blue" > Current Salary Sacrifice?</span></span>
 
-                                    <input type="number" class="form-control" min="0" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onKeyPress="return check(event,value)"  id="Salary_Sacrifice_Amount">
+                                    <input type="number" class="form-control" min="0" max="999999999" onKeyPress="return check(event,value)"  id="Salary_Sacrifice_Amount" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57" >
                                 </div>
 
                             </div>

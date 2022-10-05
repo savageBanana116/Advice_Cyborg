@@ -180,7 +180,8 @@ function getSSInput() {
         document.getElementById("After_Tax_Taxable_Income").value = Salary_commas;
         var After_Basic_Tax_Payable_commas = After_Basic_Tax_Payable.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         document.getElementById("After_Tax_Payable_Basic").value = After_Basic_Tax_Payable_commas;
-        var After_Levy_commas = After_Levy.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        var After_Levy_commas = Math.round(After_Levy).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         document.getElementById("After_Levy").value = After_Levy_commas;
         var After_LMTaxOffset_commas = After_LMTaxOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -189,10 +190,12 @@ function getSSInput() {
         var After_LIncomeTaxOffset_commas = After_LIncomeTaxOffset.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         document.getElementById("After_Low_Income_Tax_Offset").value = After_LIncomeTaxOffset_commas;
-        var After_Tax_Payable_commas = After_Tax_Payable.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        var After_Tax_Payable_commas = Math.round(After_Tax_Payable).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") ;
 
         document.getElementById("After_Tax_Payable").value = After_Tax_Payable_commas;
-        var After_Net_Income_commas = After_Net_Income.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        var After_Net_Income_commas = Math.round(After_Net_Income).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         document.getElementById("After_Net_Income").value = After_Net_Income_commas;
         document.getElementById("After_Less_After_Tax").value = 0;

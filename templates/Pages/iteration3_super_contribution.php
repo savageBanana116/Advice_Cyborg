@@ -600,8 +600,8 @@
             <div class="col-1">
                 <button class="btn btn-primary"  onclick="location.href='iteration3_super_contribution_after' ">Yes</button>
             </div>
-            <div class="col-1">
-                <a class="btn btn-primary " href="iteration3_portfolio_1">No</a>
+            <div class="col-auto">
+                <a class="btn btn-primary " href="iteration3_portfolio_1" style="padding-left: 2vh;margin-left: 2vh">No</a>
             </div>
         </div>
     </div>

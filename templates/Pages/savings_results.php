@@ -17,7 +17,7 @@ $_SESSION["my_age"] = $age;
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en">
 <div class="text-center" style="margin-top: 2%;margin-bottom: 2%">
-    <h2 class="myTitle">Investing at retirement</h2>
+    <h2 class="myTitle">Saving at retirement</h2>
     <!--    <span>Fill in your personal details</span>-->
 </div>
 
@@ -52,7 +52,7 @@ $_SESSION["my_age"] = $age;
                     </tr>
                     <tr>
                         <td><h5>Your monthly income after retirement: </h5></td>
-                        <td> <h7><?php echo $retirement_income ?></h7></td>
+                        <td> <h7><?php echo "$" . number_format($retirement_income)  ?></h7></td>
                     </tr>
                     <tr>
                         <td><h5>Your current Super fund: </h5></td>

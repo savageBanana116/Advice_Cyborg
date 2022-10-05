@@ -61,25 +61,25 @@ echo $this->Html->css('custom.css');
                 question += 1;
             }
         } else if (question === 2) {
-            // if(document.getElementById("inputOthers").value === '' ){
-            //     document.getElementById("others_error").style.display = "block";
-            // }
-            // else {
-            //     document.getElementById("others_error").style.display = "none";
+            if(document.getElementById("retirement_age").value === ''|| document.getElementById("retirement_age").value < 55 ){
+                document.getElementById("retire_error").style.display = "block";
+            }
+            else {
+                document.getElementById("retire_error").style.display = "none";
             q3.style.display = "none";//q2
             q4.style.display = "block";//q3
             question += 1;
-            //}
+            }
         } else if (question === 3) {
-            // if(document.getElementById("inputLump").value === ''){
-            //     document.getElementById("lump_error").style.display = "block";
-            // }
-            // else {
+            if(document.getElementById("retirement_income").value === ''){
+                document.getElementById("lump_error").style.display = "block";
+            }
+            else {
             document.getElementById("lump_error").style.display = "none";
             q4.style.display = "none";//q3
             q5.style.display = "block";//q4
             question += 1;
-            //}
+            }
         } else if (question === 4) {//current_super
             if (document.getElementById("inputSuper").value === '') {
                 document.getElementById("super_error").style.display = "block";
@@ -90,28 +90,28 @@ echo $this->Html->css('custom.css');
                 question += 1;
             }
         } else if (question === 5) {//monthly_super
-            if (document.getElementById("inputSuper").value === '') {
-                document.getElementById("super_error").style.display = "block";
+            if (document.getElementById("monthlyInput").value === '') {
+                document.getElementById("monthly_error").style.display = "block";
             } else {
-                document.getElementById("super_error").style.display = "none";
+                document.getElementById("monthly_error").style.display = "none";
                 q6.style.display = "none";//q5
                 q7.style.display = "block";//q6
                 question += 1;
             }
         } else if (question === 6) {//non_super_funds
-            if (document.getElementById("inputSuper").value === '') {
-                document.getElementById("super_error").style.display = "block";
+            if (document.getElementById("inputInvestment").value === '') {
+                document.getElementById("investment_error").style.display = "block";
             } else {
-                document.getElementById("super_error").style.display = "none";
+                document.getElementById("investment_error").style.display = "none";
                 q7.style.display = "none";//q6
                 q8.style.display = "block";//q7
                 question += 1;
             }
         } else if (question === 7) {//monthly_non_super
-            if (document.getElementById("inputSuper").value === '') {
-                document.getElementById("super_error").style.display = "block";
+            if (document.getElementById("nonInput").value === '') {
+                document.getElementById("non_error").style.display = "block";
             } else {
-                document.getElementById("super_error").style.display = "none";
+                document.getElementById("non_error").style.display = "none";
                 q8.style.display = "none";//q7
                 q9.style.display = "block";//q8
                 question += 1;
@@ -197,7 +197,7 @@ echo $this->Html->css('custom.css');
                 <div class="container-fluid">
                     <div class="row justify-content-around pb-3">
                         <div class="col-auto col-md-10 align-self-center">
-                            <h5 class="card-title text-center">Saving Goals:<span id="section-title">Question 1</span></h5>
+                            <h5 class="card-title text-center">Saving Goals: <span id="section-title">Question 1</span></h5>
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
@@ -241,7 +241,7 @@ echo $this->Html->css('custom.css');
                     <div class="container-fluid">
                         <div class="row justify-content-around pb-3">
                             <div class="col-auto col-md-10 align-self-center">
-                                <h5 class="card-title text-center">Saving Goals:<span id="section-title">Question 2</span></h5>
+                                <h5 class="card-title text-center">Saving Goals: <span id="section-title">Question 2</span></h5>
                             </div>
                             <div class="col-6 col-md-1 order-md-first align-self-center">
                                 <div class="d-grid gap-2">
@@ -306,27 +306,50 @@ echo $this->Html->css('custom.css');
                         <div class="col-md-10 align-content-center">
                             <div class="d-flex justify-content-center">
                                 <div id="section-input" class="col">
-                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I want to retire at ____ (age)
+                                    <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">I want to retire at ____ (age)     </h6>
 
 
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
 <!--                                            <input type="number" class="form-control"  name="others" id="inputOthers" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">-->
+                                            <input type="number" width = 40% class="form-control" name="retirement_age" id="retirement_age" placeholder="Enter age here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 
-                                            <select id="retirement_age" class="form-control" name="retirement_age">
-                                                <option selected="selected" id="age_group1" style="text-align-last: center"  "></option>
-                                                <option id="age_group2" style="text-align-last: center" ></option>
-                                                <option id="age_group3" style="text-align-last: center" ></option>
-                                                <option id="age_group4" style="text-align-last: center" ></option>
-                                                <option id="age_group5" style="text-align-last: center" ></option>
-                                                <option id="age_group6" style="text-align-last: center" ></option>
                                             </select>
                                         </div>
-                                        <span id="others_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
+                                        <span id="retire_error" style="display: none; color: red;margin-bottom: 2vh">Please input an age greater than 55.</span>
                                     </div>
 
+                                    <table class="table table-bordered table-dark">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="table-primary">Date of birth</th>
+                                            <th scope="col" class="table-primary">Preservation Age</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">Before 1 July 1960</th>
+                                            <td>55</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1 July 1961 - 30 June 1962</th>
+                                            <td>56</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1 July 1962 - 30 June 1963</th>
+                                            <td>58</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1 July 1963 - 30 June 1964</th>
+                                            <td>59</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">From 1 July 1964</th>
+                                            <td>60</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
 
-                                    </h6>
                                     <br>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: To be able to access your super, you need to be 55 or older.
                                                         There are some exceptions to the rule which allow for early retirement.</span>
@@ -370,18 +393,39 @@ echo $this->Html->css('custom.css');
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
 <!--                                            <input type="number" class="form-control" name="lump" id="inputLump" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">-->
-
-                                            <select id="retirement_income" class="form-control" name="retirement_income">
-                                                <option style="text-align-last: center">$62,269 </option>
-                                                <option  style="text-align-last: center">$44,146 </option>
-                                                <option style="text-align-last: center">$40,560 </option>
-                                                <option  style="text-align-last: center">$28,165 </option>
-                                            </select>
+                                            <input type="number" width = 40% class="form-control" name="retirement_income" id="retirement_income" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 
 
                                         </div>
-                                        <span id="lump_error" style="display: none; color: red;margin-bottom: 2vh">Please select a value</span>
+                                        <span id="lump_error" style="display: none; color: red;margin-bottom: 2vh">Please enter a value</span>
                                     </div>
+                                    <table class="table table-bordered table-dark">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="table-primary">ASFA Retirement Standard</th>
+                                            <th scope="col" class="table-primary">Annual living costs</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">Couple - comfortable</th>
+                                            <td>$62,269</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Single - comfortable</th>
+                                            <td>$44,146</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Couple - modest</th>
+                                            <td>$40,560</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Single - modest</th>
+                                            <td>$28,165</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
                                 <br>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The monthly income you would like to receive at retirement to enjoy your desired lifestyle </span>
                                 </div>
@@ -423,7 +467,7 @@ echo $this->Html->css('custom.css');
                                     </h6>
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" class="form-control" name="savings_super" id="inputSuper" value="0" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" class="form-control" name="savings_super" id="inputSuper"  placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
                                         <span id="super_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
@@ -469,9 +513,9 @@ echo $this->Html->css('custom.css');
                                     </h6>
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" class="form-control" name="savings_monthly_super" id="inputSuper" value="0" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" class="form-control" name="savings_monthly_super" id="monthlyInput"  placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="super_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
+                                        <span id="monthly_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <br>
                                     <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: How much you regularly contribute to your super account. Examples employers contributions, salary sacrifice, etc   </span>
@@ -515,7 +559,7 @@ echo $this->Html->css('custom.css');
                                     </h6>
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" required class="form-control" name="savings_non_super" value="0" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" required class="form-control" name="savings_non_super"  id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
                                         <span id="investment_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
@@ -562,9 +606,9 @@ echo $this->Html->css('custom.css');
                                     </h6>
                                     <div class="form-group row">
                                         <div class="col-sm-6" style="padding-bottom: 2vh">
-                                            <input type="number" required class="form-control" value="0" name="savings_non_monthly_super" id="inputInvestment" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <input type="number" required class="form-control"  name="savings_non_monthly_super" id="nonInput" placeholder="Enter here" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="any" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                                         </div>
-                                        <span id="investment_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
+                                        <span id="non_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <div>
                                         <!--<button type="button" onclick="hideInput()" class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase;margin-top: 1vh">Submit</button>-->

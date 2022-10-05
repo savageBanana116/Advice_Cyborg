@@ -355,10 +355,12 @@
 </script>
 <div class="hide" id="afterImportant">
     <div class="card" style="width:50%;margin:auto;padding: 2vh">
+        <div class="col-auto">    <button class="btn btn-primary"  onclick="location.href= '<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>'" >Back to dashboard</button>
+        </div>
         <div class="row text-center" style="justify-content: center">
             <p>Do you want to explore other options?</p>
-            <div class="col-1">
-                <button class="btn btn-primary"  onclick="location.href='super_options' ">Yes</button>
+            <div class="col-auto">
+                <button class="btn btn-primary"  onclick="location.href='#' ">Yes(coming soon)</button>
             </div>
             <div class="col-1">
                 <button class="btn btn-primary" onclick="readyRetire()">No</button>
@@ -368,15 +370,18 @@
 </div>
 
 <div class="hide" id="selectYes">
+
     <div class="card" style="width:50%;margin:auto;padding: 2vh">
+        <div class="col-auto">    <button class="btn btn-primary"  onclick="location.href= '<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>'" >Back to dashboard</button>
+        </div>
         <div class="allHere" id="allHere">
             <div class="form-group fieldGroup">
                 <p class="lead">You don't need to consolidate your super.</p>
             </div>
             <div class="row text-center" style="justify-content: center">
                 <p>Do you want to explore other options?</p>
-                <div class="col-1">
-                    <button class="btn btn-primary"  onclick="location.href= '<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>'" >Yes</button>
+                <div class="col-auto">
+                    <button class="btn btn-primary"  onclick="#" >Yes(coming soon)</button>
                 </div>
 
                 <div class="col-1">

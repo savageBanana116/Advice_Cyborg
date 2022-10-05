@@ -81,14 +81,14 @@ $_SESSION["my_age"] = $age;
         </div>
 
             <div class="row" style="margin-bottom:0.5em">
-                <button style="width:35%;" type="button" onclick="location.href='iteration3_super_contribution' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super (Coming Soon)</button>
+                <button style="width:35%;" type="button" onclick="location.href='iteration3_super_contribution' "  class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Contribution to Super</button>
             </div>
             <div class="row" style="margin-bottom:0.5em">
 <!--                <button type="button" onclick="location.href='risk_profile' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio</button>-->
                 <button style="width:35%;" type="button" onclick="location.href='#' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Investment portfolio (Coming Soon)</button>
             </div>
             <div class="row" style="margin-bottom:0.5em">
-                <button style="width:35%;" type="button" onclick="location.href='iteration3_consolidate_super' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Consolidate Super (Coming Soon)</button>
+                <button style="width:35%;" type="button" onclick="location.href='iteration3_consolidate_super' " class="btn btn-primary" style="font-size: 2vh; border-radius: 12px; text-transform: uppercase">Consolidate Super</button>
             </div>
 
         </div>

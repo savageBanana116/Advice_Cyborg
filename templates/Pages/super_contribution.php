@@ -598,10 +598,10 @@
     <p>Do you wish to see options for After Tax Contributions?</p>
     <div class="row text-center" style="justify-content: center">
         <div class="col-1">
-            <button class="btn btn-primary"  onclick="location.href='super_contribution_after' ">Yes</button>
+            <button class="btn btn-primary"  onclick="location.href='super_contribution_after' " >Yes</button>
         </div>
         <div class="col-1">
-            <a class="btn btn-primary " href="investment_portfolio_1">No</a>
+            <a class="btn btn-primary " href="investment_portfolio_1" style="padding-left: 2vh;margin-left: 2vh">No</a>
         </div>
     </div>
     </div>

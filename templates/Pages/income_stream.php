@@ -238,7 +238,7 @@
                                     </div>
                                         <div id="section-input" class="row">
                                             <span> Name</span>
-                                            <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            <input required type="text" onkeydown="return /[a-z]/i.test(event.key)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                    maxlength = "30" id="name" name="name">
                                             <span> Mobile Number</span>
                                             <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
@@ -278,6 +278,8 @@
                         if(!validateEmail(document.getElementById("email2").value)){
                             alert("Please Enter a Valid Email")
                         }
+                        else if(document.getElementById("phone-number2").value.length < 8){
+                            alert("Please Enter a Valid Mobile Number")
                         else {
                             $("submit-button").attr("disabled", true);
                             document.getElementById("enquiry-confirmation1").style.display = "block";
@@ -291,6 +293,8 @@
                         if(!validateEmail(document.getElementById("email").value)){
                             alert("Please Enter a Valid Email");
                         }
+                        else if(document.getElementById("phone-number").value.length < 8){
+                            alert("Please Enter a Valid Mobile Number")
                         else {
                             $("submit-button").attr("disabled", true);
                             document.getElementById("enquiry-confirmation2").style.display = "block";
@@ -339,7 +343,7 @@
                                             <div class="d-flex justify-content-center">
                                                 <div id="section-input" class="col">
                                                     <span> Name</span>
-                                                    <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                    <input required type="text" onkeydown="return /[a-z]/i.test(event.key)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                            maxlength = "30" id="name2" name="name2">
                                                     <span> Mobile Number</span>
                                                     <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"

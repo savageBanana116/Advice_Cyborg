@@ -438,7 +438,7 @@
                                 <input required type="text" onkeydown="return /[a-z]/i.test(event.key)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                        maxlength = "30" id="name2" name="name2">
                                 <span> Mobile Number</span>
-                                <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                                        maxlength = "10" id="phone-number2" name="phone-number2">
                                 <span> Email Address</span>
                                 <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"

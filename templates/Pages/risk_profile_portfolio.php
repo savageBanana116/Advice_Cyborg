@@ -27,9 +27,9 @@
                     <thead >
                     <tr>
                         <th scope="col">Product Name</th>
-                        <th scope="col">Fee</th>
-                        <th scope="col">Growth</th>
-                        <th scope="col">Defensive</th>
+                        <th scope="col">Fee(%)</th>
+                        <th scope="col">Growth(%)</th>
+                        <th scope="col">Defensive(%)</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -81,7 +81,7 @@
                 <p class="section-subheading text-muted">Notice: E.g  70,000 balance with $35,000 in BlackRock Global Allocation AUS D and BlackRock W Monthly Income D</p>
                <br>
                 <div id="risk_profile_question">
-                <h3 class="section-subheading text-muted" style="margin-bottom: 0;">Do your investments match your risk profile?</h3>
+                <h2 class="section-subheading text-muted" style="margin-bottom: 0;">Do your investments match your risk profile?</h2>
                 <div class="row justify-content-center">
                     <div class="col-auto">
                         <button class="btn btn-primary btn-lg btn-block mt-5" onclick="window.location.href='consolidate_super'" type="button">Yes</button>
@@ -106,7 +106,7 @@
                 }
                 </script>
                 <div id="risk_no" style="display:none">
-                <h3 class="section-subheading text-muted" style="margin-bottom: 0;">Do you wish to stay in this super fund?</h3>
+                <h2 class="section-subheading text-muted" style="margin-bottom: 0;">Do you wish to stay in this super fund?</h2>
                 <div class="row justify-content-center">
                     <div class="col-auto">
                         <button class="btn btn-primary btn-lg btn-block mt-5" onclick="contact_form()" type="button">Yes</button>
@@ -201,8 +201,9 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Rate</th>
-                                        <th scope="col">Balance</th>
+                                        <th scope="col">Rate(%)</th>
+                                        <th scope="col">Balance($)
+                                        </th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -219,11 +220,11 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">Admin Fees</th>
-                                        <td>0.49%</td>
+                                        <td>0.49</td>
                                         <td>70000</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" >Total Fee</th>
+                                        <th scope="row" >Total Fee($)</th>
                                         <td colspan="2">612.5</td>
                                     </tr>
                                     </tbody>
@@ -241,8 +242,8 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Rate</th>
-                                        <th scope="col">Balance</th>
+                                        <th scope="col">Rate(%)</th>
+                                        <th scope="col">Balance($)</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -263,7 +264,7 @@
                                         <td>70000</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" >Total Fee</th>
+                                        <th scope="row" >Total Fee($)</th>
                                         <td colspan="2">914.5</td>
                                     </tr>
                                     </tbody>
@@ -281,8 +282,8 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Rate</th>
-                                        <th scope="col">Balance</th>
+                                        <th scope="col">Rate(%)</th>
+                                        <th scope="col">Balance($)</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -303,7 +304,7 @@
                                         <td>70000</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" >Total Fee</th>
+                                        <th scope="row" >Total Fee($)</th>
                                         <td colspan="2">1786</td>
                                     </tr>
                                     </tbody>
@@ -321,8 +322,8 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Rate</th>
-                                        <th scope="col">Balance</th>
+                                        <th scope="col">Rate(%)</th>
+                                        <th scope="col">Balance($)</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -343,7 +344,7 @@
                                         <td>70000</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" >Total Fee</th>
+                                        <th scope="row" >Total Fee($)</th>
                                         <td colspan="2">1411</td>
                                     </tr>
                                     </tbody>
@@ -609,7 +610,7 @@
     function showResults() {
 
         document.getElementById("result-title").innerHTML = "Results";
-        document.getElementById("result-subtitle").innerHTML = "Your responses have been saved. According to your responses, you are a:";
+        document.getElementById("result-subtitle").innerHTML = "According to your responses, you are a:";
 
         var investorprofile = "";
         var investorprofiledesc = "";

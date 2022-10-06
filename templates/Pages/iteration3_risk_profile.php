@@ -27,9 +27,9 @@
                     <thead >
                     <tr>
                         <th scope="col">Product Name</th>
-                        <th scope="col">Fee</th>
-                        <th scope="col">Growth</th>
-                        <th scope="col">Defensive</th>
+                        <th scope="col">Fee(%)</th>
+                        <th scope="col">Growth(%)(</th>
+                        <th scope="col">Defensive(%)</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -198,8 +198,8 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Rate</th>
-                                    <th scope="col">Balance</th>
+                                    <th scope="col">Rate(%)</th>
+                                    <th scope="col">Balance($)</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -220,7 +220,7 @@
                                     <td>70000</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row" >Total Fee</th>
+                                    <th scope="row" >Total Fee($)</th>
                                     <td colspan="2">612.5</td>
                                 </tr>
                                 </tbody>
@@ -238,8 +238,8 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Rate</th>
-                                        <th scope="col">Balance</th>
+                                        <th scope="col">Rate(%)</th>
+                                        <th scope="col">Balance($)</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -260,7 +260,7 @@
                                         <td>70000</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" >Total Fee</th>
+                                        <th scope="row" >Total Fee($)</th>
                                         <td colspan="2">914.5</td>
                                     </tr>
                                     </tbody>
@@ -278,8 +278,8 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Rate</th>
-                                        <th scope="col">Balance</th>
+                                        <th scope="col">Rate(%)</th>
+                                        <th scope="col">Balance($)</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -300,7 +300,7 @@
                                         <td>70000</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" >Total Fee</th>
+                                        <th scope="row" >Total Fee($)</th>
                                         <td colspan="2">1786</td>
                                     </tr>
                                     </tbody>
@@ -318,8 +318,8 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Rate</th>
-                                        <th scope="col">Balance</th>
+                                        <th scope="col">Rate(%)</th>
+                                        <th scope="col">Balance($)</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -340,7 +340,7 @@
                                         <td>70000</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" >Total Fee</th>
+                                        <th scope="row" >Total Fee($)</th>
                                         <td colspan="2">1411</td>
                                     </tr>
                                     </tbody>

@@ -7,7 +7,18 @@
 
 #include 'upload.php';
 ?>
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
 
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
@@ -159,7 +170,7 @@
                                     <br>
                                     <span> Mobile Number</span>
                                     <br>
-                                    <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                                            maxlength = "10" id="phone-number2" name="phone-number2">
                                     <br>
                                     <br>

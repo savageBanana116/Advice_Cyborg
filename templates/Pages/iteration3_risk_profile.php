@@ -81,7 +81,9 @@
                 <p class="section-subheading text-muted">Notice: E.g  70,000 balance with $35,000 in BlackRock Global Allocation AUS D and BlackRock W Monthly Income D</p>
                 <br>
                 <div id="risk_profile_question">
-                    <h3 class="section-subheading text-muted" style="margin-bottom: 0;">Do your investments match your risk profile?</h3>
+                    <div class="card" style="margin-bottom: 2vh">
+                    <div class="card-body">
+                    <h3 class="section-subheading text-muted" style="font-weight: bold;margin-bottom: 0">Do your investments match your risk profile?</h3>
                     <div class="row justify-content-center">
                         <div class="col-auto">
                             <button class="btn btn-primary btn-lg btn-block mt-5" onclick="window.location.href='iteration3_consolidate_super'" type="button">Yes</button>
@@ -91,6 +93,8 @@
                         </div>
                         <br>
                         <br>
+                    </div>
+                    </div>
                     </div>
                 </div>
                 <script>
@@ -106,7 +110,9 @@
                     }
                 </script>
                 <div id="risk_no" style="display:none">
-                    <h3 class="section-subheading text-muted" style="margin-bottom: 0;">Do you wish to stay in this super fund?</h3>
+                    <div class="card" style="margin-bottom: 2vh">
+                        <div class="card-body">
+                    <h3 class="section-subheading " style="color: green;font-size: x-large;font-weight: bold;margin-bottom: 0;">Do you wish to stay in this super fund?</h3>
                     <div class="row justify-content-center">
                         <div class="col-auto">
                             <button class="btn btn-primary btn-lg btn-block mt-5" onclick="contact_form()" type="button">Yes</button>
@@ -116,6 +122,8 @@
                         </div>
                         <br>
                         <br>
+                    </div>
+                        </div>
                     </div>
                 </div>
                 <script>
@@ -131,6 +139,9 @@
                     }
                 </script>
                 <div id="contact_form" style="display:none">
+                    <div class="card">
+                        <div class="card-body">
+
                     <p class="lead">Please fill out contact details
                         below in case we find a better
                         solution for you
@@ -161,6 +172,9 @@
                             <a id="contact_submit" class="btn btn-primary mt-3" style="width:30%" onclick="sendEnquiry()">Submit Your Enquiry</a>
                             <br>
                             <br>
+                        </div>
+                    </div>
+
                         </div>
                     </div>
                 </div>

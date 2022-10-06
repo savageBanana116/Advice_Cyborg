@@ -102,7 +102,7 @@
             <p class="section-subheading text-muted">Let's help you find the most suitable product!</p>
             <br>
 
-            <table class="table table-bordered table-hover table-dark" style="width:40%;margin:auto">
+            <table class="table table-bordered table-hover table-dark" style="width: 80% ;margin:auto">
                 <thead >
                 <tr>
                     <th scope="col">Product Name</th>

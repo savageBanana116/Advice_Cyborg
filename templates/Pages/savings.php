@@ -322,8 +322,8 @@ echo $this->Html->css('custom.css');
                                     <table class="table table-bordered table-dark">
                                         <thead>
                                         <tr>
-                                            <th scope="col" class="table-primary">Date of birth</th>
-                                            <th scope="col" class="table-primary">Preservation Age</th>
+                                            <th scope="col"  class="bg-primary" >Date of birth</th>
+                                            <th scope="col"  class="bg-primary"      >Preservation Age</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -402,8 +402,8 @@ echo $this->Html->css('custom.css');
                                     <table class="table table-bordered table-dark">
                                         <thead>
                                         <tr>
-                                            <th scope="col" class="table-primary">ASFA Retirement Standard</th>
-                                            <th scope="col" class="table-primary">Annual living costs</th>
+                                            <th scope="col"  class="bg-primary">ASFA Retirement Standard</th>
+                                            <th scope="col"  class="bg-primary">Annual living costs</th>
                                         </tr>
                                         </thead>
                                         <tbody>

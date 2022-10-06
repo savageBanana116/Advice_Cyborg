@@ -131,6 +131,8 @@
                 }
                 </script>
                 <div id="contact_form" style="display:none">
+                    <div class="card">
+                        <div class="card-body">
                 <p class="lead">Please fill out contact details
                     below in case we find a better
                     solution for you
@@ -161,8 +163,12 @@
                         <a id="contact_submit" class="btn btn-primary mt-3" style="width:30%" onclick="sendEnquiry()">Submit Your Enquiry</a>
                         <br>
                         <br>
+                        <div class="col-auto" id="homeButton" style="display: none">    <button class="btn btn-primary"  onclick="location.href= '<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>'" >Back to dashboard</button>
+                        </div>
                     </div>
                 </div>
+                        </div>
+                    </div>
                 </div>
 
                 <script>
@@ -183,6 +189,7 @@
                                 alert("Please Enter a Valid Mobile Number")
                             }
                             else {
+                                document.getElementById("homeButton").style.display = "block";
                                 x.style.display = "block";
                             }
                         }

@@ -204,7 +204,7 @@ echo $this->Html->css('custom.css');
                             </div>
                             <div class="col-6 col-md-1 order-md-first align-self-center">
                                 <div class="d-grid gap-2">
-                                    <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                    <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
                                         <i class="fas fa-chevron-left"></i>
                                     </a>
                                 </div>
@@ -246,7 +246,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
-                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                             </div>
@@ -290,7 +290,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
-                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                             </div>
@@ -335,7 +335,7 @@ echo $this->Html->css('custom.css');
                         </div>
                         <div class="col-6 col-md-1 order-md-first align-self-center">
                             <div class="d-grid gap-2">
-                                <a id="prevBtnTop" class="btn btn-secondary" onclick="onPrevious();" role="button">
+                                <a id="prevBtnTop" class="btn btn-primary" onclick="onPrevious();" role="button">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                             </div>

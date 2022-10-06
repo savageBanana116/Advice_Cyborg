@@ -293,7 +293,15 @@ $( "#Salary_Sacrifice_Form" ).validate({
         errorElement:'div',
         field: {
             required: true,
-            number: true
+            number: true,
         }
+    },
+    messages: {},
+    highlight: function (element) {
+        $(element).children().addClass('error')
+    },
+    unhighlight: function (element) {
+        $(element).children().removeClass('error')
     }
 });
+

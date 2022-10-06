@@ -56,6 +56,9 @@
             border-width: 2px;
 
         }
+        #Salary_Sacrifice_Form .error{
+            color:red;
+        }
 
     </style>
 </head>

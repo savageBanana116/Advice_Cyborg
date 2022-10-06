@@ -8,6 +8,16 @@
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
         .hide {
             display: none;
         }
@@ -107,7 +117,7 @@
                         <form action="test1" method="get" class="pb-2">
                             <p class="lead">What is your Potential Monthly Centrelink Payment?</p>
                                 <div class="col" id="amount" style="justify-content: center;">
-                                    <input class="form-control" style="width:30%;margin:auto" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    <input class="form-control" style="width:30%;margin:auto" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                                            type = "number"
                                            maxlength = "6" required placeholder="$" id="centrelinkPayment" name="centrelinkPayment"/>
                                 </div>
@@ -126,7 +136,7 @@
                         <form action="test1" method="get" class="pb-2">
                             <p class="lead">What is your required income stream payment? (or minimum rate allowed by government, whichever is greater)</p>
                             <div class="col" id="amount" style="justify-content: center;">
-                                <input class="form-control" style="width:30%;margin:auto" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                <input class="form-control" style="width:30%;margin:auto" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                                        type = "number"
                                        maxlength = "6" required placeholder="$" id="streamPayment" name="streamPayment" />
                             </div>
@@ -210,7 +220,7 @@
                         <div class="container-fluid">
                             <div class="row justify-content-around pb-3">
                                 <div class="col-auto col-md-10 align-self-center">
-                                    <h5 id="enquiry-confirmation2" class="card-subtitle mb-2 text-center" style="display:none; color: green">Thank you for submitting your enquiry! Our team will be in contact within 3-5 business days.</h5>
+                                    <h5 id="my_confirm_2" class="card-subtitle mb-2 text-center" style="display:none; color: green">Thank you for submitting your enquiry! Our team will be in contact within 3-5 business days.</h5>
                                     <h5 class="card-title text-center">Income Stream: <span id="section-title">Enquiry into our funds</span></h5>
                                     <h6 id="section-subtitle" class="card-subtitle mb-2 text-muted text-center">Where do you want to open an <span class="blue">income stream?</span></h6>
                                 </div>
@@ -224,7 +234,7 @@
                                             <p>- Hands off Option</p>
                                             <p>- Paper Application</p>
                                             <br>
-                                            <input type="radio" style="vertical-align: bottom" value="option-1" name ="options" id="option-1" required>
+                                            <input type="radio" style="vertical-align: bottom" value="option-1" name ="options" id="my_option" required>
                                         </div>
                                         <div id="section-input" class="col">
                                             <p>Features</p>
@@ -233,21 +243,43 @@
                                             <p>- Hands off Option</p>
                                             <p>- Online Application</p>
                                             <br>
-                                            <input type="radio" style="vertical-align: bottom" value="option-2" name ="options" id="option-2">
+                                            <input type="radio" style="vertical-align: bottom" value="option-2" name ="options" id="your_option">
                                         </div>
                                     </div>
                                         <div id="section-input" class="row">
                                             <span> Name</span>
                                             <input required type="text" onkeydown="return /[a-z]/i.test(event.key)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                   maxlength = "30" id="name" name="name">
+                                                   maxlength = "30" id="your_name" name="name">
                                             <span> Mobile Number</span>
-                                            <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                   maxlength = "10" id="phone-number" name="phone-number">
+                                            <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                                   maxlength = "10" id="your_phone" name="phone-number">
                                             <span> Email Address</span>
                                             <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                   maxlength = "30" id="email" name="email">
+                                                   maxlength = "30" id="your_email" name="email">
                                     </div>
-                                    <a id="submit-button" class="btn btn-primary mt-3" style="width:30%" onclick="sendResults()">Submit Enquiry</a>
+                                    <a id="submit-button" class="btn btn-primary mt-3" style="width:30%" onclick="displayMy()">Submit Enquiry</a>
+                                    <script>
+                                        function validateEmail($email) {
+                                            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                                            return emailReg.test( $email );
+                                        }
+                                        function displayMy(){
+                                            if (document.getElementById("your_name").value === ""){
+                                                alert("Please Enter your name");
+                                            }else if (document.getElementById("your_phone").value.length < 8 || document.getElementById("your_phone").value === ""){alert("Please Enter a Valid Mobile Number");}
+                                            else if (!validateEmail(document.getElementById("your_email").value) || document.getElementById("your_email").value === "" ){
+                                                alert("Please Enter a Valid Email");
+
+                                            }else if (document.getElementById("your_option").value === "" &&  document.getElementById("my_option").value === ""  ){
+                                                alert("Please Select a type of fund");
+                                            }
+                                            else{
+                                                document.getElementById("my_confirm_2").style.display = "block";
+                                            }
+
+
+                                        }
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -260,6 +292,10 @@
                 var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
                 return emailReg.test( $email );
             }
+
+
+
+
             function sendResults() {
                 var test = $('#test').val();
                 var income;
@@ -339,29 +375,49 @@
 <!--                                        </div>-->
                                     </div>
                                     <div class="row justify-content-center">
+                                        <h5 id="my-confirm" class="card-subtitle mb-2 text-center" style="display:none; color: green">Thank you for submitting your enquiry! Our team will be in contact within 3-5 business days.</h5>
+
                                         <div class="col-md-6 align-content-center">
                                             <div class="d-flex justify-content-center">
                                                 <div id="section-input" class="col">
                                                     <span> Name</span>
                                                     <input required type="text" onkeydown="return /[a-z]/i.test(event.key)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                           maxlength = "30" id="name2" name="name2">
+                                                           maxlength = "30" id="my_name" name="name2">
                                                     <span> Mobile Number</span>
-                                                    <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                           maxlength = "10" id="phone-number2" name="phone-number2">
+                                                    <input required type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                                           maxlength = "10" id="my_phone" name="phone-number2">
                                                     <span> Email Address</span>
                                                     <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                           maxlength = "30" id="email2" name="email2">
+                                                           maxlength = "30" id="my_email" name="email2">
                                                 </div>
                                             </div>
-                                            <a id="submit-button" class="btn btn-primary mt-3" style="width:30%" onclick="sendResults()">Submit Your Enquiry</a>
+                                            <a id="submit-button" class="btn btn-primary mt-3" style="width:30%" onclick="display()">Submit Your Enquiry</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
                         <script>
+                            function validateEmail($email) {
+                                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                                return emailReg.test( $email );
+                            }
+
+                            function display(){
+                                if (document.getElementById("my_name").value === ""){
+                                    alert("Please Enter your name");
+                                }else if (document.getElementById("my_phone").value.length < 8 || document.getElementById("my_phone").value === ""){alert("Please Enter a Valid Mobile Number");}
+                                else if (!validateEmail(document.getElementById("my_email").value) || document.getElementById("my_email").value === "" ){
+                                    alert("Please Enter a Valid Email");
+
+                                }else{
+                                    document.getElementById("my-confirm").style.display = "block";
+                                }
+
+
+                            }
+
+
                             function onNext() {
                                 var y = document.getElementById("risk_profile")
                                 var x = document.getElementById("our-funds")

@@ -18,6 +18,9 @@
         color: #0d6efd;
         font-weight: bold;
     }
+    td{
+        padding-bottom: 2vh;
+    }
 </style>
 <body class="bg-light">
 <div class="container-fluid">
@@ -40,16 +43,26 @@
                         <table style="margin-left: auto;margin-right: auto;text-align: left">
                             <tr>
                                 <td>This year</td>
-                                <td><input type="number" id="thisYear" class="form-control" placeholder="$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+"></td>
+                                <td><input type="number" id="thisYear" class="form-control" placeholder="$"  maxlength="6" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57" ></td>
                             </tr>
+                            <tr> <td> <div style="display: none;color: red" id="this_error" > <span >Please enter a value less than 110,000 </span></div> </td></tr>
+
+
                             <tr>
                                 <td>Last year</td>
-                                <td><input type="number" id="lastYear" class="form-control" placeholder="$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+"></td>
+                                <td><input type="number" id="lastYear" class="form-control" placeholder="$" maxlength="6" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57" ></td>
+
                             </tr>
+                            <tr>  <td> <div style="display: none;color: red" id="last_error"> <span>Please enter a value less than 110,000 </span></div> </td></tr>
+
+
                             <tr>
                                 <td>The year before</td>
-                                <td><input type="number" id="yearBefore" class="form-control" placeholder="$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+" ></td>
+                                <td><input type="number" id="yearBefore" class="form-control" placeholder="$" maxlength="6" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10"  step="1" pattern="[0-9]+" onkeypress="return event.charCode >= 48 && event.charCode <= 57" ></td>
+
                             </tr>
+                            <tr> <td>  <div style="display: none;color: red" id="before_error"> <span>Please enter a value less than 110,000 </span></div> </td> </tr>
+
                         </table>
                         <button type="button" class="btn btn-primary" style="margin-top: 1em" onclick="displayOutput()">calculate</button>
                         <br>
@@ -64,14 +77,25 @@
                     const lastYear = document.getElementById("lastYear").value;
                     const yearBefore = document.getElementById("yearBefore").value;
                     if (thisYear == ''|| thisYear > 110000){
-                        alert("Please a value not greater than 110,000 for this year.");
-                    }else if (lastYear == ''){
-                        alert("Please enter your contribution for last year.");
+                        document.getElementById("this_error").style.display ="block";
+                    } else if (thisYear <= 110000){
+                        document.getElementById("this_error").style.display ="none";
+                    }
 
-                    }else if (yearBefore == ''){
-                        alert("Please enter your contribution for the year before.");
+                    if (lastYear == '' || lastYear > 110000){
+                        document.getElementById("last_error").style.display ="block";
+                    }else if (lastYear <= 110000){
+                        document.getElementById("last_error").style.display ="none";
+                    }
 
-                    }else {
+
+                    if (yearBefore == ''|| yearBefore > 110000){
+                        document.getElementById("before_error").style.display ="block";
+
+                    }else if (yearBefore <= 110000){
+                        document.getElementById("before_error").style.display ="none";
+                    }
+                    if (thisYear != ''&& lastYear != '' && yearBefore != '' && thisYear <= 110000 && lastYear <= 110000  && yearBefore <= 110000){
                         var x = document.getElementById("input");
                         var y = document.getElementById("output");
                         if (x.style.display === "none") {

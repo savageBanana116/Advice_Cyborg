@@ -153,7 +153,7 @@
                                 <div id="contact_form2" class="col" style="align-content: center">
                                     <span> Name</span>
                                     <br>
-                                    <input required type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    <input required type="text" onkeydown="return /[a-z]/i.test(event.key)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                            maxlength = "30" id="name2" name="name2">
                                     <br>
                                     <br>
@@ -172,6 +172,8 @@
                             <a id="contact_submit" class="btn btn-primary mt-3" style="width:30%" onclick="sendEnquiry()">Submit Your Enquiry</a>
                             <br>
                             <br>
+                            <div class="col-auto" id="homeButton" style="display: none">    <button class="btn btn-primary"  onclick="location.href= '<?= $this->Url->build(['controller' => 'modules','action' => 'dashboard']);?>'" >Back to dashboard</button>
+                            </div>
                         </div>
                     </div>
 
@@ -193,7 +195,11 @@
                             if(!validateEmail(document.getElementById("email2").value)){
                                 alert("Please Enter a Valid Email")
                             }
+                            else if(document.getElementById("phone-number2").value.length < 8){
+                                alert("Please Enter a Valid Mobile Number")
+                            }
                             else {
+                                document.getElementById("homeButton").style.display = "block";
                                 x.style.display = "block";
                             }
                         }

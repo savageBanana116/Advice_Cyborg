@@ -226,7 +226,10 @@ echo $this->Html->css('custom.css');
                                         <span id="age_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value greater than or equal to 18</span>
                                     </div>
                                     <br>
-                                        <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">Help: Refers to your age as at next 30 June to align with the end of tax year. </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: Refers to your age as at next 30 June to align with the end of tax year.
+                                    </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +273,10 @@ echo $this->Html->css('custom.css');
                                             <span id="income_error" style="display: none; color: red;margin-bottom: 2vh"> Please enter a value that is greater or equal to $15,000</span>
                                         </div>
                                         <br>
-                                        <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: This include all your income before tax. Examples are salary or money from rentals. </span>
+                                        <div class="alert alert-success" role="alert">
+                                            Help: This includes all your income before tax. Examples are salary or money from rentals.
+                                        </div>
+
 
                                     </div>
                                     </div>
@@ -351,8 +357,11 @@ echo $this->Html->css('custom.css');
                                     </table>
 
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: To be able to access your super, you need to be 55 or older.
-                                                        There are some exceptions to the rule which allow for early retirement.</span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: To be able to access your super, you need to be 55 or older.
+                                        There are some exceptions to the rule which allow for early retirement.
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -427,7 +436,10 @@ echo $this->Html->css('custom.css');
                                         </tbody>
                                     </table>
                                 <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The monthly income you would like to receive at retirement to enjoy your desired lifestyle </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: The monthly income you would like to receive at retirement to enjoy your desired lifestyle
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -472,8 +484,10 @@ echo $this->Html->css('custom.css');
                                         <span id="super_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The value of your Super/Retirement funds.
-                                           Does not include: investment funds, shares, bonds, term deposits, etc.   </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: The value of your Super/Retirement funds.
+                                        Does not include: investment funds, shares, bonds, term deposits, etc.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -518,7 +532,10 @@ echo $this->Html->css('custom.css');
                                         <span id="monthly_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: How much you regularly contribute to your super account. Examples employers contributions, salary sacrifice, etc   </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: How much you regularly contribute to your super account. Examples employers contributions, salary sacrifice, etc
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -565,7 +582,9 @@ echo $this->Html->css('custom.css');
                                     </div>
 
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of other investments. Examples investment funds, shares, bonds, term deposits, etc </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: The value of other investments. Examples investment funds, shares, bonds, term deposits, etc
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -615,7 +634,10 @@ echo $this->Html->css('custom.css');
                                         <input type="submit" name="submit" id="submit" onclick="onsubmit()" class="btn btn-primary" style="margin-top: 1em" >
                                     </div>
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: How much you regularly contribute to your investment account. </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: How much you regularly contribute to your investment account.
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

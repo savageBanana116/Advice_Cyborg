@@ -32,7 +32,7 @@
         </div>
         <script>
             function pop (){
-                alert("Please contact administrator for further assistance");
+                alert("Please contact administrator at admin.advicecyborg@gmail.com for further assistance");
             }
         </script>
         <style>

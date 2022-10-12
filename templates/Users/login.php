@@ -22,12 +22,19 @@
                         <div class="d-grid gap-2">
                             <button class="btn btn-primary btn-user btn-block" type="submit">Log in</button>
                             <a href="<?= $this->Url->build(['controller' => 'users','action' => 'add']) ?>" class="btn btn-secondary btn-user btn-block" role="button">Sign up</a>
+                            <a onclick="pop()" class="btn btn-secondary btn-user btn-block" role="button">Forgot Password</a>
+
                         </div>
                         <?= $this->Form->end() ?>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            function pop (){
+                alert("Please contact administrator for further assistance");
+            }
+        </script>
         <style>
             @media only screen and (max-width: 1200px) {
                 #img-ava {

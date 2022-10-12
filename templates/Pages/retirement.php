@@ -184,9 +184,12 @@ echo $this->Html->css('custom.css');
                                         <span id="age_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value greater than or equal to 58</span>
                                     </div>
                                     <br>
-                                        <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">Help: To be able to access your super benefits, you need to be 58 or older.
-                                    If you have reasons to retire before the age of 58,
-                                    please contact our office. </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: To be able to access your super benefits, you need to be 58 or older.
+                                        If you have reasons to retire before the age of 58,
+                                        please contact our office.
+                                    </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -229,7 +232,9 @@ echo $this->Html->css('custom.css');
                                             <span id="income_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                         </div>
                                         <br>
-                                        <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The net monthly income you require to enjoy your desired lifestyle. Note: If you're unsure how much you need contact a financial planner for further advice </span>
+                                        <div class="alert alert-success" role="alert">
+                                            Help: The net monthly income you require to enjoy your desired lifestyle. Note: If you're unsure how much you need contact a financial planner for further advice
+                                        </div>
                                     </div>
                                     </div>
                                 </div>
@@ -271,8 +276,11 @@ echo $this->Html->css('custom.css');
                                         <span id="others_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: Your non-super source of income.
-                                           Examples: rental, investment income               </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: Your non-super source of income.
+                                        Examples: rental, investment income
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -317,7 +325,9 @@ echo $this->Html->css('custom.css');
                                         <span id="lump_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                 <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: This is the amount you need to settle your debts and retire debt-free.   </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: This is the amount you need to settle your debts and retire debt-free.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -362,8 +372,11 @@ echo $this->Html->css('custom.css');
                                         <span id="super_error" style="display: none; color: red;margin-bottom: 2vh">Please input a value</span>
                                     </div>
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)"> Help: The value of your Super/Retirement funds.
-                                           Does not include: investment funds, shares, bonds, term deposits, etc.   </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: The value of your Super/Retirement funds.
+                                        Does not include: investment funds, shares, bonds, term deposits, etc.
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -412,8 +425,11 @@ echo $this->Html->css('custom.css');
                                         <input type="submit" name="submit" id="submit" onclick="onsubmit()" class="btn btn-primary" style="margin-top: 1em" >
                                     </div>
                                     <br>
-                                    <span style="font-size: 12px;color: rgba(0, 0, 0, 0.5)">  Help: The value of your other investments.
-                                          Examples: investment funds, shares, bonds, term deposits, etc.  </span>
+                                    <div class="alert alert-success" role="alert">
+                                        Help: The value of your other investments.
+                                        Examples: investment funds, shares, bonds, term deposits, etc.
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

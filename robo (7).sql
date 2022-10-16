@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- 主机： 127.0.0.1
--- 生成日期： 2022-05-23 04:28:40
--- 服务器版本： 10.4.20-MariaDB
--- PHP 版本： 7.4.22
+-- Host: localhost:3306
+-- Generation Time: Oct 16, 2022 at 12:09 PM
+-- Server version: 5.7.40
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `robo`
+-- Database: `u22s1018_fit3048_advice_cyborg`
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `investment`
+-- Table structure for table `investment`
 --
 
 CREATE TABLE `investment` (
@@ -34,7 +35,7 @@ CREATE TABLE `investment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `investment`
+-- Dumping data for table `investment`
 --
 
 INSERT INTO `investment` (`investment_id`, `investment_name`, `admin_fee`) VALUES
@@ -320,7 +321,7 @@ INSERT INTO `investment` (`investment_id`, `investment_name`, `admin_fee`) VALUE
 -- --------------------------------------------------------
 
 --
--- 表的结构 `modules`
+-- Table structure for table `modules`
 --
 
 CREATE TABLE `modules` (
@@ -330,24 +331,27 @@ CREATE TABLE `modules` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `modules`
+-- Dumping data for table `modules`
 --
 
 INSERT INTO `modules` (`module_id`, `module_name`, `paid`) VALUES
 (7, 'Insurance', NULL),
 (8, 'Super', NULL),
 (9, 'In-progress', NULL),
-(10, 'Investment', NULL);
+(10, 'Investment', NULL),
+(13, 'Calculator', 0),
+(14, 'Retirement', 0),
+(15, 'Savings', NULL);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `payments`
+-- Table structure for table `payments`
 --
 
 CREATE TABLE `payments` (
   `payment_id` int(10) NOT NULL,
-  `payment_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `payment_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `payment_provider_id` int(10) NOT NULL,
   `user_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -355,7 +359,7 @@ CREATE TABLE `payments` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `payment_providers`
+-- Table structure for table `payment_providers`
 --
 
 CREATE TABLE `payment_providers` (
@@ -364,7 +368,7 @@ CREATE TABLE `payment_providers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `payment_providers`
+-- Dumping data for table `payment_providers`
 --
 
 INSERT INTO `payment_providers` (`payment_provider_id`, `name`) VALUES
@@ -373,7 +377,7 @@ INSERT INTO `payment_providers` (`payment_provider_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -385,7 +389,7 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `products_modules`
+-- Table structure for table `products_modules`
 --
 
 CREATE TABLE `products_modules` (
@@ -397,7 +401,7 @@ CREATE TABLE `products_modules` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `super`
+-- Table structure for table `super`
 --
 
 CREATE TABLE `super` (
@@ -407,7 +411,7 @@ CREATE TABLE `super` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `super`
+-- Dumping data for table `super`
 --
 
 INSERT INTO `super` (`id`, `super_name`, `admin_fee`) VALUES
@@ -452,7 +456,7 @@ INSERT INTO `super` (`id`, `super_name`, `admin_fee`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `testinvestment`
+-- Table structure for table `testinvestment`
 --
 
 CREATE TABLE `testinvestment` (
@@ -463,7 +467,7 @@ CREATE TABLE `testinvestment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `testinvestment`
+-- Dumping data for table `testinvestment`
 --
 
 INSERT INTO `testinvestment` (`id`, `company_name`, `investment_name`, `admin_fee`) VALUES
@@ -477,7 +481,7 @@ INSERT INTO `testinvestment` (`id`, `company_name`, `investment_name`, `admin_fe
 -- --------------------------------------------------------
 
 --
--- 表的结构 `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -487,27 +491,41 @@ CREATE TABLE `users` (
   `mobile_number` varchar(10) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `profile_fields` text DEFAULT NULL,
+  `profile_fields` text,
   `role` varchar(20) DEFAULT NULL,
   `DOB` date NOT NULL,
   `postcode` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `email`, `password`, `mobile_number`, `first_name`, `last_name`, `profile_fields`, `role`, `DOB`, `postcode`) VALUES
-(25, 'ash123@gmail.com', '$2y$10$qtAGWVekRJ0G7igaw2c7oOhn2bJwe6AFo8tHmgCnhtQahTurGL9wq', '0432440466', 'Rahman', 'Ashik', 'N/A', '', '2021-09-02', 3149),
 (26, 'cake1@gamil.com', '$2y$10$hzxkGNQtM0YxTZCcCaLkd.94xwl0dP2f/aqqJ9.Wj/nLKLILoaCL6', '0432440488', 'Ashik', 'Rahman', '', '', '2021-09-22', 3149),
 (27, 'cake1@yahoo.com', '$2y$10$xZQRmvzKY9dknmDKkyWGa.Ez2O8Vcio5kwZuPTRObMabyP6ENOVDG', '0432440488', 'as', 'r', '', '', '2021-09-23', 3149),
 (28, 'ashik123@yahoo.com', '$2y$10$.bwWLM91Tf.gIxsur8WN0u4Y1SFC8.m8fcx8GTvrgtO43SVVjr7cG', '0432440488', 'ASHIK', 'RAHMAN', NULL, NULL, '2021-09-07', 3149),
-(29, '123456@gmail.com', '$2y$10$cWl7xGFnBDJxxD/oaq9Wy.nRhCBi.qdbBhMSaHEUKgvMHLZlkzSbK', '1234567890', 'a', 'a', NULL, 'user', '2000-01-01', 123456);
+(29, '123456@gmail.com', '$2y$10$cWl7xGFnBDJxxD/oaq9Wy.nRhCBi.qdbBhMSaHEUKgvMHLZlkzSbK', '1234567890', 'a', 'a', NULL, 'user', '2000-01-01', 123456),
+(30, 'team18@gmail.com', '$2y$10$X7Rn8y9Av0WRdjLeNwcVXuvLwKRfaHUr/O4BLrziqGw7ZEDlovNuO', '0468464979', 'Team18', '18', NULL, 'user', '2022-08-05', 4),
+(31, '18@gmail.com', '$2y$10$nJLNLQ7F8inXefscj7SU0u2wS7XFeGBxc0wbB4HNMLC2Mnqy1gMz2', '0468464979', 'Maxwell', 'Tsa', NULL, 'user', '2022-08-09', 2313),
+(32, 'bwe0001@student.monash.edu', '$2y$10$GpxTv2uq.Qet9zLHJqrhWevqjlH/05hKeRPNcm3CCEQTrq/YEXBB6', '1234567890', 'bertrand', 'wee', NULL, 'user', '1111-11-11', 3000),
+(33, '123@gmail.com', '$2y$10$7SFBaxa6qEA2PG.9vVa9.u5cXyzn7uKuryc63Ox70qD3AgGhVBQ4q', '0468464979', 'HOW', 'Greene', NULL, 'user', '2022-08-04', 3213),
+(34, 'admin@gmail.com', '$2y$10$bydIem.rB0pw.iyWl2jzcOZ20rYSb4pG0/KI8IV2Ke51FJHWDtiAC', '1231313131', 'admin', 'admin', NULL, 'user', '2022-08-18', 3111),
+(36, 'yhao0016@student.monash.edu', '$2y$10$OIem6qYO4AYuIx9O1XTq9O3p.DekB.vfwkN3S9ZEH5tXqkXSGAd8C', '0123456789', 'monashTestAccount2022', 'monashTestAccount2022', NULL, 'user', '1111-11-11', 1111),
+(37, 'yeeeesuen@gmail.com', '$2y$10$NbtJDW3IjvL5zXH2PNRlJeqio2E26OzNmlIy3rJms9xm72YIoN3Mm', '0172097022', 'Adley', 'Tan', NULL, 'user', '1111-11-11', 58000),
+(39, 'happy@test.com', '$2y$10$RZTAMVzIUGttl3Nhrc.5Be3dKRS6KUgFrjkxCdRgJVLUfG.GforU.', 'icjbhvibao', 'Helpless', 'Puppy69', NULL, 'user', '2022-09-11', 1234),
+(40, '321@gmail.com', '$2y$10$qnafcS3rcZqJ6UudbdoazuWBjID2GfWn.PQCWPEvZMs9V0FI4X1NS', '2131232133', 'Team18', '18', NULL, 'user', '1231-02-13', 3213),
+(41, 'dsa@gasda.com', '$2y$10$f3RnceWWgALL3bW7eRAo1.mGTF3fkPjM/dddRvmkKQlzVLnG8bpEu', '0412745462', 'ruby', 'dsa', NULL, 'user', '2022-10-07', 2111),
+(42, 'testuser@gmail.com', '$2y$10$P1H4R7DiheXXIJavQjWgkeAZfiMAqfqG4e7HogJ74pnnn.KFC5cF2', '5430950349', 'testu', 'user', NULL, 'user', '2022-10-01', 43563456),
+(43, 'owen18397400615@gmail.com', '$2y$10$1B4olO9wM6ld.P2ffCQfjeU61nFAE1Z7CgkWNaw69NoY7l2I1bcla', '0468464979', 'MingJing', 'Greene', NULL, 'user', '2022-09-29', 3166),
+(44, '88@gmail.com', '$2y$10$S0n8IzLXfsqb4n6Vnqa4ZusWUBjViv2.vBBjzgoggGEHwLlaW3dGu', '0468464979', 'HOW', 'Greene', NULL, 'user', '1222-01-11', 3169),
+(46, 'admin.advicecyborg@gmail.com', '$2y$10$2FyQc59/PjU4pgL0KZBQa.EAVHuuLhHs7eKp./XPawD7FhugNT9Be', '2131232133', 'Admin', 'Manager', 'This is the primary admin account for the AdviceCyborg Platform.', 'user', '1999-12-01', 3169),
+(47, 'india.macpherson@gmail.com', '$2y$10$kQzHuYGS9Wcs0/VGFtTNfuRR/awNI76IQjgIUfk56iSQQ9V.0V2Z6', '0481302078', 'India', 'Macpherson', NULL, 'user', '1999-11-11', 3053);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `users_products`
+-- Table structure for table `users_products`
 --
 
 CREATE TABLE `users_products` (
@@ -517,23 +535,23 @@ CREATE TABLE `users_products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转储表的索引
+-- Indexes for dumped tables
 --
 
 --
--- 表的索引 `investment`
+-- Indexes for table `investment`
 --
 ALTER TABLE `investment`
   ADD PRIMARY KEY (`investment_id`);
 
 --
--- 表的索引 `modules`
+-- Indexes for table `modules`
 --
 ALTER TABLE `modules`
   ADD PRIMARY KEY (`module_id`);
 
 --
--- 表的索引 `payments`
+-- Indexes for table `payments`
 --
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`payment_id`),
@@ -541,19 +559,19 @@ ALTER TABLE `payments`
   ADD KEY `fk2` (`user_id`);
 
 --
--- 表的索引 `payment_providers`
+-- Indexes for table `payment_providers`
 --
 ALTER TABLE `payment_providers`
   ADD PRIMARY KEY (`payment_provider_id`);
 
 --
--- 表的索引 `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- 表的索引 `products_modules`
+-- Indexes for table `products_modules`
 --
 ALTER TABLE `products_modules`
   ADD PRIMARY KEY (`product_module_id`),
@@ -561,13 +579,13 @@ ALTER TABLE `products_modules`
   ADD KEY `module_id` (`module_id`);
 
 --
--- 表的索引 `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- 表的索引 `users_products`
+-- Indexes for table `users_products`
 --
 ALTER TABLE `users_products`
   ADD PRIMARY KEY (`users_products_id`),
@@ -575,83 +593,83 @@ ALTER TABLE `users_products`
   ADD KEY `product_id` (`product_id`) USING BTREE;
 
 --
--- 在导出的表使用AUTO_INCREMENT
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- 使用表AUTO_INCREMENT `investment`
+-- AUTO_INCREMENT for table `investment`
 --
 ALTER TABLE `investment`
   MODIFY `investment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=279;
 
 --
--- 使用表AUTO_INCREMENT `modules`
+-- AUTO_INCREMENT for table `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `module_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `module_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- 使用表AUTO_INCREMENT `payments`
+-- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `payment_providers`
+-- AUTO_INCREMENT for table `payment_providers`
 --
 ALTER TABLE `payment_providers`
   MODIFY `payment_provider_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- 使用表AUTO_INCREMENT `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `products_modules`
+-- AUTO_INCREMENT for table `products_modules`
 --
 ALTER TABLE `products_modules`
-  MODIFY `product_module_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `product_module_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- 使用表AUTO_INCREMENT `users_products`
+-- AUTO_INCREMENT for table `users_products`
 --
 ALTER TABLE `users_products`
   MODIFY `users_products_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- 限制导出的表
+-- Constraints for dumped tables
 --
 
 --
--- 限制表 `payments`
+-- Constraints for table `payments`
 --
 ALTER TABLE `payments`
   ADD CONSTRAINT `fk1` FOREIGN KEY (`payment_provider_id`) REFERENCES `payment_providers` (`payment_provider_id`),
   ADD CONSTRAINT `fk2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 --
--- 限制表 `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `users` (`user_id`);
 
 --
--- 限制表 `products_modules`
+-- Constraints for table `products_modules`
 --
 ALTER TABLE `products_modules`
   ADD CONSTRAINT `products_modules_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
   ADD CONSTRAINT `products_modules_ibfk_2` FOREIGN KEY (`module_id`) REFERENCES `modules` (`module_id`);
 
 --
--- 限制表 `users_products`
+-- Constraints for table `users_products`
 --
 ALTER TABLE `users_products`
   ADD CONSTRAINT `users_products_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),

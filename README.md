@@ -25,7 +25,10 @@
 ***For more information about CakePhp: https://book.cakephp.org/4/en/intro/conventions.html***
 
 **Section 2: Database Config**</br>
-**Database Schema: 
+**Database Schema: ropo(7).sql** 
 ***Important Records*** 
+
+- Modules Table
+   - All records inside modules are significant for advice cyborg system to render all modules on dashboard.
 
 

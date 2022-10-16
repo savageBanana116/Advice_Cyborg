@@ -25,6 +25,7 @@
 ***For more information about CakePhp: https://book.cakephp.org/4/en/intro/conventions.html***
 
 **Section 2: Database Config**</br>
-***Important Records***
+**Database Schema: 
+***Important Records*** 
 
 

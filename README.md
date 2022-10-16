@@ -30,6 +30,10 @@
 
 - Modules Table
    - All records inside modules are significant for advice cyborg system to render all modules on dashboard.
+   - Delete Modules table will cause fatal errors occur in system.
+   - Update exsiting Module table record will cause fatal errors occur in system.
 
+
+**For more information about modules table: Check Directory/scr/controller/ModulesController/indext function.**
 
 
